@@ -15,6 +15,7 @@ Template repository, used for NTUA/ECE Software Engineering, 2020-2021
 ```sh
 git clone git@github.com:ntua/TL20-nn
 ```
+^- Αυτό είναι μόνο για ssh,για https πατήστε git clone {το http url}!!!
 
 όπου φυσικά θα αντικαταστήσετε το `nn` με τον αριθμό της ομάδας σας.
 
