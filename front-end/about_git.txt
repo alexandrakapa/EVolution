@@ -38,3 +38,24 @@ $ git checkout -b <new_branch>
 13) "git commit -m "the_message_you_want_to_show" " ->Τα κάνουμε commit και είναι έτοιμα να μπουν στο remote
 
 14) "git push origin your_branch_name(πχ alexandra)" -> Τώρα τα σπρώξαμε όλα στο repo, στο branch μας και είμαστε κομπλέ
+ Προσοχή
+
+Υou want to push your changes to the remote branch named “feature” on your repository.
+
+In order to push your branch to the “feature” branch, you would execute the following command
+
+$ git push origin my-feature:feature
+
+In order to push your branch to another branch, you may need to merge the remote branch to your current local branch.
+
+In order to be merged, the tip of the remote branch cannot be behind the branch you are trying to push.
+
+Before pushing, make sure to pull the changes from the remote branch and integrate them with your current local branch.
+
+$ git pull
+
+$ git checkout my-feature
+
+$ git merge origin/feature
+
+$ git push origin my-feature:feature
