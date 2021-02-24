@@ -1,10 +1,12 @@
 const User = require('../models/user.model.js');
 
-exports.login = (req, res)=> {  
+exports.login = (req, res)=> {
+    console.log("Hi");
+    console.log(req);
     let token = req.headers["x-access-token"];
     console.log(token);
     let cat="";
-   
+
     User.findByToken(token,(err,data)=>{
             if(data != "fail"){ return res.status(400).json({
                     error :true,
@@ -60,15 +62,14 @@ exports.login = (req, res)=> {
                                     }
                                     else {
                                         return res.json({isAuth : false, message : ' Auth failed ,email not found'});
-                                    } 
-                                
+                                    }
+
                                 });
-                            } 
-                        
+                            }
+
                         });
-                    } 
+                    }
                 }
                 )}
     })
 }
-

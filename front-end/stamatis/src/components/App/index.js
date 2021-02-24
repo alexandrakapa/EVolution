@@ -11,6 +11,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import Car_user from '../Car_user';
 import * as ROUTES from '../../constants/routes';
 const App = () => (
 <Router>
@@ -24,6 +25,7 @@ const App = () => (
 <Route path={ROUTES.HOME} component={HomePage} />
 <Route path={ROUTES.ACCOUNT} component={AccountPage} />
 <Route path={ROUTES.ADMIN} component={AdminPage} />
+<Route exact path={ROUTES.CAR_USER} component={Car_user} />
 </div>
 </Router>
 );

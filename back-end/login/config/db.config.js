@@ -7,15 +7,13 @@ const mysql = require('mysql');
 const disconnect_handler =mysql.createConnection({
     host: 'localhost',
     user: 'root',       //the credentials for our database
-    password: 'root',
-    port:8889,
+    password: 'mysql',
     database: 'Evolution'
 });
 const dbConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',       //the credentials for our database
-    password: 'root',
-    port:8889,
+    password: 'mysql',
     database: 'Evolution'
 });
 

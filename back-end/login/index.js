@@ -1,6 +1,7 @@
 const express = require('express');   //to import express
 const bodyParser = require('body-parser');
 const cookieParser=require('cookie-parser');
+const cors = require('cors');
 
 // create express app
 const app = express();
@@ -10,6 +11,7 @@ const port = process.env.PORT || 8765;
 
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors({origin: 'http://localhost:3000'}));
 
 // parse request data content type application/json
 app.use(bodyParser.json());

@@ -6,7 +6,7 @@ import * as ROUTES from '../../constants/routes';
 //const ->unchanged
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    <h1>Sign In</h1>
     <SignInForm />
   </div>
 );
@@ -25,17 +25,14 @@ class SignInFormBase extends Component {
 
   onSubmit = event => {
     const { email, password } = this.state;
-    this.props.history.push(ROUTES.HOME);
-    // this.props.firebase
-    //   .doSignInWithEmailAndPassword(email, password)
-    //   .then(() => {
-    //     this.setState({ ...INITIAL_STATE });
-    //     this.props.history.push(ROUTES.HOME);
-    //   })
-    //   .catch(error => {
-    //     this.setState({ error });
-    //   });
-
+    // this.props.history.push(ROUTES.HOME);
+    console.log("test");
+    let empInfo={ email:email, password:password};
+    console.log(empInfo);
+    var getemail= JSON.stringify(empInfo);
+    console.log(getemail);
+    fetch('http://localhost:8765/login',{ method: 'POST', headers:{'Content-type':'application/text'}, body: JSON.stringify(empInfo)}).then(r=>r.json()).then(res=>{ if(res){ console.log(res) } });
+    //console.log("hi");
     event.preventDefault();
   };
 
@@ -83,5 +80,4 @@ const SignInForm = compose(
 )(SignInFormBase);
 
 export default SignInPage;
-
-//export { SignInForm };
+export { SignInForm };
