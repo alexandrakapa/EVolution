@@ -1,0 +1,14 @@
+Δημιουργώ ένα φάκελο και μέσα σε αυτόν κάνω τα εξής:
+ 
+1) git clone https://github.com/ntua/TL20-38
+
+2) cd TL20-38
+
+3) Με το "git branch -a" βλέπουμε τι branches υπάρχουν τοπικά,έστω ότι έχουμε μόνο το master (μπορεί να εμφανίσει και αυτά: remotes/origin/HEAD -> origin/master remotes/origin/master , δεν μας νοιάζουν)
+
+4) 4.Με το "git remote -v" ας δείχνει με ποια repo εχουμε συνδεθεί. Πιθανό να βγάζει κάτι τέτοιο:
+origin https://github.com/ntua/TL20-38.git (fetch)
+origin https://github.com/ntua/TL20-38.git (push)
+Αυτό σημαίνει ότι έχουμε συνδεθεί με το repo TL20-38 και του έχουμε δώσει το όνομα origin. Αν έχετε άλλο ως origin ψάξτε πως κάνουμε delete ενα remote,μια εντολή είναι μόνο ή να κάνετε μετονομασία το παλιό remote σε πχ destination ώστε να έχετε το συγκεκριμένο ως origin για να μην μπερδευτείτε.
+
+5)
