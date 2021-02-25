@@ -31,7 +31,28 @@ class SignInFormBase extends Component {
     console.log(empInfo);
     var getemail= JSON.stringify(empInfo);
     console.log(getemail);
-    fetch('http://localhost:8765/login',{ method: 'POST', headers:{'Content-type':'application/text'}, body: JSON.stringify(empInfo)}).then(r=>r.json()).then(res=>{ if(res){ console.log(res) } });
+
+
+    const fetch = require('node-fetch');
+
+
+    let todo =
+      {
+      "username":"angrykoala333",
+      "password":"katrina"
+      }
+;
+
+
+    fetch('http://localhost:8765/login',{
+       method: 'POST',
+       body: JSON.stringify(todo),
+       headers:{'Content-type':'application/json'}
+     }).then(res => res.json())
+       .then(json => console.log(json))
+       .catch(err => console.log(err));
+
+
     //console.log("hi");
     event.preventDefault();
   };
