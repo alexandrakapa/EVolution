@@ -27,7 +27,10 @@ class SignInFormBase extends Component {
     const { email, password } = this.state;
     // this.props.history.push(ROUTES.HOME);
     console.log("test");
-    let empInfo={ email:email, password:password};
+    let empInfo={
+      username:email,
+       password:password
+     };
     console.log(empInfo);
     var getemail= JSON.stringify(empInfo);
     console.log(getemail);
@@ -35,21 +38,15 @@ class SignInFormBase extends Component {
 
     const fetch = require('node-fetch');
 
-
-    let todo =
-      {
-      "username":"angrykoala333",
-      "password":"katrina"
-      }
-;
-
-
     fetch('http://localhost:8765/login',{
        method: 'POST',
-       body: JSON.stringify(todo),
+       body: JSON.stringify(empInfo),
        headers:{'Content-type':'application/json'}
-     }).then(res => res.json())
+     }).then(res => res.json() )
        .then(json => console.log(json))
+       // .then( if(json.accessToken!="") {
+       //   this.props.history.push(ROUTES.HOME)
+       // } )
        .catch(err => console.log(err));
 
 
