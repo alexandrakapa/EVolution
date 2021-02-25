@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import Cookies from 'universal-cookie';
+
 
 import * as ROUTES from '../../constants/routes';
+const cookies = new Cookies();
 //const ->unchanged
 const SignInPage = () => (
   <div>
@@ -43,10 +46,18 @@ class SignInFormBase extends Component {
        body: JSON.stringify(empInfo),
        headers:{'Content-type':'application/json'}
      }).then(res => res.json() )
-       .then(json => console.log(json))
-       // .then( if(json.accessToken!="") {
-       //   this.props.history.push(ROUTES.HOME)
-       // } )
+       // .then(json => console.log(json))
+       .then( json => { if(json.accessToken!=="" && json.isAuth !== false) {
+         cookies.set('name',json.username, { path: '/' });
+         cookies.set('token',json.accessToken, { path: '/' });
+         this.props.history.push(ROUTES.HOME)
+       }
+       else{
+         //this.props.history.push(ROUTES.SIGNIN)
+         console.log("Error")
+       }
+     }
+      )
        .catch(err => console.log(err));
 
 
