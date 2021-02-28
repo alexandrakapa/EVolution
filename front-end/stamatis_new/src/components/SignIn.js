@@ -99,13 +99,4 @@ class SignIn extends Component {
   }
 }
 
-//router -> βιβλιοθήκη που κάνει τα routes δλδ συνδεέι τα links μεταξύ τους
-// H SignInFormBase παίρνει απο το withRouter
-//compose -> συνδεση συναρτησεων της withRouter με το SignInFormBase
-//ενισχυω τη δευτερη παρενθεση με οτι εχει η πρωτη παρενθεση
-
-// const SignIn = compose(
-//   withRouter,
-// )(SignIn);
-
 export default withRouter(SignIn) ;
