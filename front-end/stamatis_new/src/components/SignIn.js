@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-// import { compose } from 'recompose';
-// import { UserContext } from './UserContext';
-//import Cookies from 'universal-cookie';
-//import * as ROUTES from '../../constants/routes';
-//const cookies = new Cookies();
-//const ->unchanged
+import {
+  BoxContainer,
+  FormContainer,
+  Input,
+  MutedLink,
+  SubmitButton,
+} from "./common";
+import { Marginer } from "./marginer/index.jsx";
 
 class SignIn extends Component {
   constructor(props) {
@@ -63,30 +65,36 @@ class SignIn extends Component {
   render() {
     const { email, password, error } = this.state;
 
-    const isInvalid = password === '' || email === '';
+    //const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <BoxContainer>
+
+      <FormContainer onSubmit={this.onSubmit}>
+
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Input
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+    <Marginer direction="vertical" margin={10} />
+    <MutedLink href="#">Forget your password?</MutedLink>
+    <Marginer direction="vertical" margin="1.6em" />
+    <SubmitButton type="submit">Sign in</SubmitButton>
+    <Marginer direction="vertical" margin="1em" />
+{error && <p>{error.message}</p>}
+</FormContainer>
+    </BoxContainer>
     );
   }
 }
