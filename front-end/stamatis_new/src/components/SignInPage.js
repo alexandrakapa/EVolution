@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import SignIn from './SignIn'
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import "./SignInPage.css";
+import "./Background.css";
 
 const AppContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 200%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ const AppContainer = styled.div`
 
 const BoxContainer = styled.div`
   width: 280px;
-  min-height: 550px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
@@ -28,7 +28,7 @@ const BoxContainer = styled.div`
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
