@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const dbConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',       //the credentials for our database
-    password: 'mysql',
+    password: 'sedr842.',
     database: 'Evolution'
 });
 
