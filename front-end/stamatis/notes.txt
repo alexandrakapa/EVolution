@@ -1,7 +1,0 @@
-Routes -> url
-Components- > Html Κωδικας, Σελιδες
-
-npm install react-router-dom
-
-
-Θ με πηγαίνεις στο Landing και αν βλέπει ότι δεν είμαι συνδεμένος θα πηγαίνεις στο sign in. Ενω αν ειμαι συνδεμενος θα πηγαινω στο Home.

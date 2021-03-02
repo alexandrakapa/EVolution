@@ -22,6 +22,28 @@ Provider.getProviderByID = async(req,result) => {
   //         WHERE
   //         Space.name='${spacename}' and Space.StationID='${stationid}'
 
+	// dbConn.query(`
+	// 	SELECT StationID,Energy_SupplierID,company_name,Charging.ID as SessionID,Charging.CARID as VehicleID, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.protocol as Protocol, Charging.kWh_delivered as EnergyDelivered,Charging.charging_price as CostPerKWh,Charging.charging_price*Charging.kWh_delivered as TotalCost
+	// 	FROM ((Space
+	// 		INNER JOIN Energy_Supplier ON Space.Energy_SupplierID=Energy_Supplier.ID)
+	// 		INNER JOIN Station ON Station.ID=Space.StationID
+	// 	)
+	// 	WHERE Energy_Supplier.ID='${providerid}' and  DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
+	//
+
+
+
+
+
+
+
+// 		SELECT StationID,Energy_SupplierID,company_name,Charging.ID as SessionID,Charging.CARID as VehicleID, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.protocol as Protocol, Charging.kWh_delivered as EnergyDelivered,Charging.charging_price as CostPerKWh,Charging.charging_price*Charging.kWh_delivered as TotalCost
+//   FROM Space, Energy_Supplier,Charging
+//   WHERE   and Charging.Spacename=Space.name and Charging.SpaceStationID=Space.StationID
+// `
+
+
+
 	dbConn.query(`SELECT StationID,Energy_SupplierID,company_name,Charging.ID as SessionID,Charging.CARID as VehicleID, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.protocol as Protocol, Charging.kWh_delivered as EnergyDelivered,Charging.charging_price as CostPerKWh,Charging.charging_price*Charging.kWh_delivered as TotalCost
   FROM Space, Energy_Supplier,Charging
   WHERE Space.Energy_SupplierID='${providerid}' and  Space.Energy_SupplierID=Energy_Supplier.ID and Charging.Spacename=Space.name and Charging.SpaceStationID=Space.StationID and DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)

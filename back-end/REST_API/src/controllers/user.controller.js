@@ -2,13 +2,15 @@ const UserModel = require('../models/user.model');
 
 // get all user list
 exports.getUserList = (req, res)=> {  //exports.nameOfTheMethod
-    UserModel.getAllUser((err, user) =>{
+  /*  UserModel.getAllUser((err, user) =>{
         console.log('We are here');
         if(err)
         res.send(err);
         console.log('User', user);
         res.send(user)
-    })
+    })*/
+    res.json({
+          usersList: ["user 1","user 2"]})
 }
 
 // get user by username
@@ -36,7 +38,10 @@ exports.getOwnerByUsername = (req, res)=>{
                     console.log('single supplier data',supplier);
                     res.send(supplier);
                     }
-                  else res.send("There is no user in this database with username: " + req.params.username);
+                  else {
+                    res.statusMessage = "No data";
+                    res.status(402).send("There is no user in this database with username: " + req.params.username);
+                  }
                 })
               }
           })
@@ -45,13 +50,28 @@ exports.getOwnerByUsername = (req, res)=>{
 }
 
 
-// update password of a user
-exports.updateUser = (req, res)=>{
-       UserModel.updateUser(req.params.username, req.params.password, (err, user)=>{
-            if(err)
-            {
-              res.send(err);
-            }
-            else res.send("User with username : " + req.params.username + " has new password : " + req.params.password  ); //password changed
-        })
+exports.createOrUpdateUser = (req,res) => {
+  const userReqData = new UserModel(req.body);
+  UserModel.updateUser(req.params.username, req.params.password,userReqData, (err, user)=>{
+       if(err)
+       {
+         res.send(err);
+       }
+       if(user.length>0)
+       {
+         res.send("User with username : " + req.params.username + " has new password : " + req.params.password  ); //password changed
+       }
+       else {
+         //console.log('userReqData',userReqData);
+         {
+               UserModel.createUser(req.params.username, req.params.password, userReqData, (err, user)=>{
+                   if(err)
+                   {
+                     res.send(err);
+                   }
+                   else res.send("User with username : " + req.params.username + " and password : " + req.params.password + " has been created or has changed password" );
+               })
+           }
+       }
+   })
 }

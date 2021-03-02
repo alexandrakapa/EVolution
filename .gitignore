@@ -5,7 +5,6 @@
 *.bak
 *.backup
 .*.sw[a-z]
-
 # Mac OS specific
 
 .DS_Store
