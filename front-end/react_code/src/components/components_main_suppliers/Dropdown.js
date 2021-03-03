@@ -54,12 +54,13 @@ function Dropdown() {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           >
-            <div
+            <Link
               className={item.cName}
+              to={item.path}
               onClick={closeMobileMenu}
             >
-              Energy Consumption <i className='fas fa-caret-down' />
-            </div>
+              {item.title} <i className='fas fa-caret-down' />
+            </Link>
             {dropdown && <Dropdown2 />}
           </li>
         );

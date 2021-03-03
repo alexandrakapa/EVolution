@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -7,9 +7,27 @@ import Dropdown from './Dropdown';
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener('resize', showButton);
+
+
+
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -68,7 +86,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/main/contact-us'
+              to='/main/contact_us'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -85,7 +103,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <Button />
+        {button && <Button index='0'>Sign Out</Button>}
       </nav>
     </>
   );

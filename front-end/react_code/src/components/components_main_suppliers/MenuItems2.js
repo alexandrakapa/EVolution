@@ -6,7 +6,7 @@ export const MenuItems2 = [
   },
   {
     title: 'Per District',
-    path: '/main/energy_consumption_per_distirct',
+    path: '/main/energy_consumption_per_district',
     cName: 'dropdown-link'
   }
 ];

@@ -5,8 +5,8 @@ export const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'ChargingSessionsPerManufacturer',
-    path: '/main/charging_sessions',
+    title: 'Energy Consumption',
+    path: '/main/energy_consumption',
     cName: 'dropdown-link'
   }
 ];
