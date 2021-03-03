@@ -1,26 +1,30 @@
-.dropdown-menu {
+.dropdown2-menu {
   background: green;
   width: auto;
-  position: absolute;
-  top: 80px;
+  position:absolute;
+  top:50%;
   list-style: none;
   text-align: start;
+  left:100%;
+  right:-60%;
+
+
 }
 
-.dropdown-menu li {
+.dropdown2-menu li {
   background: #006400;
   cursor: pointer;
 }
 
-.dropdown-menu li:hover {
+.dropdown2-menu li:hover {
   background: #32CD32 ;
 }
 
-.dropdown-menu.clicked {
+.dropdown2-menu.clicked {
   display: none;
 }
 
-.dropdown-link {
+.dropdown2-link {
   display: block;
   height: 100%;
   width: 100%;

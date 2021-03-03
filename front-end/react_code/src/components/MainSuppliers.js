@@ -1,14 +1,14 @@
 import React from 'react';
-import Navbar from './components_main_manufacturers/Navbar';
+import Navbar from './components_main_suppliers/Navbar';
 import './MainManufacturers.css';
-import Home from './components_main_manufacturers/pages/Home';
+import Home from './components_main_suppliers/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components_main_manufacturers/pages/Services';
-import Profile from './components_main_manufacturers/pages/Profile';
-import ContactUs from './components_main_manufacturers/pages/ContactUs';
+import Services from './components_main_suppliers/pages/Services';
+import Profile from './components_main_suppliers/pages/Profile';
+import ContactUs from './components_main_suppliers/pages/ContactUs';
 import SignInPage from './SignInPage';
-import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';
-import Consulting from './components_main_manufacturers/pages/Consulting';
+import ChargingSessions from './components_main_suppliers/pages/ChargingSessionsPerManufacturer';
+import Consulting from './components_main_suppliers/pages/Consulting';
 
 function MainSuppliers() {
   return (

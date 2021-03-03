@@ -1,22 +1,12 @@
 export const MenuItems = [
   {
+    title: 'Energy Demand Forecasts',
+    path: '/main/energy_demand_forecasts',
+    cName: 'dropdown-link'
+  },
+  {
     title: 'ChargingSessionsPerManufacturer',
     path: '/main/charging_sessions',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Consulting',
-    path: '/main/consulting',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Design',
-    path: '/main/design',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Development',
-    path: '/main/development',
     cName: 'dropdown-link'
   }
 ];
