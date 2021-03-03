@@ -8,7 +8,7 @@ import Profile from './components_main_manufacturers/pages/Profile';
 import ContactUs from './components_main_manufacturers/pages/ContactUs';
 import SignInPage from './SignInPage';
 import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';
-import Consulting from './components_main_manufacturers/pages/Consulting';
+import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar';
 
 function MainManufacturers() {
   return (
@@ -21,7 +21,7 @@ function MainManufacturers() {
         <Route path='/main/contact-us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
         <Route path='/main/charging_sessions' component={ChargingSessions} />
-        <Route path='/main/consulting' component={Consulting} />
+        <Route path='/main/mean_energy_cost_per_car' component={MeanCostPerCar} />
       </Switch>
     </Router>
   );

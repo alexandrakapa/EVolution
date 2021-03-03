@@ -5,8 +5,8 @@ export const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Consulting',
-    path: '/main/consulting',
+    title: 'MeanCostPerCar',
+    path: '/main/mean_energy_cost_per_car',
     cName: 'dropdown-link'
   },
   {
