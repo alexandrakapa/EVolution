@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.div`
- padding: 20px;
+padding:70%
 
  h1 {
    border-bottom: 1px solid white;
-   color: #3d3d3d;
+   color: black;
    font-family: sans-serif;
    font-size: 20px;
    font-weight: 600;
@@ -15,30 +15,32 @@ export const FormStyle = styled.div`
  }
 
  form {
-   background: white;
-   border: 1px solid #dedede;
+   background: rgba(255,222,205,0.571848807882528);
+   border-radius: 8px;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    margin: 0 auto;
    max-width: 500px;
    padding: 30px 50px;
+
  }
 
  input {
-   border: 1px solid #d9d9d9;
+   border: 1px solid black;
    border-radius: 4px;
    box-sizing: border-box;
    padding: 10px;
    width: 100%;
-   margin-bottom: 2px;
+   margin-bottom: 4px;
  }
 
  label {
-   color: #3d3d3d;
+   color: black;
    display: block;
    font-family: sans-serif;
-   font-size: 14px;
+   font-size: 15px;
+   font-style:italic;
    font-weight: 500;
    margin-bottom: 5px;
    margin-top: 5px
@@ -68,8 +70,15 @@ export const FormStyle = styled.div`
     margin: 30px 150px;
     width: auto;
     height: 30px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
 
    }
+
+
 
 
 `

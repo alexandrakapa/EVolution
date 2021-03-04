@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import React, { useEffect, useState } from 'react';
-
+import FromStyle from './FormStyling'
 
 
 function Form(props) {
+
  const { register, handleSubmit, errors } = useForm({reValidateMode: 'onChange'});
 
  const [startedOn, setStartedOn] = useState(false)

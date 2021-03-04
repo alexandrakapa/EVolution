@@ -74,22 +74,19 @@ function EnergyConsPerDistrict(props) {
             setShouldRender(true)
     }
   }, [didSubmit])
-  console.log(general);
   return (
     <div >
       <FormStyle className='chargingsessions' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div>
+      {typeof data !=='undefined'  &&  data.length!==0 && !isloading? (
+<div>
             {general.map(data => <h3>{data.SupplierName}</h3>)}
-            <h3> Total Energy Delivered </h3>
+            <h5> Total Energy Delivered </h5>
             <h2> {general.map(data => <div> {data.TotalEnergyDelivered}</div>)} </h2>
-</div>
+</div>) : null}
 
-
-        : null}
-
-      {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
+      {typeof data ==='undefined' && !isloading && shouldRender? <h2>No data</h2> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
