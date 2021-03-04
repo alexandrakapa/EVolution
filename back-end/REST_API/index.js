@@ -65,6 +65,10 @@ app.use('/evcharge/api/admin', resetSessions);
 const sessions_per_Provider_District= require('./src/routes/sessions_per_provider_per_district.route');
 app.use('/evcharge/api/SessionsPerProvider/PerDistrict', sessions_per_Provider_District);
 
+const sessions_per_Provider_Station= require('./src/routes/sessions_per_provider_per_station.route');
+app.use('/evcharge/api/SessionsPerProvider/PerStation', sessions_per_Provider_Station);
+
+
 // listen to the port
 app.listen(port, ()=>{
     console.log(`Express Server is running at port ${port}`);
