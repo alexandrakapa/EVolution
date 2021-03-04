@@ -19,13 +19,11 @@
 
 
 import React, { useEffect, useState } from 'react';
-import Top from './ChargingSessions_components/Top';
-import {FormStyle} from './ChargingSessions_components/FormStyling'
-import Form from './ChargingSessions_components/Form';
-import  Muitable  from "./MuidataTable";
-import {columns} from './ChargingSessions_components/ChargingSessionsTableColumns'
+import {FormStyle} from './Energy_Consumption_Per_District_components/FormStyling'
+import Form from './Energy_Consumption_Per_District_components/Form';
 import {BatteryLoading} from 'react-loadingg'
-
+//import ShowResult from './Energy_Consumption_Per_District_components/Show_Result'
+//import '../../MainSuppliers.css';
 
 function EnergyConsPerDistrict(props) {
 
@@ -82,15 +80,15 @@ function EnergyConsPerDistrict(props) {
       <FormStyle className='chargingsessions' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-
-      {data.length!==0 && !isloading?
-        <div>
-            {general.map(data => <div>{data.SupplierName}</div>)}
-            <h1> Total Energy Delivered </h1>
+      {data.length!==0 && !isloading? <div>
+            {general.map(data => <h3>{data.SupplierName}</h3>)}
+            <h3> Total Energy Delivered </h3>
             <h2> {general.map(data => <div> {data.TotalEnergyDelivered}</div>)} </h2>
-          </div>
+</div>
+
 
         : null}
+
       {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
       <br />
       <br />

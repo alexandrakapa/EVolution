@@ -25,7 +25,7 @@ function Form(props) {
 function checkBig(){
    console.log("hi")
 }
- 
+
 
  return (
    <form onSubmit={handleSubmit(({region, startdate, enddate}) => {
@@ -43,7 +43,7 @@ function checkBig(){
         {errors.region && errors.region.type === "required" && <span className='error' >Field is required </span>}
         {errors.region && errors.region.type === "maxLength" && <span className='error'>Maximum length 5 digits</span> }
         {errors.region && errors.region.type === "minLength" && <span className='error'>Minumum length 2 digits</span> }
-       
+
      <label>From</label>
      <input onChange={handleStartChange} name="startdate" type="date" ref={register({ required: true, validate: value => {
         if (finishedOn){
@@ -66,7 +66,7 @@ function checkBig(){
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End date can't be smaller than start date </span>}
-     <button className='Button'>Submit</button>
+     <button className='Button'>Show Results</button>
    </form>
  );
 }

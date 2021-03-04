@@ -7,7 +7,6 @@ import Services from './components_main_suppliers/pages/Services';
 import Profile from './components_main_suppliers/pages/Profile';
 import ContactUs from './components_main_suppliers/pages/ContactUs';
 import SignInPage from './SignInPage';
-import ChargingSessions from './components_main_suppliers/pages/ChargingSessionsPerManufacturer';
 import EnergyDemand from './components_main_suppliers/pages/Energy_Demand_Forecasts';
 import EnergyConsPerDistrict from './components_main_suppliers/pages/Energy_Consumption_Per_District';
 import EnergyConsPerStation from './components_main_suppliers/pages/Energy_Consumption_Per_Station';
@@ -23,7 +22,6 @@ function MainSuppliers() {
         <Route path='/main/profile' component={Profile} />
         <Route path='/main/contact_us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
-        <Route path='/main/charging_sessions' component={ChargingSessions} />
         <Route path='/main/energy_demand_forecasts' component={EnergyDemand} />
         <Route path='/main/energy_consumption_per_district' component={EnergyConsPerDistrict} />
         <Route path='/main/energy_consumption_per_station' component={EnergyConsPerStation} />

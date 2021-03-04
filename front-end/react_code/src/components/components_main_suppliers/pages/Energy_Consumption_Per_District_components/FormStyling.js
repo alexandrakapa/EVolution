@@ -61,13 +61,13 @@ export const FormStyle = styled.div`
  }
 
    .Button {
-    background-color: darkseagreen;
+    background-color: #006400 ;
     color: white;
     font-family: sans-serif;
     font-size: 14px;
-    margin: 20px 140px;
-    width: 200px;
-    height: 30px
+    margin: 30px 150px;
+    width: auto;
+    height: 30px;
 
    }
 
