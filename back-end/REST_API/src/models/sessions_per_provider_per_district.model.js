@@ -21,6 +21,7 @@ const parsedate= function(){
 Supplier.getSessionsbyManID = async (req, result) => {
 
 	//console.log(parsedate());
+	let finalarr=new Array();
 	let arr=new Array();
 	let supplierID=(req.params.supplierID);
 	let region=(req.params.region);
@@ -51,6 +52,7 @@ Supplier.getSessionsbyManID = async (req, result) => {
 			arr.push({Region: region});
 			arr.push({TotalEnergyDelivered: res[0]['Total_Energy_Delivered']});
 			//Session.getter(req, arr, result);
+			finalarr.push(arr);
 			result(null, arr);
 			return;
 

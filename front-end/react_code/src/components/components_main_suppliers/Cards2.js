@@ -11,7 +11,7 @@ function Cards2() {
           <ul className='cards__items'>
             <CardItem
               src="https://www.w3schools.com/images/picture.jpg"
-              text='Energy Consumption Per Station'
+              text='Energy Consumption Per District'
               label='Data'
               path='/energy_consumption_per_district'
             />
