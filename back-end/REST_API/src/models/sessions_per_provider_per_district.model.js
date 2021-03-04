@@ -25,11 +25,14 @@ Manufacturer.getSessionsbyManID = async (req, result) => {
 	let SupplierID=(req.params.supplierID);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let region=(req.params.region);
+	console.log('SupplierID ',SupplierID);
+	console.log('region',region);
 	//console.log(periodfrom);
-	console.log('ManufacturerID ',ManufacturerID);
-	dbConn.query(`SELECT Car_Manufacturer.ID as ManufacturerID, Car_Manufacturer.company_name as ManufacturerName
-					FROM Energy_Supplier
-					WHERE Car_Manufacturer.ID=${ManufacturerID}` , (err, res) =>
+	dbConn.query(`SELECT Energy_Supplier.ID,Energy_Supplier.company_name,SUM(Charing.kWh_delivered) as Total_Energy_Delivered
+	FROM Space,Energy_Supplier,Station,Charging
+	WHERE Energy_Supplier.ID='${providerid}' and Space.StationID=Station.ID and SUBSTRING(concat(Station.PostalCode,''), 1, 2)='${region}' and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID and DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`
+	, (err, res) =>
 	{
 		if (err) {
 		    console.log("error: ", err);
@@ -38,15 +41,15 @@ Manufacturer.getSessionsbyManID = async (req, result) => {
 		    }
 		if (res.length){
 			//console.log(res[0]);
-			console.log('Found Manufacturer.')
+			console.log('Found Supplier.')
 			//arr.push(res);
-			arr.push({ManufacturerID: res[0]['ManufacturerID']});
-			arr.push({ManufacturerName: res[0]['ManufacturerName']});
-			//result(null,arr);
+			arr.push({SupplierID: res[0]['SupplierID']});
+			arr.push({SupplierName: res[0]['SupplierName']});
 			arr.push({RequestTimestamp: parsedate()})
 			arr.push({PeriodFrom: periodfrom});
 			arr.push({PeriodTo: periodto});
-			Session.getter(req, arr, result);
+			arr.push({TotalEnergyDelivered: res[0]['Total_Energy_Delivered']})
+			//Session.getter(req, arr, result);
 			//result(null, arr);
 			return;
 
@@ -64,17 +67,33 @@ Manufacturer.getSessionsbyManID = async (req, result) => {
 Session.getter= async ( req, arr, result ) => {
 	//Point.getPointByID(req, result);
 	let sessionlist=new Array();
-	let ManufacturerID=(req.params.manufacturerID);
+	let SupplierID=(req.params.supplierID);
 	let region=(req.params.region);
-	console.log('ManufacturerID ',ManufacturerID);
+	console.log('SupplierID ',SupplierID);
 	console.log('region',region);
+	// dbConn.query(`
+	// 	SELECT SUM(kWh_delivered)
+	// 	FROM Charging
+	// 	WHERE DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
+	//
+	// 	`
+
+
 	dbConn.query(`
 		SELECT (@rank := @rank+1) as SessionIndex, F.SessionID, F.CarID, F.Model, F.UsableBatterySize, F.StartedOn, F.FinishedOn,  F.Protocol, F.EnergyDelivered, F.BatteryPercentBegin, F.BatteryPercentEnd, F.kmTotal, F.kmBetweenCharges, F.StationAddress
 		FROM (
+
+
+
 		SELECT A.SessionID, A.CarID, A.Model, A.UsableBatterySize, A.StartedOn, A.FinishedOn,  A.Protocol, A.EnergyDelivered, A.BatteryPercentBegin, A.BatteryPercentEnd, A.kmTotal, A.kmBetweenCharges, G.StationAddress, G.PostalCode
 		FROM
-		( SELECT * FROM (
-		(SELECT Car.Car_ManufacturerID as ManufacturerID, Car.ID as ID, Car.model as Model, Car.usable_battery_size as UsableBatterySize
+
+
+		( SELECT * FROM
+
+
+		(
+		(SELECT ID as SupplierID
 		FROM Car
 		WHERE Car.Car_ManufacturerID=${ManufacturerID}
 		) as B
@@ -119,7 +138,7 @@ Session.getter= async ( req, arr, result ) => {
 		    }
 
 		    // not found
-		    console.log('No ChargingSessions for these dates and this region.')
+		    console.log('No Energy Delivered for these dates and this region.')
 		    arr.push({NumberOfChargingSessions: 0});
 		    arr.push([]);
 		    result(null, arr);
