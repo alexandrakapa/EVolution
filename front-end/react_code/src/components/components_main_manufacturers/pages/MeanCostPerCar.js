@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import {FormStyle} from './MeanCostPerCar_components/FormStyling.js'
 import Form from './MeanCostPerCar_components/Form';
 import  Muitable  from "./MuidataTable";
-import {columns} from './ChargingSessions_components/ChargingSessionsTableColumns'
+import {columns} from './MeanCostPerCar_components/MeanCostPerCarTableColumns'
 import {BatteryLoading} from 'react-loadingg'
 
 
@@ -12,7 +12,10 @@ function ChargingSessions(props) {
 
   const [startdate, setStartDate] = useState([])
   const [enddate, setEndDate] = useState([])
-  const [region, setRegion] = useState([])
+  const [model, setModel] = useState([])
+
+  const [options, setOptions]= useState([])
+  
 
   const [data, setData] = useState([])
   const [general, setGeneral] = useState([])
@@ -21,20 +24,14 @@ function ChargingSessions(props) {
   const [didSubmit, setDidSubmit] = useState(false)
   const [isloading, setIsLoading] = useState(false)
 
-  function handleClick(){
-    props.history.push(
-      {
-        pathname: '/chargingevents',
 
-      }
-    )
-  }
 
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
+      console.log(model, startdate, enddate)
 
-      fetch(`http://localhost:8765/evcharge/api/SessionsPerManufacturer/3/${region}/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/23/Ioniq/${startdate}/${enddate}`)
           .then(response => response.json())
           .then(fetchedData => {
               setData(() => fetchedData[6])
@@ -58,12 +55,13 @@ function ChargingSessions(props) {
   }, [didSubmit])
 
 
+
   return (
     <div >
-      <FormStyle className='meancost' >
-        <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
+      <FormStyle className='meanCostPerCar' >
+        <Form setStartDate={setStartDate} setEndDate={setEndDate} setModel={setModel} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <Muitable data={data} tableName={"Charging Sessions"} columns={columns} /> : null}
+      {data.length!==0 && !isloading? <Muitable data={data} tableName={`Mean energy cost per km for model ${model}`} columns={columns} /> : null}
       {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
       <br />
       <br />

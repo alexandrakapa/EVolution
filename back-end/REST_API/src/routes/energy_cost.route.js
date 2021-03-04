@@ -7,5 +7,7 @@ router.get('/PerModel/:manufacturerID/:model/:yyyymmdd_from/:yyyymmdd_to', energ
 
 router.get('/Total/:yyyymmdd_from/:yyyymmdd_to',energy_cost_controller.getTotalCost);
 
+router.get('/GetModels/:manufacturerID', energy_cost_controller.getModels);
+
 
 module.exports = router;

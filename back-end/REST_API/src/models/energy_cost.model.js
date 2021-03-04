@@ -191,7 +191,43 @@ INNER JOIN
 
 
 
+cost.getModels = async (req, result) => {
+	
 
+	let ManufacturerID=(req.params.manufacturerID);
+	console.log('ManufacturerID ',ManufacturerID);
+	dbConn.query(`SELECT DISTINCT Car.model as Model
+					FROM Car
+					WHERE Car.Car_ManufacturerID=${ManufacturerID}` , (err, res) =>
+	
+	{
+
+	 //console.log(res);
+	 if (err) {
+	    console.log("error: ", err);
+	    result(err, null);
+	    return;
+	    }
+
+	 if (res.length) {
+
+	    console.log("Found models.");
+		result(null, res);
+
+	    return;
+	
+	    }
+
+	    // not found 
+	    console.log('No data for cars of this model for these dates.')
+
+	    result(null, res);
+	    return;
+	
+
+
+	});
+}
 
 //module.exports=Session;
 module.exports = cost;

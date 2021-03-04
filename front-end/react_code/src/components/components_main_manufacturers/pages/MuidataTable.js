@@ -36,22 +36,23 @@ function MuiTable (props) {
                         overrides: {
                           MUIDataTable: {
                             root: {
-                              backgroundColor: '#AAF',
+                              backgroundColor: 'green',
                             },
-                            paper: {
+                          /*  paper: {
                               boxShadow: 'none',
-                            },
+                            }, */
                           },
                           MuiToolbar: {
                             root: {
                               backgroundColor: 'darkseagreen',
-                            },
-                          },
-                        MuiTableCell: {
+                              }
+                            
+                          }, 
+                      /*  MuiTableCell: {
                             head: {
                               backgroundColor: 'snow',
                             },
-                          },
+                          }, */
                           MUIDataTableSelectCell: {
                             root: {
                               backgroundColor: 'darkseagreen'
@@ -59,25 +60,25 @@ function MuiTable (props) {
                           },
                           MUIDataTableBodyCell: {
                             root:{
-                              backgroundColor: 'snow'
+                              backgroundColor: 'white',
                             },
                           },
-                          MUIDataTableHeaderCell: {
+                         /* MUIDataTableHeaderCell: {
                             root:{
                               backgroundColor: 'lightgreen'
                             },
-                          },
-                          MuiTableRow: {
+                          }, */
+                        /*  MuiTableRow: {
                             root: {
                               '&$selected': {
-                                backgroundColor: ''
+                                backgroundColor: 'snow'
                               }
                             }
-                          },
+                          }, */
                           MuiTableFooter: {
                             root: {
                               '& .MuiToolbar-root': {
-                                backgroundColor: 'green',
+                                backgroundColor: 'darkseagreen',
                               },
                             },
                           },

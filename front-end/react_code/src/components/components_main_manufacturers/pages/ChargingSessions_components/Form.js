@@ -37,7 +37,7 @@ function checkBig(){
         props.setDidSubmit(true)
         //console.log(newdate)
    })}>
-     <h1>Select Date and Region</h1>
+     <h1>Select date and region</h1>
      <label>Postal Code</label>
      <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />
         {errors.region && errors.region.type === "required" && <span className='error' >Field is required </span>}

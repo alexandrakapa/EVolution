@@ -20,8 +20,8 @@ code {
 .home,
 .services,
 .profile,
-.contact-us,
-.consulting {
+.contact-us
+ {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -75,11 +75,10 @@ code {
 }
 
 .meanCostPerCar {
-  background-image: url('./images/green.jpg');
+  background-image: url('./images/img_2.jpg');
   background-position: center;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
+  
 }

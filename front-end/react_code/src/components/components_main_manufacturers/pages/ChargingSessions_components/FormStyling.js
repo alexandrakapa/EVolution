@@ -65,7 +65,7 @@ export const FormStyle = styled.div`
     color: white;
     font-family: sans-serif;
     font-size: 14px;
-    margin: 20px 140px;
+    margin: 20px 25%;
     width: 200px;
     height: 30px
 
