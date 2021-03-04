@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.div`
-padding:70%
+ padding: 120px;
 
  h1 {
    border-bottom: 1px solid white;
@@ -67,15 +67,14 @@ padding:70%
     color: white;
     font-family: sans-serif;
     font-size: 14px;
-    margin: 30px 150px;
-    width: auto;
-    height: 30px;
+    margin: 30px 60px;
+    text-align: center;
+    padding: 15px 32px;
     border-radius: 4px;
     outline: none;
     border: none;
     cursor: pointer;
-
-
+    display: inline-block;
    }
 
 

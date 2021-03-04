@@ -22,7 +22,7 @@ code {
 .profile,
 .contact-us,
 .energy_consumption,
-.energy_consumption_per_distirct,
+.energy_consumption_per_district,
 .energy_consumption_per_station,
 .energy_demand_forecasts {
   display: flex;
@@ -81,8 +81,8 @@ code {
 }
 
 
-.energy_consumption_per_distirct {
-  background-image: url('./images/green.jpg');
+.energy_consumption_per_district {
+  background-image: url('./images/img_2.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;
