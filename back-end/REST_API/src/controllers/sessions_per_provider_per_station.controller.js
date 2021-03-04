@@ -1,4 +1,4 @@
- const SessionModel=require('../models/sessions_per_provider_per_district.model');
+ const SessionModel=require('../models/sessions_per_provider_per_station.model');
 
  check_day = (y, m, d) => {
     const months30 = ['04', '06', '09', '11'];
@@ -39,11 +39,11 @@
         return;
   	}
 
-    const region = req.params.region;
-    //check if ID length is valid based on our database's corresponding attribute's type
-    if (region.toString().length < 2 || region.toString().length >5) {
+    const station = req.params.station;
+    //check if station ID length is valid based on our database's corresponding attribute's type
+    if (station.length > 255) {
         res.statusMessage = 'Bad Request';
-        res.status(400).send('Bad Request : Invalid region.');
+        res.status(400).send('Bad Request : Invalid station ID.');
         return;
     }
 
@@ -114,7 +114,7 @@
  		}
  		else {
  			res.statusMessage='No data';
- 			res.status(402).send('No Charging Data for this Manufacturer and region.');
+ 			res.status(402).send('No Charging Data for this Supplier and Station.');
  			return;
  		}
 
