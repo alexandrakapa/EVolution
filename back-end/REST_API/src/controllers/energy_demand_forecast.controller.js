@@ -5,12 +5,12 @@
   exports.getSessions=(req, res) => {
 
  	//check if any of the variables given is empty
-  	if (Object.keys(req.params).length!=4){
+  	if (Object.keys(req.params).length!=3){
   		res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Empty Required Field');
         return;
   	}
-
+    console.log(req.params.yyyy_from);
     const ID = req.params.providerID;
     //check if provider ID length is valid based on our database's corresponding attribute's type
     if (ID.length > 255+255) {
@@ -20,7 +20,7 @@
     }
 
 
-    //check if date length is indeed 4 , because we want format yyyy
+    // check if date length is indeed 4 , because we want format yyyy
     if (req.params.yyyy_from.length != 4 || req.params.yyyy_to.length != 4) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Invalid Year Format');
@@ -29,8 +29,7 @@
 
     //Start date check
     const from_year = req.params.yyyy_from;
-    const to_year =req.params.yyyy_to);
-
+    const to_year =req.params.yyyy_to;
 
     //General easy checks
     if (from_year < 2000 || to_year < 2000 ) {
