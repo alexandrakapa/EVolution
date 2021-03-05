@@ -94,10 +94,10 @@ function EnergyConsPerDistrict(props) {
       </FormStyle>
 
       {typeof data !=='undefined'  &&  data.length!==0 && !isloading? (
-<ShowResult name={general[1]} start_date={general[2]} end_date={general[3]} region={general[4]} result={general[5]}  />
+<ShowResult check={0} name={general[1]} start_date={general[2]} end_date={general[3]} region={general[4]} result={general[5]}  />
 ) : null}
 
-      {typeof data ==='undefined' && !isloading && shouldRender? <h2>No data</h2> : null}
+      {typeof data ==='undefined' && !isloading && shouldRender? <ShowResult check={1} /> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
