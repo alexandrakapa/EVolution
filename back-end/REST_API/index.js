@@ -68,7 +68,8 @@ app.use('/evcharge/api/SessionsPerProvider/PerDistrict', sessions_per_Provider_D
 const sessions_per_Provider_Station= require('./src/routes/sessions_per_provider_per_station.route');
 app.use('/evcharge/api/SessionsPerProvider/PerStation', sessions_per_Provider_Station);
 
-
+const energy_Demand_Forecast= require('./src/routes/energy_demand_forecast.route');
+app.use('/evcharge/api/EnergyDemandForecast', energy_Demand_Forecast);
 // listen to the port
 app.listen(port, ()=>{
     console.log(`Express Server is running at port ${port}`);

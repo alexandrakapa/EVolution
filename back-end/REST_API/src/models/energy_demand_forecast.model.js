@@ -21,18 +21,16 @@ const parsedate= function(){
 Supplier.getSessionsbyManID = async (req, result) => {
 
 	//console.log(parsedate());
-	let finalarr=new Array();
 	let arr=new Array();
 	let supplierID=(req.params.supplierID);
-	let region=(req.params.region);
-	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
-	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let periodfrom=(req.params.yyyy_from).substring(0,4);
+	let periodto=(req.params.yyyy_to).substring(0,4);
 	console.log('SupplierID ',supplierID);
-	console.log('region',region);
+	console.log('Year',periodfrom);
 	//console.log(periodfrom);
-	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
+	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName,Station.ID as ID,Station.address_info as Address ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
 	FROM Space,Energy_Supplier,Station,Charging
-	WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and  Space.StationID=Station.ID and SUBSTRING(concat(Station.PostalCode,''), 1, 2)='${region}' and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`
+	WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${req.params.yyyy} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${req.params.yyyy}`
 	, (err, res) =>
 	{
 		if (err) {
@@ -49,10 +47,10 @@ Supplier.getSessionsbyManID = async (req, result) => {
 			arr.push({SupplierName: res[0]['SupplierName']});
 			arr.push({PeriodFrom: periodfrom});
 			arr.push({PeriodTo: periodto});
-			arr.push({Region: region});
+			arr.push({Station: station});
+			arr.push({Station: res[0]['Address']});
 			arr.push({TotalEnergyDelivered: res[0]['Total_Energy_Delivered']});
 			//Session.getter(req, arr, result);
-			finalarr.push(arr);
 			result(null, arr);
 			return;
 
