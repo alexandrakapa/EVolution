@@ -57,7 +57,7 @@ if(check===0){
 }
 else {
   return ( <div className='form'>
-<p className='h1_new'> No data available &#128532;  </p>
+<p className='h1_new'> No data available  </p>
 
    </div>);
 }
