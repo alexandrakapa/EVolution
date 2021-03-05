@@ -14,6 +14,16 @@ export const FormStyle = styled.div`
    text-align: center;
  }
 
+ h1_new{
+   color: black;
+   font-family: sans-serif;
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 44px;
+   padding: 10px;
+   text-align: center;
+ }
+
  form {
    background: rgba(255,222,205,0.571848807882528);
    border-radius: 8px;

@@ -39,6 +39,7 @@ function checkBig(){
         props.setDidSubmit(true)
         //console.log(newdate)
    })}>
+    <h1_new> Energy Consumption Per District </h1_new>
      <h1>Select Date and Region</h1>
      <label>Postal Code</label>
      <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />

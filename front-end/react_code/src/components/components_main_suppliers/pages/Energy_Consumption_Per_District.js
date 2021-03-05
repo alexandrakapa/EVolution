@@ -88,6 +88,7 @@ function EnergyConsPerDistrict(props) {
     }
   }, [didSubmit])
   return (
+
     <div className='energy_consumption_per_district' >
       <FormStyle >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
