@@ -22,10 +22,6 @@ function Form(props) {
 
 }
 
-function checkBig(){
-   console.log("hi")
-}
- 
 
  return (
    <form onSubmit={handleSubmit(({region, startdate, enddate}) => {
@@ -33,16 +29,10 @@ function checkBig(){
         const newdate2 = enddate.split('-').join('')
         props.setStartDate( newdate)
         props.setEndDate( newdate2)
-        props.setRegion(region)
         props.setDidSubmit(true)
-        //console.log(newdate)
+        console.log(newdate, newdate2)
    })}>
-     <h1>Select date and region</h1>
-     <label>Postal Code</label>
-     <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />
-        {errors.region && errors.region.type === "required" && <span className='error' >Field is required </span>}
-        {errors.region && errors.region.type === "maxLength" && <span className='error'>Maximum length 5 digits</span> }
-        {errors.region && errors.region.type === "minLength" && <span className='error'>Minumum length 2 digits</span> }
+     <h1>Select date</h1>
        
      <label>From</label>
      <input onChange={handleStartChange} name="startdate" type="date" ref={register({ required: true, validate: value => {

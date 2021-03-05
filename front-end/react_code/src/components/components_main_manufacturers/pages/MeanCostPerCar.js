@@ -31,7 +31,7 @@ function ChargingSessions(props) {
       setIsLoading(true)
       console.log(model, startdate, enddate)
 
-      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/23/Ioniq/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/23/${model}/${startdate}/${enddate}`)
           .then(response => response.json())
           .then(fetchedData => {
               setData(() => fetchedData[6])
@@ -61,7 +61,7 @@ function ChargingSessions(props) {
       <FormStyle className='meanCostPerCar' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setModel={setModel} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <Muitable data={data} tableName={`Mean energy cost per km for model ${model}`} columns={columns} /> : null}
+      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={`Mean energy cost per km`} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
       <br />
       <br />

@@ -8,7 +8,7 @@ export const FormStyle = styled.div`
 
  h1 {
    border-bottom: 1px solid white;
-   color: #3d3d3d;
+   color: #1c1c1c;
    font-family: sans-serif;
    font-size: 20px;
    font-weight: 600;
@@ -18,8 +18,9 @@ export const FormStyle = styled.div`
  }
 
  form {
-   background: white;
+  background: rgba(200, 247, 197, 0.62);
    border: 1px solid #dedede;
+   border-radius: 8px;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
@@ -29,7 +30,7 @@ export const FormStyle = styled.div`
  }
 
  input {
-   border: 1px solid #d9d9d9;
+   border: 1px solid #1c1c1c;
    border-radius: 4px;
    box-sizing: border-box;
    padding: 10px;
@@ -38,7 +39,7 @@ export const FormStyle = styled.div`
  }
 
  label {
-   color: #3d3d3d;
+   color: #1a1a1a;
    display: block;
    font-family: sans-serif;
    font-size: 14px;
@@ -64,7 +65,7 @@ export const FormStyle = styled.div`
  }
 
    .Button {
-    background-color: darkseagreen;
+    background-color: #006400;
     color: white;
     font-family: sans-serif;
     font-size: 14px;
@@ -84,6 +85,7 @@ export const selectStyle = {
      '&:hover': { borderColor: '#E18D6C' }, // border style on hover
      border: '1px solid lightgray', // default border color
      boxShadow: 'none', // no box-shadow
+     //height: '45px',
    }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     const color = 'green';

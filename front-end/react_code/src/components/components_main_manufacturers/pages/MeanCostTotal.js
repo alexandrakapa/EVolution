@@ -1,27 +1,17 @@
-// import React from 'react';
-//
-// export default function ChargingSessions() {
-//   return (
-//     <>
-//       <h1 className='charging_sessions'>MARKETING</h1>
-//     </>
-//   );
-// }
-
-
 import React, { useEffect, useState } from 'react';
-import {FormStyle} from './ChargingSessions_components/FormStyling'
-import Form from './ChargingSessions_components/Form';
+import {FormStyle} from './MeanCostTotal_components/FormStyling'
+import Form from './MeanCostTotal_components/Form';
 import  Muitable  from "./MuidataTable";
-import {columns} from './ChargingSessions_components/ChargingSessionsTableColumns'
+import {columns} from './MeanCostTotal_components/MeanCostTotalTableColumns'
 import {BatteryLoading} from 'react-loadingg'
+import BarCHart from './MeanCostTotal_components/BarChart';
 
 
-function ChargingSessions(props) {
+function MeanCostTotal(props) {
 
   const [startdate, setStartDate] = useState([])
   const [enddate, setEndDate] = useState([])
-  const [region, setRegion] = useState([])
+
 
   const [data, setData] = useState([])
   const [general, setGeneral] = useState([])
@@ -30,39 +20,43 @@ function ChargingSessions(props) {
   const [didSubmit, setDidSubmit] = useState(false)
   const [isloading, setIsLoading] = useState(false)
 
-  function handleClick(){
-    props.history.push(
-      {
-        pathname: '/chargingevents',
-
-      }
-    )
-  }
 
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
 
-      fetch(`http://localhost:8765/evcharge/api/SessionsPerManufacturer/3/${region}/${startdate}/${enddate}`)
-          .then(response => response.json())
+      fetch(`http://localhost:8765/evcharge/api/EnergyCost/Total/${startdate}/${enddate}`)
+          .then(response => {
+            if (response.ok){
+              return response.json()
+            }
+            else {
+              setIsLoading(false)
+              setData(() => [])
+              throw Error (response.statusText)
+            }
+            
+          })
           .then(fetchedData => {
-              setData(() => fetchedData[6])
+              setData(() => fetchedData[3])
               let tmp=[]
               var i
-              for (i=0; i<6; i++){
+              for (i=0; i<2; i++){
                   tmp.push(fetchedData[i])
               }
               setGeneral(() => tmp)
 
-              console.log(fetchedData[6])
+              console.log(fetchedData[3])
 
               setIsLoading(false)
 
           })
           .catch(err => console.log(err))
+         
           setDidSubmit(false)
           if (!shouldRender)
             setShouldRender(true)
+            console.log(data)
     }
   }, [didSubmit])
 
@@ -70,13 +64,14 @@ function ChargingSessions(props) {
   return (
     <div >
       <FormStyle className='chargingsessions' >
-        <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
+        <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={"Charging Sessions"} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '5%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Charging Sessions"} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
+      {data.length!==0 && !isloading?  <div style={{marginLeft: '55%', paddingRight: '0px'}}><BarCHart data={data} title={"Mean energy cost per km for Manufacturers"}/></div>: null}
     </div>
 
   );
@@ -85,4 +80,4 @@ function ChargingSessions(props) {
 
 }
 
-export default ChargingSessions;
+export default MeanCostTotal;

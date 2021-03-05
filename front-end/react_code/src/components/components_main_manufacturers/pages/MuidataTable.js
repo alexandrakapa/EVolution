@@ -36,7 +36,8 @@ function MuiTable (props) {
                         overrides: {
                           MUIDataTable: {
                             root: {
-                              backgroundColor: 'green',
+                              backgroundColor: '#006400',
+                              width: '500px'
                             },
                           /*  paper: {
                               boxShadow: 'none',
@@ -44,41 +45,46 @@ function MuiTable (props) {
                           },
                           MuiToolbar: {
                             root: {
-                              backgroundColor: 'darkseagreen',
+                              backgroundColor: '#006400',
                               }
                             
                           }, 
-                      /*  MuiTableCell: {
+                        /*MuiTableCell: {
                             head: {
-                              backgroundColor: 'snow',
+                              backgroundColor: '#006400',
                             },
                           }, */
                           MUIDataTableSelectCell: {
                             root: {
-                              backgroundColor: 'darkseagreen'
+                              backgroundColor: '#006400'
+                            },
+                            headerCell: {
+                              backgroundColor: '#006400',
                             },
                           },
                           MUIDataTableBodyCell: {
-                            root:{
-                              backgroundColor: 'white',
+                            headerCell: {
+                              backgroundColor: '#006400',
                             },
                           },
-                         /* MUIDataTableHeaderCell: {
-                            root:{
-                              backgroundColor: 'lightgreen'
-                            },
-                          }, */
-                        /*  MuiTableRow: {
+                          MUIDataTableHeadCell: {
                             root: {
-                              '&$selected': {
-                                backgroundColor: 'snow'
-                              }
-                            }
-                          }, */
+                              borderBottom : '1px solid black',
+                              borderColor : 'black',
+                            },
+                            fixedHeader: {
+                              position: 'sticky',
+                              top: '0px',
+                              zIndex: 100,
+                              backgroundColor: '#c8f7c5',
+                              borderColor : 'black'
+                             
+                            }, 
+                          },
                           MuiTableFooter: {
                             root: {
                               '& .MuiToolbar-root': {
-                                backgroundColor: 'darkseagreen',
+                                backgroundColor: '#006400',
                               },
                             },
                           },

@@ -9,6 +9,7 @@ import ContactUs from './components_main_manufacturers/pages/ContactUs';
 import SignInPage from './SignInPage';
 import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';
 import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar';
+import MeanCostTotal from './components_main_manufacturers/pages/MeanCostTotal';
 
 function MainManufacturers() {
   return (
@@ -22,6 +23,7 @@ function MainManufacturers() {
         <Route path='/sign_in' component={SignInPage} />
         <Route path='/main/charging_sessions' component={ChargingSessions} />
         <Route path='/main/mean_energy_cost_per_car' component={MeanCostPerCar} />
+        <Route path='/main/mean_energy_cost_statistics' component={MeanCostTotal} />
       </Switch>
     </Router>
   );

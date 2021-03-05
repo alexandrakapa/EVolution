@@ -72,9 +72,9 @@ const getOptions = (inputValue) =>
         const newdate2 = enddate.split('-').join('')
         props.setStartDate( newdate)
         props.setEndDate( newdate2)
-        props.setModel(model.value)
+        props.setModel(model.Model)
         props.setDidSubmit(true) 
-        //console.log(newdate, newdate2, model.value)
+        console.log(newdate, newdate2, model.Model)
    })}>
      <h1>Select date and car model</h1>
             
@@ -110,19 +110,19 @@ const getOptions = (inputValue) =>
     
        cacheOptions
        defaultOptions
-       cacheOptions
        getOptionLabel={e => e.Model}
        getOptionValue={e => e.Model}
        loadOptions={getOptions}
        styles={selectStyle}
        name="model"
        isClearable
+       isSearchable={false}
        control={control}
        rules={{ required: true }}
     
     />
      {errors.model && <span className='error' >Field is required </span>}
-     <button className='Button'>Submit</button>
+     <button className='Button'>Show results</button>
    </form>
  );
 }
