@@ -43,7 +43,16 @@ code {
 }
 
 
+.services{
+  background-image: url('./images/green.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 
+}
 .profile {
   background-image: url('./images/green.jpg');
   background-position: center;

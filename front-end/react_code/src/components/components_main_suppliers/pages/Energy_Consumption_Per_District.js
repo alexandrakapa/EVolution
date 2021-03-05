@@ -18,6 +18,19 @@
 // }
 
 
+// <div>
+//
+//
+//             {general.map(data => <p>{data.SupplierName}</p>)}
+//             <p> Total Energy Delivered </p>
+//             <h2> {general.map(data => <div> {data.TotalEnergyDelivered}</div>)} </h2>
+// </div>
+
+
+
+
+
+
 import React, { useEffect, useState } from 'react';
 import {FormStyle} from './Energy_Consumption_Per_District_components/FormStyling'
 import Form from './Energy_Consumption_Per_District_components/Form';
@@ -81,11 +94,8 @@ function EnergyConsPerDistrict(props) {
       </FormStyle>
 
       {typeof data !=='undefined'  &&  data.length!==0 && !isloading? (
-<ShowResult>
-            {general.map(data => <h3>{data.SupplierName}</h3>)}
-            <h5> Total Energy Delivered </h5>
-            <h2> {general.map(data => <div> {data.TotalEnergyDelivered}</div>)} </h2>
-</ShowResult>) : null}
+<ShowResult name={general[1]} start_date={general[2]} end_date={general[3]} region={general[4]} result={general[5]}  />
+) : null}
 
       {typeof data ==='undefined' && !isloading && shouldRender? <h2>No data</h2> : null}
       <br />
