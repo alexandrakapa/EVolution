@@ -7,6 +7,7 @@ import '../../MainSuppliers.css';
 import Charts from './Energy_Demand_Forecasts_components/Chart'
 import ChartsPieYear2 from './Energy_Demand_Forecasts_components/ChartPieYears2'
 import ChartsPieYear3 from './Energy_Demand_Forecasts_components/ChartPieYears3'
+import "./Energy_Demand_Forecasts_components/Show_Result.css";
 
 
 
@@ -55,7 +56,8 @@ function EnergyDemand(props) {
                 setGeneral(() => tmp)
                 setIsLoading(false)
               }
-              else if (startdate<=2018 && enddate<=2020){
+              else if (enddate<=2020){
+               if (startdate<=2018){
                 console.log("case 1")
               let end=4+parseInt(enddate)-2018
               setData(() => fetchedData[end])
@@ -68,7 +70,7 @@ function EnergyDemand(props) {
               setGeneral(() => tmp)
               setIsLoading(false)
             }
-            else if ( startdate >2018 && enddate<=2020){
+            else if ( startdate >2018 ){
               console.log("case 2")
               let end=4+parseInt(enddate)-parseInt(startdate)
               setData(() => fetchedData[end])
@@ -82,9 +84,11 @@ function EnergyDemand(props) {
               setIsLoading(false)
 
             }
-            else if (startdate<2020 && enddate > 2020){
+          }
+          else if (enddate>2020){
+            if (startdate<2018 ){
               console.log("case 3")
-              let end=4+2020-parseInt(startdate)
+              let end=4+2020-2018
               setData(() => fetchedData[end])
               let tmp=[]
               var i
@@ -96,6 +100,20 @@ function EnergyDemand(props) {
               setIsLoading(false)
 
             }
+            else{
+              let end=4+2020-parseInt(startdate)
+              setData(() => fetchedData[end])
+              let tmp=[]
+              var i
+              for (i=0; i<=end; i++){
+                  console.log(fetchedData[i])
+                  tmp.push(fetchedData[i])
+              }
+              setGeneral(() => tmp)
+              setIsLoading(false)
+            }
+
+          }
             else if(startdate>2020){
               let tmp=[]
               setGeneral(() => tmp)
@@ -130,7 +148,10 @@ function EnergyDemand(props) {
           <ChartsPieYear3 check={0} name={general[1]}  start_date={general[2]} end_date={general[3]} Year1={general[4]} Year2={general[5]} Year3={general[6]}/>
           ) : null}
 
-      {general.length===0 && !isloading && shouldRender? <ShowResult check={1} /> : null}
+      {general.length===0 && !isloading && shouldRender? (<div className='form'>
+    <p className='h1_new'> No data available  </p>
+
+       </div>) : null}
       <br />
       <br />
 

@@ -60,6 +60,7 @@ function checkBig(){
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End Year can't be smaller than start date </span>}
+      <label_new> Results concern period 2018-2020 </label_new>
      <button className='Button'>Show Results</button>
    </form>
  );

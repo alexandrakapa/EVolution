@@ -17,9 +17,9 @@ export const FormStyle = styled.div`
  h1_new{
    color: white;
    font-family: sans-serif;
-   font-size: 20px;
+   font-size: 10px;
    font-weight: 600;
-   line-height: 44px;
+   line-height: 24px;
    padding: 10px;
    text-align: center;
  }
@@ -54,6 +54,16 @@ export const FormStyle = styled.div`
    font-weight: 500;
    margin-bottom: 5px;
    margin-top: 5px;
+ }
+ label_new {
+   color: white;
+
+   font-family: sans-serif;
+   font-size: 10px;
+   font-style:italic;
+   margin-bottom: 1px;
+   margin-top: 5px;
+   text-align: center;
  }
 
  .error {

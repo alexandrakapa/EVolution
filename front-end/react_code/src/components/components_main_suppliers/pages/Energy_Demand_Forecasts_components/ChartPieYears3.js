@@ -88,7 +88,34 @@ export default function ChartsPieYear3(props) {
           fontSize:'30px',
           fontStyle: 'italic',
           textAlign: 'center'
-      }} > The average is {Math.round(avg*100)/100} kWh  </p>
+      }} > The average Energy Demand is {Math.round(avg*100)/100} kWh  </p>
+      <ul>
+      { year1[1].TotalEnergyDelivered < year2[1].TotalEnergyDelivered ?
+        <li style= {{
+        fontSize:'20px',
+        fontStyle: 'italic',
+        textAlign: 'center'
+    }} > At 2018-2019 Energy Demand raised per {Math.round((-year1[1].TotalEnergyDelivered+year2[1].TotalEnergyDelivered)*100)/100 } kWh </li> :
+    <li style= {{
+            fontSize:'20px',
+            fontStyle: 'italic',
+            textAlign: 'center'
+        }} > At 2018-2019 Energy Demand declined per {Math.round((year1[1].TotalEnergyDelivered-year2[1].TotalEnergyDelivered)*100)/100 } kWh </li>
+  }
+  { year2[1].TotalEnergyDelivered < year3[1].TotalEnergyDelivered ?
+    <li style= {{
+    fontSize:'20px',
+    fontStyle: 'italic',
+    textAlign: 'center'
+}} > At 2019-2020 Energy Demand raised per {Math.round((-year2[1].TotalEnergyDelivered+year3[1].TotalEnergyDelivered)*100)/100 } kWh </li> :
+<li style= {{
+        fontSize:'20px',
+        fontStyle: 'italic',
+        textAlign: 'center'
+    }} > At 2019-2020 Energy Demand declined per {Math.round((year2[1].TotalEnergyDelivered-year3[1].TotalEnergyDelivered)*100)/100 } kWh </li>
+}
+</ul>
     </div>
+
   );
 }

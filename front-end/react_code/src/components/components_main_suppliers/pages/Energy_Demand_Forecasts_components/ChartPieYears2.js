@@ -80,11 +80,25 @@ export default function ChartsPieYear2(props) {
           borderRadius: '5px'
         }} >
       <canvas id="myChart" width="500" height="500"  />
-        <p style= {{
-          fontSize:'30px',
+      <p style= {{
+        fontSize:'30px',
+        fontStyle: 'italic',
+        textAlign: 'center'
+    }} > The average Energy Demand is {Math.round(avg*100)/100} kWh  </p>
+    <ul>
+    { year1[1].TotalEnergyDelivered < year2[1].TotalEnergyDelivered ?
+      <li style= {{
+      fontSize:'20px',
+      fontStyle: 'italic',
+      textAlign: 'center'
+  }} > At {year1[0].Year} - {year2[0].Year} Energy Demand raised per {Math.round((-year1[1].TotalEnergyDelivered+year2[1].TotalEnergyDelivered)*100)/100 } kWh </li> :
+  <li style= {{
+          fontSize:'20px',
           fontStyle: 'italic',
           textAlign: 'center'
-      }} > The average is {Math.round(avg*100)/100} kWh  </p>
+      }} > At {year1[0].Year} - {year2[0].Year} Energy Demand declined per {Math.round((year1[1].TotalEnergyDelivered-year2[1].TotalEnergyDelivered)*100)/100 } kWh </li>
+}
+</ul>
     </div>
   );
 }
