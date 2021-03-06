@@ -96,7 +96,6 @@ else {
 			sessionlist.push({TotalEnergyDelivered: res[i]['Total_Energy_Delivered']});
       arr.push(sessionlist)
 }
-
 			result(null, arr);
 			return;
 

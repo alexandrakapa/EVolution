@@ -24,7 +24,7 @@ export default function Charts(props) {
   const october= props.October;
   const november= props.November;
   const december=props.December;
-
+  const avg=(january[1].TotalEnergyDelivered+ february[1].TotalEnergyDelivered+ march[1].TotalEnergyDelivered+ april[1].TotalEnergyDelivered+ may[1].TotalEnergyDelivered+ june[1].TotalEnergyDelivered+july[1].TotalEnergyDelivered+august[1].TotalEnergyDelivered+september[1].TotalEnergyDelivered+october[1].TotalEnergyDelivered+november[1].TotalEnergyDelivered+december[1].TotalEnergyDelivered)/12;
 
   const axes = React.useMemo(
   () => [
@@ -131,7 +131,12 @@ export default function Charts(props) {
           padding: '.5rem',
           borderRadius: '5px'
         }} >
-      <canvas id="myChart" width="500" height="500"  axes={axes} tooltip dark  />
+      <canvas id="myChart" width="500" height="500"  />
+        <p style= {{
+          fontSize:'30px',
+          fontStyle: 'italic',
+          textAlign: 'center'
+      }} > The average is {Math.round(avg*100)/100} kWh  </p>
     </div>
   );
 }

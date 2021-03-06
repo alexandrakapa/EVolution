@@ -68,11 +68,11 @@ function EnergyDemand(props) {
   }, [didSubmit])
 
   return (
-    <div className='energy_consumption_per_district' >
+    <div className='energy_demand_forecasts' >
       <FormStyle >
         <Form setStartDate={setStartDate} setEndDate={setEndDate}  setDidSubmit={setDidSubmit}/>
       </FormStyle>
-  
+
       {typeof data !=='undefined'  &&  general.length!==0 && !isloading? (
 <Charts check={0} name={general[1]} start_date={general[2]} end_date={general[3]}  January={general[4]}  February={general[5]} March={general[6]}  April={general[7]} May= {general[8]} June={general[9]} July={general[10]} August={general[11]} September={general[12]} October={general[13]} November={general[14]} December={general[15]}/>
 ) : null}
