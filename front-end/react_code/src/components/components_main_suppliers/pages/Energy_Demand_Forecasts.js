@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {FormStyle} from './Energy_Demand_Forecasts_components/FormStyling'
 import Form from './Energy_Demand_Forecasts_components/Form';
 import {BatteryLoading} from 'react-loadingg'
-import ShowResult from './Energy_Demand_Forecasts_components/Show_Result'
 import '../../MainSuppliers.css';
 import Charts from './Energy_Demand_Forecasts_components/Chart'
 import ChartsPieYear2 from './Energy_Demand_Forecasts_components/ChartPieYears2'
@@ -114,7 +113,7 @@ function EnergyDemand(props) {
             }
 
           }
-            else if(startdate>2020){
+          if(startdate>2020){
               let tmp=[]
               setGeneral(() => tmp)
               setIsLoading(false)
@@ -148,7 +147,7 @@ function EnergyDemand(props) {
           <ChartsPieYear3 check={0} name={general[1]}  start_date={general[2]} end_date={general[3]} Year1={general[4]} Year2={general[5]} Year3={general[6]}/>
           ) : null}
 
-      {general.length===0 && !isloading && shouldRender? (<div className='form'>
+      {general.length===0 && !isloading && shouldRender? (<div className='forms'>
     <p className='h1_new'> No data available  </p>
 
        </div>) : null}

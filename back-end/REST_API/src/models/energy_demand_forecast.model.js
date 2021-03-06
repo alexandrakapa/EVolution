@@ -67,10 +67,14 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 			return;
 
 		}
-		console.log("No result for this ID and this Date .")
+		else{
+		arr.push({SupplierID: null})
+		console.log("No result for this ID.")
+
 		//result({ kind: "not_found" }, null);
-		result(null,res);
+		result(null,arr);
 		return;
+	}
 
 
 	});
@@ -107,11 +111,14 @@ ORDER BY Year ASC`
 		return;
 
 	}
+	else{
+	arr.push({SupplierID: null})
 	console.log("No result for this ID.")
-	//result({ kind: "not_found" }, null);
-	result(null,res);
-	return;
 
+	//result({ kind: "not_found" }, null);
+	result(null,arr);
+	return;
+}
 
 });
 }

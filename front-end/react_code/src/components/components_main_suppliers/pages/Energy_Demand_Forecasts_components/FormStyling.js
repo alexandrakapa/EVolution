@@ -17,7 +17,7 @@ export const FormStyle = styled.div`
  h1_new{
    color: white;
    font-family: sans-serif;
-   font-size: 10px;
+   font-size: 20px;
    font-weight: 600;
    line-height: 24px;
    padding: 10px;

@@ -36,7 +36,7 @@ function checkBig(){
         props.setDidSubmit(true)
         //console.log(newdate)
    })}>
-    <h1_new> Energy Consumption Per Station </h1_new>
+    <h1_new> Energy Demand Forecast </h1_new>
      <h1>Select Date</h1>
      <label>From</label>
      <input onChange={handleStartChange} name="startdate" type="number" ref={register({ required: true, validate: value => {
@@ -60,7 +60,7 @@ function checkBig(){
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End Year can't be smaller than start date </span>}
-      <label_new> Results concern period 2018-2020 </label_new>
+      <label_new> *Results concern period 2018-2020* </label_new>
      <button className='Button'>Show Results</button>
    </form>
  );
