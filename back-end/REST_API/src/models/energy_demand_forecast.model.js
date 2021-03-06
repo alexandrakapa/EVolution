@@ -30,10 +30,10 @@ Supplier.getSessionsbyManID = async (req, result) => {
 	//console.log(periodfrom);
 if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 	if(periodto==2018){
-		periodfrom=2018;
+		periodfrom="2018";
 	}
 	else if (periodfrom==2020){
-		peridoto=2020;
+		periodto="2020";
 	}
 
 	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, MONTH(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Month ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
