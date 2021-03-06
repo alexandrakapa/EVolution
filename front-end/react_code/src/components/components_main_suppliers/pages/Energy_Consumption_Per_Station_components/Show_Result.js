@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTrail, animated as a } from "react-spring";
-import "./Show_Result.css";
+import "./Show_Result2.css";
 
 function ShowResult(props) {
 const check=props.check;
@@ -12,7 +12,7 @@ const station_id= props.station_id;
 const result=props.result;
 console.log(check);
 if(check===0){
-  return ( <div className='form'>
+  return ( <div className='form2'>
 <h1 className='h1'> Your results </h1>
 <label className='label'> Company name: {name.SupplierName} </label>
 <label className='label'> From: {start_date.PeriodFrom} </label>
@@ -24,7 +24,7 @@ if(check===0){
 
 }
 else {
-  return ( <div className='form'>
+  return ( <div className='form2'>
 <p className='h1_new'> No data available  </p>
 
    </div>);
