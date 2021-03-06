@@ -5,7 +5,11 @@ import CardItem from './CardItem';
 function Cards2() {
   return (
     <div className='cards'>
-      <h1>Energy Consumption </h1>
+      <h1 style= {{
+              fontSize:'40px',
+              textAlign: 'center',
+              color: 'black'
+          }}>Energy Consumption </h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
