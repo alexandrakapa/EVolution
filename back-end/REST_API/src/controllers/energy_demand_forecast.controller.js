@@ -32,7 +32,7 @@
     const to_year =req.params.yyyy_to;
 
     //General easy checks
-    if (from_year < 2000 || to_year < 2000 ) {
+    if (from_year < 2010 || to_year < 2010 ) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Invalid Year');
         return;

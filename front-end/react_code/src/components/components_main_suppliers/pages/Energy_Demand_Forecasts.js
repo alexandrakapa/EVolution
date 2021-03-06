@@ -35,7 +35,7 @@ function EnergyDemand(props) {
       fetch(`http://localhost:8765/evcharge/api/EnergyDemandForecast/11/${startdate}/${enddate}`)
           .then(response => response.json())
           .then(fetchedData => {
-              if(startdate==enddate){
+              if(startdate==enddate|| endate=2018 || startdate=2020){
               setData(() => fetchedData[15])
               let tmp=[]
               var i
