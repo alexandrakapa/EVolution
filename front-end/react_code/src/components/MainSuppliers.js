@@ -11,6 +11,7 @@ import EnergyDemand from './components_main_suppliers/pages/Energy_Demand_Foreca
 import EnergyConsPerDistrict from './components_main_suppliers/pages/Energy_Consumption_Per_District';
 import EnergyConsPerStation from './components_main_suppliers/pages/Energy_Consumption_Per_Station';
 import EnergyCons from './components_main_suppliers/pages/Energy_Consumption';
+import Founders from './components_main_suppliers/pages/Founders';
 
 function MainSuppliers() {
   return (
@@ -26,6 +27,7 @@ function MainSuppliers() {
         <Route path='/main/energy_consumption_per_district' component={EnergyConsPerDistrict} />
         <Route path='/main/energy_consumption_per_station' component={EnergyConsPerStation} />
         <Route path='/main/energy_consumption' component={EnergyCons} />
+        <Route path='/main/founders' component={Founders} />
       </Switch>
     </Router>
   );
