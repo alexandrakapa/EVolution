@@ -2,6 +2,8 @@
 
 import click
 import requests
+import json
+import os
 
 @click.group()
 def evgroup_38():
@@ -11,15 +13,37 @@ def evgroup_38():
 @click.option('--username', type=str, prompt = 'Username:')
 @click.option('--passw', type=str, prompt = 'Password:', hide_input =True)
 def login(username,passw):
-    URL = "http://localhost:8765/evcharge/api/login"
-    r = requests.post(url = URL)
-    click.echo(r.text)
+    url = "http://localhost:8765/login"
+    payload='username='+username+'&password='+passw
+    click.echo(payload)
+    headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+    f = open("softeng20bAPI.token", "w")
+    f.write(json.loads(response.text)["accessToken"])
+    f.close()
+    click.echo(json.loads(response.text)["accessToken"])
+
 
 @evgroup_38.command(name='logout')
 def logout():
-    URL = "http://localhost:8765/evcharge/api/logout"
-    r = requests.post(url = URL)
-    click.echo(r.text)
+    f = open("softeng20bAPI.token", "r")
+    tok = f.read()
+    click.echo(tok)
+    url = "http://localhost:8765/logout"
+
+    payload={}
+    headers = {
+    'x-access-token': tok
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+    if os.path.exists("softeng20bAPI.token"):
+        os.remove("softeng20bAPI.token")
+    click.echo("User logged out")
+    "print(response.text)"
 
 @evgroup_38.command(name='healthcheck')
 def healthcheck():
