@@ -18,10 +18,12 @@ code {
 }
 
 .home,
-.services,
 .profile,
 .contact-us,
-.consulting {
+.energy_consumption,
+.energy_consumption_per_district,
+.energy_consumption_per_station,
+.energy_demand_forecasts {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -39,15 +41,17 @@ code {
   font-size: 100px;
 }
 
-.services {
+
+.services{
   background-image: url('./images/green.jpg');
   background-position: center;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
 
+}
 .profile {
   background-image: url('./images/green.jpg');
   background-position: center;
@@ -58,9 +62,10 @@ code {
 }
 
 .contact-us {
-  background-image: url('./images/green.jpg');
+  background-image: url('./images/img_7.jpg');
   background-position: center;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
@@ -74,8 +79,36 @@ code {
   font-size: 100px;
 }
 
-.consulting {
+.energy_consumption{
   background-image: url('./images/green.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+
+.energy_consumption_per_district {
+  background-image: url('./images/img_2.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.energy_consumption_per_station {
+  background-image: url('./images/img_6.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.energy_demand_forecasts {
+  background-image: url('./images/img_4.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;

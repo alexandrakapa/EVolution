@@ -1,12 +1,12 @@
 import React from 'react';
 import '../../MainSuppliers.css';
-import Cards from '../Cards';
+import Cards2 from '../Cards2';
 
-export default function Services() {
+export default function EnergyCons() {
 
   return ( <div style= {{
 marginTop:'10vh'
-}} >
-                <Cards />
+}}>
+                <Cards2 />
             </div>);
 }

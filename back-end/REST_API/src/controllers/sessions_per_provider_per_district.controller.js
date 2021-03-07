@@ -1,5 +1,4 @@
- const SessionModel=require('../models/sessions_per_provider.model');
-
+ const SessionModel=require('../models/sessions_per_provider_per_district.model');
 
  check_day = (y, m, d) => {
     const months30 = ['04', '06', '09', '11'];
@@ -31,20 +30,20 @@
     return false;
 }
 
-  exports.getProvider=(req, res) => {
+  exports.getSessions=(req, res) => {
 
  	//check if any of the variables given is empty
-  	if (Object.keys(req.params).length!=3){
+  	if (Object.keys(req.params).length!=4){
   		res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Empty Required Field');
         return;
   	}
 
-    const ID = req.params.providerID;
-    //check if provider ID length is valid based on our database's corresponding attribute's type
-    if (ID.length > 255+255) {
+    const region = req.params.region;
+    //check if ID length is valid based on our database's corresponding attribute's type
+    if (region.toString().length < 2 || region.toString().length >5) {
         res.statusMessage = 'Bad Request';
-        res.status(400).send('Bad Request : Invalid Provider ID');
+        res.status(400).send('Bad Request : Invalid region.');
         return;
     }
 
@@ -104,23 +103,22 @@
         }
     }
 
-	 	SessionModel.getProviderByID(req, (err, data) => {
-	 		if (err) {
-	 			res.send(err);
-	 			return;
-	 		}
-	 		else if (data.length){
-	 			res.send(data);
-	 			return;
-	 		}
-	 		else {
-	 			//console.log(res);
-	 			res.statusMessage='No data';
-	 			res.status(402).send('No Charging Point with this ID.');
-	 			return;
-	 		}
+ 	SessionModel.getSessionsbyManID(req, (err, data) => {
+ 		if (err) {
+ 			res.send(err);
+ 			return;
+ 		}
+ 		else if (data.length){
+ 			res.send(data);
+ 			return;
+ 		}
+ 		else {
+ 			res.statusMessage='No data';
+ 			res.status(402).send('No Charging Data for this Manufacturer and region.');
+ 			return;
+ 		}
 
-	 	});
+ 	});
 
 
  };

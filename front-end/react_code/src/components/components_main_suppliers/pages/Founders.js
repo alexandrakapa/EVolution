@@ -1,12 +1,10 @@
 import React from 'react';
 import '../../MainSuppliers.css';
-import Cards from '../Cards';
+import Cards3 from '../Cards3';
 
 export default function Services() {
 
-  return ( <div style= {{
-marginTop:'10vh'
-}} >
-                <Cards />
+  return ( <div>
+                <Cards3 />
             </div>);
 }
