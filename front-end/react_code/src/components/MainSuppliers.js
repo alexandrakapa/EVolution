@@ -5,13 +5,13 @@ import Home from './components_main_suppliers/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Services from './components_main_suppliers/pages/Services';
 import Profile from './components_main_suppliers/pages/Profile';
-import ContactUs from './components_main_suppliers/pages/ContactUs';
+import ContactUs from './ContactUs';
 import SignInPage from './SignInPage';
 import EnergyDemand from './components_main_suppliers/pages/Energy_Demand_Forecasts';
 import EnergyConsPerDistrict from './components_main_suppliers/pages/Energy_Consumption_Per_District';
 import EnergyConsPerStation from './components_main_suppliers/pages/Energy_Consumption_Per_Station';
 import EnergyCons from './components_main_suppliers/pages/Energy_Consumption';
-import Founders from './components_main_suppliers/pages/Founders';
+import Founders from './Founders';
 
 function MainSuppliers() {
   return (

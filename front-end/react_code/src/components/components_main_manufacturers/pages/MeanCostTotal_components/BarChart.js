@@ -8,17 +8,17 @@ function BarGroup(props) {
     //let widthScale = d => d * 1000000
     let widthScale = d => d  * 550 / props.maxval
     console.log(props.maxval)
-  
+
     let width = widthScale(props.d.EnergyCostPerKm)
     let yMid = props.barHeight * 0.5
-    
+
     return <g className="bar-group">
       <text className="name-label" x="-5" y={yMid} alignmentBaseline="middle" >{props.d.ManufacturerName}</text>
       <rect y={barPadding * 0.5} width={width} height={props.barHeight - barPadding} fill={barColour} />
       <text className="value-label" x={width- 8} y={yMid} alignmentBaseline="middle" >{props.d.EnergyCostPerKm}</text>
     </g>
   }
-  
+
 /*  class BarChart extends React.Component {
     state = {
       data: [
@@ -31,7 +31,7 @@ function BarGroup(props) {
         { name: 'Sun', value: 30 }
       ]
     }
- */ 
+ */
     function BarChart(props) {
     //render() {
       /*  const data= [
@@ -43,7 +43,7 @@ function BarGroup(props) {
             { name: 'Sat', value: 40 },
             { name: 'Sun', value: 30 }
           ]
-*/    
+*/
       var maxval=0
       var i
 //    var minval=props.data[0].EnergyConsumption
@@ -53,11 +53,11 @@ function BarGroup(props) {
         }
       }
       let barHeight = 30
-       console.log(props.data)   
+       console.log(props.data)
       let barGroups = props.data.map((d,i,a,b) => <g transform={`translate(0, ${i * barHeight})`}>
                                                       <BarGroup maxval={maxval} d={d} barHeight={barHeight} />
-                                                    </g>)                         
-      
+                                                    </g>)
+
       return (
        <svg width="800" height={props.data.length*33} >
         <g className="container">
@@ -69,5 +69,5 @@ function BarGroup(props) {
       </svg>
       )
     }
-  
+
 export default BarChart

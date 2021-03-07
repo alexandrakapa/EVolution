@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.div`
- padding: 100px;
+ padding: 90px;
 
  h1 {
    border-bottom: 1px solid white;

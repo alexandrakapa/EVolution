@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react';
 import {FormStyle} from './Contact/FormStyling'
 import Form from './Contact/Form';
 import {BatteryLoading} from 'react-loadingg'
-import '../../MainSuppliers.css';
+import './MainSuppliers.css';
 import "./Contact/Show_Result.css";
 
 

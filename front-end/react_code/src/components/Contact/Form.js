@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import React, { useEffect, useState } from 'react';
 import FromStyle from './FormStyling'
-import '../../../MainSuppliers.css'
+import '../MainSuppliers.css'
 
 
 function Form(props) {

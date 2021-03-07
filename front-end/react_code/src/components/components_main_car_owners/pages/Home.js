@@ -14,5 +14,6 @@ return ( <div>
                 className='home'>
               </h1>
               <h1 style={textStyle}>Welcome {localStorage.username}</h1>
+              <Footer />
           </div>);
 }
