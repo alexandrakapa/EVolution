@@ -62,6 +62,7 @@ app.use('/evcharge/api/SessionsPerProvider', sessions_per_Provider_Routes);
 const resetSessions = require('./src/routes/resetsessions.route');
 app.use('/evcharge/api/admin', resetSessions);
 
+
 const sessions_per_Provider_District= require('./src/routes/sessions_per_provider_per_district.route');
 app.use('/evcharge/api/SessionsPerProvider/PerDistrict', sessions_per_Provider_District);
 
@@ -70,6 +71,18 @@ app.use('/evcharge/api/SessionsPerProvider/PerStation', sessions_per_Provider_St
 
 const energy_Demand_Forecast= require('./src/routes/energy_demand_forecast.route');
 app.use('/evcharge/api/EnergyDemandForecast', energy_Demand_Forecast);
+
+
+//stela
+const stationinfoRoutes = require('./src/routes/stationInfo.router');
+app.use('/evcharge/api/stationInfo',stationinfoRoutes);
+
+const sessions_per_EV_Routes= require('./src/routes/sessions_per_EV.route');
+app.use('/evcharge/api/SessionsPerEV', sessions_per_EV_Routes);
+
+const closestStationsRoutes = require('./src/routes/closestStation.route');
+app.use('/evcharge/api/ClosestStations', closestStationsRoutes);
+
 // listen to the port
 app.listen(port, ()=>{
     console.log(`Express Server is running at port ${port}`);
