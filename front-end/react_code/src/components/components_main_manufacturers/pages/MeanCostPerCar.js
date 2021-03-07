@@ -6,7 +6,7 @@ import Form from './MeanCostPerCar_components/Form';
 import  Muitable  from "./MuidataTable";
 import {columns} from './MeanCostPerCar_components/MeanCostPerCarTableColumns'
 import {BatteryLoading} from 'react-loadingg'
-
+import NoData from './NoData'
 
 function ChargingSessions(props) {
 
@@ -32,7 +32,17 @@ function ChargingSessions(props) {
       console.log(model, startdate, enddate)
 
       fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/23/${model}/${startdate}/${enddate}`)
-          .then(response => response.json())
+          .then(response => {
+              if (response.ok){
+                return response.json()
+              }
+              else {
+                setIsLoading(false)
+                setData(() => [])
+                throw Error (response.statusText)
+              }
+            }
+            )
           .then(fetchedData => {
               setData(() => fetchedData[6])
               let tmp=[]
@@ -62,7 +72,7 @@ function ChargingSessions(props) {
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setModel={setModel} setDidSubmit={setDidSubmit}/>
       </FormStyle>
       {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={`Mean energy cost per km`} columns={columns} /></div> : null}
-      {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
+      {data.length===0 && !isloading && shouldRender? <NoData/> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}

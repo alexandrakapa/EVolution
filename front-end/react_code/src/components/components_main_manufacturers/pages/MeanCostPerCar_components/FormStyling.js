@@ -7,15 +7,26 @@ export const FormStyle = styled.div`
  padding: 20px;
 
  h1 {
-   border-bottom: 1px solid white;
-   color: #1c1c1c;
-   font-family: sans-serif;
-   font-size: 20px;
-   font-weight: 600;
-   line-height: 24px;
-   padding: 10px;
-   text-align: center;
- }
+  color: #1c1c1c;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px;
+  text-align: center;
+}
+
+  h1Top {
+    border-bottom: 1.5px solid white;
+    color: #1c1c1c;
+    font-family: sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+  }
+
 
  form {
   background: rgba(200, 247, 197, 0.62);
@@ -45,7 +56,7 @@ export const FormStyle = styled.div`
    font-size: 14px;
    font-weight: 500;
    margin-bottom: 5px;
-   margin-top: 5px
+   margin-top: 10px
  }
 
  .error {

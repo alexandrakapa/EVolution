@@ -37,6 +37,7 @@ function checkBig(){
         props.setDidSubmit(true)
         //console.log(newdate)
    })}>
+      <h1Top>Your cars' charging sessions</h1Top>
      <h1>Select date and region</h1>
      <label>Postal Code</label>
      <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />

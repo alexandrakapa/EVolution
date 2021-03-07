@@ -32,6 +32,7 @@ function Form(props) {
         props.setDidSubmit(true)
         console.log(newdate, newdate2)
    })}>
+     <h1Top>Mean energy cost per km for Manufacturers</h1Top>
      <h1>Select date</h1>
        
      <label>From</label>

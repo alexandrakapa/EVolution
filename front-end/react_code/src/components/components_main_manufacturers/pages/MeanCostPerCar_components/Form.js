@@ -76,6 +76,7 @@ const getOptions = (inputValue) =>
         props.setDidSubmit(true) 
         console.log(newdate, newdate2, model.Model)
    })}>
+      <h1Top>Mean energy cost per km for your cars</h1Top>
      <h1>Select date and car model</h1>
             
      <label>From</label>

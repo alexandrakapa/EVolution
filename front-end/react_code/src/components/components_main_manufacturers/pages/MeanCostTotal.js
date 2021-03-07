@@ -5,7 +5,7 @@ import  Muitable  from "./MuidataTable";
 import {columns} from './MeanCostTotal_components/MeanCostTotalTableColumns'
 import {BatteryLoading} from 'react-loadingg'
 import BarCHart from './MeanCostTotal_components/BarChart';
-
+import NoData from './NoData'
 
 function MeanCostTotal(props) {
 
@@ -66,8 +66,8 @@ function MeanCostTotal(props) {
       <FormStyle className='chargingsessions' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '5%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Charging Sessions"} columns={columns} /></div> : null}
-      {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
+      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '5%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost per km per Manufacturer"} columns={columns} /></div> : null}
+      {data.length===0 && !isloading && shouldRender? <NoData /> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
