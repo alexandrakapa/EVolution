@@ -83,7 +83,7 @@ function EnergyConsumption(props) {
 
   return (
     <div >
-      <FormStyle className='chargingsessions' >
+      <FormStyle className='energyConsumption' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
       {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '12%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Energy consumption (kWh)"} columns={columns} /></div> : null}

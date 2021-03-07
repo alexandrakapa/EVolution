@@ -91,3 +91,12 @@ code {
   color: #fff;
   
 }
+
+.energyConsumption {
+  background-image: url('./images/img_2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  
+}
