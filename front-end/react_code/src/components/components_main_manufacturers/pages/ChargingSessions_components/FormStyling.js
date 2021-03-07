@@ -13,7 +13,7 @@ export const FormStyle = styled.div`
   text-align: center;
 }
 
-  h1Top {
+h1Top {
     border-bottom: 1.5px solid white;
     color: #1c1c1c;
     font-family: sans-serif;
@@ -22,7 +22,7 @@ export const FormStyle = styled.div`
     line-height: 24px;
     padding: 10px;
     text-align: center;
-  }
+}
 
 form {
  background: rgba(200, 247, 197, 0.62);
