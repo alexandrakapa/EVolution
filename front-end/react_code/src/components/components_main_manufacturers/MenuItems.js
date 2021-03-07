@@ -16,7 +16,7 @@ export const MenuItems = [
   },
   {
     title: 'Energy consumption for your car models',
-    path: '/main/energy_consumption_per_car',
+    path: '/main/energy_consumption_per_car_model',
     cName: 'dropdown-link'
   }
 ];

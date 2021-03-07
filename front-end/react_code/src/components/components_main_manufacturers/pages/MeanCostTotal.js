@@ -66,12 +66,12 @@ function MeanCostTotal(props) {
       <FormStyle className='chargingsessions' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '5%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost per km per Manufacturer"} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '8%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost per km per Manufacturer"} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <NoData /> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
-      {data.length!==0 && !isloading?  <div style={{marginLeft: '55%', paddingRight: '0px'}}><BarCHart data={data} title={"Mean energy cost per km for Manufacturers"}/></div>: null}
+      {data.length!==0 && !isloading?  <div style={{marginLeft: '52%', paddingRight: '0px'}}><BarCHart data={data} title={"Mean energy cost per km for Manufacturers"}/></div>: null}
     </div>
 
   );
