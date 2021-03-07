@@ -1,0 +1,57 @@
+.form1{
+    background: rgba(255,222,205,0.671848807882528);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 30px 50px;
+}
+
+.h11{
+    border-bottom: 1px solid white;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+
+.h11_new{
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+
+.label1c{
+   color: black;
+   display: block;
+   font-family: sans-serif;
+   font-size: 15px;
+
+   font-weight: 500;
+   margin-bottom: 5px;
+   margin-top: 5px
+ }
+
+ .label11{
+    color: black;
+    display: block;
+    font-family: sans-serif;
+    font-size: 15px;
+
+    font-weight: 900;
+    margin-bottom: 5px;
+    margin-top: 5px
+  }

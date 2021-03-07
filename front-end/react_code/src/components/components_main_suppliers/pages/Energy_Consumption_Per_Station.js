@@ -1,28 +1,15 @@
-// import React from 'react';
-//
-// export default function ChargingSessions() {
-//   return (
-//     <>
-//       <h1 className='charging_sessions'>MARKETING</h1>
-//     </>
-//   );
-// }
-
-
 import React, { useEffect, useState } from 'react';
-import Top from './ChargingSessions_components/Top';
-import {FormStyle} from './ChargingSessions_components/FormStyling'
-import Form from './ChargingSessions_components/Form';
-import  Muitable  from "./MuidataTable";
-import {columns} from './ChargingSessions_components/ChargingSessionsTableColumns'
+import {FormStyle} from './Energy_Consumption_Per_Station_components/FormStyling'
+import Form from './Energy_Consumption_Per_Station_components/Form';
 import {BatteryLoading} from 'react-loadingg'
+import ShowResult from './Energy_Consumption_Per_Station_components/Show_Result'
+import '../../MainSuppliers.css';
 
-
-function ChargingSessions(props) {
+function EnergyConsPerStation(props) {
 
   const [startdate, setStartDate] = useState([])
   const [enddate, setEndDate] = useState([])
-  const [region, setRegion] = useState([])
+  const [station, setStation] = useState([])
 
   const [data, setData] = useState([])
   const [general, setGeneral] = useState([])
@@ -34,7 +21,7 @@ function ChargingSessions(props) {
   function handleClick(){
     props.history.push(
       {
-        pathname: '/chargingevents',
+        pathname: '/energy_consumption_per_station',
 
       }
     )
@@ -44,19 +31,20 @@ function ChargingSessions(props) {
     if (didSubmit){
       setIsLoading(true)
 
-      fetch(`http://localhost:8765/evcharge/api/SessionsPerManufacturer/3/${region}/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/SessionsPerProvider/PerStation/15/${station}/${startdate}/${enddate}`)
           .then(response => response.json())
           .then(fetchedData => {
               setData(() => fetchedData[6])
               let tmp=[]
               var i
-              for (i=0; i<6; i++){
+              for (i=0; i<=6; i++){
+                  console.log(fetchedData[i])
                   tmp.push(fetchedData[i])
               }
               setGeneral(() => tmp)
-
-              console.log(fetchedData[6])
-
+              console.log("hi")
+              console.log(fetchedData[5])
+              console.log("end of hi")
               setIsLoading(false)
 
           })
@@ -66,15 +54,18 @@ function ChargingSessions(props) {
             setShouldRender(true)
     }
   }, [didSubmit])
-
-
   return (
-    <div >
-      <FormStyle className='chargingsessions' >
-        <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
+
+    <div className='energy_consumption_per_station' >
+      <FormStyle >
+        <Form setStartDate={setStartDate} setEndDate={setEndDate} setStation={setStation} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <Muitable data={data} tableName={"Charging Sessions"} columns={columns} /> : null}
-      {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
+
+      {typeof data !=='undefined'  &&  data.length!==0 && !isloading? (
+<ShowResult check={0} name={general[1]} start_date={general[2]} end_date={general[3]} station_id={general[4]}  station_name={general[5]}  result={general[6]}  />
+) : null}
+
+      {typeof data ==='undefined' && !isloading && shouldRender? <ShowResult check={1} /> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
@@ -86,4 +77,4 @@ function ChargingSessions(props) {
 
 }
 
-export default ChargingSessions;
+export default EnergyConsPerStation;

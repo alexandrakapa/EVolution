@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import React, { useEffect, useState } from 'react';
-
+import FromStyle from './FormStyling'
+import '../../../MainSuppliers.css'
 
 
 function Form(props) {
+
  const { register, handleSubmit, errors } = useForm({reValidateMode: 'onChange'});
 
  const [startedOn, setStartedOn] = useState(false)
@@ -25,25 +27,26 @@ function Form(props) {
 function checkBig(){
    console.log("hi")
 }
- 
+
 
  return (
-   <form onSubmit={handleSubmit(({region, startdate, enddate}) => {
+   <form onSubmit={handleSubmit(({station, startdate, enddate}) => {
         const newdate = startdate.split('-').join('')
         const newdate2 = enddate.split('-').join('')
         props.setStartDate( newdate)
         props.setEndDate( newdate2)
-        props.setRegion(region)
+        props.setStation(station)
         props.setDidSubmit(true)
         //console.log(newdate)
    })}>
-     <h1>Select Date and Region</h1>
-     <label>Postal Code</label>
-     <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />
-        {errors.region && errors.region.type === "required" && <span className='error' >Field is required </span>}
-        {errors.region && errors.region.type === "maxLength" && <span className='error'>Maximum length 5 digits</span> }
-        {errors.region && errors.region.type === "minLength" && <span className='error'>Minumum length 2 digits</span> }
-       
+    <h1_new> Energy Consumption Per Station </h1_new>
+     <h1>Select Date and Station</h1>
+     <label>Station</label>
+     <input name="station" type="text" ref={register({ required: true, maxLength: 12,minLength: 11 }) } />
+        {errors.station && errors.station.type === "required" && <span className='error' >Field is required </span>}
+        {errors.station && errors.station.type === "maxLength" && <span className='error'>Maximum length 12 </span> }
+        {errors.station && errors.station.type === "minLength" && <span className='error'>Minumum length 11</span> }
+
      <label>From</label>
      <input onChange={handleStartChange} name="startdate" type="date" ref={register({ required: true, validate: value => {
         if (finishedOn){
@@ -66,7 +69,7 @@ function checkBig(){
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End date can't be smaller than start date </span>}
-     <button className='Button'>Submit</button>
+     <button className='Button'>Show Results</button>
    </form>
  );
 }

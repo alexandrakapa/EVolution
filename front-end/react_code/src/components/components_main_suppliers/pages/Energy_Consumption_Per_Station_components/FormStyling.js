@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.div`
- padding: 20px;
+ padding: 120px;
 
  h1 {
    border-bottom: 1px solid white;
-   color: #3d3d3d;
+   color: white;
    font-family: sans-serif;
    font-size: 20px;
    font-weight: 600;
@@ -14,34 +14,46 @@ export const FormStyle = styled.div`
    text-align: center;
  }
 
+ h1_new{
+   color: white;
+   font-family: sans-serif;
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 44px;
+   padding: 10px;
+   text-align: center;
+ }
+
  form {
-   background: white;
-   border: 1px solid #dedede;
+   background: rgba(44,203,209,0.2690476874343487);
+   border-radius: 8px;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    margin: 0 auto;
    max-width: 500px;
    padding: 30px 50px;
+
  }
 
  input {
-   border: 1px solid #d9d9d9;
+   border: 1px solid black;
    border-radius: 4px;
    box-sizing: border-box;
    padding: 10px;
    width: 100%;
-   margin-bottom: 2px;
+   margin-bottom: 4px;
  }
 
  label {
-   color: #3d3d3d;
+   color: white;
    display: block;
    font-family: sans-serif;
-   font-size: 14px;
+   font-size: 15px;
+   font-style:italic;
    font-weight: 500;
    margin-bottom: 5px;
-   margin-top: 5px
+   margin-top: 5px;
  }
 
  .error {
@@ -61,15 +73,21 @@ export const FormStyle = styled.div`
  }
 
    .Button {
-    background-color: darkseagreen;
-    color: white;
+    background-color: #ffffff ;
+    color: black;
     font-family: sans-serif;
     font-size: 14px;
-    margin: 20px 140px;
-    width: 200px;
-    height: 30px
-
+    margin: 30px 60px;
+    text-align: center;
+    padding: 15px 32px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
    }
+
+
 
 
 `
