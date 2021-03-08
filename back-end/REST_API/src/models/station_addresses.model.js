@@ -6,7 +6,7 @@ var Stations = function (){};
 Stations.getStationAddresses = async (req, result) => {
 	
 	//console.log(parsedate());
-	dbConn.query(`SELECT ID as StationID, address_info as Address 
+	dbConn.query(`SELECT ID as StationID, address_info as Address, postalcode as PostalCode, country as Country 
 				  FROM Station` , (err, res) =>
 	
 	{
