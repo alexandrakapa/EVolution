@@ -78,10 +78,26 @@ form {
   font-size: 14px;
   margin: 20px 25%;
   width: 200px;
-  height: 30px
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
 
  }
 
-
+ .Button1 {
+  background-color: #ffffff ;
+  color: black;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 30px 60px;
+  text-align: center;
+  padding: 15px 32px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+ }
 
 `

@@ -78,7 +78,10 @@ export const FormStyle = styled.div`
   font-size: 14px;
   margin: 20px 25%;
   width: 200px;
-  height: 30px
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
 
  }
 

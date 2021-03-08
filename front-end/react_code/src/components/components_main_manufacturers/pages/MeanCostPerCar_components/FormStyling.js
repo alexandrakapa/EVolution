@@ -75,17 +75,19 @@ export const FormStyle = styled.div`
    margin: 20px 0px;
  }
 
-   .Button {
-    background-color: #006400;
-    color: white;
-    font-family: sans-serif;
-    font-size: 14px;
-    margin: 20px 25%;
-    width: 200px;
-    height: 30px
+ .Button {
+  background-color: #006400;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 20px 25%;
+  width: 200px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
 
-   }
-
+ }
    
 
 

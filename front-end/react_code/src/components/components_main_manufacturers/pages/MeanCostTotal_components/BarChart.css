@@ -12,13 +12,13 @@ body {
   text-anchor: end;
   font-weight: 300;
   font-size: 1em;
-  fill: #333;
+  fill: rgb(0, 0, 0);
 }
 .name-label{
   text-anchor: end;
   font-weight: 300;
   font-size: 0.78em;
-  fill: #333;
+  fill: rgb(0, 0, 0);
 }
 
 .bar-group .value-label {
@@ -34,7 +34,7 @@ body {
 
 /* Fade bars when the chart is hovered */
 .container:hover .bar-group {
-  opacity: 0.65;
+  opacity: 0.7;
 }
 
 /* But don't fade the hovered bar... */
