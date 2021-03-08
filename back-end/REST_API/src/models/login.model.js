@@ -4,22 +4,46 @@ const bcrypt=require('bcrypt');
 const salt=10;//hash parameter
 const dotenv = require("dotenv");
 const sha512crypt = require("sha512crypt-node").sha512crypt;
-
+const jwt_decode =require("jwt-decode");
 dotenv.config();
 
-var User = function(user){
-    this.id = user.id;
-    this.username     =   user.username;
-    this.password      =   user.password;
-    this.email          =   user.email;
-    this.token = user.token;
+var Login = function(login){
+    this.id = login.id;
+    this.username     =   login.username;
+    this.password      =   login.password;
+    this.email          =   login.email;
+    this.company_name ="";
+    this.token = login.token;
     this.category ="";
+    this.sessionID =login.sessionID;
 
 }
 
-
-
-User.findByManufacturerUsername = async(username, result)=>{
+Login.findByAdmin = async(username, result)=>{
+    quer = "SELECT * FROM admin WHERE username= '"+ username.username+"'";
+    console.log(quer);
+    dbConn.query(quer, (err, res)=>{
+        if(err){
+            console.log('Error while fetching user by username', err);
+            result(err, null);
+            return;
+        }else{
+            if(res[0] !=undefined){
+            console.log("found admin");
+            Login.username = res[0].username;
+            Login.password = res[0].password;
+            Login.category = "Admin";
+            Login.sessionID= res[0].sessionID;
+            result(null, res[0]);
+            return;
+            }else{
+                result(null, null);
+                return; 
+            }
+        }
+    })
+}
+Login.findByManufacturerUsername = async(username, result)=>{
         
     dbConn.query("SELECT * FROM Car_Manufacturer WHERE username= '"+ username.username+"'", (err, res)=>{
         if(err){
@@ -28,11 +52,14 @@ User.findByManufacturerUsername = async(username, result)=>{
             return;
         }else{
             if(res[0] !=undefined){
-            User.id = res[0].ID;
-            User.username = res[0].username;
-            User.password = res[0].password;
-            User.category = "Car_Manufacturer";
-            console.log("id "+User.id+" username: "+User.username+" password: "+User.password+" category: "+User.category)
+            console.log("found man");
+            Login.id = res[0].ID;
+            Login.username = res[0].username;
+            Login.password = res[0].password;
+            Login.category = "Car_Manufacturer";
+            Login.company_name = res[0].company_name;
+            Login.sessionID= res[0].sessionID;
+            console.log("id "+Login.id+" username: "+Login.username+" password: "+Login.password+" category: "+Login.category)
             result(null, res[0]);
             return;
             }else{
@@ -43,7 +70,7 @@ User.findByManufacturerUsername = async(username, result)=>{
     })
 }
     
-User.findBySupplierUsername = (username, result)=>{
+Login.findBySupplierUsername = (username, result)=>{
          
     dbConn.query("SELECT * FROM Energy_Supplier WHERE username= '"+ username.username+"'", (err, res)=>{
         if(err){
@@ -51,12 +78,15 @@ User.findBySupplierUsername = (username, result)=>{
             result(err, null);
             return;
         }else{
+            console.log("found supplier");
             if(res[0] != undefined){
-            User.id = res[0].ID;
-            User.username = res[0].username;
-            User.password = res[0].password;
-            User.category = "Energy Supplier";
-            console.log("id "+User.id+" username: "+User.username+" password: "+User.password+" category: "+User.category)
+            Login.id = res[0].ID;
+            Login.username = res[0].username;
+            Login.password = res[0].password;
+            Login.category = "Energy_Supplier";
+            Login.company_name = res[0].company_name;
+            Login.sessionID= res[0].sessionID;
+            console.log("id "+Login.id+" username: "+Login.username+" password: "+Login.password+" category: "+Login.category)
             result(null, res[0]);
             return;
             }else{
@@ -67,7 +97,8 @@ User.findBySupplierUsername = (username, result)=>{
     })
 }
     
-User.findByOwnerUsername = (username, result)=>{
+Login.findByOwnerUsername = (username, result)=>{
+    console.log("found owner");
     dbConn.query("SELECT * FROM Car_Owner WHERE username= '"+ username.username+"'", (err, res)=>{
         if(err){
             console.log('Error while fetching user by username', err);
@@ -75,12 +106,12 @@ User.findByOwnerUsername = (username, result)=>{
             return;
         }else{
             if(res[0] !=undefined){
-            console.log(res[0]);
-            User.id = res[0].ID;
-            User.username = res[0].username;
-            User.password = res[0].password;
-            User.category = "Car_Owner";
-            console.log("id "+User.id+" username: "+User.username+" password: "+User.password+" category: "+User.category)
+           
+            Login.username = res[0].username;
+            Login.password = res[0].password;
+            Login.category = "Car_Owner";
+            Login.sessionID= res[0].sessionID;
+            console.log("id "+Login.id+" username: "+Login.username+" password: "+Login.password+" category: "+Login.category)
             result(null, res[0]);
             return;
             }else{
@@ -91,68 +122,105 @@ User.findByOwnerUsername = (username, result)=>{
     })
 }
 // get all users
-User.comparePassword = function(password,resp){
-    // console.log("pw: "+password+" cpw: "+this.password)
-    // var verified = bcrypt.compareSync(password, User.password)
-    // if(verified){
-    //     console.log("ok");
-    //     return(resp(null,true));
-    // }else{
-    //     console.log("not ok! ")
-    //     return(resp(null,false));
-    // }
-
-
-// // origHash is the hash generated by passlib  
-console.log("here");  
-// var origHash = "$6$rounds=656000$8Wc3AqHSFxcaZGUb$qgIxg10neNCUH508Aw1ZCBVbSZAPtniqDWYJhUnYnFz1M3tMwFToyzABsajiJ5TTeeljsRykRRQulbs9jzvbS.",
-//     parts = origHash.split('$'),
-//     rounds = parts[2],
-//     salt = '$' + parts[1] + '$' + rounds + '$' + parts[3],
-//     npassword = "lightning";
-// var hash = sha512crypt(npassword, salt);
+Login.comparePassword = function(password,resp){
+var start=Date.now();
 var origHash = this.password,
     parts = origHash.split('$'),
     rounds = parts[2],
     salt = '$' + parts[1] + '$' + rounds + '$' + parts[3];
 var hash = sha512crypt(password, salt);
 console.log("verified", hash === origHash);
+var fin= Date.now();
+var inbetween=(fin-start)/1000+"secs";
+console.log("here: "+inbetween);
 if(hash === origHash) return(resp(null,true));
 else return(resp(null,false));
 }
 
 
-User.generateToken = function(resp){
-    var uname = {username: User.username};
-    User.token = jwt.sign(uname, process.env.TOKEN_SECRET, { expiresIn: '2 days' });
-        resp(null,User);
-        return;
+Login.generateToken = function(resp){
+    var category = Login.category;
+    console.log(category);
+    if(category == "Car_Manufacturer"){
+        console.log("man");
+        var elems = {username:Login.username,id:Login.id,company_name:Login.company_name,category: Login.category,sessionID:Login.sessionID}
+        Login.token = jwt.sign(elems,process.env.TOKEN_SECRET, { expiresIn: '2 days' });
+    }else if(category == "Car_Owner"){
+        console.log("owner");
+        var elems = {username:Login.username, category: Login.category,sessionID:Login.sessionID}
+        Login.token = jwt.sign(elems,process.env.TOKEN_SECRET, { expiresIn: '2 days' });
+    }else if(category=="Energy_Supplier"){
+        console.log("supplier");
+        var elems = {username:Login.username,id:Login.id,company_name:Login.company_name,category: Login.category,sessionID:Login.sessionID}
+        Login.token = jwt.sign(elems,process.env.TOKEN_SECRET, { expiresIn: '2 days' });
+        
+    }else if(category=="Admin"){
+        console.log("admin");
+        var elems = {username:Login.username,category: Login.category,sessionID:Login.sessionID}
+        Login.token = jwt.sign(elems,process.env.TOKEN_SECRET, { expiresIn: '2 days' });
+        
+    }
+    
+    resp(null,Login);
+    return;
 }
-
-User.findByToken = async (tok, result) => {
+Login.checkToken = async(tokid,tuname, cat,result) =>{
+    qur = "SELECT * FROM "+cat+" WHERE username= '"+ tuname+"'";
+    console.log(qur);
+    dbConn.query(qur, (err, res)=>{
+        if(err){
+            console.log('Error while fetching user by username', err);
+            result(err, null);
+            return;
+        }else{
+            if(res[0].sessionID ==tokid){
+            result(null, "ok");
+            return;
+            }else{
+                result(null, "no");
+                return;
+            }
+        }
+    })
+};
+Login.findByToken = async (tok, result) => {
     
     if (!tok) {
         result(null,"fail");
         return;
     }else{
-        console.log("look: "+tok);
         jwt.verify(tok,  process.env.TOKEN_SECRET, (err, decoded) => {
         if (err) {
             console.log("stranger");
             result(null,"fail");
             return;
         }else{
-        console.log("love");
-        User.username = decoded.username;
-        result(null,User.username);
-        return;
+        console.log("dec:"+Object.getOwnPropertyNames(jwt_decode(tok)));
+        var csid = jwt_decode(tok).sessionID;
+        var csum = jwt_decode(tok).username;
+        var csct = jwt_decode(tok).category;
+        Login.checkToken(csid,csum,csct,(err,res)=>{
+            if(err){
+                console.log(err);
+            }
+            if(res == "ok"){
+                console.log("No no here we are");
+                console.log(csum);
+                result(null,csum);
+                return;
+            }else{
+                result(null,"fail");
+                return;
+            }
+        });
+
         }
         });
     }
     console.log("result: "+result);
   };
 
-User.verifyToken = function(tok,req, result,next) {
+  Login.verifyToken = function(tok,req, result,next) {
     
     if (!tok) {
     
@@ -185,7 +253,7 @@ User.verifyToken = function(tok,req, result,next) {
     
 // }
 
-User.test = async (test_pam,err,result)=>{
+Login.test = async (test_pam,err,result)=>{
     if(err){
         result(err, null);
         return;
@@ -193,4 +261,4 @@ User.test = async (test_pam,err,result)=>{
     result(null,res);
     return;
 }
-module.exports = User;
+module.exports = Login;

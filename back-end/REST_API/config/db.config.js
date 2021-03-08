@@ -1,17 +1,31 @@
 const mysql = require('mysql');
-
+// $servername = "localhost:8889";
+// $username = "root";
+// $password = "root";
+// $db = "Evolution";
 // create here mysql connection
-
+const disconnect_handler =mysql.createConnection({
+    host: 'localhost',
+    user: 'root',       //the credentials for our database
+    password: 'root',
+    port:8889,
+    database: 'Evolution'
+});
 const dbConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',       //the credentials for our database
-    password: 'mysql',
+    password: 'root',
+    port:8889,
     database: 'Evolution'
 });
 
-dbConn.connect(function(error){
-    if(error) throw error;
-    console.log('Database Connected Successfully!!!');
-})
+dbConn.on('error', err => {
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+        // db error reconnect
+        disconnect_handler();
+    } else {
+        throw err;
+    }
+});
 
 module.exports = dbConn;
