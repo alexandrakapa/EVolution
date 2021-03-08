@@ -6,7 +6,7 @@ function BarGroup(props) {
     let barPadding = 2
     let barColour = '#006400'
     //let widthScale = d => (d - props.minval) * 300 / (props.maxval-props.minval)
-    let widthScale = d => d  * 300 / props.maxval
+    let widthScale = d => d  * 280 / props.maxval
   
     let width = widthScale(props.d.EnergyConsumption)
     let yMid = props.barHeight * 0.5

@@ -71,7 +71,7 @@ function MeanCostTotal(props) {
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
-      {data.length!==0 && !isloading?  <div style={{marginLeft: '52%', paddingRight: '0px'}}><BarCHart data={data} title={"Mean energy cost per km for Manufacturers"}/></div>: null}
+      {data.length!==0 && !isloading?  <div style={{marginLeft: '54%', paddingRight: '5%'}}><BarCHart data={data} title={"Mean energy cost per km for Manufacturers"}/></div>: null}
     </div>
 
   );

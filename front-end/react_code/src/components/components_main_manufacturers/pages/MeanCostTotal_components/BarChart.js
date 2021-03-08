@@ -6,7 +6,7 @@ function BarGroup(props) {
     let barPadding = 2
     let barColour = '#006400'
     //let widthScale = d => d * 1000000
-    let widthScale = d => d  * 550 / props.maxval
+    let widthScale = d => d  * 430 / props.maxval
     console.log(props.maxval)
 
     let width = widthScale(props.d.EnergyCostPerKm)

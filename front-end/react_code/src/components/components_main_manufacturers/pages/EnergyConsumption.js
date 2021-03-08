@@ -30,7 +30,7 @@ function EnergyConsumption(props) {
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
         var urlencoded = new URLSearchParams();
-        urlencoded.append("manufacturer", "Tesla");
+        urlencoded.append("manufacturer", "BMW");
         urlencoded.append("start_date", startdate);
         urlencoded.append("end_date", enddate);
 
@@ -91,7 +91,7 @@ function EnergyConsumption(props) {
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
-      {data.length!==0 && !isloading?  <div style={{marginLeft: '55%', paddingRight: '0px'}}><BarCHart data={data} title={"Energy Consumption per car model (kWh)"}/></div>: null}
+      {data.length!==0 && !isloading?  <div style={{marginLeft: '56%', paddingRight: '5%'}}><BarCHart data={data} title={"Energy Consumption per car model (kWh)"}/></div>: null}
     </div>
 
   );
