@@ -10,7 +10,20 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const logMeOut = () => {
+    console.log("here logging out");
+    setClick(false);
+    localStorage.clear();
+    const fetch = require('node-fetch');
 
+    fetch('http://localhost:8765/evcharge/api/logout',{
+       method: 'POST',
+       headers:{'Content-type':'application/json'}
+     }).then(function(response){
+      console.log("HERE: "+response.status);
+     })
+       .catch(err => console.log(err));
+  };
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -77,11 +90,11 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to='/sign_in'
+              to='/'
               className='nav-links-mobile'
-              onClick={closeMobileMenu}
+              onClick={logMeOut}
             >
-              Sign Out
+              Signed Out
             </Link>
           </li>
         </ul>

@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from './components_main_manufacturers/Navbar';
+import Navbar from './components_main_car_owners/Navbar';
 import './MainManufacturers.css';
 import Home from './components_main_manufacturers/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components_main_manufacturers/pages/Services';
+  import Services from './components_main_manufacturers/pages/Services';
 import Profile from './components_main_manufacturers/pages/Profile';
 import ContactUs from './ContactUs';
 import SignInPage from './SignInPage';
