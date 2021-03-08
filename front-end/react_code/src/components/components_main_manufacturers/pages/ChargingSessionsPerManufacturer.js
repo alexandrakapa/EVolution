@@ -79,7 +79,7 @@ function ChargingSessions(props) {
 
   return (
     <div >
-      <FormStyle className='chargingsessions' >
+      <FormStyle className='chargingSessions' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
       </FormStyle>
       {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={"Charging Sessions"} columns={columns} /></div> : null}

@@ -11,6 +11,7 @@ import ChargingSessions from './components_main_manufacturers/pages/ChargingSess
 import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar';
 import MeanCostTotal from './components_main_manufacturers/pages/MeanCostTotal';
 import EnergyConsumption from './components_main_manufacturers/pages/EnergyConsumption';
+import MeanEnergyCost from './components_main_manufacturers/pages/MeanEnergyCost'
 import Founders from './Founders';
 
 function MainManufacturers() {
@@ -26,7 +27,8 @@ function MainManufacturers() {
         <Route path='/main/charging_sessions' component={ChargingSessions} />
         <Route path='/main/mean_energy_cost_per_car' component={MeanCostPerCar} />
         <Route path='/main/mean_energy_cost_statistics' component={MeanCostTotal} />
-        <Route path='/main/energy_consumption_per_car_model' component={EnergyConsumption} />
+        <Route path='/main/energy_consumption_report' component={EnergyConsumption} />
+        <Route path='/main/mean_energy_cost' component={MeanEnergyCost} />
         <Route path='/main/founders' component={Founders} />
       </Switch>
     </Router>

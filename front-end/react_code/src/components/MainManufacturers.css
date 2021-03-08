@@ -65,17 +65,17 @@ code {
   color: #fff;
   font-size: 100px;
 }
-.chargingsessions {
-  background-image: url('./images/img_2.jpg');
+
+.chargingSessions {
+  background-image: url('./images/img_13.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
 }
 
 .meanCostPerCar {
-  background-image: url('./images/img_2.jpg');
+  background-image: url('./images/img_8.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -84,7 +84,7 @@ code {
 }
 
 .meanCostTotal {
-  background-image: url('./images/img_2.jpg');
+  background-image: url('./images/img_10.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -93,7 +93,7 @@ code {
 }
 
 .energyConsumption {
-  background-image: url('./images/img_2.jpg');
+  background-image: url('./images/img_9.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
