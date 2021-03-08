@@ -1,15 +1,16 @@
 import React from 'react';
-import Navbar from './components_main_manufacturers/Navbar';
-import './MainManufacturers.css';
+import Navbar from './components_main_car_owners/Navbar';
+import './MainCarOwners.css';
 import Home from './components_main_manufacturers/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components_main_manufacturers/pages/Services';
-import Profile from './components_main_manufacturers/pages/Profile';
+import Services from './components_main_car_owners/pages/Services';
+import Profile from './components_main_car_owners/pages/Profile';
 import ContactUs from './ContactUs';
 import SignInPage from './SignInPage';
 import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';
 import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar';
 import Founders from './Founders';
+import ChargeNow from './components_main_car_owners/pages/ChargeNow';
 
 function MainCarOwners() {
   return (
@@ -22,7 +23,7 @@ function MainCarOwners() {
         <Route path='/main/contact_us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
         <Route path='/main/charging_sessions' component={ChargingSessions} />
-        <Route path='/main/mean_energy_cost_per_car' component={MeanCostPerCar} />
+        <Route path='/main/charging' component={ChargeNow} />
         <Route path='/main/founders' component={Founders} />
       </Switch>
     </Router>

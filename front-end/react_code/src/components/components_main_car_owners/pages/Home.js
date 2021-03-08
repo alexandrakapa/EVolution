@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../MainManufacturers.css';
+import '../../MainCarOwners.css';
 
 export default function Home() {
 var textStyle = {
@@ -14,6 +14,5 @@ return ( <div>
                 className='home'>
               </h1>
               <h1 style={textStyle}>Welcome {localStorage.username}</h1>
-              <Footer />
           </div>);
 }

@@ -57,6 +57,8 @@ app.use('/evcharge/api/EnergyCost', energy_cost_Routes);
 const station_addresses_Routes=require('./src/routes/station_addresses.route');
 app.use('/evcharge/api/StationAddresses', station_addresses_Routes);
 
+const station_points_Routes=require('./src/routes/station_points.route');
+app.use('/evcharge/api/StationPoints', station_points_Routes);
 
 //stamatis
 const sessions_per_Provider_Routes= require('./src/routes/sessions_per_provider.route');
