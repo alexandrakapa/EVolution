@@ -9,4 +9,6 @@ router.get('/:vehicleID', vehicleController.getvehiclebyid);
 
 router.get("/",vehicleController.getCarList);
 
+router.get('/ofOwner/:username',vehicleController.getvehiclebyowner);
+
 module.exports = router;

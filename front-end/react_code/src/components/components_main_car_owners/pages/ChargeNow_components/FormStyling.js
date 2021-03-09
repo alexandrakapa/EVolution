@@ -26,7 +26,8 @@ export const FormStyle = styled.div`
  }
 
  form {
-   background: rgba(30, 139, 195, 0.6);
+   background: rgba(0,27,45,0.8);
+
    border-radius: 8px;
    display: flex;
    flex-direction: column;
@@ -88,7 +89,11 @@ export const FormStyle = styled.div`
     border: none;
     cursor: pointer;
     display: inline-block;
-   }
+  }
+
+  .Button:hover{
+    background-color:rgba(44, 200, 201, 1) ;
+  }
 
 
 
