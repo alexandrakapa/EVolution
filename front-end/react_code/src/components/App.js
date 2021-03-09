@@ -7,9 +7,9 @@ import MainManufacturers from './MainManufacturers';
 import MainCarOwners from './MainCarOwners';
 import MainSuppliers from './MainSuppliers';
 import NavbarHome from './NavbarHome';
-import Footer from './Footer'
+import Footer from './Footer_Home';
 import ContactUs from './ContactUs';
-import Founders from './Founders';
+import Founders from './Founders_Home';
 import Slider from './slides/slide_components/Slider';
 import images from './slides/images';
 import Services from './Services_Home'
@@ -99,18 +99,18 @@ class App extends Component {
             <div >
               <Route path="/" exact render={ (props) => {
                 return <div >
-                 <NavbarHome/>
+                <NavbarHome/>
                  <Slider slides={images} />
                 <Footer />
                 </div>
               }
             }/>
-
             <Switch>
             <Route path='/contact_us' component={ContactUs} />
             <Route path='/founders' component={Founders} />
             <Route path='/services' component={Services} />
             </Switch>
+
               <Route path="/sign_in" exact render={ (setUserData) =>( <SignInPage setUserData={this.state.setUserData} />)} />
               <Route path="/main" render={this.renderProtectedComponent(MainSuppliers)} />
             </div>

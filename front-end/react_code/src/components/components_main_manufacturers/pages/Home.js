@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../MainManufacturers.css';
-import Footer from '../../Footer';
+import Footer from '../Footer';
 
 export default function Home() {
 var textStyle = {

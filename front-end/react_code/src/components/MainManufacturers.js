@@ -5,13 +5,13 @@ import Home from './components_main_manufacturers/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Services from './components_main_manufacturers/pages/Services';
 import Profile from './components_main_manufacturers/pages/Profile';
-import ContactUs from './ContactUs';
+import ContactUs from './components_main_manufacturers/ContactUs';
 import SignInPage from './SignInPage';
 import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';
 import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar';
 import MeanCostTotal from './components_main_manufacturers/pages/MeanCostTotal';
 import EnergyConsumption from './components_main_manufacturers/pages/EnergyConsumption';
-import Founders from './Founders';
+import Founders from './components_main_manufacturers/Founders';
 
 function MainManufacturers() {
   return (

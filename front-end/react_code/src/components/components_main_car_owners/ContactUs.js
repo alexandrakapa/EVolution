@@ -7,12 +7,11 @@
 
 
 import React, { useEffect, useState } from 'react';
-import {FormStyle} from './Contact/FormStyling'
-import Form from './Contact/Form';
+import {FormStyle} from '../Contact/FormStyling'
+import Form from '../Contact/Form';
 import {BatteryLoading} from 'react-loadingg'
-import './MainSuppliers.css';
-import "./Contact/Show_Result.css";
-import NavbarHome from './NavbarHome';
+import '../MainSuppliers.css';
+import "../Contact/Show_Result.css";
 
 
 
@@ -29,14 +28,11 @@ function ContactUs(props) {
   const [isloading, setIsLoading] = useState(false)
 
   return (
-    <div>
-    <NavbarHome />
     <div className='contact-us' >
       <FormStyle >
         <Form setfullname={setfullname} setemail={setemail}  setDidSubmit={setDidSubmit}/>
       </FormStyle>
 
-</div>
 </div>
 )
 }
