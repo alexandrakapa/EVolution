@@ -12,6 +12,7 @@ import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar
 import Founders from './Founders';
 import ChargeNow from './components_main_car_owners/pages/ChargeNow';
 import ChargeInProgress from './components_main_car_owners/pages/ChargeInProgress';
+import ChargeDone from './components_main_car_owners/pages/ChargeDone';
 
 function MainCarOwners() {
   return (
@@ -26,7 +27,8 @@ function MainCarOwners() {
         <Route path='/main/charging_sessions' component={ChargingSessions} />
         <Route path='/main/charging' component={ChargeNow} />
         <Route path='/main/founders' component={Founders} />
-         <Route path='/main/charging_in_progress' component={ChargeInProgress} />
+        <Route path='/main/charging_in_progress' component={ChargeInProgress} />
+        <Route path='/main/charging_done' component={ChargeDone} />
       </Switch>
     </Router>
   );

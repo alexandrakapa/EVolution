@@ -28,7 +28,7 @@ export const FormStyle = styled.div`
  form {
    background: rgba(0,27,45,0.8);
 
-   border-radius: 8px;
+   border-radius: 30px;
    display: flex;
    flex-direction: column;
    justify-content: space-around;

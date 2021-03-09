@@ -145,7 +145,12 @@ function ChargeInProgress(props){
 			        duration={minuteSeconds}
 			        initialRemainingTime={remainingTime % minuteSeconds}
 			        onComplete={()=>{
-			        	alert("done!")
+			        	 // alert("done!")
+			        	  //console.log(car.ID, money, payment.value, selectedStationID, selectedPoint)
+				          props.history.push({
+				          pathname: '/main/charging_done',
+				          state: { carID : location.state.carID, money : location.state.money, paymentWay : location.state.paymentWay, stationID : location.state.stationID, pointName : location.state.pointName }
+				          })
 			        }}
 			      >
 			        {({ elapsedTime }) =>
