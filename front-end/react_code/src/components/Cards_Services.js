@@ -15,7 +15,7 @@ function CardsServices() {
             <CardItemService
               src="https://cdn.skoda-storyboard.com/2019/05/190517-Comprehensive-update-for-%C5%A0KODA-Connect-App-users-2560x1706.jpg"
               text='Car Owners'
-              subtext='Chraging, Payment,'
+              subtext='Chraging, Payment,Nearby Stations'
             />
             <CardItemService
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1ORpvkyuLxAUel20nH5QPJh20w7tVY41HGA&usqp=CAU"
