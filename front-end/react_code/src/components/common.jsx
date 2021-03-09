@@ -27,9 +27,9 @@ export const Input = styled.input`
   width: 100%;
   height: 42px;
   outline: none;
-  border: 1px solid rgba(211,241,141,1);
+  border: 1px solid rgba(211,241,141,0.5);
   padding: 0px 10px;
-  border-bottom: 1.4px solid transparent;
+  border-bottom: 1.4px solid inherite;
   transition: all 200ms ease-in-out;
   font-size: 12px;
 

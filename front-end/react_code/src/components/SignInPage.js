@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import SignIn from './SignIn'
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import "./Background.css";
+import './App.css';
+import NavbarHome from './NavbarHome';
+
 
 const AppContainer = styled.div`
   width: 100%;
-  height: 200%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +30,7 @@ const BoxContainer = styled.div`
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -39,7 +41,7 @@ const TopContainer = styled.div`
 
 const BackDrop = styled(motion.div)`
   width: 160%;
-  height: 550px;
+  height: 110%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -63,7 +65,6 @@ const HeaderText = styled.h2`
   line-height: 1.24;
   color: #fff;
   z-index: 10;
-  margin: 0;
 `;
 
 const SmallText = styled.h5`
@@ -72,7 +73,7 @@ const SmallText = styled.h5`
   font-size: 11px;
   z-index: 10;
   margin: 0;
-  margin-top: 7px;
+  margin-top: 0%;
 `;
 
 const InnerContainer = styled.div`
@@ -82,27 +83,20 @@ const InnerContainer = styled.div`
   padding: 0 1.8em;
 `;
 
-const backdropVariants = {
-  expanded: {
-    width: "233%",
-    height: "1050px",
-    borderRadius: "20%",
-    transform: "rotate(60deg)",
-  },
-  collapsed: {
-    width: "160%",
-    height: "550px",
-    borderRadius: "50%",
-    transform: "rotate(60deg)",
-  },
-};
-
-const expandingTransition = {
-  type: "spring",
-  duration: 2.3,
-  stiffness: 30,
-};
-
+// const backdropVariants = {
+//   expanded: {
+//     width: "233%",
+//     height: "1050px",
+//     borderRadius: "20%",
+//     transform: "rotate(60deg)",
+//   },
+//   collapsed: {
+//     width: "160%",
+//     height: "550px",
+//     borderRadius: "50%",
+//     transform: "rotate(60deg)",
+//   },
+// };
 
 //import Cookies from 'universal-cookie';
 //import * as ROUTES from '../../constants/routes';
@@ -114,18 +108,14 @@ function SignInPage(props){
   console.log("hi");
   return (
   <div>
-  <AppContainer>
+  <NavbarHome />
+  <AppContainer  style= {{ marginTop:'10vh'}} >
     <BoxContainer>
       <TopContainer>
-        <BackDrop
-          initial={false}
-          //animate={isExpanded ? "expanded" : "collapsed"}
-          variants={backdropVariants}
-          transition={expandingTransition}
-        />
-        <HeaderContainer>
-            <HeaderText>Welcome</HeaderText>
-            <HeaderText><br /></HeaderText>
+        <BackDrop/>
+        <HeaderContainer >
+            <HeaderText  >Welcome</HeaderText>
+            <HeaderText  ><br /> </HeaderText>
             <SmallText>Please sign-in to continue!</SmallText>
         </HeaderContainer>
       </TopContainer>

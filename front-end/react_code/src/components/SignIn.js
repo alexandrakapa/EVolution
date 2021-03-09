@@ -87,7 +87,7 @@ class SignIn extends Component {
           placeholder="Password"
         />
 
-    <Marginer direction="vertical" margin={10} />
+    <Marginer direction="vertical" margin={20} />
     <MutedLink href="#">Forget your password?</MutedLink>
     <Marginer direction="vertical" margin="1.6em" />
     <SubmitButton type="submit">Sign in</SubmitButton>

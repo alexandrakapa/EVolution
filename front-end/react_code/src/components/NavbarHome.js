@@ -1,10 +1,9 @@
 import React, { useState,useEffect } from 'react';
-import { Button } from './Button';
+import { Button } from './components_main_suppliers/Button';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
-import Dropdown from './Dropdown';
+import './NavbarHome.css';
 
-function Navbar() {
+function NavbarHome() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [button, setButton] = useState(true);
@@ -48,7 +47,7 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <Link to='/main' className='navbar-logo' onClick={closeMobileMenu}>
+        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           EVolution
           <i class='fab fa-firstdraft' />
         </Link>
@@ -57,7 +56,7 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
@@ -67,21 +66,11 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/main/services'
+              to='/services'
               className='nav-links'
               onClick={closeMobileMenu}
             >
               Services <i className='fas fa-caret-down' />
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/main/profile'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              MyProfile
             </Link>
           </li>
           <li className='nav-item'>
@@ -99,14 +88,14 @@ function Navbar() {
               className='nav-links-mobile'
               onClick={closeMobileMenu}
             >
-              Sign Out
+              Sign In
             </Link>
           </li>
         </ul>
-        {button && <Button index='0'>Sign Out</Button>}
+        {button && <Button index='0'>Sign In</Button>}
       </nav>
     </>
   );
 }
 
-export default Navbar;
+export default NavbarHome;
