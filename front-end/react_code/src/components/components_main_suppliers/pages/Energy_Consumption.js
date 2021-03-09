@@ -4,9 +4,7 @@ import Cards2 from '../Cards2';
 
 export default function EnergyCons() {
 
-  return ( <div style= {{
-marginTop:'10vh'
-}}>
+  return ( <div className='energy_consumption'>
                 <Cards2 />
             </div>);
 }

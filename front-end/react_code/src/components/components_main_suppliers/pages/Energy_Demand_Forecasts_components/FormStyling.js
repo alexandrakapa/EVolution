@@ -5,13 +5,14 @@ export const FormStyle = styled.div`
 
  h1 {
    border-bottom: 1px solid white;
-   color: white;
+   color: black;
    font-family: sans-serif;
    font-size: 20px;
    font-weight: 600;
    line-height: 24px;
    padding: 10px;
    text-align: center;
+
  }
 
  h1_new{
@@ -22,10 +23,11 @@ export const FormStyle = styled.div`
    line-height: 24px;
    padding: 10px;
    text-align: center;
+   color:black;
  }
 
  form {
-   background: rgba(255,222,205,0.671848807882528);
+   background: rgba(255,222,205,0.81848807882528);
    border-radius: 8px;
    display: flex;
    flex-direction: column;
@@ -46,7 +48,7 @@ export const FormStyle = styled.div`
  }
 
  label {
-   color: white;
+   color:black;
    display: block;
    font-family: sans-serif;
    font-size: 15px;
@@ -56,7 +58,7 @@ export const FormStyle = styled.div`
    margin-top: 5px;
  }
  label_new {
-   color: white;
+   color: black;
 
    font-family: sans-serif;
    font-size: 10px;

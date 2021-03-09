@@ -43,7 +43,7 @@ code {
 
 
 .services1{
-  background-image: url('https://www.electrive.com/wp-content/uploads/2020/03/circontrol-ladestation-charging-station-2020-001-min.png');
+  background-image: url('https://bios-services.eu/skn/img/about/4.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -79,7 +79,7 @@ code {
 }
 
 .energy_consumption{
-  background-image: url('./images/green.jpg');
+  background-image: url('https://images.theconversation.com/files/268502/original/file-20190410-2912-1rtdnfu.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -99,18 +99,18 @@ code {
   font-size: 100px;
 }
 .energy_consumption_per_station {
-  background-image: url('https://acee.princeton.edu/wp-content/uploads/2019/06/AdobeStock_144776912_newsletter-900x506.jpg');
+  background-image: url('./images/img_9.jpg');
   background-position: center;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
 }
 .energy_demand_forecasts {
-  background-image: url('./images/img_4.jpg');
+  background-image: url('https://console.kr-asia.com/wp-content/uploads/2020/11/%E5%9B%BE%E8%99%AB%E5%88%9B%E6%84%8F-902720890664648719-scaled.jpeg');
   background-position: center;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
