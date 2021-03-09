@@ -1,9 +1,11 @@
 .cards11{
   padding: 3rem;
+
 }
 .h1_new1{
   font-size: 45px;
   text-align: center;
+  color:white;
 }
 
 .cards__container11{
@@ -30,6 +32,7 @@
   flex: 1;
   margin: 0 1rem;
   border-radius: 10px;
+  background: white;
 }
 
 .cards__item__link11{
@@ -97,6 +100,12 @@
   color: #252e48;
   font-size: 18px;
   line-height: 24px;
+}
+
+.cards__item__subtext11{
+  color: #252e48;
+  font-size: 10px;
+  line-height: 10px;
 }
 
 @media only screen and (min-width: 1200px) {

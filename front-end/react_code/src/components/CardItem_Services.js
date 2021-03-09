@@ -16,6 +16,7 @@ function CardItemService(props) {
           </figure>
           <div className='cards__item__info11'>
             <h5 className='cards__item__text11'>{props.text}</h5>
+            <p className='cards__item__subtext11'>{props.subtext}</p>
           </div>
         </a>
       </li>

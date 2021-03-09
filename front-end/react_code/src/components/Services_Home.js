@@ -1,14 +1,14 @@
 import React from 'react';
 import CardsServices from './Cards_Services';
 import NavbarHome from './NavbarHome';
-
+import './Background.css'
 
 export default function Services() {
 
   return (
 <div>
     <NavbarHome />
-      <div style= {{ marginTop:'5vh' }} >
+      <div  className='services'  >
           <CardsServices />
       </div>
 </div>);

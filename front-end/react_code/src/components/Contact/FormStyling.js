@@ -42,7 +42,7 @@ export const FormStyle = styled.div`
    box-sizing: border-box;
    padding: 10px;
    width: 100%;
-   margin-bottom: 20px;
+   margin-bottom: 4px;
  }
 
  label {
