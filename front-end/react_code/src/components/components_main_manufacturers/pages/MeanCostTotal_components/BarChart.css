@@ -13,6 +13,7 @@ body {
   font-weight: 300;
   font-size: 1em;
   fill: rgb(0, 0, 0);
+ 
 }
 .name-label{
   text-anchor: end;
@@ -26,6 +27,7 @@ body {
   fill: #fff;
   font-weight: 900;
   font-size: 0.7em;
+  
 }
 
 .container .bar-group {
@@ -42,10 +44,11 @@ body {
   opacity: 1;
 }
 
+
 .container .bar-group:hover .name-label {
   font-weight: 400;
 }
-
+  
 .container .bar-group:hover .value-label {
   font-size: 0.8em;
 }

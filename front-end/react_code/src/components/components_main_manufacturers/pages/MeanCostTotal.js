@@ -66,7 +66,7 @@ function MeanCostTotal(props) {
       <FormStyle className='meanCostTotal' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '5%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost per km per Manufacturer"} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{float:'left', marginLeft: '130px', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost per km per Manufacturer"} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <NoData /> : null}
       <br />
       <br />

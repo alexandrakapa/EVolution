@@ -61,7 +61,7 @@ function BarGroup(props) {
                                                     </g>)                         
       
       return (
-       <svg width="800" height={props.data.length*100} >
+       <svg width="500px" height={props.data.length*100} >
         <g >
           <text className="title" x="10" y="20">{props.title}</text>
           <g className="chart" transform="translate(100,50)">
