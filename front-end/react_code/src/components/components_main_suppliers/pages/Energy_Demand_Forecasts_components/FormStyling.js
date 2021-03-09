@@ -25,7 +25,7 @@ export const FormStyle = styled.div`
  }
 
  form {
-   background: rgba(0, 27, 45, 0.9);
+   background: rgba(255,222,205,0.671848807882528);
    border-radius: 8px;
    display: flex;
    flex-direction: column;

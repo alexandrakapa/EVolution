@@ -8,7 +8,7 @@ position: 'absolute',
 fontSize: '100px',
 top: '40%',
 left: '50%',
-color: '#006400'
+color: 'white'
 };
 return ( <div>
               <h1

@@ -32,7 +32,7 @@ code {
 }
 
 .home {
-  background-image: url('./images/green.jpg');
+  background-image: url('https://www.centrica.com/Story/Putting-Electricity-In-The-Driving-Seat/assets/avADhukYei/ev-header-thumbnail-1920x1080.png');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -42,15 +42,14 @@ code {
 }
 
 
-.services{
-  background-image: url('./images/green.jpg');
+.services1{
+  background-image: url('https://www.electrive.com/wp-content/uploads/2020/03/circontrol-ladestation-charging-station-2020-001-min.png');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-
 }
 .profile {
   background-image: url('./images/green.jpg');
@@ -62,7 +61,7 @@ code {
 }
 
 .contact-us {
-  background-image: url('./images/img_7.jpg');
+  background-image: url('https://wallpaperaccess.com/full/3124512.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -100,7 +99,7 @@ code {
   font-size: 100px;
 }
 .energy_consumption_per_station {
-  background-image: url('./images/img_6.jpg');
+  background-image: url('https://acee.princeton.edu/wp-content/uploads/2019/06/AdobeStock_144776912_newsletter-900x506.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

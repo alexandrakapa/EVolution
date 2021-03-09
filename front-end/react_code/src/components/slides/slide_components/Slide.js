@@ -9,7 +9,7 @@ const Slide = ({ content, width,num }) => {
   position: 'absolute',
   fontSize: '100px',
   top: '30%',
-  left: '35%',
+  left: '55%',
   color: '#006400'
   };
   return (

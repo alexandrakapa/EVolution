@@ -25,7 +25,7 @@ export const FormStyle = styled.div`
  }
 
  form {
-   background: rgba(10,22,23,0.9275911048012955);
+   background: rgba(12,47,75,0.95071429255295868);
    border-radius: 8px;
    display: flex;
    flex-direction: column;
@@ -42,7 +42,7 @@ export const FormStyle = styled.div`
    box-sizing: border-box;
    padding: 10px;
    width: 100%;
-   margin-bottom: 4px;
+   margin-bottom: 8px;
  }
 
  label {
