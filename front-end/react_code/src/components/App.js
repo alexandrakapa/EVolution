@@ -112,7 +112,7 @@ class App extends Component {
             </Switch>
 
               <Route path="/sign_in" exact render={ (setUserData) =>( <SignInPage setUserData={this.state.setUserData} />)} />
-              <Route path="/main" render={this.renderProtectedComponent(MainSuppliers)} />
+              <Route path="/main" render={this.renderProtectedComponent(MainCarOwners)} />
             </div>
           </Router>
       </div>
