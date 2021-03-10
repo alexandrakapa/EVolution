@@ -94,6 +94,7 @@ class App extends Component {
 
   render() {
     return (
+
       <div>
           <Router >
             <div >
@@ -110,9 +111,9 @@ class App extends Component {
             <Route path='/founders' component={Founders} />
             <Route path='/services' component={Services} />
             </Switch>
-
-              <Route path="/sign_in" exact render={ (setUserData) =>( <SignInPage setUserData={this.state.setUserData} />)} />
-              <Route path="/main" render={this.renderProtectedComponent(MainSuppliers)} />
+            <Route path="/sign_in" exact render={ (setUserData) =>( <SignInPage setUserData={this.state.setUserData} />)} />                <Route path="/mainsup" render={this.renderProtectedComponent(MainSuppliers)} />
+            <Route path="/mainown" render={this.renderProtectedComponent(MainCarOwners)} />
+            <Route path="/mainman" render={this.renderProtectedComponent(MainManufacturers)} />
             </div>
           </Router>
       </div>

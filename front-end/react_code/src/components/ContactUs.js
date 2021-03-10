@@ -31,7 +31,7 @@ function ContactUs(props) {
   return (
     <div>
     <NavbarHome />
-    <div className='contact-us' >
+    <div className='contact-us1' >
       <FormStyle >
         <Form setfullname={setfullname} setemail={setemail}  setDidSubmit={setDidSubmit}/>
       </FormStyle>

@@ -1,0 +1,19 @@
+.timer {
+  display: flex;
+  justify-content: space-around;
+  font-family: sans-serif;
+  text-align: center;
+  margin : 5% auto;
+  width: 800px;
+  background-color: rgba(0,27,45,0.8);
+  padding : 40px;
+  border-radius: 80px;
+	
+   
+			
+}
+
+.time {
+  font-size: 32px;
+  color: white;
+}

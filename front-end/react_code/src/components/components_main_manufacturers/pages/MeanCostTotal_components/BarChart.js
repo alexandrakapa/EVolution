@@ -6,7 +6,7 @@ function BarGroup(props) {
     let barPadding = 2
     let barColour = '#006400'
     //let widthScale = d => d * 1000000
-    let widthScale = d => d  * 550 / props.maxval
+    let widthScale = d => d  * 300 / props.maxval
     console.log(props.maxval)
 
     let width = widthScale(props.d.EnergyCostPerKm)
@@ -59,8 +59,8 @@ function BarGroup(props) {
                                                     </g>)
 
       return (
-       <svg width="800" height={props.data.length*33} >
-        <g className="container">
+       <svg width="500px" height={props.data.length*33} >
+        <g >
           <text className="title" x="40" y="20">{props.title}</text>
           <g className="chart" transform="translate(100,50)">
             {barGroups}
@@ -71,3 +71,6 @@ function BarGroup(props) {
     }
 
 export default BarChart
+
+
+//<g classname="container"!!!!!!!!!!!!!!

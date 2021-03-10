@@ -5,18 +5,13 @@ export const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Mean energy cost per km for your car models',
-    path: '/main/mean_energy_cost_per_car',
+    title: 'Mean energy cost',
+    path: '/main/mean_energy_cost',
     cName: 'dropdown-link'
   },
   {
-    title: 'Mean energy cost per km statistics',
-    path: '/main/mean_energy_cost_statistics',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Energy consumption for your car models',
-    path: '/main/energy_consumption_per_car_model',
+    title: 'Energy consumption report',
+    path: '/main/energy_consumption_report',
     cName: 'dropdown-link'
   }
 ];

@@ -22,3 +22,14 @@ exports.getCarList = (req, res)=> {  //exports.nameOfTheMethod
         res.send(car)
     })
 }
+
+//get vehicle by owner
+exports.getvehiclebyowner = (req,res) => {
+    CarModel.getVehicleByOwner(req.params.username,(err, vehicle)=>{
+        if(err)
+        res.send(err);
+        console.log('Vehicle data about owner',vehicle);
+        res.send(vehicle);
+        return;
+    });
+}

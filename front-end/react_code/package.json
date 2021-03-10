@@ -12,9 +12,11 @@
     "canvasjs": "^1.8.3",
     "chart.js": "^2.9.4",
     "framer-motion": "^3.7.0",
+    "jwt-decode": "^3.1.2",
     "mui-datatables": "^3.7.6",
     "node-fetch": "^2.6.1",
     "react": "^17.0.1",
+    "react-countdown-circle-timer": "^2.5.0",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.15.4",
     "react-loadingg": "^1.7.2",
@@ -50,5 +52,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

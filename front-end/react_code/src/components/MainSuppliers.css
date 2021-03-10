@@ -19,7 +19,7 @@ code {
 
 .home,
 .profile,
-.contact-us,
+.contact-us1,
 .energy_consumption,
 .energy_consumption_per_district,
 .energy_consumption_per_station,
@@ -60,7 +60,7 @@ code {
   font-size: 100px;
 }
 
-.contact-us {
+.contact-us1 {
   background-image: url('https://wallpaperaccess.com/full/3124512.jpg');
   background-position: center;
   background-attachment: fixed;

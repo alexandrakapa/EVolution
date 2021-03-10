@@ -36,4 +36,19 @@ Car.getVehicleByID = (vehicleID,result) => {
   });
 }
 
+
+
+Car.getVehicleByOwner = (username,result) => {
+  dbConn.query('SELECT * FROM Car WHERE Car_Ownerusername = ?' ,username, (err, res)=>{
+      if(err){
+          console.log('Error while fetching vehicle by owner', err);
+          result(null,err);
+      }else{
+          result(null,res);
+      }
+  });
+}
+
+module.exports = Car;
+
 module.exports = Car;
