@@ -1,15 +1,3 @@
-/* body {
-  background-image: url('green.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +5,7 @@ code {
   font-family: 'PT Sans', sans-serif;
 }
 
-.home,
+.homesup,
 .profile,
 .contact-us1,
 .energy_consumption,
@@ -31,7 +19,7 @@ code {
   font-size: 3rem;
 }
 
-.home {
+.homesup{
   background-image: url('https://www.centrica.com/Story/Putting-Electricity-In-The-Driving-Seat/assets/avADhukYei/ev-header-thumbnail-1920x1080.png');
   background-position: center;
   background-attachment: fixed;

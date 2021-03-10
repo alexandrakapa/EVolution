@@ -80,9 +80,9 @@ function Form(props) {
    <form onSubmit={handleSubmit(({money,payment,car}) => {
     if (selectedStationID && selectedPoint){
         console.log(car.ID, money, payment.value, selectedStationID, selectedPoint)
-        //props.history.push('/main/charging_in_progress');
+        //props.history.push('/mainown/charging_in_progress');
           props.history.push({
-          pathname: '/main/charging_in_progress',
+          pathname: '/mainown/charging_in_progress',
           state: { carID : car.ID, money : money, paymentWay : payment.value, stationID : selectedStationID, pointName : selectedPoint }
           })
     }

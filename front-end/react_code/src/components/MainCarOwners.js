@@ -20,17 +20,17 @@ function MainCarOwners() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/main' exact component={Home} />
-        <Route path='/main/services' component={Services} />
-        <Route path='/main/profile' component={Profile} />
-        <Route path='/main/contact_us' component={ContactUs} />
+        <Route path='/mainown' exact component={Home} />
+        <Route path='/mainown/services' component={Services} />
+        <Route path='/mainown/profile' component={Profile} />
+        <Route path='/mainown/contact_us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
-        <Route path='/main/charging_sessions' component={ChargingSessions} />
-        <Route path='/main/map' component={Map} />
-        <Route path='/main/charging' component={ChargeNow} />
-        <Route path='/main/founders' component={Founders} />
-        <Route path='/main/charging_in_progress' component={ChargeInProgress} />
-        <Route path='/main/charging_done' component={ChargeDone} />
+        <Route path='/mainown/charging_sessions' component={ChargingSessions} />
+        <Route path='/mainown/map' component={Map} />
+        <Route path='/mainown/charging' component={ChargeNow} />
+        <Route path='/mainown/founders' component={Founders} />
+        <Route path='/mainown/charging_in_progress' component={ChargeInProgress} />
+        <Route path='/mainown/charging_done' component={ChargeDone} />
       </Switch>
     </Router>
   );

@@ -18,16 +18,16 @@ function MainSuppliers() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/main' exact component={Home} />
-        <Route path='/main/services' component={Services} />
-        <Route path='/main/profile' component={Profile} />
-        <Route path='/main/contact_us' component={ContactUs} />
+        <Route path='/mainsup' exact component={Home} />
+        <Route path='/mainsup/services' component={Services} />
+        <Route path='/mainsup/profile' component={Profile} />
+        <Route path='/mainsup/contact_us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
-        <Route path='/main/energy_demand_forecasts' component={EnergyDemand} />
-        <Route path='/main/energy_consumption_per_district' component={EnergyConsPerDistrict} />
-        <Route path='/main/energy_consumption_per_station' component={EnergyConsPerStation} />
-        <Route path='/main/energy_consumption' component={EnergyCons} />
-        <Route path='/main/founders' component={Founders} />
+        <Route path='/mainsup/energy_demand_forecasts' component={EnergyDemand} />
+        <Route path='/mainsup/energy_consumption_per_district' component={EnergyConsPerDistrict} />
+        <Route path='/mainsup/energy_consumption_per_station' component={EnergyConsPerStation} />
+        <Route path='/mainsup/energy_consumption' component={EnergyCons} />
+        <Route path='/mainsup/founders' component={Founders} />
       </Switch>
     </Router>
   );

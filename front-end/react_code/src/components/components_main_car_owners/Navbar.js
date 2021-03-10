@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <Link to='/main' className='navbar-logo' onClick={closeMobileMenu}>
+        <Link to='/mainown' className='navbar-logo' onClick={closeMobileMenu}>
           EVolution
           <i class='fab fa-firstdraft' />
         </Link>
@@ -54,7 +54,7 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/mainown' className='nav-links' onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
@@ -64,7 +64,7 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/main/services'
+              to='/mainown/services'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -74,7 +74,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/main/profile'
+              to='/mainown/profile'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -83,14 +83,14 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/main/contact_us'
+              to='/mainown/contact_us'
               className='nav-links'
               onClick={closeMobileMenu}
             >
               Contact Us
             </Link>
           </li>
-          
+
           <li>
             <Link
               to='/'

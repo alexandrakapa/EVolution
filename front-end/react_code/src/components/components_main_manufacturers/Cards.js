@@ -22,19 +22,19 @@ function Cards() {
               src="https://cdn.motor1.com/images/mgl/NAQXn/s1/electric-car-charging-at-station-with-wind-turbines-in-background.jpg"
               text='Charging sessions'
               label='Report'
-              path='/main/charging_sessions'
+              path='/mainman/charging_sessions'
             />
             <CardItem
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_PZio4jXrJxQp1IjgMSja2g4raGeK-X7P-Q&usqp=CAU"
               text='Mean energy cost'
               label='Reports and statisitcs'
-              path='/main/mean_energy_cost'
+              path='/mainman/mean_energy_cost'
             />
              <CardItem
               src="https://www.smarthomecharge.co.uk/site/assets/files/1374/matthew-henry-yetqklnhsui-unsplash.500x350.jpg"
               text='Energy Consumption'
               label='Report and statisitcs'
-              path='/main/energy_consumption_report'
+              path='/mainman/energy_consumption_report'
             />
           </ul>
         </div>

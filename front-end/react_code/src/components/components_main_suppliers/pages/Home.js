@@ -12,7 +12,7 @@ color: 'white'
 };
 return ( <div>
               <h1
-                className='home'>
+                className='homesup'>
               </h1>
               <h1 style={textStyle}>Welcome {localStorage.username}</h1>
               <Footer />

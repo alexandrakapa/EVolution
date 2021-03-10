@@ -16,7 +16,7 @@ function ChargeInProgress(props){
 
 			<div>
 				<h1>Hello</h1>
-				
+
 				<button onClick={()=>{       console.log(location.state)}}>Press</button>
 			</div>
 		)
@@ -76,7 +76,7 @@ function ChargeInProgress(props){
 
 	useEffect(()=>{
 		if (location.state==undefined){
-			props.history.push('/main/charging')
+			props.history.push('/mainown/charging')
 		}
 	},[location])
 
@@ -87,7 +87,7 @@ function ChargeInProgress(props){
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
 
-  
+
   if (location.state!==undefined){
 		return(
 			<div className='chargeInProgress'>
@@ -112,7 +112,7 @@ function ChargeInProgress(props){
 				<Message/>
 
 			    <div className='timer'>
-			      
+
 			      <CountdownCircleTimer
 			        {...timerProps}
 			        colors={[["#218380"]]}
@@ -148,7 +148,7 @@ function ChargeInProgress(props){
 			        	 // alert("done!")
 			        	  //console.log(car.ID, money, payment.value, selectedStationID, selectedPoint)
 				          props.history.push({
-				          pathname: '/main/charging_done',
+				          pathname: '/mainown/charging_done',
 				          state: { carID : location.state.carID, money : location.state.money, paymentWay : location.state.paymentWay, stationID : location.state.stationID, pointName : location.state.pointName }
 				          })
 			        }}

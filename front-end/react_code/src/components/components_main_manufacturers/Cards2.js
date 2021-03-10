@@ -22,13 +22,13 @@ function Cards2() {
               src="https://i.pinimg.com/originals/bf/c1/44/bfc14452f8d36aa857593e1efe10782a.jpg"
               text='For your car models'
               label='Report'
-              path='/main/mean_energy_cost_per_car'
+              path='/mainman/mean_energy_cost_per_car'
             />
             <CardItem
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQw2KhemZLq38GIZAtjdmFYheKSd0WkUA8Rw&usqp=CAU"
               text='General statisitcs'
               label='Report and diagram'
-              path='/main/mean_energy_cost_statistics'
+              path='/mainman/mean_energy_cost_statistics'
             />
           </ul>
         </div>

@@ -32,7 +32,7 @@ function ChargeInProgress(props){
 	 useEffect( () => {
 
 	 	if (location.state==undefined){
-			props.history.push('/main/charging')
+			props.history.push('/mainown/charging')
 		}
 		else{
 			setIsLoading(true)

@@ -1,16 +1,26 @@
 {
   "name": "rest_api",
   "version": "1.0.0",
-  "description": "2d endpoint together with alexandra's. Not ready yet. Error handling misssing, plus one of the list elements missing.",
+  "description": "A rest API with NodeJS that is connected with MySql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrakapa/Softeng_team_38.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandrakapa/Softeng_team_38/issues"
+  },
+  "homepage": "https://github.com/alexandrakapa/Softeng_team_38#readme",
   "dependencies": {
     "async": "^3.2.0",
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

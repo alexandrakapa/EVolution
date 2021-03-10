@@ -4,7 +4,7 @@ import Cards3 from '../components_main_suppliers/Cards3';
 
 export default function Services() {
 
-  return ( <div>
+  return ( <div className='founders'>
                 <Cards3 />
             </div>);
 }

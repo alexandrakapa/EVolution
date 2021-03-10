@@ -1,14 +1,4 @@
-// import React from 'react';
-// import './Button.css';
-// import { Link } from 'react-router-dom';
-//
-// export function Button() {
-//   return (
-//     <Link to='/sign_in'>
-//       <button className='btn'>Sign Out</button>
-//     </Link>
-//   );
-// }
+
 
 import React from 'react';
 import './Button.css';
@@ -34,7 +24,7 @@ export const Button = ({
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
   const checkindex=INDEX.includes(index)? index: INDEX[1];
-  
+
   if(checkindex=='0'){
   return (
     <Link to='/sign_in' className='btn-mobile'>

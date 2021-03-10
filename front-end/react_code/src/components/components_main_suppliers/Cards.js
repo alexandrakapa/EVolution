@@ -17,13 +17,13 @@ function Cards() {
               src="https://console.kr-asia.com/wp-content/uploads/2020/11/%E5%9B%BE%E8%99%AB%E5%88%9B%E6%84%8F-902720890664648719-scaled.jpeg"
               text='Energy Demand Forecast'
               label='Statisitcs'
-              path='/main/energy_demand_forecasts'
+              path='/mainsup/energy_demand_forecasts'
             />
             <CardItem
               src="https://console.kr-asia.com/wp-content/uploads/2019/06/Electric-Vehicles-Shutterstock-M-Size-2-1175x500.jpg"
               text='Energy Consumption'
               label='Data'
-              path='/main/energy_consumption'
+              path='/mainsup/energy_consumption'
             />
           </ul>
         </div>

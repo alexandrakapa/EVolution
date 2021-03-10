@@ -19,17 +19,17 @@ function MainManufacturers() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/main' exact component={Home} />
-        <Route path='/main/services' component={Services} />
-        <Route path='/main/profile' component={Profile} />
-        <Route path='/main/contact_us' component={ContactUs} />
+        <Route path='/mainman' exact component={Home} />
+        <Route path='/mainman/services' component={Services} />
+        <Route path='/mainman/profile' component={Profile} />
+        <Route path='/mainman/contact_us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
-        <Route path='/main/charging_sessions' component={ChargingSessions} />
-        <Route path='/main/mean_energy_cost_per_car' component={MeanCostPerCar} />
-        <Route path='/main/mean_energy_cost_statistics' component={MeanCostTotal} />
-        <Route path='/main/energy_consumption_report' component={EnergyConsumption} />
-        <Route path='/main/mean_energy_cost' component={MeanEnergyCost} />
-        <Route path='/main/founders' component={Founders} />
+        <Route path='/mainman/charging_sessions' component={ChargingSessions} />
+        <Route path='/mainman/mean_energy_cost_per_car' component={MeanCostPerCar} />
+        <Route path='/mainman/mean_energy_cost_statistics' component={MeanCostTotal} />
+        <Route path='/mainman/energy_consumption_report' component={EnergyConsumption} />
+        <Route path='/mainman/mean_energy_cost' component={MeanEnergyCost} />
+        <Route path='/mainman/founders' component={Founders} />
       </Switch>
     </Router>
   );
