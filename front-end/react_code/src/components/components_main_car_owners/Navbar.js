@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 // transfers sessionStorage from one tab to another
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -23,9 +24,27 @@ function Navbar() {
        headers:{'Content-type':'application/json','x-access-token':tok}
      }).then(function(response){
       console.log("HERE: "+response.status);
+      localStorage.clear();
+      window.location.href = "http://localhost:3000";
      })
        .catch(err => console.log(err));
   };
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener('resize', showButton);
+
+
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -90,17 +109,8 @@ function Navbar() {
               Contact Us
             </Link>
           </li>
-
-          <li>
-            <Link
-              to='/'
-              className='nav-links'
-              onClick={logMeOut}
-            >
-              Sign Out
-            </Link>
-          </li>
         </ul>
+        {button && <Button index='0'  onClick={logMeOut}>Sign Out</Button>}
       </nav>
     </>
   );

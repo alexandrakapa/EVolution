@@ -3,8 +3,9 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
+// transfers sessionStorage from one tab to another
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [button, setButton] = useState(true);
@@ -14,17 +15,21 @@ function Navbar() {
   const logMeOut = () => {
     console.log("here logging out");
     setClick(false);
-    localStorage.clear();
     const fetch = require('node-fetch');
+    const tok = localStorage.getItem('token');
+    console.log(tok);
 
     fetch('http://localhost:8765/evcharge/api/logout',{
        method: 'POST',
-       headers:{'Content-type':'application/json'}
+       headers:{'Content-type':'application/json','x-access-token':tok}
      }).then(function(response){
       console.log("HERE: "+response.status);
+      localStorage.clear();
+      window.location.href = "http://localhost:3000";
      })
        .catch(err => console.log(err));
   };
+
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -38,8 +43,6 @@ function Navbar() {
   }, []);
 
   window.addEventListener('resize', showButton);
-
-
 
 
   const onMouseEnter = () => {
@@ -106,17 +109,8 @@ function Navbar() {
               Contact Us
             </Link>
           </li>
-          <li>
-            <Link
-             to= "/"
-              className='nav-links-mobile'
-              onClick={logMeOut}
-            >
-              Signed Out
-            </Link>
-          </li>
         </ul>
-        {button && <Button index='0'>Sign Out</Button>}
+        {button && <Button index='0'  onClick={logMeOut}>Sign Out</Button>}
       </nav>
     </>
   );
