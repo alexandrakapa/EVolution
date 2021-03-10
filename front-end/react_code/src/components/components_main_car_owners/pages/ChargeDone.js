@@ -26,16 +26,16 @@ function ChargeInProgress(props){
 	const [data, setData] = useState()
 
 
-	useEffect(()=>{
-		if (location.state==undefined){
-			props.history.push('/main/charging')
-		}
-	},[location])
+
 
 
 	 useEffect( () => {
-   
-      setIsLoading(true)
+
+	 	if (location.state==undefined){
+			props.history.push('/main/charging')
+		} 
+		else{
+			setIsLoading(true)
     //  console.log(data, "hi")
 
       fetch(`http://localhost:8765/evcharge/api/charging/angrykoala333/${location.state.carID}`)
@@ -62,6 +62,9 @@ function ChargeInProgress(props){
           if (!shouldRender)
             setShouldRender(true)
             console.log(data)
+		}
+   
+      
     
   }, [location])
 
@@ -69,7 +72,7 @@ function ChargeInProgress(props){
 	if (location.state!==undefined){
 		return(
 
-			<div>
+			<div className='chargeDone'>
 
 				<video
 					autoPlay

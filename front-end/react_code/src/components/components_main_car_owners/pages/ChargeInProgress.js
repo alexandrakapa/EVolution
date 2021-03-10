@@ -90,7 +90,7 @@ function ChargeInProgress(props){
   
   if (location.state!==undefined){
 		return(
-			<div>
+			<div className='chargeInProgress'>
 				<video
 					autoPlay
 					loop

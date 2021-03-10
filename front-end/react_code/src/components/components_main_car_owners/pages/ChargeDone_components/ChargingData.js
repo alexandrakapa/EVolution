@@ -11,7 +11,7 @@ function ChargingData(props) {
 	const protocol=props.data.protocol;
 	const batteryBegin=props.data.battery_percent_begin;
 	const batteryEnd= props.data.battery_percent_end;
-	const price=props.data.charging_price<=props.money? props.data.charging_price : props.money;
+	const price=(props.money=='' || props.data.charging_price<=props.money)? props.data.charging_price : props.money;
 	const timeNow=new Date().getTime()/1000
 
 	var currentdate = new Date(); 
