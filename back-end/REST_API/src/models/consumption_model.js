@@ -23,6 +23,7 @@ var Consumer = function(user){
             res(err, null);
             return;
         }else{
+            console.log(res);
             res(null, result);
             return;
         }

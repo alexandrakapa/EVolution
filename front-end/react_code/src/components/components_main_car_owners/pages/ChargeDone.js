@@ -40,8 +40,9 @@ function ChargeInProgress(props){
 			setIsLoading(true)
 			const tok = localStorage.getItem('token');
     //  console.log(data, "hi")
+		console.log(localStorage.username);
 
-      fetch(`http://localhost:8765/evcharge/api/charging/angrybutterfly766/${location.state.carID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+      fetch(`http://localhost:8765/evcharge/api/charging/${localStorage.username}/${location.state.carID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
           .then(response => {
             if (response.ok){
               return response.json()

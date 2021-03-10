@@ -7,7 +7,6 @@ import Services from './components_main_car_owners/pages/Services';
 import Profile from './components_main_car_owners/pages/Profile';
 import ContactUs from './components_main_car_owners/ContactUs';
 import SignInPage from './SignInPage';
-import ChargingSessions from './components_main_car_owners/pages/ChargingSessionsPerManufacturer';
 import Founders from './components_main_car_owners/Founders';
 import Map from './components_main_car_owners/pages/Map';
 import ChargeNow from './components_main_car_owners/pages/ChargeNow';
@@ -43,7 +42,6 @@ function MainCarOwners(props) {
         <Route path='/mainown/profile' render={renderProtectedComponent(Profile)} />
         <Route path='/mainown/contact_us' render={renderProtectedComponent(ContactUs)} />
         <Route path='/sign_in' render={renderProtectedComponent(SignInPage)} />
-        <Route path='/mainown/charging_sessions' render={renderProtectedComponent(ChargingSessions)} />
         <Route path='/mainown/map' render={renderProtectedComponent(Map)} />
         <Route path='/mainown/charging' render={renderProtectedComponent(ChargeNow)} />
         <Route path='/mainown/founders' render={renderProtectedComponent(Founders)} />

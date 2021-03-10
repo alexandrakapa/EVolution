@@ -30,7 +30,7 @@ function EnergyConsumption(props) {
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
         var urlencoded = new URLSearchParams();
-        urlencoded.append("manufacturer", "BMW");
+        urlencoded.append("manufacturer",localStorage.company_name);
         urlencoded.append("start_date", startdate);
         urlencoded.append("end_date", enddate);
 
@@ -55,7 +55,7 @@ function EnergyConsumption(props) {
               setData(() => [])
               throw Error (response.statusText)
             }
-            
+
           })
           .then(fetchedData => {
               setData(() => fetchedData)
@@ -72,7 +72,7 @@ function EnergyConsumption(props) {
 
           })
           .catch(err => console.log(err))
-         
+
           setDidSubmit(false)
           if (!shouldRender)
             setShouldRender(true)

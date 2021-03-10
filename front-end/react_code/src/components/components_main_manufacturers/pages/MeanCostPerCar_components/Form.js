@@ -39,7 +39,7 @@ useEffect(() => {
          .then(fetchedData => {
              setManufacturerModels(()=>fetchedData)
 
-             
+
          })
          .then(()=>{
            var i
@@ -53,17 +53,20 @@ useEffect(() => {
 
          })
          .catch(err => console.log(err))
-      
 
-       
+
+
  }, [])
 */
 const getOptions = (inputValue) =>
 {
-   return fetch(`http://localhost:8765/evcharge/api/EnergyCost/GetModels/23`)
+  const tok = localStorage.getItem('token');
+   return fetch(`http://localhost:8765/evcharge/api/EnergyCost/GetModels/${localStorage.id}`,{
+     headers:{'Content-type':'application/json','x-access-token':tok}
+    })
    .then(response => response.json())
            //.catch(err => console.log(err))
-      
+
 }
 
  return (
@@ -73,12 +76,12 @@ const getOptions = (inputValue) =>
         props.setStartDate( newdate)
         props.setEndDate( newdate2)
         props.setModel(model.Model)
-        props.setDidSubmit(true) 
+        props.setDidSubmit(true)
         console.log(newdate, newdate2, model.Model)
    })}>
       <h1Top>Mean energy cost per km for your cars</h1Top>
      <h1>Select date and car model</h1>
-            
+
      <label>From</label>
      <input onChange={handleStartChange} name="startdate" type="date" ref={register({ required: true, validate: value => {
         if (finishedOn){
@@ -90,8 +93,8 @@ const getOptions = (inputValue) =>
      }})} />
         {errors.startdate && errors.startdate.type === "required" && <span className='error' >Field is required </span>}
         {errors.startdate && errors.startdate.type === "validate" && <span className='error' >Start date can't be bigger than end date </span>}
-    
-    
+
+
     <label>To</label>
      <input onChange={handleEndChange} name="enddate" type="date" ref={register({ required: true, validate: value => {
         if (startedOn){
@@ -103,12 +106,12 @@ const getOptions = (inputValue) =>
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End date can't be smaller than start date </span>}
-        
+
     <label>Car model</label>
 
      <Controller
      as={AsyncSelect}
-    
+
        cacheOptions
        defaultOptions
        getOptionLabel={e => e.Model}
@@ -120,7 +123,7 @@ const getOptions = (inputValue) =>
        isSearchable={false}
        control={control}
        rules={{ required: true }}
-    
+
     />
      {errors.model && <span className='error' >Field is required </span>}
      <button className='Button'>Show results</button>
@@ -133,7 +136,7 @@ export default Form
 
 /*
     <Controller
-      rules={{ required: true }} 
+      rules={{ required: true }}
       as={AsyncSelect}
       //cacheOptions
       //options={selectOptions}

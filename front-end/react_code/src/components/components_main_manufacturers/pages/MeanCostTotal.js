@@ -24,8 +24,10 @@ function MeanCostTotal(props) {
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
-
-      fetch(`http://localhost:8765/evcharge/api/EnergyCost/Total/${startdate}/${enddate}`)
+      const tok = localStorage.getItem('token');
+      fetch(`http://localhost:8765/evcharge/api/EnergyCost/Total/${startdate}/${enddate}`,{
+        headers:{'Content-type':'application/json','x-access-token':tok}
+      })
           .then(response => {
             if (response.ok){
               return response.json()

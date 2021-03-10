@@ -102,8 +102,8 @@ export const FormStyle = styled.div`
 
 export const selectStyle1 = {
 
-  control: (styles, {menuIsOpen, isFocused, isSelected}) => ({ 
-     ...styles, backgroundColor: 'white', 
+  control: (styles, {menuIsOpen, isFocused, isSelected}) => ({
+     ...styles, backgroundColor: 'white',
      '&:hover': { borderColor: 'blue' }, // border style on hover
      border: '1px solid blue', // default border color
      boxShadow: 'none', // no box-shadow
@@ -116,22 +116,22 @@ export const selectStyle1 = {
       ...styles,
      // height : '30px',
       fontSize : '15px',
-      backgroundColor: 
+      backgroundColor:
          isSelected
         ? data.color
         : isFocused
         ? color
         : null,
-      color: 
-        isSelected 
+      color:
+        isSelected
         ? 'rgba(44, 130, 201, 1)'
-        : 
+        :
         isFocused
         ? 'white'
         : 'black',
 
       cursor: isSelected ? 'not-allowed' : 'default',
-    
+
 
       ':active': {
         ...styles[':active'],
@@ -165,8 +165,8 @@ const dot = (color = '#ccc') => ({
 
 export const selectStyle2 = {
 
-  control: (styles, {menuIsOpen, isFocused, isSelected}) => ({ 
-     ...styles, backgroundColor: 'white', 
+  control: (styles, {menuIsOpen, isFocused, isSelected}) => ({
+     ...styles, backgroundColor: 'white',
      '&:hover': { borderColor: 'blue' }, // border style on hover
      border: '1px solid blue', // default border color
      boxShadow: 'none', // no box-shadow
@@ -179,22 +179,22 @@ export const selectStyle2 = {
       ...styles,
      // height : '30px',
       fontSize : '15px',
-      backgroundColor: 
+      backgroundColor:
          isSelected
         ? data.color
         : isFocused
         ? color
         : null,
-      color: 
-        isSelected 
+      color:
+        isSelected
         ? 'rgba(44, 130, 201, 1)'
-        : 
+        :
         isFocused
         ? 'white'
         : 'black',
 
       cursor: isSelected ? 'not-allowed' : 'default',
-    
+
 
       ':active': {
         ...styles[':active'],
@@ -207,10 +207,3 @@ export const selectStyle2 = {
   placeholder: styles => ({ ...styles, ...dot() }),
   singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
 };
-
-
-
-
-
-
-

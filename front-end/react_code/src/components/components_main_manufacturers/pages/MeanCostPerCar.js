@@ -8,14 +8,14 @@ import {columns} from './MeanCostPerCar_components/MeanCostPerCarTableColumns'
 import {BatteryLoading} from 'react-loadingg'
 import NoData from './NoData'
 
-function ChargingSessions(props) {
+function MeanCostPerCar(props) {
 
   const [startdate, setStartDate] = useState([])
   const [enddate, setEndDate] = useState([])
   const [model, setModel] = useState([])
 
   const [options, setOptions]= useState([])
-  
+
 
   const [data, setData] = useState([])
   const [general, setGeneral] = useState([])
@@ -30,8 +30,11 @@ function ChargingSessions(props) {
     if (didSubmit){
       setIsLoading(true)
       console.log(model, startdate, enddate)
+      const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/23/${model}/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/${localStorage.id}/${model}/${startdate}/${enddate}`,{
+         headers:{'Content-type':'application/json','x-access-token':tok}
+      })
           .then(response => {
               if (response.ok){
                 return response.json()
@@ -84,8 +87,4 @@ function ChargingSessions(props) {
 
 }
 
-export default ChargingSessions;
-
-
-
-
+export default MeanCostPerCar;
