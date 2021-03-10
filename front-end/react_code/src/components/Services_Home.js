@@ -8,7 +8,7 @@ export default function Services() {
   return (
 <div>
     <NavbarHome />
-      <div  className='services'  >
+      <div  className='services12' >
           <CardsServices />
       </div>
 </div>);

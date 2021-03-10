@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../MainManufacturers.css';
+import '../../Background.css';
 
 export default function Profile() {
   var textStyle = {
@@ -11,7 +11,7 @@ export default function Profile() {
 };
   return ( <div>
                 <h1
-                  className='services'>
+                  className='services12'>
                 </h1>
                 <h1 style={textStyle}>Services</h1>
             </div>);

@@ -28,7 +28,7 @@ function Cards3() {
           <ul className='cards__items'>
             <CardItem2
               src="https://avatars.githubusercontent.com/u/45352904?s=400&u=cf815953b4cef9819e16deeabac8859690afbbff&v=4"
-              text='Nikos Giorgoulakis'
+              text='Nikolaos Giorgoulakis'
               path='https://github.com/nikosgio'
             />
             <CardItem2

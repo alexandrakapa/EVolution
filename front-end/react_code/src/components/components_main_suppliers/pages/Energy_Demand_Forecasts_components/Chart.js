@@ -97,18 +97,18 @@ export default function Charts(props) {
                     callback: function(value, index, values) {
                         return value + ' kWh' ;
                     },
-                  fontColor: "#CCC",
+                  fontColor: "black",
                 }
             }],
           xAxes:[{
             ticks:{
-              fontColor: "#CCC"
+              fontColor: "black"
             }
           }]
         },
         title: {
             display: true,
-            fontColor: "white",
+            fontColor: "black",
             fontSize: 30,
             text: 'Energy Demand at '+ end_date.PeriodTo
         },
@@ -127,7 +127,7 @@ export default function Charts(props) {
   });
   return (
     <div  style={{
-          background: 'rgba(0, 27, 45, 0.9)',
+          background: 'rgba(255,222,205,0.91848807882528)',
           padding: '.5rem',
           borderRadius: '5px'
         }} >
@@ -135,7 +135,8 @@ export default function Charts(props) {
         <p style= {{
           fontSize:'30px',
           fontStyle: 'italic',
-          textAlign: 'center'
+          textAlign: 'center',
+          color: 'black'
       }} > The average is {Math.round(avg*100)/100} kWh  </p>
     </div>
   );

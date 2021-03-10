@@ -4,8 +4,8 @@ export const FormStyle = styled.div`
  padding: 120px;
 
  h1 {
-   border-bottom: 1px solid white;
-   color: white;
+   border-bottom: 1px solid black;
+   color: black;
    font-family: sans-serif;
    font-size: 20px;
    font-weight: 600;
@@ -15,7 +15,7 @@ export const FormStyle = styled.div`
  }
 
  h1_new{
-   color: white;
+   color: black;
    font-family: sans-serif;
    font-size: 20px;
    font-weight: 600;
@@ -46,7 +46,7 @@ export const FormStyle = styled.div`
  }
 
  label {
-   color: white;
+   color: black;
    display: block;
    font-family: sans-serif;
    font-size: 15px;

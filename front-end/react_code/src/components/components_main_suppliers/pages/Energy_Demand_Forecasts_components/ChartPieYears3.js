@@ -52,7 +52,7 @@ export default function ChartsPieYear3(props) {
         },
           title: {
               display: true,
-              fontColor: "white",
+              fontColor: "black",
               fontSize: 25,
               text: 'Energy Demand at Period '+ start_date.PeriodFrom + '-' + end_date.PeriodTo
           },
@@ -79,7 +79,7 @@ export default function ChartsPieYear3(props) {
 
   return (
     <div  style={{
-          background: 'rgba(0, 27, 45, 0.9)',
+          background: 'rgba(255,222,205,0.91848807882528)',
           padding: '.5rem',
           borderRadius: '5px'
         }} >
@@ -87,31 +87,36 @@ export default function ChartsPieYear3(props) {
         <p style= {{
           fontSize:'30px',
           fontStyle: 'italic',
-          textAlign: 'center'
+          textAlign: 'center',
+          color: 'black'
       }} > The average Energy Demand is {Math.round(avg*100)/100} kWh  </p>
       <ul>
       { year1[1].TotalEnergyDelivered < year2[1].TotalEnergyDelivered ?
         <li style= {{
         fontSize:'20px',
         fontStyle: 'italic',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'black'
     }} > At 2018-2019 Energy Demand raised per {Math.round((-year1[1].TotalEnergyDelivered+year2[1].TotalEnergyDelivered)*100)/100 } kWh </li> :
     <li style= {{
             fontSize:'20px',
             fontStyle: 'italic',
-            textAlign: 'center'
+            textAlign: 'center',
+            color: 'black'
         }} > At 2018-2019 Energy Demand declined per {Math.round((year1[1].TotalEnergyDelivered-year2[1].TotalEnergyDelivered)*100)/100 } kWh </li>
   }
   { year2[1].TotalEnergyDelivered < year3[1].TotalEnergyDelivered ?
     <li style= {{
     fontSize:'20px',
     fontStyle: 'italic',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'black'
 }} > At 2019-2020 Energy Demand raised per {Math.round((-year2[1].TotalEnergyDelivered+year3[1].TotalEnergyDelivered)*100)/100 } kWh </li> :
 <li style= {{
         fontSize:'20px',
         fontStyle: 'italic',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'black'
     }} > At 2019-2020 Energy Demand declined per {Math.round((year2[1].TotalEnergyDelivered-year3[1].TotalEnergyDelivered)*100)/100 } kWh </li>
 }
 </ul>

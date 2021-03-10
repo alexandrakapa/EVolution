@@ -4,7 +4,7 @@ export const FormStyle = styled.div`
  padding: 120px;
 
  h1 {
-   border-bottom: 1px solid white;
+   border-bottom: 1px solid black;
    color: black;
    font-family: sans-serif;
    font-size: 20px;
@@ -72,9 +72,9 @@ export const FormStyle = styled.div`
    margin: 20px 0px;
  }
 
-   .Button {
-    background-color: #006400 ;
-    color: white;
+   .Button1 {
+    background-color: white ;
+    color: black;
     font-family: sans-serif;
     font-size: 14px;
     margin: 30px 60px;

@@ -148,7 +148,7 @@ function EnergyDemand(props) {
           ) : null}
 
       {general.length===0 && !isloading && shouldRender? (<div className='forms'>
-    <p className='h1_new'> No data available  </p>
+    <p className='h13_new'> No data available  </p>
 
        </div>) : null}
       <br />

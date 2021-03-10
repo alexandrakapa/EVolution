@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import './App.css';
 import NavbarHome from './NavbarHome';
+import "./Background.css"
 
 
 const AppContainer = styled.div`
@@ -109,6 +110,7 @@ function SignInPage(props){
   return (
   <div>
   <NavbarHome />
+  <div >
   <AppContainer  style= {{ marginTop:'10vh'}} >
     <BoxContainer>
       <TopContainer>
@@ -127,10 +129,9 @@ function SignInPage(props){
 
   < /BoxContainer>
   </AppContainer>
-
+</div>
   </div>
 )
 };
 
 export default SignInPage;
-// export { SignInForm };

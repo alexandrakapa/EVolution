@@ -69,7 +69,7 @@ function checkBig(){
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End date can't be smaller than start date </span>}
-     <button className='Button'>Show Results</button>
+     <button className='Button1'>Show Results</button>
    </form>
  );
 }

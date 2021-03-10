@@ -1,5 +1,5 @@
-.form2{
-  background: rgba(44,203,209,0.2690476874343487);
+.form23{
+  background: rgba(255,222,205,0.671848807882528);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -9,9 +9,9 @@
   padding: 30px 50px;
 }
 
-.h1{
-  border-bottom: 1px solid white;
-  color: white;
+.h12{
+  border-bottom: 1px solid black;
+  color: black;
   font-family: sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -22,8 +22,8 @@
 }
 
 
-.h1_new{
-    color: white;
+.h12_new{
+    color: black;
     font-family: sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -34,8 +34,8 @@
 }
 
 
-.label{
-   color: white;
+.label2{
+   color: black;
    display: block;
    font-family: sans-serif;
    font-size: 15px;
@@ -45,8 +45,8 @@
    margin-top: 5px
  }
 
- .label1{
-    color: white;
+ .label12{
+    color: black;
     display: block;
     font-family: sans-serif;
     font-size: 15px;

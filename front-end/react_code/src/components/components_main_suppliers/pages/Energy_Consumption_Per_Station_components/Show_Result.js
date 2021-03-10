@@ -12,20 +12,20 @@ const station_id= props.station_id;
 const result=props.result;
 console.log(check);
 if(check===0){
-  return ( <div className='form2'>
-<h1 className='h1'> Your results </h1>
-<label className='label'> Company name: {name.SupplierName} </label>
-<label className='label'> From: {start_date.PeriodFrom} </label>
-<label className='label'> To: {end_date.PeriodTo}</label>
-<label className='label'> Station Id: {station_id.Station} </label>
-<label className='label'> Station Name: {station_name.Station} </label>
-<label className='label1'> Total Energy Consumption: {result.TotalEnergyDelivered} kWh </label>
+  return ( <div className='form23'>
+<h1 className='h12'> Your results </h1>
+<label className='label2'> Company name: {name.SupplierName} </label>
+<label className='label2'> From: {start_date.PeriodFrom} </label>
+<label className='label2'> To: {end_date.PeriodTo}</label>
+<label className='label2'> Station Id: {station_id.Station} </label>
+<label className='label2'> Station Name: {station_name.Station} </label>
+<label className='label12'> Total Energy Consumption: {result.TotalEnergyDelivered} kWh </label>
    </div>);
 
 }
 else {
-  return ( <div className='form2'>
-<p className='h1_new'> No data available  </p>
+  return ( <div className='form23'>
+<p className='h12_new'> No data available  </p>
 
    </div>);
 }
