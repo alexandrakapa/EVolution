@@ -30,8 +30,10 @@ function EnergyConsPerStation(props) {
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
+      const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/SessionsPerProvider/PerStation/15/${station}/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/SessionsPerProvider/PerStation/${localStorage.id}/${station}/${startdate}/${enddate}`,{headers:{'Content-type':'application/json','x-access-token':tok}
+        })
           .then(response => response.json())
           .then(fetchedData => {
               setData(() => fetchedData[6])
@@ -68,7 +70,7 @@ function EnergyConsPerStation(props) {
       {typeof data ==='undefined' && !isloading && shouldRender? <ShowResult check={1} /> : null}
       <br />
       <br />
-      {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
+      {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '50px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
     </div>
 
   );

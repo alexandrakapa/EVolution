@@ -63,6 +63,9 @@ app.use('/evcharge/api/SessionsPerProvider', sessions_per_Provider_Routes);
 const resetSessions = require('./src/routes/resetsessions.route');
 app.use('/evcharge/api/admin', resetSessions);
 
+const station_addresses_suppliers_Routes=require('./src/routes/station_addresses_suppliers.route');
+app.use('/evcharge/api/StationAddressesPerSupplier', station_addresses_suppliers_Routes);
+
 
 const sessions_per_Provider_District= require('./src/routes/sessions_per_provider_per_district.route');
 app.use('/evcharge/api/SessionsPerProvider/PerDistrict', sessions_per_Provider_District);
@@ -83,7 +86,7 @@ app.use('/evcharge/api/SessionsPerEV', sessions_per_EV_Routes);
 
 const closestStationsRoutes = require('./src/routes/closestStation.route');
 app.use('/evcharge/api/ClosestStations', closestStationsRoutes);
-//nikos 
+//nikos
 
 const loginRoutes = require('./src/routes/login.route.js');
 app.use('/evcharge/api/login', loginRoutes);

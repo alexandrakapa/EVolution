@@ -1,36 +1,3 @@
-// import React from 'react';
-// import '../../MainSuppliers.css';
-//
-// export default function EnergyConsPerDistrict() {
-//   return <h1 className='energy_consumption_per_district'>LIKE & SUBSCRIBE</h1>;
-// }
-
-
-
-// import React from 'react';
-//
-// export default function ChargingSessions() {
-//   return (
-//     <>
-//       <h1 className='charging_sessions'>MARKETING</h1>
-//     </>
-//   );
-// }
-
-
-// <div>
-//
-//
-//             {general.map(data => <p>{data.SupplierName}</p>)}
-//             <p> Total Energy Delivered </p>
-//             <h2> {general.map(data => <div> {data.TotalEnergyDelivered}</div>)} </h2>
-// </div>
-
-
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import {FormStyle} from './Energy_Consumption_Per_District_components/FormStyling'
 import Form from './Energy_Consumption_Per_District_components/Form';
@@ -63,8 +30,10 @@ function EnergyConsPerDistrict(props) {
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
+      const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/SessionsPerProvider/PerDistrict/3/${region}/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/SessionsPerProvider/PerDistrict/${localStorage.id}/${region}/${startdate}/${enddate}`,{headers:{'Content-type':'application/json','x-access-token':tok}
+      })
           .then(response => response.json())
           .then(fetchedData => {
               setData(() => fetchedData[5])
@@ -101,7 +70,7 @@ function EnergyConsPerDistrict(props) {
       {typeof data ==='undefined' && !isloading && shouldRender? <ShowResult check={1} /> : null}
       <br />
       <br />
-      {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
+      {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '50px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
     </div>
 
   );

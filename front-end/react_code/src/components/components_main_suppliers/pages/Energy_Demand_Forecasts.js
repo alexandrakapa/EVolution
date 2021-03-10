@@ -34,8 +34,9 @@ function EnergyDemand(props) {
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
+      const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/EnergyDemandForecast/11/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/EnergyDemandForecast/${localStorage.id}/${startdate}/${enddate}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
           .then(response => response.json())
           .then(fetchedData => {
               if(startdate==enddate|| enddate==2018 || startdate==2020){

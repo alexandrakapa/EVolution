@@ -45,7 +45,6 @@ function Form(props) {
    return fetch(`http://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
            //.catch(err => console.log(err))
-
 }
 
   const getOptions2 = (inputValue) =>

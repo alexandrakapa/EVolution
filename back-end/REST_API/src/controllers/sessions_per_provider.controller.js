@@ -42,7 +42,7 @@
 
     const ID = req.params.providerID;
     //check if provider ID length is valid based on our database's corresponding attribute's type
-    if (ID.length > 255+255) {
+    if (ID.length > 255) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Invalid Provider ID');
         return;

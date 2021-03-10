@@ -37,7 +37,7 @@ function checkBig(){
         //console.log(newdate)
    })}>
     <h1_new> Energy Demand Forecast </h1_new>
-     <h1>Select Date</h1>
+     <h1>Select Year</h1>
      <label>From</label>
      <input onChange={handleStartChange} name="startdate" type="number" ref={register({ required: true, validate: value => {
         if (finishedOn){
