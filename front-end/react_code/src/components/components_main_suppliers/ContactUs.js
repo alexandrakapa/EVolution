@@ -28,7 +28,7 @@ function ContactUs(props) {
   const [isloading, setIsLoading] = useState(false)
 
   return (
-    <div className='contact-us' >
+    <div className='contact-us1' >
       <FormStyle >
         <Form setfullname={setfullname} setemail={setemail}  setDidSubmit={setDidSubmit}/>
       </FormStyle>
