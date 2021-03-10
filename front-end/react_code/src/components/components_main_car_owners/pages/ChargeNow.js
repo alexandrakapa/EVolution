@@ -26,7 +26,7 @@ function ChargeNow(){
 		>
 			<source src={VideoCharge} type="video/mp4" />
 		</video>
-			<FormStyle>
+			<FormStyle style={{marginTop:'-3%'}}>
         		<Form setDidSubmit={setDidSubmit}/>
              </FormStyle>
 		</div>

@@ -33,12 +33,12 @@ function ChargeInProgress(props){
 
 	 	if (location.state==undefined){
 			props.history.push('/main/charging')
-		} 
+		}
 		else{
 			setIsLoading(true)
     //  console.log(data, "hi")
 
-      fetch(`http://localhost:8765/evcharge/api/charging/angrykoala333/${location.state.carID}`)
+      fetch(`http://localhost:8765/evcharge/api/charging/angrybutterfly766/${location.state.carID}`)
           .then(response => {
             if (response.ok){
               return response.json()
@@ -52,20 +52,20 @@ function ChargeInProgress(props){
           })
           .then(fetchedData => {
               setData(() => fetchedData[0])
-              
+
               setIsLoading(false)
 
           })
           .catch(err => console.log(err))
 
-          
+
           if (!shouldRender)
             setShouldRender(true)
             console.log(data)
 		}
-   
-      
-    
+
+
+
   }, [location])
 
 
@@ -91,23 +91,23 @@ function ChargeInProgress(props){
 				>
 					<source src={VideoCharge} type="video/mp4" />
 				</video>
-				<Message />
+				<Message   />
 
 				 {isloading? <BatteryLoading size={"large"} speed={1} color={'rgba(44, 200, 201, 1)'} style={{margingTop: '20px', borderColor: 'white', position: 'absolute', left: '50%', top:' 30%', transform: 'translate(-50%,-50%)'}} /> : null}
-	
+
 				 {typeof data !=='undefined'  &&  data.length!==0 && !isloading? (
 					<ChargingData check={0} data={data} paymentWay={location.state.paymentWay} money={location.state.money}/>
 			      ) : null}
 
       			{typeof data ==='undefined' && !isloading && shouldRender? <ChargingData check={1} /> : null}
 
-				
+
 
 				{location.state.paymentWay=='card_in_app' ?
 				<div className='container1'>
 				 {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button' onClick={()=>{props.history.push('/main')}}>Return to homepage</button> : null}
 				  {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button2'>Continue to payment</button> : null}
-				</div> 
+				</div>
 				: typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button_alone' onClick={()=>{props.history.push('/main')}}>Return to homepage</button> : null }
 			</div>
 		)

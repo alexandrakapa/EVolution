@@ -44,11 +44,11 @@ function Form(props) {
    return fetch(`http://localhost:8765/evcharge/api/StationAddresses`)
    .then(response => response.json())
            //.catch(err => console.log(err))
-      
+
 }
 
   const getOptions2 = (inputValue) =>
-{   
+{
   if (selectedStationID){
    return fetch(`http://localhost:8765/evcharge/api/StationPoints/${selectedStationID}`)
    .then(response => response.json())
@@ -63,15 +63,15 @@ function Form(props) {
     return(tmp)
    })
    }        //.catch(err => console.log(err))
-      
+
 }
 
   const getOptions_car = (inputValue) =>
 {
-   return fetch(`http://localhost:8765/evcharge/api/vehicle/ofOwner/angrykoala333`)
+   return fetch(`http://localhost:8765/evcharge/api/vehicle/ofOwner/angrybutterfly766`)
    .then(response => response.json())
            //.catch(err => console.log(err))
-      
+
 }
 
 
@@ -87,7 +87,7 @@ function Form(props) {
           })
     }
     else if (selectedStationID && !selectedPoint)
-        alert("Please select a charging position to continue!")  
+        alert("Please select a charging position to continue!")
     else{
       alert("Please select a charging station and position to continue!")
      } // props.setDidSubmit(true)
@@ -117,11 +117,11 @@ function Form(props) {
        control={control}
        rules={{ required: true }}
        defaultValue={false}
-      
-    
+
+
     />
      {errors.car && <span className='error' >Please select a car </span>}
-       
+
 
        <label>Select a charging station</label>
 
@@ -150,7 +150,7 @@ function Form(props) {
 
       <label>Select a charging postition</label>
 
-        
+
          <AsyncSelect
            noOptionsMessage={() => 'No available charging points.'}
            loadingMessage={() => 'Select a charging station to see charging points.'}
@@ -170,8 +170,8 @@ function Form(props) {
            onChange={
             handlePointChange
            }
-          
-      
+
+
     />
      {errors.positions && <span className='error' >Please select a charging station! </span>}
 
