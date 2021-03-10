@@ -24,10 +24,6 @@ app.get('/', (req, res)=>{
     res.send('Hello World');
 });
 
-// import user routes
-const loginRoutes = require('./src/routes/login.route.js');
-app.use('/login', loginRoutes);
-
 
 //alexandra
 const userRoutes = require('./src/routes/user.route');
@@ -87,7 +83,19 @@ app.use('/evcharge/api/SessionsPerEV', sessions_per_EV_Routes);
 
 const closestStationsRoutes = require('./src/routes/closestStation.route');
 app.use('/evcharge/api/ClosestStations', closestStationsRoutes);
+//nikos 
 
+const loginRoutes = require('./src/routes/login.route.js');
+app.use('/evcharge/api/login', loginRoutes);
+
+const logoutRoutes = require('./src/routes/logout.route.js');
+app.use('/evcharge/api/logout', logoutRoutes);
+
+const consumptionRoutes = require('./src/routes/consumption_route.js');
+app.use('/evcharge/api/report_consumption', consumptionRoutes);
+
+const uploadRoutes = require('./src/routes/upload_route.js');
+app.use('/evcharge/api/uploadcsv', uploadRoutes);
 // listen to the port
 app.listen(port, ()=>{
     console.log(`Express Server is running at port ${port}`);
