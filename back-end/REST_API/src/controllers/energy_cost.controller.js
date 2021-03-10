@@ -214,3 +214,29 @@ check_day = (y, m, d) => {
 	 
 	 
  };
+
+ exports.getModels=(req, res) => {
+
+
+        if (Object.keys(req.params).length!=1){
+        res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Empty Required Field');
+        return;
+    }
+    EnergyCostModel.getModels(req, (err, data) => {
+        if (err) {
+            res.send(err);
+            return;
+        }
+        else if (data.length){
+            res.send(data);
+            return;
+        }
+        else {
+            res.statusMessage='No data';
+            res.status(402).send('No Data.');
+            return;
+        }
+        
+    });
+}

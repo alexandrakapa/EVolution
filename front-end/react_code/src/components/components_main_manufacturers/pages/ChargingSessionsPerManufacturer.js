@@ -10,12 +10,12 @@
 
 
 import React, { useEffect, useState } from 'react';
-import Top from './ChargingSessions_components/Top';
 import {FormStyle} from './ChargingSessions_components/FormStyling'
 import Form from './ChargingSessions_components/Form';
 import  Muitable  from "./MuidataTable";
 import {columns} from './ChargingSessions_components/ChargingSessionsTableColumns'
 import {BatteryLoading} from 'react-loadingg'
+import NoData from './NoData'
 
 
 function ChargingSessions(props) {
@@ -45,7 +45,16 @@ function ChargingSessions(props) {
       setIsLoading(true)
 
       fetch(`http://localhost:8765/evcharge/api/SessionsPerManufacturer/3/${region}/${startdate}/${enddate}`)
-          .then(response => response.json())
+          .then(response => {
+            if (response.ok){
+              return response.json()
+            }
+            else {
+              setIsLoading(false)
+              setData(() => [])
+              throw Error (response.statusText)
+            }
+          })
           .then(fetchedData => {
               setData(() => fetchedData[6])
               let tmp=[]
@@ -70,11 +79,11 @@ function ChargingSessions(props) {
 
   return (
     <div >
-      <FormStyle className='chargingsessions' >
+      <FormStyle className='chargingSessions' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setRegion={setRegion} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <Muitable data={data} tableName={"Charging Sessions"} columns={columns} /> : null}
-      {data.length===0 && !isloading && shouldRender? <h2>No data</h2> : null}
+      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={"Charging Sessions"} columns={columns} /></div> : null}
+      {data.length===0 && !isloading && shouldRender? <NoData /> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}

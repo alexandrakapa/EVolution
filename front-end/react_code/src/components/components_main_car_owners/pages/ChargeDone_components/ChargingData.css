@@ -1,0 +1,125 @@
+.charging_results{
+    background:  rgba(0,27,45,0.9);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 30px 80px;
+}
+
+.title_res{
+    border-bottom: 3px solid rgba(44, 130, 201, 0.6);
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+
+.no_data{
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+
+.label_res{
+   color: white;
+   display: block;
+   font-family: sans-serif;
+   font-size: 15px;
+
+   font-weight: 500;
+
+   margin-top: 10px
+ }
+
+
+
+   .charging_button {
+    background-color: rgba(44, 130, 201, 1) ;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    text-align: center;
+    padding: 15px 32px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 40px;
+
+ 
+    
+   
+   
+    
+  }
+
+  .charging_button:hover{
+    background-color:rgba(44, 200, 201, 1) ;
+  }
+
+     .charging_button2 {
+    background-color: rgba(44, 130, 201, 1) ;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    text-align: center;
+    padding: 15px 32px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    
+    margin-top: 40px;
+    
+  }
+
+  .charging_button2:hover{
+    background-color:rgba(44, 200, 201, 1) ;
+  }
+
+
+  .container1{
+      text-align: center;
+  }
+
+
+      .charging_button_alone {
+    background-color: rgba(44, 130, 201, 1) ;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    text-align: center;
+    padding: 15px 32px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+
+    margin : 40px auto;
+    display: block;
+    
+  }
+
+  .charging_button_alone:hover{
+    background-color:rgba(44, 200, 201, 1) ;
+  }

@@ -139,21 +139,24 @@ cost.getMeanCost = async (req, result) => {
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	
-	dbConn.query(`SELECT C.ManName as ManufacturerName, C.Model as CarModel, SUM(T.kWh_delivered)/SUM(T.km_total) as EnergyCostPerKm, SUM(T.kWh_delivered) as EnergyDelivedInKWh, SUM(T.km_total) as TotalKm  FROM
+	dbConn.query(` SELECT A.ManufacturerName, SUM(A.EnergyDelivedInKWh)/SUM(A.TotalKm) as EnergyCostPerKm, SUM(A.EnergyDelivedInKWh) as EnergyDelivedInKWh, SUM(A.TotalKm) as TotalKm FROM (
+		SELECT C.ManName as ManufacturerName, C.Model as CarModel, SUM(T.kWh_delivered)/SUM(T.km_total) as EnergyCostPerKm, SUM(T.kWh_delivered) as EnergyDelivedInKWh, SUM(T.km_total) as TotalKm  FROM
 
-( SELECT Charging.CarID, Charging.km_total, Charging.kWh_delivered, Charging.ID as Charging_ID 
- from Charging 
-WHERE DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)) as T
+		( SELECT Charging.CarID, Charging.km_total, Charging.kWh_delivered, Charging.ID as Charging_ID 
+		 from Charging 
+		WHERE DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)) as T
 
-INNER JOIN
+		INNER JOIN
 
-( SELECT Car.Car_ManufacturerID as ManID, Car.model as Model, Car.ID as CarID , Car_Manufacturer.company_name as ManName
- FROM Car, Car_Manufacturer
- WHERE Car.Car_ManufacturerID=Car_Manufacturer.ID ) as C
- 
- ON T.CarID=C.CarID
- GROUP BY T.CarID
- ORDER BY EnergyCostPerKm, C.ManName, C.Model` , (err, res) =>
+		( SELECT Car.Car_ManufacturerID as ManID, Car.model as Model, Car.ID as CarID , Car_Manufacturer.company_name as ManName
+		 FROM Car, Car_Manufacturer
+		 WHERE Car.Car_ManufacturerID=Car_Manufacturer.ID ) as C
+		 
+		 ON T.CarID=C.CarID
+		 GROUP BY T.CarID
+		 ) as A
+		 GROUP BY A.ManufacturerName
+		 ORDER BY ManufacturerName` , (err, res) =>
 	
 	{
 
@@ -171,6 +174,7 @@ INNER JOIN
 		
 		arr.push({RequestTimestamp: parsedate()})
 		arr.push({PeriodFrom: periodfrom});
+		arr.push({PeriodTo: periodto});
 		//console.log(res)
 		arr.push(res);
 	    result(null,arr)
@@ -191,7 +195,43 @@ INNER JOIN
 
 
 
+cost.getModels = async (req, result) => {
+	
 
+	let ManufacturerID=(req.params.manufacturerID);
+	console.log('ManufacturerID ',ManufacturerID);
+	dbConn.query(`SELECT DISTINCT Car.model as Model
+					FROM Car
+					WHERE Car.Car_ManufacturerID=${ManufacturerID}` , (err, res) =>
+	
+	{
+
+	 //console.log(res);
+	 if (err) {
+	    console.log("error: ", err);
+	    result(err, null);
+	    return;
+	    }
+
+	 if (res.length) {
+
+	    console.log("Found models.");
+		result(null, res);
+
+	    return;
+	
+	    }
+
+	    // not found 
+	    console.log('No data for cars of this model for these dates.')
+
+	    result(null, res);
+	    return;
+	
+
+
+	});
+}
 
 //module.exports=Session;
 module.exports = cost;

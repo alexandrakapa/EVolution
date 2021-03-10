@@ -20,8 +20,8 @@ code {
 .home,
 .services,
 .profile,
-.contact-us,
-.consulting {
+.contact-us
+ {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -65,21 +65,38 @@ code {
   color: #fff;
   font-size: 100px;
 }
-.chargingsessions {
-  background-image: url('./images/img_2.jpg');
+
+.chargingSessions {
+  background-image: url('./images/img_13.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
 }
 
-.consulting {
-  background-image: url('./images/green.jpg');
+.meanCostPerCar {
+  background-image: url('./images/img_15.jpg');
   background-position: center;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
+
+}
+
+.meanCostTotal {
+  background-image: url('./images/img_10.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+
+}
+
+.energyConsumption {
+  background-image: url('./images/img_16.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+
 }

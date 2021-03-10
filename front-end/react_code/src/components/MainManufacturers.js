@@ -5,10 +5,14 @@ import Home from './components_main_manufacturers/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Services from './components_main_manufacturers/pages/Services';
 import Profile from './components_main_manufacturers/pages/Profile';
-import ContactUs from './components_main_manufacturers/pages/ContactUs';
+import ContactUs from './ContactUs';
 import SignInPage from './SignInPage';
 import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';
-import Consulting from './components_main_manufacturers/pages/Consulting';
+import MeanCostPerCar from './components_main_manufacturers/pages/MeanCostPerCar';
+import MeanCostTotal from './components_main_manufacturers/pages/MeanCostTotal';
+import EnergyConsumption from './components_main_manufacturers/pages/EnergyConsumption';
+import MeanEnergyCost from './components_main_manufacturers/pages/MeanEnergyCost'
+import Founders from './Founders';
 
 function MainManufacturers() {
   return (
@@ -18,10 +22,14 @@ function MainManufacturers() {
         <Route path='/main' exact component={Home} />
         <Route path='/main/services' component={Services} />
         <Route path='/main/profile' component={Profile} />
-        <Route path='/main/contact-us' component={ContactUs} />
+        <Route path='/main/contact_us' component={ContactUs} />
         <Route path='/sign_in' component={SignInPage} />
         <Route path='/main/charging_sessions' component={ChargingSessions} />
-        <Route path='/main/consulting' component={Consulting} />
+        <Route path='/main/mean_energy_cost_per_car' component={MeanCostPerCar} />
+        <Route path='/main/mean_energy_cost_statistics' component={MeanCostTotal} />
+        <Route path='/main/energy_consumption_report' component={EnergyConsumption} />
+        <Route path='/main/mean_energy_cost' component={MeanEnergyCost} />
+        <Route path='/main/founders' component={Founders} />
       </Switch>
     </Router>
   );
