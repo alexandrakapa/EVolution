@@ -12,7 +12,7 @@ function Dropdown2() {
     <>
       <ul
         onClick={handleClick}
-        className={click ? 'dropdown2-menu clicked' : 'dropdown2-menu'}
+        className={click ? 'dropdown21-menu clicked' : 'dropdown21-menu'}
       >
         {MenuItems2.map((item, index) => {
           console.log(index);

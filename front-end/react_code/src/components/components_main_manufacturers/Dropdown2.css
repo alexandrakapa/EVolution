@@ -1,28 +1,28 @@
-.dropdown2-menu {
+.dropdown21-menu {
   background: green;
   width: auto;
   position:absolute;
-  top:50%;
+  top:32.3%;
   list-style: none;
   text-align: start;
   left:100%;
   right:-60%;
 }
 
-.dropdown2-menu li {
+.dropdown21-menu li {
   background: #006400;
   cursor: pointer;
 }
 
-.dropdown2-menu li:hover {
+.dropdown21-menu li:hover {
   background: #32CD32 ;
 }
 
-.dropdown2-menu.clicked {
+.dropdown21-menu.clicked {
   display: none;
 }
 
-.dropdown2-link {
+.dropdown21-link {
   display: block;
   height: 100%;
   width: 100%;

@@ -12,7 +12,8 @@ import ContactUs from './ContactUs';
 import Founders from './Founders_Home';
 import Slider from './slides/slide_components/Slider';
 import images from './slides/images';
-import Services from './Services_Home'
+import Services from './Services_Home';
+
 
 
 

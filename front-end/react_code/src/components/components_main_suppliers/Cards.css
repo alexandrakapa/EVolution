@@ -29,6 +29,7 @@ h1 {
   flex: 1;
   margin: 0 1rem;
   border-radius: 10px;
+  background: white;
 }
 
 .cards__item__link {

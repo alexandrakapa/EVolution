@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import './App.css';
 import NavbarHome from './NavbarHome';
-import "./Background.css"
+import "./Body.css"
 
 
 const AppContainer = styled.div`

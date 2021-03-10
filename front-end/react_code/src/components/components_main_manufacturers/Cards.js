@@ -8,9 +8,9 @@ function Cards() {
       <h1 style= {{
               fontSize:'40px',
               textAlign: 'center',
-              color: 'black',
+              color: 'white',
               paddingBottom : '40px',
-              borderBottom: '5px solid rgba(200, 247, 197, 0.62)',
+              borderBottom: '3px solid white',
               width: '330px',
               height: '80px',
               margin: '0 auto'
