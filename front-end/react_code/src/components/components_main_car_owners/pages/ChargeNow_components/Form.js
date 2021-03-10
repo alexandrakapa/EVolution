@@ -41,7 +41,8 @@ function Form(props) {
 
   const getOptions = (inputValue) =>
 {
-   return fetch(`http://localhost:8765/evcharge/api/StationAddresses`)
+    const tok = localStorage.getItem('token');
+   return fetch(`http://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
            //.catch(err => console.log(err))
 
@@ -50,7 +51,8 @@ function Form(props) {
   const getOptions2 = (inputValue) =>
 {
   if (selectedStationID){
-   return fetch(`http://localhost:8765/evcharge/api/StationPoints/${selectedStationID}`)
+  const tok = localStorage.getItem('token');
+   return fetch(`http://localhost:8765/evcharge/api/StationPoints/${selectedStationID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
    .then(data=>{
     var i
@@ -68,7 +70,8 @@ function Form(props) {
 
   const getOptions_car = (inputValue) =>
 {
-   return fetch(`http://localhost:8765/evcharge/api/vehicle/ofOwner/angrybutterfly766`)
+    const tok = localStorage.getItem('token');
+   return fetch(`http://localhost:8765/evcharge/api/vehicle/ofOwner/angrybutterfly766`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
            //.catch(err => console.log(err))
 

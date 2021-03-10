@@ -5,6 +5,8 @@ import Message from './ChargeDone_components/Message'
 import {BatteryLoading} from 'react-loadingg'
 import ChargingData from './ChargeDone_components/ChargingData'
 import "./ChargeDone_components/ChargingData.css";
+import '../../MainCarOwners.css';
+
 
 
 function ChargeInProgress(props){
@@ -36,9 +38,10 @@ function ChargeInProgress(props){
 		}
 		else{
 			setIsLoading(true)
+			const tok = localStorage.getItem('token');
     //  console.log(data, "hi")
 
-      fetch(`http://localhost:8765/evcharge/api/charging/angrybutterfly766/${location.state.carID}`)
+      fetch(`http://localhost:8765/evcharge/api/charging/angrybutterfly766/${location.state.carID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
           .then(response => {
             if (response.ok){
               return response.json()
@@ -73,7 +76,6 @@ function ChargeInProgress(props){
 		return(
 
 			<div className='chargeDone'>
-
 				<video
 					autoPlay
 					loop
@@ -105,10 +107,10 @@ function ChargeInProgress(props){
 
 				{location.state.paymentWay=='card_in_app' ?
 				<div className='container1'>
-				 {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button' onClick={()=>{props.history.push('/main')}}>Return to homepage</button> : null}
+				 {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button' onClick={()=>{props.history.push('/mainown')}}>Return to homepage</button> : null}
 				  {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button2'>Continue to payment</button> : null}
 				</div>
-				: typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button_alone' onClick={()=>{props.history.push('/main')}}>Return to homepage</button> : null }
+				: typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button_alone' onClick={()=>{props.history.push('/mainown')}}>Return to homepage</button> : null }
 			</div>
 		)
 	}

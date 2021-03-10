@@ -43,8 +43,9 @@ function ChargingSessions(props) {
   useEffect( () => {
     if (didSubmit){
       setIsLoading(true)
+      const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/SessionsPerManufacturer/3/${region}/${startdate}/${enddate}`)
+      fetch(`http://localhost:8765/evcharge/api/SessionsPerManufacturer/3/${region}/${startdate}/${enddate}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
           .then(response => response.json())
           .then(fetchedData => {
               setData(() => fetchedData[6])

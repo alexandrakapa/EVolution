@@ -3,7 +3,11 @@ const router = express.Router();
 
 const sessionController = require('../controllers/sessions_per_provider_per_station.controller');
 
-router.get('/:supplierID/:station/:yyyymmdd_from/:yyyymmdd_to', sessionController.getSessions);
+// router.get('/:supplierID/:station/:yyyymmdd_from/:yyyymmdd_to', sessionController.getSessions);
 
+const middle_check = require('../authentication/auth.js');
+router.get('/:supplierID/:station/:yyyymmdd_from/:yyyymmdd_to',function(req, res){
+  middle_check.findByToken(req,res,sessionController.getSessions,0)
+});
 
 module.exports = router;
