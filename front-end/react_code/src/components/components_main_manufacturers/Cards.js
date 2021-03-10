@@ -25,7 +25,7 @@ function Cards() {
               path='/mainman/charging_sessions'
             />
             <CardItem
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_PZio4jXrJxQp1IjgMSja2g4raGeK-X7P-Q&usqp=CAU"
+              src="https://i.pinimg.com/originals/bf/c1/44/bfc14452f8d36aa857593e1efe10782a.jpg"
               text='Mean energy cost'
               label='Reports and statisitcs'
               path='/mainman/mean_energy_cost'

@@ -47,6 +47,7 @@ class SignIn extends Component {
          localStorage.setItem('token', json.accessToken);
          const username = jwt(json.accessToken).username;
          const category = jwt(json.accessToken).category;
+         localStorage.setItem('category',category);
          localStorage.setItem('username',username);
          const tok = localStorage.getItem('token');
           console.log(tok);
@@ -59,11 +60,15 @@ class SignIn extends Component {
           console.log(category);
           if(category == "Car_Manufacturer"){
             const id = jwt(json.accessToken).id;
+            const company_name =jwt(json.accessToken).company_name;
+            localStorage.setItem('company_name',company_name);
             localStorage.setItem('id',id);
             this.props.history.push('/mainman');
           }else if(category == "Energy_Supplier"){
             const id = jwt(json.accessToken).id;
+            const company_name =jwt(json.accessToken).company_name;
             localStorage.setItem('id',id);
+            localStorage.setItem('company_name',company_name);
             this.props.history.push('/mainsup');
           }else if(category == "Car_Owner"){
             this.props.history.push('/mainown');
@@ -98,7 +103,7 @@ class SignIn extends Component {
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          placeholder="Username"
         />
         <Input
           name="password"

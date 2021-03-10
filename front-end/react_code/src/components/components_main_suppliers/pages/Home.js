@@ -22,7 +22,7 @@ return ( <div>
                 className='homesup'>
               </h1>
               <h1 style={textStyle} >Welcome</h1>
-              <h1 style={textStyle2}>{localStorage.username}</h1>
+              <h1 style={textStyle2}>{localStorage.company_name}</h1>
 
               <Footer />
           </div>);

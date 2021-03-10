@@ -4,9 +4,7 @@ import Cards2 from '../Cards2';
 
 export default function Services() {
 
-  return ( <div style= {{
-marginTop:'10vh'
-}} >
+  return ( <div className='meanCostService' >
                 <Cards2 />
             </div>);
 }
