@@ -5,12 +5,21 @@
   font-family: 'PT Sans', sans-serif;
 }
 
-.homesup,
-.profile,
-.energy_consumption,
+.energy_demand_forecasts,
 .energy_consumption_per_district,
-.energy_consumption_per_station,
-.energy_demand_forecasts {
+.energy_consumption_per_station {
+  display: flex;
+  height: 90.7vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+
+
+
+.homesup,
+.profile {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -73,12 +82,15 @@
 
 .energy_consumption{
   background-image: url('https://console.kr-asia.com/wp-content/uploads/2019/06/Electric-Vehicles-Shutterstock-M-Size-2-1175x500.jpg');
-  background-position: center;
+  position:absolute;
+  top:80px;
+  left:0;
+  bottom:0px;
+  width:100%;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+  background-position: center;
 }
 
 
