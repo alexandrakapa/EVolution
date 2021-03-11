@@ -12,7 +12,7 @@ function Cards2() {
               paddingBottom : '40px',
               borderBottom: '5px solid rgba(200, 247, 197, 0.62)',
               width: '400px',
-              height: '130px',
+              height: '110px',
               margin: '0 auto'
           }} >Mean energy cost per km </h1>
       <div className='cards__container1'>

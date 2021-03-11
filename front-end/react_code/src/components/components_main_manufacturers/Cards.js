@@ -12,7 +12,7 @@ function Cards() {
               paddingBottom : '40px',
               borderBottom: '5px solid rgba(200, 247, 197, 0.62)',
               width: '330px',
-              height: '80px',
+              height: '70px',
               margin: '0 auto'
           }} >Our Services </h1>
       <div className='cards__container1'>

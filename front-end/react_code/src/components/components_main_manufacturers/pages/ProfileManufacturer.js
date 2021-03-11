@@ -27,15 +27,13 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
     <ProfStyle>
     <IconContext.Provider value={{color:"forestgreen", size : "3em"}}>
     <div class="ribbon">
-    {data.username}    <GoTools color="#f1f1f1" size="1em"/>
+    {data.company_name}    <GoTools color="#f1f1f1" size="1em"/>
 </div>
 
     <div class="row">
-    <div class="column">
+    <div class="column_1">
       <div class="card">
         <AiOutlineMail/><h2>Email</h2>
-        <br/>
-        <br/>
         <p>{data.email}</p>
         <br/>
         <br/>
@@ -43,11 +41,9 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
       </div>
     </div>
 
-    <div class="column">
+    <div class="column_3">
       <div class="card">
         <AiFillPhone/><h2>Phone number</h2>
-        <br/>
-        <br/>
         <p>{data.phone}</p>
         <br/>
         <br/>
@@ -60,8 +56,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   <div class="column_2">
     <div class="card">
       <IoMdBusiness/><h2>Company name</h2>
-      <br/>
-      <br/>
+
       <p>{data.company_name}</p>
       <br/>
       <br/>

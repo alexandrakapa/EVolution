@@ -34,8 +34,6 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
     <div class="column">
       <div class="card">
         <AiOutlineMail/><h2>Email</h2>
-        <br/>
-        <br/>
         <p>{data.email}</p>
         <br/>
         <br/>
@@ -46,8 +44,6 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
     <div class="column">
       <div class="card">
         <AiFillPhone/><h2>Phone number</h2>
-        <br/>
-        <br/>
         <p>{data.phone}</p>
         <br/>
         <br/>
@@ -60,8 +56,6 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   <div class="column_2">
     <div class="card">
       <IoMdBusiness/><h2>Company name</h2>
-      <br/>
-      <br/>
       <p>{data.company_name}</p>
       <br/>
       <br/>

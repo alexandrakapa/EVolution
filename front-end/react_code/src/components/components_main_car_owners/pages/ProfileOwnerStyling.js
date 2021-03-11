@@ -45,6 +45,7 @@ body {
   text-align: center;
   background-color: #f1f1f1;
   border-radius: 50px;
+  height: 175px;
 }
 .header {
   padding: 60px;
@@ -54,7 +55,7 @@ body {
   font-size: 30px;
 }
 .ribbon {
- font-size: 40px !important;
+ font-size: 30px !important;
  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
  width: fit-content;
  position: relative;
@@ -62,7 +63,7 @@ body {
  color: #fff;
  text-align: center;
  padding: 1em 2em; /* Adjust to suit */
- margin: 1em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+ margin: 1em auto 2em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 }
 .ribbon:before, .ribbon:after {
  content: "";
@@ -118,7 +119,7 @@ body {
  h2 {
    color: #3d3d3d;
    font-family: sans-serif;
-   font-size: 30px;
+   font-size: 21px;
    border-bottom: 1px solid rgba(0,27,45,0.8);
    line-height: 24px;
    padding: 10px;
