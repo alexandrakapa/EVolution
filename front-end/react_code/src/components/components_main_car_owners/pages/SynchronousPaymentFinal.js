@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
-import {PayStyle} from './Payment_components/PaymentFinalStyling'
+import {PayStyle} from './Payment_components/SynchronousPaymentStyling'
 import '../../MainCarOwners.css';
 import React, { useEffect, useState } from 'react';
 import { useLocation , useHistory} from "react-router-dom";
@@ -46,7 +46,6 @@ useEffect(()=>{
 <div className="speech-bubble"><h1>You have earned {earned} point(s)!</h1></div>
   <div className="speech-bubble_2"><h1>Your total number of points is {total} points!</h1></div>
     </PayStyle>
-
   );
 }
 

@@ -37,8 +37,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
     <div class="column">
       <div class="card">
         <AiOutlineMail/><h2>Email</h2>
-        <br/>
-        <br/>
+
         <p>{data.email}</p>
         <br/>
         <br/>
@@ -49,8 +48,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
     <div class="column">
       <div class="card">
         <AiFillPhone/><h2>Phone number</h2>
-        <br/>
-        <br/>
+
         <p>{data.phone_number}</p>
         <br/>
         <br/>
@@ -63,8 +61,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   <div class="column">
     <div class="card">
       <AiOutlineEuroCircle/><h2>Amount owed</h2>
-      <br/>
-      <br/>
+
       <p>{data.price_to_pay}€</p>
       <br/>
       <br/>
@@ -75,8 +72,6 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   <div class="column">
     <div class="card">
     <VscActivateBreakpoints/><h2>Points earned</h2>
-    <br/>
-    <br/>
     <p>{data.points}</p>
     <br/>
     <br/>
