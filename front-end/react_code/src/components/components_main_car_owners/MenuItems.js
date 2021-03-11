@@ -5,7 +5,7 @@ export const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Map',
+    title: 'Nearby Stations',
     path: '/mainown/map',
     cName: 'dropdown-link'
   },
