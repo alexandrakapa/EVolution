@@ -26,31 +26,23 @@ function EnergyConsumption(props) {
     if (didSubmit){
       setIsLoading(true)
 
-      var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      const tok = localStorage.getItem('token');
 
-        var urlencoded = new URLSearchParams();
-        urlencoded.append("manufacturer",localStorage.company_name);
-        urlencoded.append("start_date", startdate);
-        urlencoded.append("end_date", enddate);
+      fetch(`http://localhost:8765/evcharge/api/report_consumption/${localStorage.company_name}/${startdate}/${enddate}`,{
+         headers:{'Content-type':'application/json','x-access-token':tok}
+      })
 
-        var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
-        };
-
-        fetch("http://localhost:8765/report_consumption", requestOptions)
-        //.then(response => response.text())
+              //.then(response => response.text())
         //.then(result => console.log(result))
 
       //fetch(`http://localhost:8765/evcharge/api/EnergyCost/Total/${startdate}/${enddate}`)
           .then(response => {
             if (response.ok){
+              console.log('ok')
               return response.json()
             }
             else {
+              console.log("not ok")
               setIsLoading(false)
               setData(() => [])
               throw Error (response.statusText)

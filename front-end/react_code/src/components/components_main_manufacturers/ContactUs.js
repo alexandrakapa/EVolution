@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react';
 import {FormStyle} from '../Contact/FormStyling'
 import Form from '../Contact/Form';
 import {BatteryLoading} from 'react-loadingg'
-import '../MainSuppliers.css';
+import '../MainManufacturers.css';
 import "../Contact/Show_Result.css";
 
 
@@ -28,7 +28,7 @@ function ContactUs(props) {
   const [isloading, setIsLoading] = useState(false)
 
   return (
-    <div className='contact-us1' >
+    <div className='contact-us_man' >
       <FormStyle >
         <Form setfullname={setfullname} setemail={setemail}  setDidSubmit={setDidSubmit}/>
       </FormStyle>

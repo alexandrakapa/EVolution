@@ -15,7 +15,7 @@ function Cards3() {
               path='https://github.com/stamatisalex'
             />
             <CardItem2
-              src="https://www.w3schools.com/images/picture.jpg"
+              src="https://scontent.fath3-4.fna.fbcdn.net/v/t1.0-9/159653659_5370541429653478_8039614882833677267_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_ohc=fsFjtT7R-DsAX9GAr0I&_nc_ht=scontent.fath3-4.fna&oh=8557c4c202c38ae39215057cc647cd76&oe=606F4BC0"
               text='Polytimi Anna Gkotsi'
               path='https://github.com/PolyannaG'
             />
