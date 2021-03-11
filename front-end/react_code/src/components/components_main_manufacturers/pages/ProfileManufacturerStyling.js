@@ -6,7 +6,7 @@ export const ProfStyle = styled.div`
 }
 body {
   font-family: sans-serif;
-  
+
 }
 
 
@@ -41,7 +41,7 @@ body {
 }
 /* Style the counter cards */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,27,45,0.8);
+  box-shadow: 0 4px 8px 0 forestgreen;
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;
@@ -59,11 +59,11 @@ body {
  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
  width: fit-content;
  position: relative;
- background: #D7A790;
+ background: forestgreen;
  color: #fff;
  text-align: center;
  padding: 1em 2em; /* Adjust to suit */
- margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+ margin: 1em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 }
 .ribbon:before, .ribbon:after {
  content: "";
@@ -109,7 +109,7 @@ body {
    color: #3d3d3d;
    font-family: sans-serif;
    font-size: 30px;
-   border-bottom: 1px solid #A6826C;
+   border-bottom: 1px solid forestgreen;
    line-height: 24px;
    padding: 10px;
    text-align: center;

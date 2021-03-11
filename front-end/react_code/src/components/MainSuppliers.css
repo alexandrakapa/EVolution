@@ -39,13 +39,21 @@
   color: #fff;
   font-size: 100px;
 }
-.profile {
-  background-image: url('./images/green.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+
+.profile_sup {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/50631261e4b0e9530e2c53a7/1477015166314-2GSZPKN8MYAF2IMGAZS6/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcTSrQkGwCGRqSxozz07hWZrYGYYH8sg4qn8Lpf9k1pYMHPsat2_S1jaQY3SwdyaXg/Orange-Sky-Electrical-Poles-Silhouette.jpg?format=2500w');
+    position:absolute;
+    padding: 4rem;
+    top:80px;
+    left:0;
+    bottom:0px;
+    width:100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    font-size: 14px;
 }
 
 .contact-us1 {

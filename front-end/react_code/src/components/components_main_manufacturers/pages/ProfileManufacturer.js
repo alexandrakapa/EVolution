@@ -23,8 +23,9 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
 
 
   return (
+    <div className="profile_man">
     <ProfStyle>
-    <IconContext.Provider value={{color:"#D7A790", size : "3em"}}>
+    <IconContext.Provider value={{color:"forestgreen", size : "3em"}}>
     <div class="ribbon">
     {data.username}    <GoTools color="#f1f1f1" size="1em"/>
 </div>
@@ -71,6 +72,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   </div>
     </IconContext.Provider>
     </ProfStyle>
+    </div>
   );
 
 

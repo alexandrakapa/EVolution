@@ -23,8 +23,9 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
 
 
   return (
+    <div className="profile_sup">
     <ProfStyle>
-    <IconContext.Provider value={{color:"green", size : "3em"}}>
+    <IconContext.Provider value={{color:"#ce897b", size : "3em"}}>
     <div class="ribbon">
     {data.username}   <BsFillLightningFill color="#f1f1f1" size="1em"/>
 </div>
@@ -68,10 +69,10 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
     </div>
   </div>
 
-
   </div>
     </IconContext.Provider>
     </ProfStyle>
+    </div>
   );
 
 

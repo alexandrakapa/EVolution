@@ -37,13 +37,20 @@
   font-size: 100px;
 }
 
-.profile {
-  background-image: url('./images/green.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+.profile_man {
+  background-image: url('https://enkinisi.gr/wp-content/uploads/2021/03/E-2.jpg');
+    position:absolute;
+    padding: 4rem;
+    top:80px;
+    left:0;
+    bottom:0px;
+    width:100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    font-size: 14px;
 }
 
 .contact-us {

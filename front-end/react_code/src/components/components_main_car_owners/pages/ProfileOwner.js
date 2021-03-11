@@ -26,6 +26,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
 
 
   return (
+    <div className="profile_own">
     <ProfStyle>
     <IconContext.Provider value={{color:"rgba(0,27,45,0.9)", size : "3em"}}>
     <div class="ribbon">
@@ -61,7 +62,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   <div class="row">
   <div class="column">
     <div class="card">
-      <AiOutlineEuroCircle/><h2>Price to pay</h2>
+      <AiOutlineEuroCircle/><h2>Amount owed</h2>
       <br/>
       <br/>
       <p>{data.price_to_pay}€</p>
@@ -85,6 +86,7 @@ fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,
   </div>
     </IconContext.Provider>
     </ProfStyle>
+    </div>
   );
 
 
