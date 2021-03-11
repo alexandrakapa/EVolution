@@ -49,6 +49,8 @@ DROP DATABASE IF EXISTS Evolution;
     address_info varchar(255) not null,
     postalcode integer(10) not null,
     country varchar(255) not null,
+    longitude decimal(30,8) not null,
+    latitude decimal(30,8) not null,
     primary key (ID)
     );
 
