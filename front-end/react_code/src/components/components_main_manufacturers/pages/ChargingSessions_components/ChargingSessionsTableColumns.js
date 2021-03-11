@@ -25,7 +25,7 @@
         },
         {
           name: "UsableBatterySize",
-          label: "Usable Battery Size",
+          label: "Usable Battery Size (%)",
           options: {
             filter: true,
             sort: false,
@@ -57,7 +57,7 @@
         },
         {
             name: "EnergyDelivered",
-            label: "Energy Delivered",
+            label: "Energy Delivered (kWh)",
             options: {
               filter: true,
               sort: false,
@@ -65,7 +65,7 @@
          },
          {
             name: "BatteryPercentBegin",
-            label: "Battery Percent Begin",
+            label: "Battery Percent Begin (%)",
             options: {
               filter: true,
               sort: false,
@@ -73,7 +73,7 @@
          },
          {
             name: "BatteryPercentEnd",
-            label: "Battery Percent End",
+            label: "Battery Percent End (%)",
             options: {
               filter: true,
               sort: false,
