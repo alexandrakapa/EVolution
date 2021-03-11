@@ -1,22 +1,17 @@
 export const MenuItems = [
   {
-    title: 'ChargingSessionsPerManufacturer',
-    path: '/main/charging_sessions',
+    title: 'Charging sessions report',
+    path: '/mainman/charging_sessions',
     cName: 'dropdown-link'
   },
   {
-    title: 'Consulting',
-    path: '/main/consulting',
+    title: 'Mean energy cost',
+    path: '/mainman/mean_energy_cost',
     cName: 'dropdown-link'
   },
   {
-    title: 'Design',
-    path: '/main/design',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Development',
-    path: '/main/development',
+    title: 'Energy consumption report',
+    path: '/mainman/energy_consumption_report',
     cName: 'dropdown-link'
   }
 ];

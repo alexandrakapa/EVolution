@@ -1,22 +1,22 @@
 export const MenuItems = [
   {
-    title: 'ChargingSessionsPerManufacturer',
-    path: '/main/charging_sessions',
+    title: 'Charge Now',
+    path: '/mainown/charging',
     cName: 'dropdown-link'
   },
   {
-    title: 'Consulting',
-    path: '/main/consulting',
+    title: 'Map',
+    path: '/mainown/map',
     cName: 'dropdown-link'
   },
   {
     title: 'Design',
-    path: '/main/design',
+    path: '/mainown/design',
     cName: 'dropdown-link'
   },
   {
     title: 'Development',
-    path: '/main/development',
+    path: '/mainown/development',
     cName: 'dropdown-link'
   }
 ];

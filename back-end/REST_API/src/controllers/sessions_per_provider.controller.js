@@ -1,5 +1,6 @@
  const SessionModel=require('../models/sessions_per_provider.model');
 
+
  check_day = (y, m, d) => {
     const months30 = ['04', '06', '09', '11'];
     const months31 = ['01', '03', '05', '07', '08', '10', '12'];
@@ -7,7 +8,7 @@
     if (m == 2) {
         if (y % 4 == 0) {
             if (d > 29) {
-                return true;                
+                return true;
             }
         }
         else if (d > 28) {
@@ -38,12 +39,12 @@
         res.status(400).send('Bad Request : Empty Required Field');
         return;
   	}
-    
+
     const ID = req.params.providerID;
-    //check if point ID length is valid based on our database's corresponding attribute's type
-    if (isNaN(parseInt(ID))) {
+    //check if provider ID length is valid based on our database's corresponding attribute's type
+    if (ID.length > 255) {
         res.statusMessage = 'Bad Request';
-        res.status(400).send('Bad Request : Invalid provider ID');
+        res.status(400).send('Bad Request : Invalid Provider ID');
         return;
     }
 
@@ -74,7 +75,7 @@
     if (check_day(from_year, from_month, from_day) ) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Invalid Dates');
-        return;       
+        return;
     }
     if (check_day(to_year, to_month, to_day) ) {
         res.statusMessage = 'Bad Request';
@@ -115,12 +116,11 @@
 	 		else {
 	 			//console.log(res);
 	 			res.statusMessage='No data';
-	 			res.status(402).send('No Provider with this ID.');
+	 			res.status(402).send('No Charging Point with this ID.');
 	 			return;
 	 		}
-	 		
+
 	 	});
-	 
+
 
  };
-

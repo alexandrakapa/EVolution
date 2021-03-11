@@ -34,6 +34,18 @@ Charging.getChargingData = (chargingID,result) => {
   });
 }
 
+Charging.getChargingDataByOwner = (username,vehicleID,result) => {
+  dbConn.query('SELECT ID,kWh_delivered,protocol,battery_percent_begin,battery_percent_end, charging_price FROM Charging WHERE Car_Ownerusername = ? AND CarID = ? LIMIT 1' , [username,vehicleID], (err, res)=>{
+      if(err){
+          console.log('Error while fetching charging by owner and vehicle', err);
+          result(null,err);
+      }else{
+          result(null,res);
+      }
+  });
+}
+
+
 Charging.getChargingCost = (chargingID,result) => {
   dbConn.query('SELECT kWh_delivered*charging_price as total_cost FROM `Charging` WHERE ID = ?' , chargingID, (err, res)=>{
       if(err){

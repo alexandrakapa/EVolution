@@ -4,26 +4,37 @@ export const FormStyle = styled.div`
  padding: 20px;
 
  h1 {
-   border-bottom: 1px solid white;
-   color: #3d3d3d;
-   font-family: sans-serif;
-   font-size: 20px;
-   font-weight: 600;
-   line-height: 24px;
-   padding: 10px;
-   text-align: center;
- }
+  color: #1c1c1c;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px;
+  text-align: center;
+}
 
- form {
-   background: white;
-   border: 1px solid #dedede;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   margin: 0 auto;
-   max-width: 500px;
-   padding: 30px 50px;
- }
+h1Top {
+    border-bottom: 1.5px solid white;
+    color: #1c1c1c;
+    font-family: sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+}
+
+form {
+ background: rgba(200, 247, 197, 0.62);
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px 50px;
+}
 
  input {
    border: 1px solid #d9d9d9;
@@ -35,14 +46,14 @@ export const FormStyle = styled.div`
  }
 
  label {
-   color: #3d3d3d;
-   display: block;
-   font-family: sans-serif;
-   font-size: 14px;
-   font-weight: 500;
-   margin-bottom: 5px;
-   margin-top: 5px
- }
+  color: #1a1a1a;
+  display: block;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 10px
+}
 
  .error {
    color: red;
@@ -60,16 +71,33 @@ export const FormStyle = styled.div`
    margin: 20px 0px;
  }
 
-   .Button {
-    background-color: darkseagreen;
-    color: white;
-    font-family: sans-serif;
-    font-size: 14px;
-    margin: 20px 140px;
-    width: 200px;
-    height: 30px
+ .Button {
+  background-color: #006400;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 20px 25%;
+  width: 200px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
 
-   }
+ }
 
+ .Button1 {
+  background-color: #ffffff ;
+  color: black;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 30px 60px;
+  text-align: center;
+  padding: 15px 32px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+ }
 
 `

@@ -1,6 +1,6 @@
 .dropdown-menu {
   background: green;
-  width: 300px;
+  width: auto;
   position: absolute;
   top: 80px;
   list-style: none;

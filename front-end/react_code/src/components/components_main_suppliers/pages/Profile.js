@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../MainManufacturers.css';
+import '../../MainSuppliers.css';
 
 export default function Profile() {
   var textStyle = {

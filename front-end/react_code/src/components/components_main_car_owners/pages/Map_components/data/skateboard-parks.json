@@ -1,0 +1,1629 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 960,
+        "FACILITYID": 28014,
+        "NAME": "Station1",
+        "NAME_FR": "Planchodrome Bearbrook",
+        "ADDRESS": "Pacific View Mall 3295 E Main St Ventura CA",
+        "ADDRESS_FR": "8720, chemin Russell",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.2486047,34.268504]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1219,
+        "FACILITYID": 28001,
+        "NAME": "Bob MacQuarrie Skateboard Park (SK8 Extreme Park)",
+        "NAME_FR": "Planchodrome Bob-MacQuarrie (Parc SK8 Extreme)",
+        "ADDRESS": "HPE SAN JOSE 3000 Hanover St Palo Alto CA",
+        "ADDRESS_FR": "1490, promenade Youville",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community: mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Flat asphalt surface, 10 components, City run learn to skateboard programs, City run skateboard camps in summer",
+        "DESCRIPT_1": "Surface d'asphalte plane, 10 modules, programmes et camps de planche à roulettes en été géré par la Ville",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[-122.146383, 37.414745]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Walter Baker Skateboard Park",
+        "NAME_FR": "Planchodrome Walter-Baker",
+        "ADDRESS": "City of Pasadena - De Lacey Garage 45 De Lacey Ave Pasadena CA",
+        "ADDRESS_FR": "100, place Charlie Rogers",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community : mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Concrete bowl, 7,000 sq ft",
+        "DESCRIPT_1": "Bol de béton, 7 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.152328, 34.144978]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 9,
+        "FACILITYID": 28006,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "City of Santa Monica - Pier 200 Santa Monica Pier Santa Monica CA",
+        "ADDRESS_FR": "2785, chemin 8th Line",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor - Mobile",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Metcalfe Community Centre - Roving Skateboard Park Location",
+        "FACILITY_F": "Centre communautaire de Metcalfe - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.496006, 34.009922]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1160,
+        "FACILITYID": 28007,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "State Capitol Parking Garage 1303 10th St Sacramento CA",
+        "ADDRESS_FR": "10, ruelle Warner Colpitts",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "yes/oui",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Indoor - Summer",
+        "MODIFIED_D": "2018/03/07",
+        "CREATED_DA": null,
+        "FACILITY": "Johnny Leroux Stittsville Community Arena - Roving Skateboard Park Location",
+        "FACILITY_F": "Aréna communautaire de Stittsville Johnny-Leroux - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.494094, 38.57852]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1693,
+        "FACILITYID": 28016,
+        "NAME": "Legacy Skateboard Park",
+        "NAME_FR": "Planchodrome Legacy",
+        "ADDRESS": "Home Depot 2745 Teller Rd Newbury Park CA",
+        "ADDRESS_FR": "101, promenade Centrepointe",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, many street and vertical components, 17,000 sq ft",
+        "DESCRIPT_1": "Grand bol de béton, modules de rue et modules verticaux, 17 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.933978, 34.192844]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1717,
+        "FACILITYID": 28018,
+        "NAME": "Greenboro Skateboard Park",
+        "NAME_FR": "Planchodrome de Greenboro",
+        "ADDRESS": "California Air Resources Board 9530 Telstar Ave El Monte CAd",
+        "ADDRESS_FR": "3142, chemin Conroy",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.061284, 34.068714]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 137,
+        "FACILITYID": 28019,
+        "NAME": "Bridlewood Skateboard Park",
+        "NAME_FR": "Planchodrome Bridlewood",
+        "ADDRESS": "6Scripps Memorial Hospital 354 Santa Fe Dr Encinitas CA",
+        "ADDRESS_FR": "65, promenade Stonehaven",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.284132, 33.037019]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1133,
+        "FACILITYID": 28020,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "100 Clifford Campbell Street",
+        "ADDRESS_FR": "100, rue Clifford-Campbell",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Fitzroy Harbour Community Centre - Roving Skateboard Park Location",
+        "FACILITY_F": "Centre communautaire de Fitzroy Harbour - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.206087708136721, 45.470459866077654]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 657,
+        "FACILITYID": 28000,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "Helms Bakery Building 8800 Venice Blvd Los Angeles CA",
+        "ADDRESS_FR": "110, promenade Malvern",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Walter Baker Sports Centre - Roving Skateboard Park Location",
+        "FACILITY_F": "Centre sportif Walter-Baker - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.383919, 34.03009]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 653,
+        "FACILITYID": 28008,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "Van Nuys Amtrak/Metrolink Station 7724 Van Nuys Blvd Van Nuys CA",
+        "ADDRESS_FR": "5660, rue Osgoode Main",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor - Mobile",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Osgoode Community Centre - Roving Skateboard Park Location",
+        "FACILITY_F": "Centre communautaire d'Osgoode - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.4483, 34.211383]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 812,
+        "FACILITYID": 35050,
+        "NAME": "Charlie Bowins Skateboard Park",
+        "NAME_FR": "Planchodrome Charlie-Bowins",
+        "ADDRESS": "Universal City Hilton 333 Universal Terrace Pkwy Universal City CA",
+        "ADDRESS_FR": "435, avenue Bronson",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor (Commemoratively named Charlie Bowins Skateboard Park on June 10, 2015)",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": "2015/05/20",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Flat concrete surface, 10 plus components (large half pipe), City run learn to skateboard programs, City run skateboard camps in summer",
+        "DESCRIPT_1": "Surface de béton plane, 10 modules ou plus (grande demi-lune), programmes et camps de planche à roulettes en été géré par la Ville",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.358042, 34.136443]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2457,
+        "FACILITYID": 35637,
+        "NAME": "Diamond Jubilee Skateboard Park",
+        "NAME_FR": "Planchodrome Jubilé de Diamant",
+        "ADDRESS": "San Dimas Park & Ride 205 S San Dimas Ave San Dimas CA",
+        "ADDRESS_FR": "2810, promenade Findlay Creek",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/06/22",
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.807471, 34.105203]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 430,
+        "FACILITYID": 28005,
+        "NAME": "Blackburn Skateboard Park",
+        "NAME_FR": "Planchodrome Blackburn",
+        "ADDRESS": "Hyatt at Fisherman's Wharf 555 N Point St San Francisco CA ",
+        "ADDRESS_FR": "190, promenade Glen Park",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.416376, 37.80614]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 989,
+        "FACILITYID": 28017,
+        "NAME": "Goulbourn Skateboard Park",
+        "NAME_FR": "Planchodrome Goulbourn",
+        "ADDRESS": "LADWP - John Ferraro Building 111 N Hope St Los Angeles CA",
+        "ADDRESS_FR": "1500, chemin Shea",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 6 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 6 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.249464, 34.058743]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1334,
+        "FACILITYID": 28011,
+        "NAME": "Constance Bay Skateboard Park",
+        "NAME_FR": "Planchodrome Constance Bay",
+        "ADDRESS": "Costco 2200 E Willow St Signal Hill CA",
+        "ADDRESS_FR": "262, promenade Len-Purcell",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.165729, 33.804053]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 923,
+        "FACILITYID": 28013,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "City of Sacramento - City Hall Public Parking Garage 10th St & I St Sacramento CA",
+        "ADDRESS_FR": "334, chemin River",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Eccolands Park - Roving Skateboard Park Location",
+        "FACILITY_F": "Parc Eccolands - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.4921, 38.580649]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 762,
+        "FACILITYID": 28004,
+        "NAME": "Trillium Park Skateboard Park",
+        "NAME_FR": "Planchodrome de Park Trillium",
+        "ADDRESS": "Palace Hotel 2 New Montgomery St San Francisco CA",
+        "ADDRESS_FR": "2030, chemin Ogilvie",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat asphalt surface, 5 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.401902,37.788124]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 52,
+        "FACILITYID": 35120,
+        "NAME": "Lansdowne Skateboard Park",
+        "NAME_FR": "Planchodrome Lansdowne",
+        "ADDRESS": "Los Angeles County - Arboretum 301 N Baldwin Ave Arcadia CAy",
+        "ADDRESS_FR": "450, promenade Queen Elizabeth",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2015/09/23",
+        "FACILITY": "A series of skateboard ramps ideally suited to beginners.",
+        "FACILITY_F": "Une série de rampes adaptées parfaitement aux débutants.",
+        "DESCRIPTIO": "Flat asphalt surface",
+        "DESCRIPT_1": "Survace d'asphalte plane",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.053412, 34.142524]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2488,
+        "FACILITYID": 35815,
+        "NAME": "Greely Village Skateboard Park",
+        "NAME_FR": "Planchodrome Greely Village",
+        "ADDRESS": "LADWP - Ducommun Center 433 E Temple St Los Angeles CA",
+        "ADDRESS_FR": "7292, chemin Parkway",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/04",
+        "CREATED_DA": "2017/04/28",
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat concrete surface, 5 components",
+        "DESCRIPT_1": "Surface de béton plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.236151, 34.050677]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 330,
+        "FACILITYID": 28003,
+        "NAME": "Manotick Skateboard Park",
+        "NAME_FR": "Planchodrome Manotick",
+        "ADDRESS": "5572 Doctor Leach Drive",
+        "ADDRESS_FR": "5572, promenade Doctor-Leach",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "yes/oui",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor - Joined with basketball",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community: mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Flat asphalt surface, 8 components",
+        "DESCRIPT_1": "Surface d'asphalte plane, 8 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.491966, 34.172485]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 693,
+        "FACILITYID": 28010,
+        "NAME": "Roving Skateboard Park Location",
+        "NAME_FR": "Lieu de planchodrome itinérant",
+        "ADDRESS": "Soquel & Front Garage 601 Front St Santa Cruz CA",
+        "ADDRESS_FR": "1448, promenade Meadow",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor - Mobile",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Andy Shields Park - Roving Skateboard Park Location",
+        "FACILITY_F": "Parc Andy-Shields - Lieu de planchodrome itinérant",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.025145, 36.973652]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2544,
+        "FACILITYID": 35667,
+        "NAME": "Berrigan Skateboard Park",
+        "NAME_FR": "Planchodrome Berrigan",
+        "ADDRESS": "University of California - Davis Extension 1441 Research Park Dr Davis CA",
+        "ADDRESS_FR": "51, promenade Berrigan",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/02/27",
+        "CREATED_DA": "2016/06/27",
+        "FACILITY": "Community: mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Flat concrete surface, 10 plus components",
+        "DESCRIPT_1": "Surface de béton plane, 10 modules ou plus",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.732814, 38.538638]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2599,
+        "FACILITYID": 49251,
+        "NAME": "Eugène Martineau Skateboard Park",
+        "NAME_FR": "Planchodrome Eugène-Martineau",
+        "ADDRESS": "CITY OF SB EV2 1115 Anacapa St Santa Barbara CA",
+        "ADDRESS_FR": "710, chemin Mikinak",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/11/29",
+        "CREATED_DA": "2018/11/29",
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.702443, 34.423271]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2278,
+        "FACILITYID": 49211,
+        "NAME": "Vista Skateboard Park",
+        "NAME_FR": "Planchodrome Vista",
+        "ADDRESS": "Office Max - Home Depot 7075 Firestone Blvd Downey CA",
+        "ADDRESS_FR": "720, promenade Vistapark",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/11/29",
+        "CREATED_DA": "2018/06/22",
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Flat surface, 5 components",
+        "DESCRIPT_1": "Surface plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.156719, 33.948328]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "CITYOFSANTAROSA 100 Santa Rosa Ave Santa Rosa CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.711476, 38.438051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Southern California Edison - Rosemead Service Center 2131 Walnut Grove Ave Rosemead CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.082758, 34.052434]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Southern California Edison - Rosemead Office Building 1 2244 Walnut Grove Ave Rosemead CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.08081, 34.0539471]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Tops Auto Park Garage 6464 Sunset Blvd Hollywood CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.33284, 34.09868]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "CNTYOFRIVERSIDE 3535 12th Street Riverside CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.37496, 33.977519]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Costco 17550 Castleton St Industry CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.922227, 33.994014]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "California State University - Northridge 18111 Nordhoff St Northridge CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.527674, 34.241037]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Mark Hopkins InterContinental Hotel 999 California St San Francisco CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.410393, 37.791553]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Getty Center 1200 Getty Center Dr Los Angeles CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.474095, 34.078036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Los Angeles Convention Center 1201 S Figueroa St Los Angeles CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.269562, 34.040321]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Brea Downtown Parking 101 S Brea Blvd Brea CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.89943, 33.920088]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "DoubleTree Hotel - Los Angeles - Westside 6161 Centinela Ave Culver City CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.396144, 33.982485]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Arden Fair Mall 1689 Arden Way Sacramento CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.427609, 38.601165]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Ontario Airport Hilton 700 N Haven Ave Ontario CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.574714, 34.070519]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Hotel Sofitel 8555 Beverly Blvd Los Angeles CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.377523, 34.076318]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Sutter Galleria Mall - University of California - Davis Extension 2901 K St Sacramento CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.467938, 38.572732]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Lake Casitas Municipal Water District - Recreational Area Casitas Pass Rd & Baldwin Rd Oak View CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.299884, 34.402444]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Courtyard Marriott - Oxnard Ventura 600 E Esplanade Dr Oxnard CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.171308, 34.227993]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "San Luis Obispo County Air Pollution Control District 3433 Roberto Ct San Luis Obispo CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-129.644662, 35.25947]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Westfield MainPlace Mall 2800 N Main St Santa Ana CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.869856, 33.776587]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "City of Pasadena - El Molino Lot 100 N El Molino Ave Pasadena CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.136451, 34.147664]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "City of Santa Monica - Airport 3223 Donald Douglas Loop Santa Monica CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.447329, 34.017814]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Pasadena Hilton 150 S Los Robles Pasadena CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.14067, 34.142789]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "California State University - Northridge 18111 Nordhoff St Northridge CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.527674, 34.241037]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Hewlett Packard 19111 Pruneridge Ave Cupertino CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.008913, 37.332466]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "City of Lancaster - City Hall 44933 Fern Ave Lancaster CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.144928, 34.698522]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "California State University - Channel Islands 1 University Dr Camarillo CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.043463, 34.162056]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "Inland Empire Foods 5425 Wilson St Riverside CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.380326, 34.018452]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Innovation Skateboard Park",
+        "NAME_FR": "Planchomdrome Innovation",
+        "ADDRESS": "City of Pasadena - Schoolhouse Garage 33 E Green St Pasadena CA",
+        "ADDRESS_FR": "4101, promenade Innovation",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "yes/oui",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2017/07/11",
+        "CREATED_DA": "2016/02/08",
+        "FACILITY": "District: larger facility to service population of 100,000 plus",
+        "FACILITY_F": "De district : grande installation assurant des services à 100 000 résidents ou plus.",
+        "DESCRIPTIO": "Large concrete bowl, 10 plus components, many street and vertical components",
+        "DESCRIPT_1": "Grand bol de béton, 10 modules ou plus, modules de rue et modules verticaux",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.150312, 34.145182]
+      }
+    }
+  ]
+}

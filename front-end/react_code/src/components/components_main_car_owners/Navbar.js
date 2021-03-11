@@ -1,15 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
+// transfers sessionStorage from one tab to another
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const logMeOut = () => {
+    console.log("here logging out");
+    setClick(false);
+    const fetch = require('node-fetch');
+    const tok = localStorage.getItem('token');
+    console.log(tok);
+
+    fetch('http://localhost:8765/evcharge/api/logout',{
+       method: 'POST',
+       headers:{'Content-type':'application/json','x-access-token':tok}
+     }).then(function(response){
+      console.log("HERE: "+response.status);
+      localStorage.clear();
+      window.location.href = "http://localhost:3000";
+     })
+       .catch(err => console.log(err));
+  };
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener('resize', showButton);
+
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -30,7 +64,7 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <Link to='/main' className='navbar-logo' onClick={closeMobileMenu}>
+        <Link to='/mainown' className='navbar-logo' onClick={closeMobileMenu}>
           EVolution
           <i class='fab fa-firstdraft' />
         </Link>
@@ -39,7 +73,7 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/mainown' className='nav-links' onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
@@ -49,7 +83,7 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/main/services'
+              to='/mainown/services'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -59,7 +93,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/main/profile'
+              to='/mainown/profile'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -68,24 +102,15 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/main/contact-us'
+              to='/mainown/contact_us'
               className='nav-links'
               onClick={closeMobileMenu}
             >
               Contact Us
             </Link>
           </li>
-          <li>
-            <Link
-              to='/sign_in'
-              className='nav-links-mobile'
-              onClick={closeMobileMenu}
-            >
-              Sign Out
-            </Link>
-          </li>
         </ul>
-        <Button />
+        {button && <Button index='0'  onClick={logMeOut}>Sign Out</Button>}
       </nav>
     </>
   );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import jwt from 'jwt-decode'
 import { withRouter } from 'react-router-dom';
 import {
   BoxContainer,
@@ -8,6 +9,7 @@ import {
   SubmitButton,
 } from "./common";
 import { Marginer } from "./marginer/index.jsx";
+// transfers sessionStorage from one tab to another
 
 class SignIn extends Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class SignIn extends Component {
 
     const fetch = require('node-fetch');
 
-    fetch('http://localhost:8765/login',{
+    fetch('http://localhost:8765/evcharge/api/login',{
        method: 'POST',
        body: JSON.stringify(empInfo),
        headers:{'Content-type':'application/json'}
@@ -43,10 +45,34 @@ class SignIn extends Component {
        .then( json => {
         if(json.accessToken!=="" && json.isAuth !== false) {
          localStorage.setItem('token', json.accessToken);
-         localStorage.setItem('username',json.username);
-         console.log(json.accessToken, json.username);
+         const username = jwt(json.accessToken).username;
+         const category = jwt(json.accessToken).category;
+         localStorage.setItem('category',category);
+         localStorage.setItem('username',username);
+         const tok = localStorage.getItem('token');
+          console.log(tok);
+          const uname = localStorage.getItem('username');
+          console.log(uname);
+          console.log(Object.getOwnPropertyNames(localStorage) );
+
           this.props.setUserData(json.accessToken, json.username);
-          this.props.history.push('/main');
+
+          console.log(category);
+          if(category == "Car_Manufacturer"){
+            const id = jwt(json.accessToken).id;
+            const company_name =jwt(json.accessToken).company_name;
+            localStorage.setItem('company_name',company_name);
+            localStorage.setItem('id',id);
+            this.props.history.push('/mainman');
+          }else if(category == "Energy_Supplier"){
+            const id = jwt(json.accessToken).id;
+            const company_name =jwt(json.accessToken).company_name;
+            localStorage.setItem('id',id);
+            localStorage.setItem('company_name',company_name);
+            this.props.history.push('/mainsup');
+          }else if(category == "Car_Owner"){
+            this.props.history.push('/mainown');
+          }
       }
        else{
          alert("Non valid username or password");
@@ -77,7 +103,7 @@ class SignIn extends Component {
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          placeholder="Username"
         />
         <Input
           name="password"
@@ -87,7 +113,7 @@ class SignIn extends Component {
           placeholder="Password"
         />
 
-    <Marginer direction="vertical" margin={10} />
+    <Marginer direction="vertical" margin={20} />
     <MutedLink href="#">Forget your password?</MutedLink>
     <Marginer direction="vertical" margin="1.6em" />
     <SubmitButton type="submit">Sign in</SubmitButton>

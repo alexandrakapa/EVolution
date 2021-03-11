@@ -37,7 +37,8 @@ function checkBig(){
         props.setDidSubmit(true)
         //console.log(newdate)
    })}>
-     <h1>Select Date and Region</h1>
+      <h1Top>Your cars' charging sessions</h1Top>
+     <h1>Select date and region</h1>
      <label>Postal Code</label>
      <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />
         {errors.region && errors.region.type === "required" && <span className='error' >Field is required </span>}
@@ -66,7 +67,7 @@ function checkBig(){
      }})} />
         {errors.enddate && errors.enddate.type === "required" && <span className='error' >Field is required </span>}
         {errors.enddate && errors.enddate.type === "validate" && <span className='error' >End date can't be smaller than start date </span>}
-     <button className='Button'>Submit</button>
+     <button className='Button'>Show results</button>
    </form>
  );
 }
