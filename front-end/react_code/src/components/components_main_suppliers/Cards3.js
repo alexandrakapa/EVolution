@@ -4,11 +4,11 @@ import CardItem2 from './CardItem2';
 
 function Cards3() {
   return (
-    <div className='cards'>
+    <div className='cards_found' >
       <h1>Founders </h1>
-      <div className='cards__container'>
-        <div className='cards__wrapper'>
-          <ul className='cards__items'>
+      <div className='cards_found__container'>
+        <div className='cards_found__wrapper'>
+          <ul className='cards_found__items'>
             <CardItem2
               src="https://avatars.githubusercontent.com/u/64039583?s=460&u=042fdc6b0eb6b57a118dad63bd5bb48fd1939690&v=4"
               text='Stamatis Alexandropoulos'
@@ -25,7 +25,7 @@ function Cards3() {
               path='https://github.com/alexandrakapa'
             />
           </ul>
-          <ul className='cards__items'>
+          <ul className='cards_found__items'>
             <CardItem2
               src="https://avatars.githubusercontent.com/u/45352904?s=400&u=cf815953b4cef9819e16deeabac8859690afbbff&v=4"
               text='Nikolaos Giorgoulakis'

@@ -9,7 +9,7 @@ const Provider = function (provider){};
 Provider.getProviderByID = async(req,result) => {
 	//console.log(req.headers.Date);
 	let arr=new Array();
-	let providerid=(req.params.providerID).substring(0,2);
+	let providerid=(req.params.supplierID).substring(0,2);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	//console.log(periodfrom);
