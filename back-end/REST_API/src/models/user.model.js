@@ -15,7 +15,24 @@ var User = function(user){
     this.whatamI = user.whatamI;
 }
 
+User.ChangePoints = (username, price, points, result) => {
+    var decimalpoints = parseFloat(price) * 0.2;
+    const points_earned = Math.round(decimalpoints);
+    var pointsforbase = parseInt(points_earned - points);
 
+    dbConn.query(`UPDATE Car_Owner SET Car_Owner.points = Car_Owner.points + '${pointsforbase}' WHERE Car_Owner.username = '${username}'`, (err, res)=> {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        else {
+            console.log("Points changed");
+            result(null, res);
+            return;
+        }
+    });
+}
 
 // get all users
 User.getAllUser = (result) =>{
@@ -67,48 +84,65 @@ User.getEnergySupplierByUsername = (username, result)=>{
 
 // update user
 User.updateUser = (username, password, userReqData, result)=>{
-  if (userReqData.whatamI==0) //Car_Manufacturer
-  {
-    dbConn.query("UPDATE Car_Manufacturer SET password = ? WHERE username = ?", [password, username], (err, res)=>{
+  dbConn.query("SELECT * FROM Car_Manufacturer WHERE username = ?", [username], (err, res)=>{ //does manufacturer exist?
         if(err){
             console.log('Error while updating the user');
             result(null, err);
         }else {
-            console.log("Car manufacturer updated successfully");
-            result(null, res);
+            if (res.length>0) //he exists and will be updated
+            {
+              dbConn.query("UPDATE Car_Manufacturer SET password = ? WHERE username = ?", [password, username], (err, res)=>{
+                    if(err){
+                        console.log('Error while updating the user');
+                        result(null, err);
+                    }else {
+                        console.log("Car manufacturer updated successfully");
+                        result(null, res);
+                    }
+                });
+            } //he doesnt exist
+            else {
+              dbConn.query("SELECT * FROM Energy_Supplier WHERE username = ?", [username], (err, res)=>{ //does supplier exist?
+              //dbConn.query("UPDATE Car_Manufacturer SET password = ? WHERE username = ?", [password, username], (err, res)=>{
+                    if(err){
+                        console.log('Error while updating the user');
+                        result(null, err);
+                    }else {
+                        if (res.length>0) //he exists and will be updated
+                        {
+                          dbConn.query("UPDATE Energy_Supplier SET password = ? WHERE username = ?", [password, username], (err, res)=>{
+                                if(err){
+                                    console.log('Error while updating the user');
+                                    result(null, err);
+                                }else {
+                                    console.log("Energy supplier updated successfully");
+                                    result(null, res);
+                                }
+                            });
+                        } //he doesnt exist
+                        else {
+                          dbConn.query("UPDATE Car_Owner SET password = ? WHERE username = ?", [password, username], (err, res)=>{
+                                if(err){
+                                    console.log('Error while updating the user');
+                                    result(null, err);
+                                }else {
+                                    console.log("Car owner updated successfully");
+                                    result(null, res);
+                                }
+                            });
+                        }
+                    }
+                });
+            }
         }
     });
-  }
-  else if (userReqData.whatamI==1) //Energy_Supplier
-  {
-    dbConn.query("UPDATE Energy_Supplier SET password = ? WHERE username = ?", [password, username], (err, res)=>{
-        if(err){
-            console.log('Error while updating the user');
-            result(null, err);
-        }else {
-            console.log("Energy supplier updated successfully");
-            result(null, res);
-        }
-    });
-  }
-  else {
-    dbConn.query("UPDATE Car_Owner SET password = ? WHERE username = ?", [password, username], (err, res)=>{
-        if(err){
-            console.log('Error while updating the user');
-            result(null, err);
-        }else {
-            console.log("Car owner updated successfully");
-            result(null, res);
-        }
-    });
-  }
 }
 
 //create user
 User.createUser = (username, password, userReqData, result)=>{
   if (userReqData.whatamI==0) //Car_Manufacturer
   {
-    dbConn.query("INSERT INTO Car_Manufacturer SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,whatamI=0", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone], (err, res)=>{
+    dbConn.query("INSERT INTO Car_Manufacturer SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,isAdmin = ?,sessionID = 0,whatamI=0", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone, userReqData.isAdmin], (err, res)=>{
         if(err){
           //  console.log('Error:Please fill all the forms!');
             result(null, err);
@@ -120,7 +154,7 @@ User.createUser = (username, password, userReqData, result)=>{
   }
   else if (userReqData.whatamI==1) //Energy_Supplier
   {
-    dbConn.query("INSERT INTO Energy_Supplier SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,whatamI=1", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone], (err, res)=>{
+    dbConn.query("INSERT INTO Energy_Supplier SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,isAdmin = ?,sessionID = 0,whatamI=1", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone,userReqData.isAdmin], (err, res)=>{
         if(err){
           //  console.log('Error:Please fill all the forms!');
             result(null, err);
@@ -130,18 +164,19 @@ User.createUser = (username, password, userReqData, result)=>{
         }
     });
   }
-  else { //Car_Owner
-    dbConn.query("INSERT INTO Car_Owner SET username = ?, password = ?, email = ?, phone_number = ?, price_to_pay = ?, points = ?", [username, password, userReqData.email, userReqData.phone_number, userReqData.price_to_pay, userReqData.points ], (err, res)=>{
+  else if (userReqData.whatamI==undefined) { //Car_Owner
+    dbConn.query("INSERT INTO Car_Owner SET username = ?, password = ?, email = ?, phone_number = ?, price_to_pay = ?, points = ?, sessionID = 0", [username, password, userReqData.email, userReqData.phone_number, userReqData.price_to_pay, userReqData.points ], (err, res)=>{
         if(err){
           //  console.log('Error:Please fill all the forms!');
             result(null, err);
         }else {
-            console.log("Car owner created successfully" + userReqData.whatamI);
+            console.log("Car owner created successfully");
             result(null, res);
         }
     });
-  }
+   }
 }
+
 
 
 module.exports = User;

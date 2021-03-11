@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../MainManufacturers.css';
+import '../../MainCarOwners.css';
 import Footer from '../Footer';
 
 export default function Home() {
@@ -19,10 +19,10 @@ color: 'white'
 };
 return ( <div>
               <h1
-                className='home_man'>
+                className='home_own'>
               </h1>
-              <h1 style={textStyle} >Welcome</h1>
-              <h1 style={textStyle2}>{localStorage.username}</h1>
+              <h1 style={textStyle} ><mark>Welcome</mark></h1>
+              <h1 style={textStyle2}><mark>{localStorage.username}</mark></h1>
 
               <Footer />
           </div>);

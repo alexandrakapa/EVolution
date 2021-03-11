@@ -109,7 +109,21 @@ function ChargeInProgress(props){
 				{location.state.paymentWay=='card_in_app' ?
 				<div className='container1'>
 				 {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button' onClick={()=>{props.history.push('/mainown')}}>Return to homepage</button> : null}
-				  {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button2'>Continue to payment</button> : null}
+				  {typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button2' onClick={()=>{
+
+						if (location.state.money=='' || data.charging_price<=location.state.money)  {
+						props.history.push({
+							pathname:'/mainown/synchronous_payment',
+							state: {money : data.charging_price}
+					})
+					}
+					else {
+						props.history.push({
+							pathname:'/mainown/synchronous_payment',
+							state: {money : location.state.money}
+					})
+					}
+				}}>Continue to payment</button> : null}
 				</div>
 				: typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button_alone' onClick={()=>{props.history.push('/mainown')}}>Return to homepage</button> : null }
 			</div>

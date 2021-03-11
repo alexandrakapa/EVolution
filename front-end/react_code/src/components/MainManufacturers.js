@@ -4,7 +4,7 @@ import './MainManufacturers.css';
 import Home from './components_main_manufacturers/pages/Home';
 import { BrowserRouter as Router, Route,Switch, Redirect } from "react-router-dom";
 import Services from './components_main_manufacturers/pages/Services';
-import Profile from './components_main_manufacturers/pages/Profile';
+import Profile from './components_main_manufacturers/pages/ProfileManufacturer';
 import ContactUs from './components_main_manufacturers/ContactUs';
 import SignInPage from './SignInPage';
 import ChargingSessions from './components_main_manufacturers/pages/ChargingSessionsPerManufacturer';

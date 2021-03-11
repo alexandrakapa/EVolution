@@ -10,13 +10,8 @@ export const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Design',
-    path: '/mainown/design',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Development',
-    path: '/mainown/development',
+    title: 'Payment',
+    path: '/mainown/payment',
     cName: 'dropdown-link'
   }
 ];

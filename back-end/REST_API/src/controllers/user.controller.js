@@ -2,15 +2,14 @@ const UserModel = require('../models/user.model');
 
 // get all user list
 exports.getUserList = (req, res)=> {  //exports.nameOfTheMethod
-  /*  UserModel.getAllUser((err, user) =>{
+  UserModel.getAllUser((err, user) =>{
         console.log('We are here');
         if(err)
         res.send(err);
         console.log('User', user);
         res.send(user)
-    })*/
-    res.json({
-          usersList: ["user 1","user 2"]})
+    })
+
 }
 
 // get user by username
@@ -52,6 +51,8 @@ exports.getOwnerByUsername = (req, res)=>{
 
 exports.createOrUpdateUser = (req,res) => {
   const userReqData = new UserModel(req.body);
+  userReqData.username = req.params.username;
+  userReqData.password = req.params.password;
   UserModel.updateUser(req.params.username, req.params.password,userReqData, (err, user)=>{
        if(err)
        {
@@ -62,7 +63,7 @@ exports.createOrUpdateUser = (req,res) => {
          res.send("User with username : " + req.params.username + " has new password : " + req.params.password  ); //password changed
        }
        else {
-         //console.log('userReqData',userReqData);
+         console.log('userReqData',userReqData);
          {
                UserModel.createUser(req.params.username, req.params.password, userReqData, (err, user)=>{
                    if(err)
@@ -74,4 +75,27 @@ exports.createOrUpdateUser = (req,res) => {
            }
        }
    })
+}
+
+
+exports.UpdatePoints = (req, res) => {
+  let username = req.params.username;
+  let price = parseFloat(req.params.price);
+  let points = parseInt(req.params.points);
+
+  UserModel.ChangePoints(username, price, points, (err, data)=>{
+      if (err) {
+        res.send(err);
+        return;
+      }
+      else if (data != null) {
+        res.send(data)
+        return;
+      }
+      else {
+        res.send("something went wrong");
+        return;
+      }
+  });
+
 }

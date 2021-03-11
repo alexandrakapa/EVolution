@@ -50,5 +50,3 @@ Car.getVehicleByOwner = (username,result) => {
 }
 
 module.exports = Car;
-
-module.exports = Car;

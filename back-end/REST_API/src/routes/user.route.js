@@ -33,6 +33,8 @@ router.post('/usermod/:username/:password',function(req, res){
 // });
 // TODO: change with uploadcsv!
 
-
+router.post('/UpdatePoints/:username/:price/:points',function(req, res){
+  middle_check.findByToken(req,res,userController.UpdatePoints,0)
+});
 
 module.exports = router;

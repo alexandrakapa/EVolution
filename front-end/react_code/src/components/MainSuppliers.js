@@ -4,7 +4,7 @@ import './MainSuppliers.css';
 import Home from './components_main_suppliers/pages/Home';
 import { BrowserRouter as Router, Route,Switch, Redirect } from "react-router-dom";
 import Services from './components_main_suppliers/pages/Services';
-import Profile from './components_main_suppliers/pages/Profile';
+import Profile from './components_main_suppliers/pages/ProfileSupplier';
 import ContactUs from './components_main_suppliers/ContactUs';
 import SignInPage from './SignInPage';
 import EnergyDemand from './components_main_suppliers/pages/Energy_Demand_Forecasts';

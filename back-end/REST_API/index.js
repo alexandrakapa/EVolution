@@ -43,7 +43,6 @@ app.use('/evcharge/api/SessionsPerPoint', sessions_per_point_Routes);
 const  healthcheck_Routes=require('./src/routes/healthcheck.route');
 app.use('/evcharge/api/admin', healthcheck_Routes);
 
-
 const sessions_per_manufacturer_Routes=require('./src/routes/sessions_per_manufacturer.route');
 app.use('/evcharge/api/SessionsPerManufacturer', sessions_per_manufacturer_Routes);
 
@@ -99,6 +98,15 @@ app.use('/evcharge/api/report_consumption', consumptionRoutes);
 
 const uploadRoutes = require('./src/routes/upload_route.js');
 app.use('/evcharge/api/uploadcsv', uploadRoutes);
+
+//katerina
+const PaymentFirstPage_OwedInfo_Route = require('./src/routes/PaymentFirstPage_OwedInfo.route');
+app.use('/evcharge/api/PaymentPage', PaymentFirstPage_OwedInfo_Route);
+
+const CreatePayment_Route = require('./src/routes/CreatePayment.route');
+app.use('/evcharge/api/CreatePayment', CreatePayment_Route);
+
+
 // listen to the port
 app.listen(port, ()=>{
     console.log(`Express Server is running at port ${port}`);
