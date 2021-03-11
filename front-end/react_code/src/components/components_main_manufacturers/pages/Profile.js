@@ -11,7 +11,7 @@ export default function Profile() {
 };
   return ( <div>
                 <h1
-                  className='profile'>
+                  className='profile_man'>
                 </h1>
                 <h1 style={textStyle}>Profile Info
                 </h1>
