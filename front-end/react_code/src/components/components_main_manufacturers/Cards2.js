@@ -8,7 +8,7 @@ function Cards2() {
       <h1 style= {{
               fontSize:'40px',
               textAlign: 'center',
-              color: 'black',
+              color: 'white',
               paddingBottom : '40px',
               borderBottom: '5px solid rgba(200, 247, 197, 0.62)',
               width: '400px',
@@ -19,13 +19,13 @@ function Cards2() {
         <div className='cards__wrapper1'>
           <ul className='cards__items1'>
             <CardItem
-              src="https://i.pinimg.com/originals/bf/c1/44/bfc14452f8d36aa857593e1efe10782a.jpg"
+              src="https://wallpaperaccess.com/full/223836.jpg"
               text='For your car models'
               label='Report'
               path='/mainman/mean_energy_cost_per_car'
             />
             <CardItem
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQw2KhemZLq38GIZAtjdmFYheKSd0WkUA8Rw&usqp=CAU"
+              src="https://theimpacteconomy.files.wordpress.com/2020/07/tesla_the_nieuw_economy.jpg"
               text='General statisitcs'
               label='Report and diagram'
               path='/mainman/mean_energy_cost_statistics'

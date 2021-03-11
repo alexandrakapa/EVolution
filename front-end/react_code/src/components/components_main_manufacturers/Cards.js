@@ -10,7 +10,7 @@ function Cards() {
               textAlign: 'center',
               color: 'white',
               paddingBottom : '40px',
-              borderBottom: '3px solid white',
+              borderBottom: '5px solid rgba(200, 247, 197, 0.62)',
               width: '330px',
               height: '80px',
               margin: '0 auto'
@@ -25,13 +25,13 @@ function Cards() {
               path='/mainman/charging_sessions'
             />
             <CardItem
-              src="https://i.pinimg.com/originals/bf/c1/44/bfc14452f8d36aa857593e1efe10782a.jpg"
+              src="https://images.hgmsites.net/hug/bmw-inext-concept_100670744_h.jpg"
               text='Mean energy cost'
               label='Reports and statisitcs'
               path='/mainman/mean_energy_cost'
             />
              <CardItem
-              src="https://www.smarthomecharge.co.uk/site/assets/files/1374/matthew-henry-yetqklnhsui-unsplash.500x350.jpg"
+              src="https://jooinn.com/images/electric-pole-1.png"
               text='Energy Consumption'
               label='Report and statisitcs'
               path='/mainman/energy_consumption_report'

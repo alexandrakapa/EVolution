@@ -40,7 +40,7 @@
         return;
   	}
 
-    const ID = req.params.providerID;
+    const ID = req.params.supplierID;
     //check if provider ID length is valid based on our database's corresponding attribute's type
     if (ID.length > 255) {
         res.statusMessage = 'Bad Request';

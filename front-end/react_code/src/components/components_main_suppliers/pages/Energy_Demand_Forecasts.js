@@ -155,7 +155,7 @@ function EnergyDemand(props) {
       <br />
       <br />
 
-      {isloading? <BatteryLoading size={"large"} speed={1} color={'rgba(0, 27, 45, 0.9)'} style={{margingTop: '20px', borderColor: 'rgba(0, 27, 45, 0.9)', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
+      {isloading? <BatteryLoading size={"large"} speed={1} color={'rgba(0, 27, 45, 0.9)'} style={{margingTop: '80px', borderColor: 'rgba(0, 27, 45, 0.9)', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
     </div>
 
   );

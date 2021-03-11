@@ -4,18 +4,18 @@ import CardItem2 from './CardItem2';
 
 function Cards3() {
   return (
-    <div className='cards'>
+    <div className='cards_found' >
       <h1>Founders </h1>
-      <div className='cards__container'>
-        <div className='cards__wrapper'>
-          <ul className='cards__items'>
+      <div className='cards_found__container'>
+        <div className='cards_found__wrapper'>
+          <ul className='cards_found__items'>
             <CardItem2
               src="https://avatars.githubusercontent.com/u/64039583?s=460&u=042fdc6b0eb6b57a118dad63bd5bb48fd1939690&v=4"
               text='Stamatis Alexandropoulos'
               path='https://github.com/stamatisalex'
             />
             <CardItem2
-              src="https://www.w3schools.com/images/picture.jpg"
+              src="https://scontent.fath3-4.fna.fbcdn.net/v/t1.0-9/159653659_5370541429653478_8039614882833677267_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_ohc=fsFjtT7R-DsAX9GAr0I&_nc_ht=scontent.fath3-4.fna&oh=8557c4c202c38ae39215057cc647cd76&oe=606F4BC0"
               text='Polytimi Anna Gkotsi'
               path='https://github.com/PolyannaG'
             />
@@ -25,7 +25,7 @@ function Cards3() {
               path='https://github.com/alexandrakapa'
             />
           </ul>
-          <ul className='cards__items'>
+          <ul className='cards_found__items'>
             <CardItem2
               src="https://avatars.githubusercontent.com/u/45352904?s=400&u=cf815953b4cef9819e16deeabac8859690afbbff&v=4"
               text='Nikolaos Giorgoulakis'

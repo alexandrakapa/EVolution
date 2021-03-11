@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../Background.css';
+import '../../MainManufacturers.css';
 import Cards from '../Cards';
 
 export default function Services() {
 
-  return ( <div  className='services12' >
+  return ( <div  className='services_man' >
                 <Cards />
             </div>);
 }
