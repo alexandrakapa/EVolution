@@ -61,6 +61,7 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderText = styled.h2`
+  padding: 10%;
   font-size: 30px;
   font-weight: 600;
   line-height: 1.24;

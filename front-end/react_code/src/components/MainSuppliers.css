@@ -7,7 +7,6 @@
 
 .homesup,
 .profile,
-.contact-us1,
 .energy_consumption,
 .energy_consumption_per_district,
 .energy_consumption_per_station,
@@ -50,12 +49,18 @@
 
 .contact-us1 {
   background-image: url('https://wallpaperaccess.com/full/3124512.jpg');
-  background-position: center;
+  padding: 4rem;
+  position:absolute;
+  top:80px;
+  left:0;
+  bottom:0px;
+  width:100%;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+  background-position: center;
+
+
 }
 .chargingsessions {
   background-image: url('./images/img_2.jpg');
@@ -106,10 +111,13 @@
 
 .founders{
   background-image: url('./images/green.PNG');
-  background-position: center;
+  position:absolute;
+  top:80px;
+  left:0;
+  bottom:0px;
+  width:100%;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+  background-position: center;
 }

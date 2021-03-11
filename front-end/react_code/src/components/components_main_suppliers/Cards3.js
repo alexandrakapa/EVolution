@@ -4,7 +4,7 @@ import CardItem2 from './CardItem2';
 
 function Cards3() {
   return (
-    <div className='cards'>
+    <div className='cards' style ={{marginTop:'10px'}}>
       <h1>Founders </h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
