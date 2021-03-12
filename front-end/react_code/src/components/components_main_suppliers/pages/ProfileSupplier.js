@@ -10,7 +10,7 @@ function ProfileSupplier(props) {
 const [data, setData] = useState([])
 useEffect( () => {
     const tok = localStorage.getItem('token');
-fetch(`http://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+fetch(`https://localhost:8765/evcharge/api/admin/users/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
   .then(response => response.json())
          .then(fetchedData => {
 

@@ -34,7 +34,7 @@ const location = useLocation();
   const [points, setPoints] = useState([])
   useEffect( () => {
   const tok = localStorage.getItem('token');
-  fetch(`http://localhost:8765/evcharge/api/PaymentPage/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+  fetch(`https://localhost:8765/evcharge/api/PaymentPage/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
     .then(response => response.json())
            .then(fetchedData => {
 
@@ -72,7 +72,7 @@ const [calc, setCalc] = useState('');
            state: {  paymentWay : payment.value, price : location.state.money, pointsGiven : pointsGiven}
            })
            const tok = localStorage.getItem('token');
-           fetch(`http://localhost:8765/evcharge/api/admin/UpdatePoints/${localStorage.username}/${location.state.money}/${pointsGiven}`, {
+           fetch(`https://localhost:8765/evcharge/api/admin/UpdatePoints/${localStorage.username}/${location.state.money}/${pointsGiven}`, {
              method: 'POST',
              headers: {
                'Accept': 'application/json',

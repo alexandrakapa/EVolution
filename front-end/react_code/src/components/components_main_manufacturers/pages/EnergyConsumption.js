@@ -28,7 +28,7 @@ function EnergyConsumption(props) {
 
       const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/report_consumption/${localStorage.company_name}/${startdate}/${enddate}`,{
+      fetch(`https://localhost:8765/evcharge/api/report_consumption/${localStorage.company_name}/${startdate}/${enddate}`,{
          headers:{'Content-type':'application/json','x-access-token':tok}
       })
 

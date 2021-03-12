@@ -29,10 +29,10 @@ function MainCarOwners(props) {
       }
       else {
         if (localStorage.category === "Energy_Supplier") {
-            window.location.href = "http://localhost:3000/mainsup";
+            window.location.href = "https://localhost:3000/mainsup";
         }
         else if (localStorage.category === "Car_Manufacturer") {
-            window.location.href = "http://localhost:3000/mainman";
+            window.location.href = "https://localhost:3000/mainman";
         }
       }
     }

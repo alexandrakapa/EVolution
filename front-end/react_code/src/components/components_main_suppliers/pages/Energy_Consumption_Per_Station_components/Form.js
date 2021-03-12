@@ -41,7 +41,7 @@ function checkBig(){
 const getOptions = (inputValue) =>
 {
   const tok = localStorage.getItem('token');
- return fetch(`http://localhost:8765/evcharge/api/StationAddressesPerSupplier/${localStorage.id}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+ return fetch(`https://localhost:8765/evcharge/api/StationAddressesPerSupplier/${localStorage.id}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
  .then(response => response.json())
          //.catch(err => console.log(err))
 }
