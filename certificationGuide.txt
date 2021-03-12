@@ -1,10 +1,11 @@
 Για να σας δουλέψει το https κάντε το παρακάτω:
 (όσα λέω πρέπει να γίνουν ΔΥΟ φορές, μία στο backend/REST_API και μία στο frontend/react-code)
+!!!!!!!!Προσοχη:οι εντολες να εκτελεστουν στα δυο παραπανω παθς,δηλαδη στο REST_API και στο react-code ΑΝΑΓΚΑΣΤΙΚΑ,οχι αλλου
 Αρχικά εκτελούμε την παρακάτω εντολή:
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-Αφού γίνει αυτό(κατεβάστε και κάτι dependencies που λέει για σιγουρία)
+Αφού γίνει αυτό(κάνουμε και αυτά με τα echo και τα install dependencies)
 Μετά εκτελούμε διαδοχικά τα παρακάτω:
 
 brew install mkcert
