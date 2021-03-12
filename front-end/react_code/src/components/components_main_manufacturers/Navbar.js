@@ -19,13 +19,13 @@ function Navbar(props) {
     const tok = localStorage.getItem('token');
     console.log(tok);
 
-    fetch('http://localhost:8765/evcharge/api/logout',{
+    fetch('https://localhost:8765/evcharge/api/logout',{
        method: 'POST',
        headers:{'Content-type':'application/json','x-access-token':tok}
      }).then(function(response){
       console.log("HERE: "+response.status);
       localStorage.clear();
-      window.location.href = "http://localhost:3000";
+      window.location.href = "https://localhost:3000";
      })
        .catch(err => console.log(err));
   };

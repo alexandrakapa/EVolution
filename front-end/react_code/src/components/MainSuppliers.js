@@ -26,10 +26,10 @@ function renderProtectedComponent(ProtectedComponent) {
     }
     else {
       if (localStorage.category === "Car_Owner") {
-          window.location.href = "http://localhost:3000/mainown";
+          window.location.href = "https://localhost:3000/mainown";
       }
       else if (localStorage.category === "Car_Manufacturer") {
-          window.location.href = "http://localhost:3000/mainman";
+          window.location.href = "https://localhost:3000/mainman";
       }
     }
   }

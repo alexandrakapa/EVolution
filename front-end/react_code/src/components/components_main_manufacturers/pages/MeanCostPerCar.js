@@ -32,7 +32,7 @@ function MeanCostPerCar(props) {
       console.log(model, startdate, enddate)
       const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/${localStorage.id}/${model}/${startdate}/${enddate}`,{
+      fetch(`https://localhost:8765/evcharge/api/EnergyCost/PerModel/${localStorage.id}/${model}/${startdate}/${enddate}`,{
          headers:{'Content-type':'application/json','x-access-token':tok}
       })
           .then(response => {

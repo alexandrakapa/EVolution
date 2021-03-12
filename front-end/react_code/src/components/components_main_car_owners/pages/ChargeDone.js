@@ -42,7 +42,7 @@ function ChargeInProgress(props){
     //  console.log(data, "hi")
 		console.log(localStorage.username);
 
-      fetch(`http://localhost:8765/evcharge/api/charging/${localStorage.username}/${location.state.carID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+      fetch(`https://localhost:8765/evcharge/api/charging/${localStorage.username}/${location.state.carID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
           .then(response => {
             if (response.ok){
               return response.json()

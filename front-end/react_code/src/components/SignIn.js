@@ -37,7 +37,7 @@ class SignIn extends Component {
 
     const fetch = require('node-fetch');
 
-    fetch('http://localhost:8765/evcharge/api/login',{
+    fetch('https://localhost:8765/evcharge/api/login',{
        method: 'POST',
        body: JSON.stringify(empInfo),
        headers:{'Content-type':'application/json'}
