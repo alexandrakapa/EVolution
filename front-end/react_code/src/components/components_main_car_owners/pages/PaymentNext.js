@@ -13,7 +13,7 @@ function PaymentNext(props) {
 const location = useLocation();
 useEffect(()=>{
   if (location.state==undefined){
-    props.history.push('/main/payment')
+    props.history.push('/mainown/payment')
   }
 },[location])
 

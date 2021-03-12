@@ -56,7 +56,8 @@ var x=owed.OwedMoney;
 
 
   return (
-    <PayStyle className="payment">
+    <div className="payment">
+    <PayStyle >
     <div className="speech-bubble_2"><h1>You owe {owed.OwedMoney} €!</h1></div>
     <div className="speech-bubble"><h1>You have {points.Points} points!</h1></div>
 
@@ -84,7 +85,7 @@ var x=owed.OwedMoney;
       {errors.price && errors.price.type === "required" && <span className='error' >Field is required </span>}
       {errors.price && errors.price.type === "max" && <span className='error' >You can't pay more than you own </span>}
 
-      <label>Do you want to use any of your points?(optional)</label>
+      <label>Do you want to use any of your points? (optional)</label>
 
       <input name="pointsGiven" type="number" placeholder="If not leave blank" onChange={e => setCalc(e.target.value/0.2)} ref={register({max: points.Points})} />
       {errors.pointsGiven && errors.pointsGiven.type === "max" && <span className='error' >You can't spend more points than you own </span>}
@@ -96,6 +97,7 @@ var x=owed.OwedMoney;
 
 
     </PayStyle>
+    </div>
 
   );
 }

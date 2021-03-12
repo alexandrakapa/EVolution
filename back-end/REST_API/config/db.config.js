@@ -7,6 +7,7 @@ const dbConn = mysql.createConnection({
     user: 'root',       //the credentials for our database
     password: 'mysql',
     database: 'Evolution'
+
 });
 
 dbConn.connect(function(error){

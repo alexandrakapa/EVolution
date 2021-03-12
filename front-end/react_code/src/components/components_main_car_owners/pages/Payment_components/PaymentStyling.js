@@ -15,19 +15,17 @@ body {
     sans-serif;
 }
 form {
-  margin-top: 20%;
   background: rgba(0,27,45,0.8);
   border-radius: 25px;
-  width: 40%;
+  width: 30%;
 }
 h1 {
   line-height: 2;
-  text-align: left;
   display: block;
   margin-bottom: 10%;
   margin-top: 10%;
   color: white;
-  font-size: 35px;
+  font-size: 23px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -44,8 +42,8 @@ p {
 .p2 {
   color: #f1f1f1;
   margin-top: -6%;
-  margin-left: 72%;
-  font-size: 30px;
+  margin-left: 70%;
+  font-size: 22px;
   margin-bottom:3%;
 }
 select {
@@ -54,23 +52,23 @@ select {
 input {
   display: block;
   box-sizing: border-box;
-  width: 40%;
-  height: 7%;
+  width: 34%;
+  height: 5%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
-  margin-top: 10%;
-  font-size: 27px;
-  margin-left: 30%;
+  margin-top: 7%;
+  font-size: 12px;
+  margin-left: 35%;
 }
 label {
   line-height: 2;
   text-align: left;
   display: block;
   margin-bottom: 10px;
-  margin-top: 10%;
+  margin-top: 7%;
   color: white;
-  font-size: 35px;
+  font-size: 18px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -81,12 +79,14 @@ input[type="submit"] {
   color: white;
   text-transform: uppercase;
   border: none;
-  margin-top: 40px;
-  padding: 30px;
-  font-size: 16px;
+  margin-top: 35px;
+  padding: 20px;
+  font-size: 10px;
   font-weight: 100;
   letter-spacing: 10px;
-  margin-left: 43%;
+  margin-left: 42%;
+  display: inline-block;
+
 }
 button[type="submit"]:hover,
 input[type="submit"]:hover {
@@ -113,9 +113,9 @@ input[type="submit"] {
 }
 .App {
   max-width: 100%;
-  height: 900px;
-  margin-left: 30%;
-  margin-top:-22%;
+  height: 450px;
+  margin-left: 35%;
+  margin-top:-20%;
   margin-right:2%;
 }
 button[type="button"] {
@@ -127,6 +127,7 @@ button[type="button"] {
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 4px;
+
 }
 hr {
   margin-top: 30px;

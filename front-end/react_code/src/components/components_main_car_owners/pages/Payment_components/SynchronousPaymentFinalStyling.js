@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PayStyleFinal = styled.div`
+export const SynchPayStyleFinal = styled.div`
 .error {
    color: red;
    font-family: sans-serif;
@@ -28,12 +28,12 @@ font-size: 20px;
 
 h1 {
   line-height: 2;
-  text-align: center;
+  text-align: left;
   display: block;
   margin-bottom: 10%;
   margin-top: 10%;
   color: white;
-  font-size: 23px;
+  font-size: 35px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -69,16 +69,17 @@ input {
   margin-left: 30%;
 }
 .icon {
-  margin-left: 48%;
+  margin-left: 50%;
   margin-top: 1%;
 }
 
 label {
   line-height: 2;
+  text-align: left;
   display: block;
   margin-top: 1%;
   color: white;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
