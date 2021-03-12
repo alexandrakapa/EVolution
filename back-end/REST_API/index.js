@@ -110,6 +110,11 @@ const CreatePayment_Route = require('./src/routes/CreatePayment.route');
 app.use('/evcharge/api/CreatePayment', CreatePayment_Route);
 
 
+const SessionsPerStation_Route = require('./src/routes/SessionsPerStation.route');
+app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
+
+
+
 // listen to the port
 // app.listen(port, ()=>{
 //     console.log(`Express Server is running at port ${port}`);

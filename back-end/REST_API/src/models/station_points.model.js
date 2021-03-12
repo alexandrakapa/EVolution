@@ -1,4 +1,5 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 var point = function (){};
 
@@ -24,17 +25,34 @@ point.getStationPoints = async (req, result) => {
 	 if (res.length) {
 	 	//arr.push({NumberOfCars: Object.keys(res).length});
 	    console.log("Found charging points.");
-	    result(null, res);
+	    if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
 
-	    return;
-	
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    })
+		}
+		else {
+				result(null,res)
+			}
 	    }
+
+	    else {
 
 	    // not found 
 	    console.log('No charging points found.')
 
 	    result(null, res);
 	    return;
+	}
 	
 
 

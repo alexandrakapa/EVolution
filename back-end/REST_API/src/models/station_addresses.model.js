@@ -1,4 +1,5 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 var Stations = function (){};
 
@@ -20,17 +21,36 @@ Stations.getStationAddresses = async (req, result) => {
 	 if (res.length) {
 	    console.log("Found Stations.");
 
-	    result(null, res);
-	    return;
+
+	     if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    })
+		}
+		else {
+				result(null,res)
+			}
+	
 
 	    }
+	    else{
 
 	    // not found
 	    console.log('No Stations found.')
 
 	    result(null, res);
 	    return;
-
+	}
 
 
 	});

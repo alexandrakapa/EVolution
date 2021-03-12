@@ -1,4 +1,5 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 const Session = function (){
 };
@@ -113,17 +114,34 @@ Session.getter= async ( req, arr, result ) => {
 		    arr.push(res);
 		    //console.log(arr[0]['NumberOfChargingSessions']);
 		    //console.log(arr[1][0]['SessionIndex']);
-		    result(null, arr);
-		    return;
-		
-		    }
-
+		      if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=res
+				tocsv.unshift(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5])
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+			    	else {
+			    		result(null,csv)
+			    	}
+			    })
+			   
+			}
+			else {
+				result(null,arr)
+				return
+			}
+		 }
+		 else {
 		    // not found 
 		    console.log('No ChargingSessions for these dates and this region.')
 		    arr.push({NumberOfChargingSessions: 0});
 		    arr.push([]);
 		    result(null, arr);
 		    return;
+		}
 		 });
 };
 

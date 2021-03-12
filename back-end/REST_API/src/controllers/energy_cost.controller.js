@@ -108,6 +108,11 @@ check_day = (y, m, d) => {
         }
     }
 
+ //check that the datatype requested is valid
+    if (req.query.format!='csv' && req.query.format!=undefined && req.query.format!='json'){
+        res.statusMessage = 'Bad Request'
+        res.status(400).send("Invalid requested datatype.")
+    }
     
 
  	EnergyCostModel.getCostByModel(req, (err, data) => {
@@ -116,8 +121,19 @@ check_day = (y, m, d) => {
  			return;
  		}
  		else if (data.length){
- 			res.send(data);
- 			return;
+ 			 if (req.query.format=='csv'){
+                    //console.log(data)
+                    res.attachment('results.csv').send(data);
+                    return;
+                }
+                else if (req.query.format=='json' || req.query.format==undefined){
+                    res.send(data);
+                    console.log('json')
+                    return;
+                }
+                else {
+                    console.log('error in query.format, should not be here')
+                }
  		}
  		else {
  			res.statusMessage='No data';
@@ -195,14 +211,31 @@ check_day = (y, m, d) => {
         }
     }
 
+     //check that the datatype requested is valid
+    if (req.query.format!='csv' && req.query.format!=undefined && req.query.format!='json'){
+        res.statusMessage = 'Bad Request'
+        res.status(400).send("Invalid requested datatype.")
+    }
+
  	EnergyCostModel.getMeanCost(req, (err, data) => {
  		if (err) {
  			res.send(err);
  			return;
  		}
  		else if (data.length){
- 			res.send(data);
- 			return;
+ 			 if (req.query.format=='csv'){
+                    //console.log(data)
+                    res.attachment('results.csv').send(data);
+                    return;
+                }
+                else if (req.query.format=='json' || req.query.format==undefined){
+                    res.send(data);
+                    console.log('json')
+                    return;
+                }
+                else {
+                    console.log('error in query.format, should not be here')
+                }
  		}
  		else {
  			res.statusMessage='No data';
@@ -223,14 +256,32 @@ check_day = (y, m, d) => {
         res.status(400).send('Bad Request : Empty Required Field');
         return;
     }
+
+     //check that the datatype requested is valid
+    if (req.query.format!='csv' && req.query.format!=undefined && req.query.format!='json'){
+        res.statusMessage = 'Bad Request'
+        res.status(400).send("Invalid requested datatype.")
+    } 
+
     EnergyCostModel.getModels(req, (err, data) => {
         if (err) {
             res.send(err);
             return;
         }
         else if (data.length){
-            res.send(data);
-            return;
+            if (req.query.format=='csv'){
+                    //console.log(data)
+                    res.attachment('results.csv').send(data);
+                    return;
+                }
+                else if (req.query.format=='json' || req.query.format==undefined){
+                    res.send(data);
+                    console.log('json')
+                    return;
+                }
+                else {
+                    console.log('error in query.format, should not be here')
+                }
         }
         else {
             res.statusMessage='No data';

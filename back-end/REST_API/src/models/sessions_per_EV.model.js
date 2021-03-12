@@ -1,4 +1,5 @@
 const dbConn = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 const Session = function(session){};
 const Vehicle = function(vehicle){};
@@ -79,8 +80,29 @@ Session.findByVehicle = async (req,resultarray, result) => {
 			}
 
 			resultarray.push(vcslist);
-			result(null,resultarray);
-			return;
+
+			 if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=vcslist
+				tocsv.unshift(resultarray[0],resultarray[1],resultarray[2],resultarray[3],resultarray[4],resultarray[5],resultarray[6])
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    })
+			   
+			}
+			else {
+				result(null,resultarray);
+				return;
+			}
+			
 		}
                 else{
 		console.log('No session for vehicle within requested dates');
