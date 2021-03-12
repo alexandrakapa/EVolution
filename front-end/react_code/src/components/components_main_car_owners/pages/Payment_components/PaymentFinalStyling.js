@@ -193,7 +193,7 @@ button {
 	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
   border: 2px solid transparent;
-  width:20%;
+  width:30%;
   height: 20%;
   margin-right: 2%;
   margin-top: 2%;

@@ -109,7 +109,7 @@ export default function Map() {
 
               ) :  null}
               </p>
-              <p><b>Cost(in euros per Kwh) </b>{selectedPark.epk}</p>
+              <p><b>Cost(in euros per Kwh) </b>{selectedPark.epk} ‎€/kWh</p>
 
                {(selectedPark.Payment_Types.search("Credit_note")!=-1)?(
                 <h4>Supports Credit Notes</h4>

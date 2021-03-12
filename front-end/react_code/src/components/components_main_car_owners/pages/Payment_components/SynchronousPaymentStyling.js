@@ -154,7 +154,7 @@ input[type="submit"] {
   max-width: 100%;
   height: 640px;
   margin-left: 30%;
-  margin-top:-30%;
+  margin-top:-27%;
   margin-right:5%;
 
 }
@@ -245,7 +245,7 @@ button {
 	border-radius: 5em;
   border: 2px solid transparent;
   width:20%;
-  height: 200px;
+  height: 160px;
   margin-left: 70%;
   margin:right: 50%;
   margin-top:17%;

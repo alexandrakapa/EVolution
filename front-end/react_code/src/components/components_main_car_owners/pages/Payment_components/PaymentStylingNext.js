@@ -99,7 +99,7 @@ input[type="submit"] {
   font-size: 10px;
   font-weight: 100;
   letter-spacing: 10px;
-  margin-left: 27%;
+  margin-left: 26%;
   margin-top: 5%;
 }
 
