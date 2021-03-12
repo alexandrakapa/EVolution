@@ -10,7 +10,7 @@ export default function Map() {
   const[isfetched,setfetched] = useState(false);
   var maptok = "pk.eyJ1Ijoibmlrb3NnaW9yZyIsImEiOiJja20yZnJtNzEwMWdpMndxZHBvejhpOTIzIn0.19RRfYCa9MZ0Tq-98vYjHw";
   useEffect(() => {
-    fetch(`http://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+    fetch(`https://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
     .then(response => {
         if (response.ok){
            return response.json();
