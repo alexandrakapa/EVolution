@@ -74,7 +74,7 @@ function MeanCostPerCar(props) {
       <FormStyle className='meanCostPerCar' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setModel={setModel} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={`Mean energy cost per km`} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={`Mean energy cost (kWh/km)`} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <NoData/> : null}
       <br />
       <br />

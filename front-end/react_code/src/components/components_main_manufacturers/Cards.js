@@ -31,7 +31,7 @@ function Cards() {
               path='/mainman/mean_energy_cost'
             />
              <CardItem
-              src="https://jooinn.com/images/electric-pole-1.png"
+              src="https://wallpapercave.com/wp/wp2498841.jpg"
               text='Energy Consumption'
               label='Report and statisitcs'
               path='/mainman/energy_consumption_report'

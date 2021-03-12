@@ -25,7 +25,7 @@ export const columns = [
       },
     {
         name: "EnergyCostPerKm",
-        label: "Mean energy cost per km",
+        label: "Mean energy cost (kW/km)",
         options: {
           filter: true,
           sort: false,
