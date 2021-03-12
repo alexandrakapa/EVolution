@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PayStyleFinal = styled.div`
+export const SynchPayStyleFinal = styled.div`
 .error {
    color: red;
    font-family: sans-serif;

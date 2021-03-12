@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import {useForm} from "react-hook-form";
-import {PayStyle} from './Payment_components/PaymentFinalStyling'
+import {PayStyleFinal} from './Payment_components/PaymentFinalStyling'
 import '../../MainCarOwners.css';
 import React, { useEffect, useState } from 'react';
 import { useLocation , useHistory} from "react-router-dom";
@@ -40,15 +40,15 @@ useEffect(()=>{
   var total = earned + points.Points - location.state.pointsGiven
 
   return (
-    <PayStyle className="payment_final">
+    <PayStyleFinal className="payment_final">
 <div>
 <AiFillCheckCircle className="icon" color="#f1f1f1" size="4em"/>
 </div>
     <label>Your payment was successful!  </label>
-<div className="speech-bubble"><h1>You have earned {earned} point(s)!</h1></div>
+<div className="speech-bubble_1"><h1>You have earned {earned} point(s)!</h1></div>
   <div className="speech-bubble_2"><h1>Your total number of points is {total} points!</h1></div>
-  <div className="speech-bubble"><h1>You owe {money} € now!</h1></div>
-    </PayStyle>
+  <div className="speech-bubble_1"><h1>You owe {money} € now!</h1></div>
+    </PayStyleFinal>
 
   );
 }
