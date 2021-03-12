@@ -87,15 +87,26 @@ useEffect(()=>{
 
 
       <label>Name on Card</label>
-      <input type="text" id="cname" name="cardname" placeholder="John More Doe"/>
-      <label for="ccnum">Credit card number</label>
-      <input type="text" id="ccnum" name="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+      <input type="text" id="cname" name="cardname" placeholder="John More Doe" ref={register({ required: true})}/>
+      {errors.cardname && errors.cardname.type === "required" && <span className='error' >Field is required </span>}
+      <label type="text" >Credit card number</label>
+      <input type="text" name="ccnum" placeholder="XXXX-XXXX-XXXX-XXXX" ref={register({ required: true, maxLength: 19, minLength:19})}/>
+      {errors.ccnum && errors.ccnum.type === "required" && <span className='error' >Field is required </span>}
+      {errors.ccnum && errors.ccnum.type === "maxLength" && <span className='error' >The correct form is XXXX-XXXX-XXXX-XXXX</span>}
+      {errors.ccnum && errors.ccnum.type === "minLength" && <span className='error' >The correct form is XXXX-XXXX-XXXX-XXXX</span>}
       <label for="expmonth">Expiration Month</label>
-      <input type="text" id="expmonth" name="expmonth" placeholder="September"/>
+      <input type="text" name="expmonth" placeholder="September" ref={register({ required: true})}/>
+      {errors.expmonth && errors.expmonth.type === "required" && <span className='error' >Field is required </span>}
       <label for="expyear" className="expYearLabel">Exp Year</label>
       <label for="cvv" className="CVVLabel">CVV</label>
-      <input className="CVV" type="text" id="cvv" name="cvv" placeholder="352"/>
-      <input className="expYear" type="text" id="expyear" name="expyear" placeholder="2018"/>
+      <input className="CVV" type="number" id="cvv" name="cvv" placeholder="352"  ref={register({ required: true, maxLength: 3, minLength:3})}/>
+      {errors.cvv && errors.cvv.type === "required" && <span className='error' >Field is required </span>}
+      {errors.cvv && errors.cvv.type === "maxLength" && <span className='error' >Not valid CVV</span>}
+      {errors.cvv && errors.cvv.type === "minLength" && <span className='error' >Not valid CVV</span>}
+      <input className="expYear" type="number" id="expyear" name="expyear" placeholder="2018" ref={register({ required: true, maxLength: 4, minLength:4})}/>
+      {errors.expyear && errors.expyear.type === "required" && <span className='error' >Field is required </span>}
+      {errors.expyear && errors.expyear.type === "maxLength" && <span className='error' >Not valid year</span>}
+      {errors.expyear && errors.expyear.type === "minLength" && <span className='error' >Not valid year</span>}
       <button type="submit">Start payment</button>
       <br/>
       <br/>

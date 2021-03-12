@@ -24,7 +24,7 @@ function Cards() {
               path='/mainown/charging'
             />
             <CardItem
-              src="https://images.hgmsites.net/hug/bmw-inext-concept_100670744_h.jpg"
+              src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1599199400000/photosp/79acfc1f-20ce-43b1-acb0-bc22df956323/stock-photo-car-road-travel-journey-world-map-drive-auto-navigation-79acfc1f-20ce-43b1-acb0-bc22df956323.jpg"
               text='Nearby stations'
               path='/mainown/map'
             />
