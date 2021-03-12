@@ -42,7 +42,7 @@ function Form(props) {
   const getOptions = (inputValue) =>
 {
     const tok = localStorage.getItem('token');
-   return fetch(`http://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+   return fetch(`https://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
            //.catch(err => console.log(err))
 }
@@ -51,7 +51,7 @@ function Form(props) {
 {
   if (selectedStationID){
   const tok = localStorage.getItem('token');
-   return fetch(`http://localhost:8765/evcharge/api/StationPoints/${selectedStationID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+   return fetch(`https://localhost:8765/evcharge/api/StationPoints/${selectedStationID}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
    .then(data=>{
     var i
@@ -70,7 +70,7 @@ function Form(props) {
   const getOptions_car = (inputValue) =>
 {
     const tok = localStorage.getItem('token');
-   return fetch(`http://localhost:8765/evcharge/api/vehicle/ofOwner/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+   return fetch(`https://localhost:8765/evcharge/api/vehicle/ofOwner/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
    .then(response => response.json())
            //.catch(err => console.log(err))
 

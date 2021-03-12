@@ -51,7 +51,7 @@ useEffect(()=>{
            state: {  paymentWay : payment.value, price : location.state.price, pointsGiven: location.state.pointsGiven}
            })
            const tok = localStorage.getItem('token');
-           fetch(`http://localhost:8765/evcharge/api/CreatePayment/${localStorage.username}/${location.state.price}/${payment.value}/${rand}/${location.state.pointsGiven}`, {
+           fetch(`https://localhost:8765/evcharge/api/CreatePayment/${localStorage.username}/${location.state.price}/${payment.value}/${rand}/${location.state.pointsGiven}`, {
              method: 'POST',
              headers: {
                'Accept': 'application/json',

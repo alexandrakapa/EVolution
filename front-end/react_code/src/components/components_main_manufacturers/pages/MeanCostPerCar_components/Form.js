@@ -61,7 +61,7 @@ useEffect(() => {
 const getOptions = (inputValue) =>
 {
   const tok = localStorage.getItem('token');
-   return fetch(`http://localhost:8765/evcharge/api/EnergyCost/GetModels/${localStorage.id}`,{
+   return fetch(`https://localhost:8765/evcharge/api/EnergyCost/GetModels/${localStorage.id}`,{
      headers:{'Content-type':'application/json','x-access-token':tok}
     })
    .then(response => response.json())

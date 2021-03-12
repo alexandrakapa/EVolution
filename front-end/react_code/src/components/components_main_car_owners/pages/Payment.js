@@ -37,7 +37,7 @@ function App(props) {
   useEffect( () => {
     const tok = localStorage.getItem('token');
     console.log(localStorage.username);
-  fetch(`http://localhost:8765/evcharge/api/PaymentPage/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+  fetch(`https://localhost:8765/evcharge/api/PaymentPage/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
     .then(response => response.json())
            .then(fetchedData => {
 

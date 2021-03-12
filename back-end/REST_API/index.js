@@ -2,6 +2,9 @@ const express = require('express');   //to import express
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const cookieParser=require('cookie-parser');
+const https = require('https')
+const fs = require('fs')
+const path = require('path')
 
 // create express app
 const app = express();
@@ -11,7 +14,7 @@ const port = process.env.PORT || 8765;
 
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cors({origin: 'http://localhost:3000'}));
+app.use(cors({origin: 'https://localhost:3000'}));
 
 // parse request data content type application/json
 app.use(bodyParser.json());
@@ -108,6 +111,14 @@ app.use('/evcharge/api/CreatePayment', CreatePayment_Route);
 
 
 // listen to the port
-app.listen(port, ()=>{
-    console.log(`Express Server is running at port ${port}`);
-});
+// app.listen(port, ()=>{
+//     console.log(`Express Server is running at port ${port}`);
+// });
+
+const sslServer =https.createServer(
+  {
+  key: fs.readFileSync(path.join(__dirname, '.cert', 'key.pem')),
+  cert : fs.readFileSync(path.join(__dirname, '.cert', 'cert.pem')),
+}, app)
+
+sslServer.listen(8765, () => console.log('secure server on port 8765'))
