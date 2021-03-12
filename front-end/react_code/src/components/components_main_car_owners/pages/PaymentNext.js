@@ -41,7 +41,8 @@ useEffect(()=>{
   console.log(rand)
 
   return (
-    <PayStyle className="payment_next">
+    <div className="payment_next">
+    <PayStyle >
     <form className="App" onSubmit={handleSubmit(({payment}) => {
      if (true){
          console.log(payment.value,location.state.price,location.state.pointsGiven)
@@ -100,6 +101,7 @@ useEffect(()=>{
       <br/>
     </form>
     </PayStyle>
+    </div>
   );
 }
 
