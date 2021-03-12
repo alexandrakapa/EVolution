@@ -28,12 +28,12 @@ font-size: 20px;
 
 h1 {
   line-height: 2;
-  text-align: left;
+  text-align: center;
   display: block;
   margin-bottom: 10%;
   margin-top: 10%;
   color: white;
-  font-size: 35px;
+  font-size: 21px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -69,7 +69,7 @@ input {
   margin-left: 30%;
 }
 .icon {
-  margin-left: 50%;
+  margin-left: 48%;
   margin-top: 1%;
 }
 
@@ -77,9 +77,9 @@ label {
   line-height: 2;
   text-align: left;
   display: block;
-  margin-top: 1%;
+  margin-top: 0%;
   color: white;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -163,7 +163,7 @@ button {
 }
 
 .speech-bubble_1 {
-	position: relative;
+  position: relative;
 	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
   border: 2px solid transparent;
@@ -175,7 +175,7 @@ button {
 }
 
 .speech-bubble_1:after {
-	content: '';
+  content: '';
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -190,11 +190,11 @@ button {
 }
 
 .speech-bubble_2 {
-	position: relative;
+  position: relative;
 	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
   border: 2px solid transparent;
-  width:20%;
+  width:30%;
   height: 20%;
   margin-right: 2%;
   margin-top: 2%;
@@ -202,7 +202,7 @@ button {
 }
 
 .speech-bubble_2:after {
-	content: '';
+  content: '';
 	position: absolute;
 	bottom: 0;
 	left: 50%;

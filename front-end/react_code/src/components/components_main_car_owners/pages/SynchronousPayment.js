@@ -53,7 +53,8 @@ const [calc, setCalc] = useState('');
 
 
   return (
-    <PayStyle className="synchronous_payment">
+    <div className="synchronous_payment">
+    <PayStyle>
     <div className="speech-bubble"><h1>You have {points.Points} points!</h1></div>
 
 
@@ -128,6 +129,7 @@ const [calc, setCalc] = useState('');
 
 
     </PayStyle>
+    </div>
   );
 }
 
