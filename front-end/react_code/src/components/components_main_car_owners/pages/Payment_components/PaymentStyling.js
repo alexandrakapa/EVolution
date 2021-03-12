@@ -15,7 +15,6 @@ body {
     sans-serif;
 }
 form {
-  margin-top: 20%;
   background: rgba(0,27,45,0.8);
   border-radius: 25px;
   width: 40%;
@@ -87,6 +86,7 @@ input[type="submit"] {
   font-weight: 100;
   letter-spacing: 10px;
   margin-left: 43%;
+  display: inline-block;
 }
 button[type="submit"]:hover,
 input[type="submit"]:hover {
@@ -113,9 +113,9 @@ input[type="submit"] {
 }
 .App {
   max-width: 100%;
-  height: 900px;
+  height: 800px;
   margin-left: 30%;
-  margin-top:-22%;
+  margin-top:-20%;
   margin-right:2%;
 }
 button[type="button"] {
@@ -127,6 +127,7 @@ button[type="button"] {
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 4px;
+
 }
 hr {
   margin-top: 30px;
