@@ -112,6 +112,36 @@ mark {
 
 }
 
+.charging_statistics{
+  background-image: url('./images/payment_charging.jpg');
+  position:absolute;
+  top:80px;
+  left:0;
+  bottom:0px;
+  width:100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.charging_statistics_km {
+  background-image: url('./images/payment_charging.jpg');
+  display: flex;
+  height: 90.7vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+
+
 
 .payment {
   background-image: url('./images/pay3.jpg');

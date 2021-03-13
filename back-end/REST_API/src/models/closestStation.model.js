@@ -1,4 +1,5 @@
 var dbConn = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 var Station = function(station) {
 	this.ID = station.ID
@@ -11,7 +12,7 @@ var Station = function(station) {
 	this.country = station.country
 }
 
-Station.getStationByCode = (postalcode,result) => {
+Station.getStationByCode = (postalcode,format,result) => {
 
         let postal_code = parseInt(postalcode,10);
 
@@ -31,13 +32,36 @@ GROUP BY StationID) AS E ON E.ID = Station.ID WHERE postalcode BETWEEN '${postal
 			result(null,res);
 		}
 		else {
-			result(null,res);
+			
+	 if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
 		}
 
-	});
+	}
+});
 }
 
-Station.getStationByCodePrice = (postalcode,lowerprice,higherprice,result) => {
+Station.getStationByCodePrice = (postalcode,lowerprice,higherprice,format,result) => {
 
 	let postal_code = parseInt(postalcode,10);
 	
@@ -57,13 +81,35 @@ GROUP BY StationID) AS E ON E.ID = Station.ID WHERE postalcode BETWEEN '${postal
 			result(null,res);
 		}
 		else {
-			result(null,res);
+			if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
+		}
 		}
 
 	});
 }
 
-Station.getStationByCodePay = (postalcode,payment,result) => {
+Station.getStationByCodePay = (postalcode,payment,format,result) => {
 
 	let postal_code = parseInt(postalcode,10);
 	
@@ -83,13 +129,35 @@ GROUP BY StationID) AS E ON E.ID = Station.ID WHERE (payment_types LIKE '%${paym
 			result(null,res);
 		}
 		else {
-			result(null,res);
+			if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
+		}
 		}
 
 	});
 }
 
-Station.getStationByCodePricePay = (postalcode,lowerprice,higherprice,payment,result) => {
+Station.getStationByCodePricePay = (postalcode,lowerprice,higherprice,payment,format,result) => {
 
 	let postal_code = parseInt(postalcode,10);
 	
@@ -109,7 +177,29 @@ GROUP BY StationID) AS E ON E.ID = Station.ID WHERE postalcode BETWEEN '${postal
 			result(null,res);
 		}
 		else {
-			result(null,res);
+			if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
+		}
 		}
 
 	});

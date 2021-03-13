@@ -56,8 +56,8 @@ input {
   height: 5%;
   border-radius: 4px;
   border: 1px solid white;
-  padding: 10px 15px;
-  margin-top: 7%;
+  padding: 20px 15px;
+  margin-top: 10%;
   font-size: 12px;
   margin-left: 35%;
 }
@@ -79,12 +79,12 @@ input[type="submit"] {
   color: white;
   text-transform: uppercase;
   border: none;
-  margin-top: 35px;
+  margin-top: 25px;
   padding: 20px;
   font-size: 10px;
   font-weight: 100;
   letter-spacing: 10px;
-  margin-left: 42%;
+  margin-left: 41%;
   display: inline-block;
 
 }

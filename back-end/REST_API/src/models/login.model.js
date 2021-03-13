@@ -39,13 +39,13 @@ Login.findByAdmin = async(username, result)=>{
             return;
             }else{
                 result(null, null);
-                return; 
+                return;
             }
         }
     })
 }
 Login.findByManufacturerUsername = async(username, result)=>{
-        
+
     dbConn.query("SELECT * FROM Car_Manufacturer WHERE username= '"+ username.username+"'", (err, res)=>{
         if(err){
             console.log('Error while fetching user by username', err);
@@ -66,14 +66,14 @@ Login.findByManufacturerUsername = async(username, result)=>{
             return;
             }else{
                 result(null, null);
-                return; 
+                return;
             }
         }
     })
 }
-    
+
 Login.findBySupplierUsername = (username, result)=>{
-         
+
     dbConn.query("SELECT * FROM Energy_Supplier WHERE username= '"+ username.username+"'", (err, res)=>{
         if(err){
             console.log('Error while fetching user by username', err);
@@ -99,7 +99,7 @@ Login.findBySupplierUsername = (username, result)=>{
         }
     })
 }
-    
+
 Login.findByOwnerUsername = (username, result)=>{
     console.log("found owner");
     dbConn.query("SELECT * FROM Car_Owner WHERE username= '"+ username.username+"'", (err, res)=>{
@@ -109,7 +109,7 @@ Login.findByOwnerUsername = (username, result)=>{
             return;
         }else{
             if(res[0] !=undefined){
-           
+
             Login.username = res[0].username;
             Login.password = res[0].password;
             Login.category = "Car_Owner";
@@ -156,14 +156,14 @@ Login.generateToken = function(resp){
         console.log("supplier");
         var elems = {username:Login.username,id:Login.id,company_name:Login.company_name,category: Login.category,sessionID:Login.sessionID}
         Login.token = jwt.sign(elems,process.env.TOKEN_SECRET, { expiresIn: '2 days' });
-        
+
     }else if(category=="Admin"){
         console.log("admin");
         var elems = {username:Login.username,category: Login.category,sessionID:Login.sessionID}
         Login.token = jwt.sign(elems,process.env.TOKEN_SECRET, { expiresIn: '2 days' });
-        
+
     }
-    
+
     resp(null,Login);
     return;
 }
@@ -187,7 +187,7 @@ Login.checkToken = async(tokid,tuname, cat,result) =>{
     })
 };
 Login.findByToken = async (tok, result) => {
-    
+
     if (!tok) {
         result(null,"fail");
         return;
@@ -224,14 +224,14 @@ Login.findByToken = async (tok, result) => {
   };
 
   Login.verifyToken = function(tok,req, result,next) {
-    
+
     if (!tok) {
-    
+
       return result.status(403).send({
         message: "No token provided!"
       });
     }
-  
+
     jwt.verify(tok, config.secret, (err, decoded) => {
       if (err) {
         return result.status(401).send({
@@ -239,10 +239,10 @@ Login.findByToken = async (tok, result) => {
         });
       }
       this.id = decoded.id;
-      
+
     });
   };
-  
+
 // User.deleteToken = function(token, resp){
 //     dbConn.query('UPDATE ? SET token=NULL', user.category, (err, res)=>{
 //         if(err){
@@ -253,7 +253,7 @@ Login.findByToken = async (tok, result) => {
 //         }
 //     })
 //     this.token =-1;
-    
+
 // }
 
 Login.test = async (test_pam,err,result)=>{

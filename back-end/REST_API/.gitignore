@@ -1,3 +1,5 @@
 node_modules
 config
+db.config.js
+.DS_Store
 .cert

@@ -1,2 +1,6 @@
 node_modules
+<<<<<<< HEAD
+.DS_Store
+=======
 back-end/REST_API/config/db.config.js
+>>>>>>> 8f4e807cad6c4fd427aac92841e4223ed8cbc4a8

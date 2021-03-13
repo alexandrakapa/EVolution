@@ -2,6 +2,8 @@ const Login = require('../models/login.model.js');
 //console.time("dbsave");
 var begin=Date.now();
 exports.login = (req, res)=> {  
+    if (req.body.password == null) {return res.status(400).json({isAuth : false, message : 'Auth failed, password field is required'});} 
+    if (req.body.username == null) {return res.status(400).json({isAuth : false, message : 'Auth failed, username field is required'});} 
     let token = req.headers["x-access-token"];
     let cat="";
    
@@ -88,7 +90,7 @@ exports.login = (req, res)=> {
                                         });
                                     }
                                     else {
-                                         res.json({isAuth : false, message : ' Auth failed ,email not found'});
+                                         res.json({isAuth : false, message : 'Auth failed, username not found'});
                                     } 
                                 
                                 });

@@ -17,8 +17,8 @@ router.get('/:username/:vehicleID',function(req, res){
   });
 
 //get charging cost
-router.get('/:chargingID/chargingCost',function(req, res){
-    middle_check.findByToken(req,res,chargingDataController.getChargingCost,0)
-  });
+// router.get('/:chargingID/chargingCost',function(req, res){
+//     middle_check.findByToken(req,res,chargingDataController.getChargingCost,0)
+//   });
 
 module.exports = router;

@@ -19,7 +19,7 @@ function Cards() {
         <div className='cards__wrapper1'>
           <ul className='cards__items1'>
             <CardItem
-              src="https://www.proactiveinvestors.com.au/thumbs/upload/News/Image/2020_10/1200z740_1602132093_Cartoon-electric-car-being-recharged.jpg"
+              src="https://scontent.fath3-4.fna.fbcdn.net/v/t1.0-9/160004791_3960702270655991_194178788410065607_o.jpg?_nc_cat=101&ccb=1-3&_nc_sid=730e14&_nc_ohc=tCQ0rynX_BgAX_L-joa&_nc_ht=scontent.fath3-4.fna&oh=137f086e6284893b1604177a2986dfea&oe=607026E6"
               text='Charge now'
               path='/mainown/charging'
             />

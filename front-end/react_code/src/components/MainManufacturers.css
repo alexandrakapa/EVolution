@@ -37,7 +37,7 @@
 }
 
 .profile_man {
-  background-image: url('https://car-images.bauersecure.com/pagefiles/100957/id3_polestar_tesla_09.jpg');
+  background-image: url('./images/img_profile_man.jpg');
     position:absolute;
     padding: 4rem;
     top:80px;

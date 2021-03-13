@@ -78,6 +78,12 @@ app.use('/evcharge/api/SessionsPerProvider/PerStation', sessions_per_Provider_St
 const energy_Demand_Forecast= require('./src/routes/energy_demand_forecast.route');
 app.use('/evcharge/api/EnergyDemandForecast', energy_Demand_Forecast);
 
+const charging_statistics_money= require('./src/routes/charging_statistics_money.route');
+app.use('/evcharge/api/ChargingStatisticsMoney', charging_statistics_money);
+
+const charging_statistics_km= require('./src/routes/charging_statistics_km.route');
+app.use('/evcharge/api/ChargingStatisticsKm', charging_statistics_km);
+
 
 //stela
 const stationinfoRoutes = require('./src/routes/stationInfo.router');
@@ -116,6 +122,7 @@ app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
 
 // const SessionsPerStation_Route = require('./src/routes/SessionsPerStation.route');
 // app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
+
 
 
 

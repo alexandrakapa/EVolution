@@ -1,10 +1,10 @@
 const Logout = require('../models/logout.model.js');
 //console.time("dbsave");
 var begin=Date.now();
-exports.logout = (req, res)=> {  
-  
-   
-   
+exports.logout = (req, res)=> {
+
+
+
     Logout.logMeOut(req,(err,data) =>{
         if(err){
             res.status(401).json({
@@ -12,11 +12,10 @@ exports.logout = (req, res)=> {
             });
         }
         
+
         if(data == "ok"){
             res.status(200).send();
         }
     });
-    
+
     }
-
-
