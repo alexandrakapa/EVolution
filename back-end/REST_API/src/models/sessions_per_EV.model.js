@@ -3,6 +3,7 @@ const converter = require('json-2-csv');
 
 const Session = function(session){};
 const Vehicle = function(vehicle){};
+const emptyArray = new Array();
 
 const parsedate= function(){
 	let date=new Date();
@@ -33,7 +34,7 @@ Vehicle.getVehicleByID = async (req,result) => {
 			return;
 		}
 
-		if (res.length) {
+		else if (res.length && res[0]['Vehicle'] != null ) {
 			console.log('Found vehicle.')
 			console.log(res);
 			resultarray.push({Vehicle: res[0]['Vehicle']});
@@ -50,7 +51,7 @@ Vehicle.getVehicleByID = async (req,result) => {
 		}
                else {
 		console.log("Noresult for this ID");
-		result(null,res);
+		result(null,emptyArray);
 		return;
 		}
 	});
@@ -71,7 +72,7 @@ Session.findByVehicle = async (req,resultarray, result) => {
 			return;
 		}
 
-		if (res.length) {
+		else if (res.length) {
 			vcslist.push({NumberofChargingSessions: res.length});
 			console.log("Found vehicle");
 
@@ -104,7 +105,8 @@ Session.findByVehicle = async (req,resultarray, result) => {
 			}
 			
 		}
-                else{
+		
+        else{
 		console.log('No session for vehicle within requested dates');
 		resultarray.push({NumberofChargingSessions: 0});
 		resultarray.push([]);
