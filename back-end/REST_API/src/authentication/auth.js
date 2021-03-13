@@ -22,6 +22,10 @@ Validator.checkToken = async(tokid,tuname, cat,result) =>{
             result(err, null);
             return;
         }else{
+            if(res[0].sessionID == null){
+                result(err, null);
+                return; 
+            }
             if(res[0].sessionID ==tokid){
             result(null, "ok");
             return;

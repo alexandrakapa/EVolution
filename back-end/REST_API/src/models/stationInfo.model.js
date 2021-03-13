@@ -13,14 +13,13 @@ var Station = function(station) {
 
 Station.getAllStations = async (result) => {
 
-	dbConn.query(`SELECT Station.operator AS Operator,
+	dbConn.query(`SELECT Station.operator AS Operator,Station.ID as Sid,
 Station.euro_per_kWh AS Price_per_kWh,
-Station.payment_types AS Payment_methods_available,
-Station.address_info AS Address,SUM(evaluates.evaluation)/COUNT(evaluates.StationID) AS Evaluation
+Station.payment_types AS Payment_methods_available,Station.is_active AS is_act,Station.longitude as longitude, Station.latitude as latitude,
+Station.address_info AS Address,CAST(SUM(evaluates.evaluation)/COUNT(evaluates.StationID) AS UNSIGNED) AS Evaluation
 FROM evaluates
 LEFT JOIN Station
 ON evaluates.StationID = Station.ID
-WHERE is_active = 1
 GROUP BY StationID` ,  (err,res) =>
 	{
 		if(err) {
