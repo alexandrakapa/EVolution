@@ -32,12 +32,12 @@ function Cards3() {
               path='https://github.com/nikosgio'
             />
             <CardItem2
-              src="https://www.w3schools.com/images/picture.jpg"
+              src="https://scontent.fath3-3.fna.fbcdn.net/v/t1.0-9/117646155_616482952341708_5095140044217577436_o.jpg?_nc_cat=111&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=Yt-7P2uTg5MAX8IW8aI&_nc_ht=scontent.fath3-3.fna&oh=59316ddd1e53fef3c46817a129a4fbc9&oe=60704E85"
               text='Stela Zhara'
               path='https://github.com/stelazr'
             />
             <CardItem2
-              src="https://www.w3schools.com/images/picture.jpg"
+              src="https://scontent.fath3-4.fna.fbcdn.net/v/t1.0-1/p480x480/48422220_1184394105041319_6651669263528493056_o.jpg?_nc_cat=102&ccb=1-3&_nc_sid=7206a8&_nc_ohc=iMn8tBA2wH8AX8B0kW9&_nc_ht=scontent.fath3-4.fna&tp=6&oh=051eebb91d05fa6a145b722cbd675570&oe=6071BCAA"
               text='Aikaterini Liagka'
               path='https://github.com/LiagkaAikaterini'
             />

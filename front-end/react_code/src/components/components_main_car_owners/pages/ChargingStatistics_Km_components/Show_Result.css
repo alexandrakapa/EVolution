@@ -1,0 +1,58 @@
+.forms_charging_km{
+  background: rgba(0,27,45,0.8);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px 50px;
+  margin-right: 20%;
+}
+
+.h1{
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px;
+  text-align: center;
+
+}
+
+
+.h13_new_charging_km{
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+
+.label{
+   color: black;
+   display: block;
+   font-family: sans-serif;
+   font-size: 15px;
+
+   font-weight: 500;
+   margin-bottom: 5px;
+   margin-top: 5px
+ }
+
+ .label1{
+    color: white;
+    display: block;
+    font-family: sans-serif;
+    font-size: 15px;
+
+    font-weight: 900;
+    margin-bottom: 5px;
+    margin-top: 5px
+  }

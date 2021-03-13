@@ -27,7 +27,7 @@ Supplier.getSessionsbyManID = async (req, result) => {
 	console.log('Username ',username);
 	console.log('Year',periodfrom);
 
-	dbConn.query(`SELECT Charging.Car_Ownerusername as Car_Owner, MONTH(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Month ,SUM(Charging.km_between_charges) as TotalKmBetweenCharges
+	dbConn.query(`SELECT Charging.Car_Ownerusername as Car_Owner, MONTH(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Month , SUM(Charging.km_between_charges) as TotalKmBetweenCharges
 	FROM Charging
 	WHERE Charging.Car_Ownerusername='${username}' and YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${periodfrom}
 	GROUP BY Month
@@ -45,16 +45,41 @@ Supplier.getSessionsbyManID = async (req, result) => {
 			arr.push({PeriodFrom: periodfrom});
 			var months = [ "January", "February", "March", "April", "May", "June",
            "July", "August", "September", "October", "November", "December" ];
+			let check=0;
 			for (var i=0; i<res.length; i++){
       let sessionlist=new Array();
       //arr.push({Number: res.length});
+			if((res[i]['Month'] -1)==check){
 			sessionlist.push({Month: months[res[i]['Month'] -1 ]});
+
 			sessionlist.push({Total_Km_Between_Charges: res[i]['TotalKmBetweenCharges']});
+			check=check+1;
+		}
+		else{
+			sessionlist.push({Month: months[check]});
+			sessionlist.push({Total_Km_Between_Charges: 0});
+			i--;
+			check=check+1;
+
+		}
       arr.push(sessionlist)
 }
+let diff= 11 -(res[res.length-1]['Month'] -1) ;
+if(diff==0){
 			result(null, arr);
 			return;
+}
+else {
+	for (var i=12-diff; i<12;i++){
+		let sessionlist=new Array();
+		sessionlist.push({Month: months[i]});
+		sessionlist.push({Total_Km_Between_Charges: 0});
+		arr.push(sessionlist)
+	}
+	result(null, arr);
+	return;
 
+}
 		}
 		else{
 		arr.push({Car_Owner: null})
