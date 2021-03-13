@@ -12,17 +12,6 @@ exports.getvehiclebyid = (req, res)=>{
     });
 }
 
-
-exports.getCarList = (req, res)=> {  //exports.nameOfTheMethod
-    CarModel.getAllCars((err, car) =>{
-        console.log('We are here');
-        if(err)
-        res.send(err);
-        console.log('User', car);
-        res.send(car)
-    })
-}
-
 //get vehicle by owner
 exports.getvehiclebyowner = (req,res) => {
     CarModel.getVehicleByOwner(req.params.username,(err, vehicle)=>{

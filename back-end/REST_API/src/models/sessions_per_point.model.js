@@ -32,7 +32,7 @@ Point.getPointByID = async (req, result) => {
 	let spacename=(req.params.pointID).substring(0,6);
 	let stationid=(req.params.pointID).substring(6,req.params.pointID.length);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
-	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	//console.log(periodfrom);
 	console.log('Spacename ',spacename);
 	console.log('StationID ',stationid);
@@ -80,7 +80,7 @@ Session.findByPoint= async ( req, arr, result ) => {
 	console.log('StationID ',stationid);
 	dbConn.query(`
 		SELECT (@rank := @rank+1) as SessionIndex, T.SessionID, T.StartedOn, T.FinishedOn, T.Protocol, T.EnergyDelivered, K.Payment, T.VehicleType FROM 
-		((SELECT Charging.ID as SessionID, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.protocol as Protocol, Charging.kWh_delivered as EnergyDelivered, Car.model as VehicleType FROM Car, Charging WHERE (Car.ID=Charging.CarID and Charging.SpaceStationID='${stationid}' and Charging.Spacename='${spacename}' and DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)) ) as T
+		((SELECT Charging.ID as SessionID, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.protocol as Protocol, Charging.kWh_delivered as EnergyDelivered, Car.model as VehicleType FROM Car, Charging WHERE (Car.ID=Charging.CarID and Charging.SpaceStationID='${stationid}' and Charging.Spacename='${spacename}' and DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)) ) as T
 		LEFT JOIN 
 		( SELECT pays_up.ChargingID, Payment.payment_way as Payment
 		 FROM Payment, pays_up
