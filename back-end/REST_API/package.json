@@ -4,7 +4,7 @@
   "description": "A rest API with NodeJS that is connected with MySql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --exit",
     "start": "nodemon index"
   },
   "repository": {
