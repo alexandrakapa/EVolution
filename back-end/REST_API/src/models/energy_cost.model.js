@@ -1,4 +1,6 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
+
 
 var cost = function (){};
 
@@ -113,17 +115,41 @@ cost.getter= async ( req, arr, result ) => {
 		    arr.push(res);
 		    //console.log(arr[0]['NumberOfChargingSessions']);
 		    //console.log(arr[1][0]['SessionIndex']);
-		    result(null, arr);
-		    return;
+		     if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=res
+				tocsv.unshift(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5])
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+			    	/*else{
+			    		console.log(csv)
+			    		fs.writeFile('todos.csv', csv,'utf8')
+			    		.then(result.attachment('todos.csv'))
+			    		.catch(console.log("error creating csv file"))
+			    	}*/
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+			   
+			}
+			else {
+				result(null,arr)
+			}
 		
 		    }
-
+		    else {
 		    // not found 
 		    console.log('No ChargingSessions for these dates and this region.')
 		    arr.push({NumberOfChargingSessions: 0});
 		    arr.push([]);
 		    result(null, arr);
 		    return;
+		}
 		 });
 };
 
@@ -177,10 +203,32 @@ cost.getMeanCost = async (req, result) => {
 		arr.push({PeriodTo: periodto});
 		//console.log(res)
 		arr.push(res);
-	    result(null,arr)
-	    return;
+
+
+		 if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=res
+				tocsv.unshift(arr[0],arr[1],arr[2])
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+			   
+			}
+			else {
+				result(null,arr)
+			}
 	
 	    }
+
+	    else{
 
 	    // not found 
 	    console.log('No charging sessions to calculate mean energy cost per km for these dates.')
@@ -188,7 +236,7 @@ cost.getMeanCost = async (req, result) => {
 	    result(null, res);
 	    return;
 	
-
+	}
 
 	});
 }
@@ -216,18 +264,37 @@ cost.getModels = async (req, result) => {
 	 if (res.length) {
 
 	    console.log("Found models.");
-		result(null, res);
+		 
+		 if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
 
-	    return;
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
+	
+
 	
 	    }
+	    else{
 
 	    // not found 
 	    console.log('No data for cars of this model for these dates.')
 
 	    result(null, res);
 	    return;
-	
+	}
 
 
 	});

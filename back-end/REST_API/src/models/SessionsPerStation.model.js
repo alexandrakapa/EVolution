@@ -1,5 +1,9 @@
 const dbConn = require('../../config/db.config');
 
+const converter = require('json-2-csv');
+
+
+
 const Station = function (station) {};
 
 const parsedate= function() {
@@ -63,8 +67,32 @@ Station.getStationByID = async (req, result)=> {
             }
 
             resultarray.push(myList);
-            result(null, resultarray);
-            return;
+if (req.query.format=='csv'){
+                console.log("found it")
+                var tocsv=myList
+                tocsv.unshift(resultarray[0],resultarray[1],resultarray[2],resultarray[3],resultarray[4],resultarray[5],resultarray[6])
+                
+                converter.json2csv(tocsv, (err, csv) =>{
+                    if (err) {
+                        result(err,null)
+                    }
+                    /*else{
+                        console.log(csv)
+                        fs.writeFile('todos.csv', csv,'utf8')
+                        .then(result.attachment('todos.csv'))
+                        .catch(console.log("error creating csv file"))
+                    }*/
+                    else {
+                        //result.attachment('results.csv').send(csv)
+                        result(null,csv)
+                    }
+                },{emptyFieldValue  : ''})
+               
+            }
+            else {
+                result(null,resultarray)
+                return
+            }
             
         }
 
