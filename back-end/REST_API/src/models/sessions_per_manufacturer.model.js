@@ -66,7 +66,7 @@ Session.getter= async ( req, arr, result ) => {
 	//Point.getPointByID(req, result);
 	let sessionlist=new Array();
 	let ManufacturerID=(req.params.manufacturerID);
-	let region=(req.params.region);
+	let region=(req.params.region).substring(0,2);
 	console.log('ManufacturerID ',ManufacturerID);
 	console.log('region',region);
 	dbConn.query(`
