@@ -1,4 +1,5 @@
 var dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 
 
@@ -26,14 +27,33 @@ var Consumer = function(user){
         if (res.length){
             console.log("Found data.");
 
+             if (req.query.format=='csv'){
+                console.log("found it")
+                var tocsv=res
+                                
+                converter.json2csv(tocsv, (err, csv) =>{
+                    if (err) {
+                        result(err,null)
+                    }
+
+                    else {
+                        //result.attachment('results.csv').send(csv)
+                        result(null,csv)
+                    }
+                },{emptyFieldValue  : ''})
+        }
+        else {
+                result(null,res)
+            }
+    
+
+        }
+        else {
+            console.log('No data found.')
+
             result(null, res);
             return;
         }
-
-        console.log('No data found.')
-
-        result(null, res);
-        return;
     })
 }
 module.exports = Consumer;
