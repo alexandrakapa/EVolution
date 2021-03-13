@@ -35,8 +35,18 @@ exports.postPayment = (req, res)=> {
                 return;
             }
             else if (data != null) {
-                res.send(data)
-                return;
+                if (req.query.format=='csv'){
+                    //console.log(data)
+                    res.attachment('results.csv').send(data);
+                    return;
+                }
+                else if (req.query.format=='json' || req.query.format==undefined){
+                    res.send(data);
+                    return;
+                }
+                else {
+                    console.log('error in query.format, should not be here')
+                }
             }
             else {
                 res.send("something went wrong");
