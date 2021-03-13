@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "click": "^0.1.0",
     "cors": "^2.8.5",
     "package.json": "^2.0.1",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "unittest": "^1.0.0"
   }
 }

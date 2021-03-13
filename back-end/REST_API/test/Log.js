@@ -1,13 +1,12 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-
 const { expect } = chai;
-
 chai.use(chaiHttp);
 
 let token = String();
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 
 describe('Log Tests', () => {
     describe('Login', () => {

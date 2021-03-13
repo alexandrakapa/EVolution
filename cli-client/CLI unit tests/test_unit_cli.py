@@ -37,17 +37,25 @@ class TestUnit (unittest.TestCase):
 
 
     def test_healthcheck(self):
+        with patch.object(requests, 'post') as mocked_login:
+            mocked_login.return_value = Mock(status_code = 200)
+            mocked_login.return_value.json.return_value = fakeToken
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 200)
             mocked_get.return_value.json.return_value = myStatus
-            self.assertEqual(healthcheck(), myStatus)
+            self.assertEqual(healthcheck(), 200)
+        with patch.object(requests, 'post') as mocked_logout:
+            mocked_logout.return_value = Mock(status_code = 200)
+            mocked_logout.return_value.json.return_value = fakeToken
+            logout() 
             
 
     def test_resetsessions(self):
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 200)
             mocked_post.return_value.json.return_value = myStatus
-            self.assertEqual(reset(), myStatus)
+            self.assertEqual(reset(), 200)
             
 
     def test_sessions_per_point(self):
@@ -128,7 +136,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 200)
             mocked_post.return_value.json.return_value = fakeToken
-            self.assertEqual(admin_actions(sessionsupd = 'source'), [200, 1])
+            self.assertEqual(admin_actions(sessionsupd = 'test.csv'), [200, 1])
         with patch.object(requests, 'post') as mocked_logout:
             mocked_logout.return_value = Mock(status_code = 200)
             mocked_logout.return_value.json.return_value = fakeToken

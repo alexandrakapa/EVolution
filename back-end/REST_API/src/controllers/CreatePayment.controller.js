@@ -20,8 +20,7 @@ exports.postPayment = (req, res)=> {
         return;
     }
 
-    let p = parseInt(req.params.pointsused);
-    if (!Number.isInteger(p) || p < 0) {
+    if (!Number.isInteger(req.params.pointsusedp) || (req.params.pointsused) < 0) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Inserted points in not an integer');
         return;
