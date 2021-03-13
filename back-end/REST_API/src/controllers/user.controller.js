@@ -98,7 +98,7 @@ exports.UpdatePoints = (req, res) => {
         return;
       }
       else {
-        res.status(402).send('Bad request.');
+        res.send("something went wrong");
         return;
       }
   });
