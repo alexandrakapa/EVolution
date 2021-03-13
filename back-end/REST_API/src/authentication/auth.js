@@ -16,6 +16,7 @@ var Validator = function(validator){
 }
 Validator.checkToken = async(tokid,tuname, cat,result) =>{
     qur = "SELECT * FROM "+cat+" WHERE username= '"+ tuname+"'";
+    console.log(qur);
     dbConn.query(qur, (err, res)=>{
         if(err){
             result(err, null);
@@ -37,13 +38,13 @@ exports.findByToken =  (req, result,next,isAdmin) => {
     var tok = req.headers["x-access-token"];
     Validator.token =tok;
     if (!tok) {
-        result.status(500).send("Not authorized");
+        result.status(401).send("Not authorized");
 
 
     }else{
         jwt.verify(tok,  process.env.TOKEN_SECRET, (err, decoded) => {
         if (err) {
-            result.status(500).send("An error occured while validating user");
+            result.status(401).send("Not authorized");
         }else{
         var csid = jwt_decode(tok).sessionID;
         var csum = jwt_decode(tok).username;
@@ -54,14 +55,14 @@ exports.findByToken =  (req, result,next,isAdmin) => {
         Validator.category = csct;
         Validator.checkToken(csid,csum,csct,(err,res)=>{
             if(err){
-                result.status(500).send("An error occured while validating user");
+                result.status(401).send("Not authorized");
             }
             if((isAdmin==0 && res == "ok")||(isAdmin==1 &&csct=="Admin" && res == "ok")){
                 next(req,result);
                 return;
 
             }else{
-                result.status(500).send("Not authorized");
+                result.status(401).send("Not authorized");
             }
         });
 

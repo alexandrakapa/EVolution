@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
 const multer = require('multer');
-const upload = multer({ dest:'uploads/' })
-
+const upload = multer({ dest: 'tmp/csv/' });
+const uploadController = require('../controllers/upload_controller');
 const userController = require('../controllers/user.controller');
 const middle_check = require('../authentication/auth.js');
 
@@ -22,15 +21,13 @@ router.get('/users/:username',function(req, res){
 
 // router.post('/usermod/:username/:password',userController.createOrUpdateUser);
 router.post('/usermod/:username/:password',function(req, res){
-  middle_check.findByToken(req,res,userController.createOrUpdateUser,0)
+  middle_check.findByToken(req,res,userController.createOrUpdateUser,1)
 });
 //TODO:check
 
-// router.post('/system/sessionsupd', upload.single('file'), (req, res) => { //sample is written as key in postman
-//   console.log(`new upload = ${req.file.filename}\n`);
-//   console.log(req.file);
-//   res.json({ message: 'Upload Works' });
-// });
+
+router.post('/system/sessionsupd', upload.single('file'),uploadController.getFile);
+
 // TODO: change with uploadcsv!
 
 router.post('/UpdatePoints/:username/:price/:points',function(req, res){

@@ -2,7 +2,6 @@ const express = require('express');   //to import express
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const cookieParser=require('cookie-parser');
-
 // create express app
 const app = express();
 
@@ -96,8 +95,8 @@ app.use('/evcharge/api/logout', logoutRoutes);
 const consumptionRoutes = require('./src/routes/consumption_route.js');
 app.use('/evcharge/api/report_consumption', consumptionRoutes);
 
-const uploadRoutes = require('./src/routes/upload_route.js');
-app.use('/evcharge/api/uploadcsv', uploadRoutes);
+// const uploadRoutes = require('./src/routes/upload_route.js');
+// app.use('/evcharge/api/uploadcsv', uploadRoutes);
 
 //katerina
 const PaymentFirstPage_OwedInfo_Route = require('./src/routes/PaymentFirstPage_OwedInfo.route');

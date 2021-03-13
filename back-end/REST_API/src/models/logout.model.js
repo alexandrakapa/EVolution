@@ -25,7 +25,11 @@ Logout.logMeOut = async(req,res) =>{
     Logout.sessionID =csid;
     Logout.category = csct;
 
+    if(Logout.sessionID==9999){
+        Logout.sessionID=0; 
+    }else{
     Logout.sessionID +=1;
+    }
     qur = "UPDATE "+Logout.category+" SET sessionID = "+Logout.sessionID+" WHERE username= '"+ Logout.username+"'";
     console.log(qur);
     dbConn.query(qur, (err, result)=>{
