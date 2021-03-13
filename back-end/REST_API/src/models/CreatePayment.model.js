@@ -1,4 +1,5 @@
 const dbConn = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 const Payment = function (payment) {};
 var resarray = new Array();
@@ -213,8 +214,28 @@ Payment.ReturnPoints = (req, earnedpoints, result)=> {
         }
         else {
             resarray.push({TotalPoints: res[0]['TotalPoints']});
-            result(null, resarray);
-            return;
+            
+             if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=resarray
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err, null);
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null, csv);
+			    	}
+			    }, {emptyFieldValue  : ''})
+			   
+                return;
+			}
+            else {
+                result(null, resarray);
+                return;
+            }
         }
     });
 }

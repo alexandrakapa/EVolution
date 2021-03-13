@@ -25,7 +25,7 @@ Manufacturer.getSessionsbyManID = async (req, result) => {
 	let arr=new Array();
 	let ManufacturerID=(req.params.manufacturerID);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
-	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	//console.log(periodfrom);
 	console.log('ManufacturerID ',ManufacturerID);
 	dbConn.query(`SELECT Car_Manufacturer.ID as ManufacturerID, Car_Manufacturer.company_name as ManufacturerName
@@ -85,7 +85,7 @@ Session.getter= async ( req, arr, result ) => {
 		Charging.km_between_charges as kmBetweenCharges, Charging.protocol as Protocol, Charging.SpaceStationID as StationID, Charging.CarID as CarID
 		 FROM Charging
 		WHERE
-		DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
+		DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
 		) as T
 		ON T.CarID=B.ID
 		)

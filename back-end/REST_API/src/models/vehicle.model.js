@@ -9,21 +9,6 @@ var Car = function(car) {
   this.Car_ManufacturerID = car.Car_ManufacturerID;
 }
 
-Car.getAllCars = (result) =>{
-  dbConn.query('SELECT * FROM Car', (err, res)=>{
-        if(err){
-            console.log('Error while fetching employess', err);
-            result(null,err);
-
-        }else{
-            console.log('Employees fetched successfully');
-            result(null,res);
-
-        }
-    })
-}
-
-
 
 Car.getVehicleByID = (vehicleID,result) => {
   dbConn.query('SELECT * FROM Car WHERE ID = ?' , vehicleID, (err, res)=>{

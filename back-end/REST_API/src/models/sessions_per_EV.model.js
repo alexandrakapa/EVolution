@@ -3,6 +3,7 @@ const converter = require('json-2-csv');
 
 const Session = function(session){};
 const Vehicle = function(vehicle){};
+const emptyArray = new Array();
 
 const parsedate= function(){
 	let date=new Date();
@@ -25,7 +26,7 @@ Vehicle.getVehicleByID = async (req,result) => {
 
 	console.log('VehicleID', vehicleid);
 
-	dbConn.query(`SELECT CarID AS Vehicle, SUM(kWh_delivered) AS TotalEnergyConsumed, COUNT(DISTINCT(SpaceStationID)) AS NumberOfVisitedPoints, COUNT(ID) AS NumberOfVehicleChargingSessions FROM Charging  WHERE CarID = "${vehicleid}" and DATE(STR_TO_DATE(Charging.the_date, "%c/%e/%Y %H:%i"))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, "%c/%e/%Y"))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`, (err,res) =>
+	dbConn.query(`SELECT CarID AS Vehicle, SUM(kWh_delivered) AS TotalEnergyConsumed, COUNT(DISTINCT(SpaceStationID)) AS NumberOfVisitedPoints, COUNT(ID) AS NumberOfVehicleChargingSessions FROM Charging  WHERE CarID = "${vehicleid}" and DATE(STR_TO_DATE(Charging.the_date, "%e/%c/%Y %H:%i"))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, "%e/%c/%Y"))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`, (err,res) =>
 	{
 		if (err) {
 			console.log("error: ", err);
@@ -33,7 +34,7 @@ Vehicle.getVehicleByID = async (req,result) => {
 			return;
 		}
 
-		if (res.length) {
+		else if (res.length && res[0]['Vehicle'] != null ) {
 			console.log('Found vehicle.')
 			console.log(res);
 			resultarray.push({Vehicle: res[0]['Vehicle']});
@@ -50,7 +51,7 @@ Vehicle.getVehicleByID = async (req,result) => {
 		}
                else {
 		console.log("Noresult for this ID");
-		result(null,res);
+		result(null,emptyArray);
 		return;
 		}
 	});
@@ -63,7 +64,7 @@ Session.findByVehicle = async (req,resultarray, result) => {
 
 	console.log('VehicleID', vehicleid);
 
-	dbConn.query(`SELECT (@rank := @rank+1) as SessionIndex, Charging.ID as SessionID, Energy_Supplier.company_name as EnergyProvider, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.kWh_delivered as EnergyDelivered, Station.euro_per_kWh as CostPerkWh, Charging.charging_price AS SessionCost FROM Charging LEFT JOIN Energy_Supplier ON Charging.supplierID = Energy_Supplier.ID LEFT JOIN Station ON Station.ID = Charging.SpaceStationID, (SELECT @rank:=0) r WHERE CarID ="${vehicleid}" and DATE(STR_TO_DATE(Charging.the_date, "%c/%e/%Y %H:%i"))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, "%c/%e/%Y"))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`, (err,res) =>
+	dbConn.query(`SELECT (@rank := @rank+1) as SessionIndex, Charging.ID as SessionID, Energy_Supplier.company_name as EnergyProvider, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.connection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.connection_time,17,17) ), 1, 19) as StartedOn, SUBSTRING(CONCAT(STR_TO_DATE(SUBSTRING(Charging.disconnection_time,6,11), "%d %b %Y"), SUBSTRING(Charging.disconnection_time,17,17) ), 1, 19) as FinishedOn, Charging.kWh_delivered as EnergyDelivered, Station.euro_per_kWh as CostPerkWh, Charging.charging_price AS SessionCost FROM Charging LEFT JOIN Energy_Supplier ON Charging.supplierID = Energy_Supplier.ID LEFT JOIN Station ON Station.ID = Charging.SpaceStationID, (SELECT @rank:=0) r WHERE CarID ="${vehicleid}" and DATE(STR_TO_DATE(Charging.the_date, "%e/%c/%Y %H:%i"))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, "%e/%c/%Y"))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`, (err,res) =>
 	{
 		if (err) {
 			console.log("error: ", err);
@@ -71,7 +72,7 @@ Session.findByVehicle = async (req,resultarray, result) => {
 			return;
 		}
 
-		if (res.length) {
+		else if (res.length) {
 			vcslist.push({NumberofChargingSessions: res.length});
 			console.log("Found vehicle");
 
@@ -104,7 +105,8 @@ Session.findByVehicle = async (req,resultarray, result) => {
 			}
 			
 		}
-                else{
+		
+        else{
 		console.log('No session for vehicle within requested dates');
 		resultarray.push({NumberofChargingSessions: 0});
 		resultarray.push([]);

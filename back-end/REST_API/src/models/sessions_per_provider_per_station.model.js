@@ -25,13 +25,13 @@ Supplier.getSessionsbyManID = async (req, result) => {
 	let supplierID=(req.params.supplierID);
 	let station=( req.params.station);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
-	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	console.log('SupplierID ',supplierID);
 	console.log('Station',station);
 	//console.log(periodfrom);
 	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName,Station.ID as ID,Station.address_info as Address ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
 	FROM Space,Energy_Supplier,Station,Charging
-	WHERE Energy_Supplier.ID='${supplierID}' and   Space.Energy_SupplierID=Energy_Supplier.ID and   Space.StationID=Station.ID and Station.ID='${station}' and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`
+	WHERE Energy_Supplier.ID='${supplierID}' and   Space.Energy_SupplierID=Energy_Supplier.ID and   Space.StationID=Station.ID and Station.ID='${station}' and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)`
 	, (err, res) =>
 	{
 		if (err) {

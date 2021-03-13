@@ -1,4 +1,5 @@
 const dbConn = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 const PaymentInfo = function (station) {};
 
@@ -34,9 +35,27 @@ PaymentInfo.getOwedInfo = async (req, result)=> {
             else {
                 resultarray.push({Discount: res[0]['discount']});
             }
-
-            result(null, resultarray);
-            return;
+        
+            if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=resultarray
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err, null);
+			    	}
+			    	else {
+			    		result(null, csv);
+			    	}
+			    }, {emptyFieldValue  : ''})
+                
+                return;
+			}
+            else {
+                result(null, resultarray);
+                return;
+            }
+            
 
         }
 

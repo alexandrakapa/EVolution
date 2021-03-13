@@ -36,9 +36,9 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 		periodto="2020";
 	}
 
-	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, MONTH(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Month ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
+	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, MONTH(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i')) as Month ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
 	FROM Space,Energy_Supplier,Station,Charging
-	WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${periodto}
+	WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=${periodto}
 	GROUP BY Month
 	ORDER BY Month ASC`
 	, (err, res) =>
@@ -81,9 +81,9 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 
 }
 else{
-dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Year ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
+dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i')) as Year ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
 FROM Space,Energy_Supplier,Station,Charging
-WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${req.params.yyyy_from} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${req.params.yyyy_to}
+WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=${req.params.yyyy_from} AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=${req.params.yyyy_to}
 GROUP BY Year
 ORDER BY Year ASC`
 , (err, res) =>

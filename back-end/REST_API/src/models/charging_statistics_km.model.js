@@ -27,9 +27,9 @@ Supplier.getSessionsbyManID = async (req, result) => {
 	console.log('Username ',username);
 	console.log('Year',periodfrom);
 
-	dbConn.query(`SELECT Charging.Car_Ownerusername as Car_Owner, MONTH(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Month , SUM(Charging.km_between_charges) as TotalKmBetweenCharges
+	dbConn.query(`SELECT Charging.Car_Ownerusername as Car_Owner, MONTH(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i')) as Month , SUM(Charging.km_between_charges) as TotalKmBetweenCharges
 	FROM Charging
-	WHERE Charging.Car_Ownerusername='${username}' and YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${periodfrom}
+	WHERE Charging.Car_Ownerusername='${username}' and YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=${periodfrom}
 	GROUP BY Month
 	ORDER BY Month ASC`
 	, (err, res) =>

@@ -26,7 +26,7 @@ cost.getCostByModel = async (req, result) => {
 	let ManufacturerID=(req.params.manufacturerID);
 	let Model=req.params.model;
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
-	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	//console.log(periodfrom);
 	console.log('ManufacturerID ',ManufacturerID);
 	dbConn.query(`SELECT Car_Manufacturer.ID as ManufacturerID, Car_Manufacturer.company_name as ManufacturerName
@@ -86,7 +86,7 @@ cost.getter= async ( req, arr, result ) => {
 	 	FROM
 		Charging
 	     WHERE
-	    DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
+	    DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
 	) as T
 	INNER JOIN
 	 (
@@ -163,14 +163,14 @@ cost.getMeanCost = async (req, result) => {
 	
 	let arr=new Array();
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
-	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
+	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	
 	dbConn.query(` SELECT A.ManufacturerName, SUM(A.EnergyDelivedInKWh)/SUM(A.TotalKm) as EnergyCostPerKm, SUM(A.EnergyDelivedInKWh) as EnergyDelivedInKWh, SUM(A.TotalKm) as TotalKm FROM (
 		SELECT C.ManName as ManufacturerName, C.Model as CarModel, SUM(T.kWh_delivered)/SUM(T.km_total) as EnergyCostPerKm, SUM(T.kWh_delivered) as EnergyDelivedInKWh, SUM(T.km_total) as TotalKm  FROM
 
 		( SELECT Charging.CarID, Charging.km_total, Charging.kWh_delivered, Charging.ID as Charging_ID 
 		 from Charging 
-		WHERE DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)) as T
+		WHERE DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)) as T
 
 		INNER JOIN
 

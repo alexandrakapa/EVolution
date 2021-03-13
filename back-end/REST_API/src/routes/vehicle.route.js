@@ -11,11 +11,6 @@ router.get('/:vehicleID',function(req, res){
     middle_check.findByToken(req,res,vehicleController.getvehiclebyid,0)
   });
 
-// router.get("/",vehicleController.getCarList);
-router.get('/',function(req, res){
-    middle_check.findByToken(req,res,vehicleController.getCarList,0)
-  });
-
 router.get('/ofOwner/:username', function(req, res){
     middle_check.findByToken(req,res,vehicleController.getvehiclebyowner,0)
 });
