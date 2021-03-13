@@ -134,7 +134,7 @@ cost.getter= async ( req, arr, result ) => {
 			    		//result.attachment('results.csv').send(csv)
 			    		result(null,csv)
 			    	}
-			    })
+			    },{emptyFieldValue  : ''})
 			   
 			}
 			else {
@@ -219,7 +219,7 @@ cost.getMeanCost = async (req, result) => {
 			    		//result.attachment('results.csv').send(csv)
 			    		result(null,csv)
 			    	}
-			    })
+			    },{emptyFieldValue  : ''})
 			   
 			}
 			else {
@@ -278,7 +278,7 @@ cost.getModels = async (req, result) => {
 			    		//result.attachment('results.csv').send(csv)
 			    		result(null,csv)
 			    	}
-			    })
+			    },{emptyFieldValue  : ''})
 		}
 		else {
 				result(null,res)

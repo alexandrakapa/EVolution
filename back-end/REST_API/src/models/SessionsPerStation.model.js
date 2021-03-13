@@ -84,7 +84,7 @@ Station.getStationByID = async (req, result)=> {
                         //result.attachment('results.csv').send(csv)
                         result(null,csv)
                     }
-                })
+                },{emptyFieldValue  : ''})
                
             }
             else {

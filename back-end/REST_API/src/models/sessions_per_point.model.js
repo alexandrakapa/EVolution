@@ -131,7 +131,7 @@ Session.findByPoint= async ( req, arr, result ) => {
 			    		//result.attachment('results.csv').send(csv)
 			    		result(null,csv)
 			    	}
-			    })
+			    }, {emptyFieldValue  : ''})
 			   
 			}
 			else {

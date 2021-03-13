@@ -126,7 +126,7 @@ Session.getter= async ( req, arr, result ) => {
 			    	else {
 			    		result(null,csv)
 			    	}
-			    })
+			    },{emptyFieldValue  : ''})
 			   
 			}
 			else {

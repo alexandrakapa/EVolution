@@ -7,6 +7,13 @@ exports.getStationPoints=(req, res) => {
         res.statusMessage = 'Bad Request'
         res.status(400).send("Invalid requested datatype.")
     }
+
+
+        if ((req.params.stationID).length > 255) {
+        res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid station ID');
+        return;
+    }
     
 	StationPointsModel.getStationPoints(req, (err, data) => {
  		if (err) {
