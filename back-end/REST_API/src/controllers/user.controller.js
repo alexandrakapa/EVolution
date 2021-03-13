@@ -70,7 +70,7 @@ exports.createOrUpdateUser = (req,res) => {
        else {
          console.log('userReqData',userReqData);
          {
-               UserModel.createUser(req.params.username, req.params.password, userReqData, (err, user)=>{
+               UserModel.createUser(req.params.username,fin_pas, userReqData, (err, user)=>{
                    if(err)
                    {
                      res.send(err);

@@ -2,6 +2,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "package.json": "^2.0.1",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "start": "^5.1.0"
   }
 }

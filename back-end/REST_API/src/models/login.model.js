@@ -21,7 +21,7 @@ var Login = function(login){
 }
 
 Login.findByAdmin = async(username, result)=>{
-    quer = "SELECT * FROM admin WHERE username= '"+ username.username+"'";
+    quer = "SELECT * FROM Admin WHERE username= '"+ username.username+"'";
     console.log(quer);
     dbConn.query(quer, (err, res)=>{
         if(err){
