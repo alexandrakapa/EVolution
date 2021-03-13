@@ -7,7 +7,8 @@ export const PayStyle = styled.div`
    font-size: 15px;
    height: 15px;
    font-style: italic;
-   margin-left: 30%;
+   margin-left: 39%;
+
  }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

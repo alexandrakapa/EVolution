@@ -9,6 +9,42 @@ export const PayStyle = styled.div`
    font-style: italic;
    margin-left: 30%;
  }
+ .error_name {
+    color: red;
+    font-family: sans-serif;
+    font-size: 15px;
+    height: 15px;
+    font-style: italic;
+    margin-left: 39%;
+
+  }
+  .error_exp_month {
+     color: red;
+     font-family: sans-serif;
+     font-size: 15px;
+     height: 1px;
+     font-style: italic;
+
+     margin-left: 39%;
+   }
+
+
+   .error_cvv {
+      color: red;
+      font-family: sans-serif;
+      font-size: 15px;
+      font-style: italic;
+      margin-left: 55%;
+    }
+
+
+    .error_expyear {
+       color: red;
+       font-family: sans-serif;
+       font-size: 15px;
+       font-style: italic;
+       margin-left: 30%;
+     }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -66,7 +102,7 @@ input {
 }
 
 label {
-  line-height: 2;
+  line-height: 1.32;
   text-align: left;
   display: block;
   margin-top: 2%;
@@ -100,7 +136,7 @@ input[type="submit"] {
   font-weight: 100;
   letter-spacing: 10px;
   margin-left: 26%;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 button[type="submit"]:hover,
@@ -174,8 +210,8 @@ button {
   height: 4%;
   border-radius: 4px;
   border: 1px solid white;
-  padding: 10px 15px;
-  margin-top: -8%;
+  padding: 10px 10px;
+  margin-top: -14%;
   font-size: 12px;
   margin-left: 30%;
   margin-bottom: 2%;
@@ -188,7 +224,7 @@ button {
   height: 4%;
   border-radius: 4px;
   border: 1px solid white;
-  padding: 10px 15px;
+  padding: 10px 10px;
   margin-top: 10%;
   font-size: 12px;
   margin-left: 55%;

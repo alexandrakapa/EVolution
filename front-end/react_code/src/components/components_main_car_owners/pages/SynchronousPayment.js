@@ -109,30 +109,35 @@ const [calc, setCalc] = useState('');
 
       <label>Name on Card</label>
       <input type="text" id="cname" name="cardname" placeholder="John More Doe" ref={register({ required: true})}/>
-      {errors.cardname && errors.cardname.type === "required" && <span className='error' >Field is required </span>}
+      {errors.cardname && errors.cardname.type === "required" && <span className='error_name' >Field is required </span>}
       <label for="ccnum">Credit card number</label>
       <input type="text" id="ccnum" name="ccnum" placeholder="XXXX-XXXX-XXXX-XXXX" ref={register({ required: true, maxLength: 19, minLength:19})}/>
-      {errors.ccnum && errors.ccnum.type === "required" && <span className='error' >Field is required </span>}
+      {errors.ccnum && errors.ccnum.type === "required" && <span className='error_name' >Field is required </span>}
       {errors.ccnum && errors.ccnum.type === "maxLength" && <span className='error' >The correct form is XXXX-XXXX-XXXX-XXXX</span>}
       {errors.ccnum && errors.ccnum.type === "minLength" && <span className='error' >The correct form is XXXX-XXXX-XXXX-XXXX</span>}
       <label for="expmonth">Expiration Month</label>
       <input type="text" id="expmonth" name="expmonth" placeholder="September" ref={register({ required: true})}/>
-      {errors.expmonth && errors.expmonth.type === "required" && <span className='error' >Field is required </span>}
+      {errors.expmonth && errors.expmonth.type === "required" && <span className='error_exp_month' >Field is required </span>}
+      <div >
       <label for="expyear" className="expYearLabel">Exp Year</label>
       <label for="cvv" className="CVVLabel">CVV</label>
       <input className="CVV" type="text" id="cvv" name="cvv" placeholder="352" ref={register({ required: true, maxLength: 3, minLength:3})}/>
-      {errors.cvv && errors.cvv.type === "required" && <span className='error' >Field is required </span>}
-      {errors.cvv && errors.cvv.type === "maxLength" && <span className='error' >Not valid CVV</span>}
-      {errors.cvv && errors.cvv.type === "minLength" && <span className='error' >Not valid CVV</span>}
+      {errors.cvv && errors.cvv.type === "required" && <span className='error_cvv' >Field is required </span>}
+      {errors.cvv && errors.cvv.type === "maxLength" && <span className='error_cvv' >Not valid CVV</span>}
+      {errors.cvv && errors.cvv.type === "minLength" && <span className='error_cvv' >Not valid CVV</span>}
       <input className="expYear" type="text" id="expyear" name="expyear" placeholder="2018" ref={register({ required: true, maxLength: 4, minLength:4})}/>
-      {errors.expyear && errors.expyear.type === "required" && <span className='error' >Field is required </span>}
-      {errors.expyear && errors.expyear.type === "maxLength" && <span className='error' >Not valid year</span>}
-      {errors.expyear && errors.expyear.type === "minLength" && <span className='error' >Not valid year</span>}
+      {errors.expyear && errors.expyear.type === "required" && <span className='error_expyear' >Field is required </span>}
+      {errors.expyear && errors.expyear.type === "maxLength" && <span className='error_expyear' >Not valid year</span>}
+      {errors.expyear && errors.expyear.type === "minLength" && <span className='error_expyear' >Not valid year</span>}
       <br/>
-      <label className="label3">Would you like to use some points?(optional)</label>
+      </div>
+      <label className="label3">Would you like to use some points? (optional)</label>
       <input name="pointsGiven" type="number" placeholder="If not leave blank" onChange={e => setCalc(e.target.value/0.2)} ref={register({max: points.Points})}/>
-      {errors.pointsGiven && errors.pointsGiven.type === "max" && <span className='error' >You can't spend more points than you own </span>}
-      <p className="p2">= {calc} €</p>
+      {errors.pointsGiven && errors.pointsGiven.type === "max" && <span className='error_points' >You can't spend more points than you own </span>}
+      <div className="p2">
+      <p >= {calc} €</p>
+      </div>
+
       <button type="submit">Start payment</button>
       <br/>
       <br/>

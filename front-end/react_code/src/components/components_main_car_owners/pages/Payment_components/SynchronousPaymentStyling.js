@@ -7,8 +7,53 @@ export const PayStyle = styled.div`
    font-size: 15px;
    height: 15px;
    font-style: italic;
-   margin-left: 27%;
+   margin-left: 30%;
  }
+ .error_name {
+    color: red;
+    font-family: sans-serif;
+    font-size: 15px;
+    height: 15px;
+    font-style: italic;
+    margin-left: 39%;
+
+  }
+  .error_exp_month {
+     color: red;
+     font-family: sans-serif;
+     font-size: 15px;
+     height: 1px;
+     font-style: italic;
+
+     margin-left: 39%;
+   }
+
+
+   .error_cvv {
+      color: red;
+      font-family: sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      margin-left: 55%;
+    }
+
+
+    .error_expyear {
+       color: red;
+       font-family: sans-serif;
+       font-size: 14px;
+       font-style: italic;
+       margin-left: 30%;
+     }
+
+     .error_points{
+       color: red;
+       font-family: sans-serif;
+       font-size: 11px;
+       font-style: italic;
+       margin-left: 30%;
+
+     }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,10 +62,10 @@ body {
 }
 
 .p2 {
-  color: #f1f1f1;
+  color:white;
   margin-top: -5%;
-  margin-left: 72%;
-  font-size: 20px;
+  margin-left: 62%;
+
 }
 
 form {
@@ -44,10 +89,10 @@ h1 {
 }
 
 p {
-  color: #bf1650;
-  margin-top: 3%;
+  color: white
+  margin-top: -3%;
   margin-left: 30%;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 
@@ -73,12 +118,12 @@ input {
 }
 
 label {
-  line-height: 2;
+  line-height: 1.22;
   text-align: left;
   display: block;
   margin-top: 2%;
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 200;
   text-align: center;
 
@@ -97,7 +142,7 @@ label {
 }
 
 .label3 {
-  line-height: 2;
+  line-height: 1.3;
   text-align: left;
   display: block;
   margin-top: -1%;
@@ -194,8 +239,8 @@ button {
   height: 4%;
   border-radius: 4px;
   border: 1px solid white;
-  padding: 10px 15px;
-  margin-top: -8%;
+  padding: 10px 10px;
+  margin-top: -14%;
   font-size: 12px;
   margin-left: 30%;
   margin-bottom: 2%;
@@ -208,7 +253,7 @@ button {
   height: 4%;
   border-radius: 4px;
   border: 1px solid white;
-  padding: 10px 15px;
+  padding: 10px 10px;
   margin-top: 10%;
   font-size: 12px;
   margin-left: 55%;
