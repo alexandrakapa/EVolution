@@ -36,7 +36,7 @@ csvReader.checkToken = async(tokid,tuname, cat,result) =>{
 
 
 csvReader.findByToken = async (tok, result) => {
-    
+
     if (!tok) {
         result(null,"fail");
         return;
@@ -81,8 +81,8 @@ csvReader.upFile =  ((req, result) => {
       fileRows.push(data); // push each row
     })
     .on("end", function () {
-      fs.unlinkSync(req.file.path); 
-      console.log(fileRows);  
+      fs.unlinkSync(req.file.path);
+      console.log(fileRows);
       result(null,fileRows);
       return;
     })
@@ -105,19 +105,16 @@ csvReader.upDB =  ((data, result) => {
                 }else{
                     cur_to_exec += data_ar[k] + ",";
                 }
-                
+
             }else{
                 cur_to_exec += data_ar[k];
             }
         }
-        if(i <= data[i].length -1){
         cur_to_exec += "),"
-        }else{
-            cur_to_exec += ")"
-        }
         to_exec += cur_to_exec;
   }
 //   console.log(to_exec);
+to_exec = to_exec.slice(0, -1);
 //   result(null,"okey dokey");
     dbConn.query(to_exec,(er,re)=>{
         if(er){

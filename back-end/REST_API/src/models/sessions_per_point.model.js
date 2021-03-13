@@ -148,8 +148,22 @@ Session.findByPoint= async ( req, arr, result ) => {
 		    // not found 
 		    console.log('No ChargingSessions for these dates.')
 		    arr.push({NumberOfChargingSessions: 0});
-		    arr.push([]);
-		    result(null, arr);
+		    if (req.query.format!='csv'){
+			    arr.push([]);
+			    result(null, arr);
+			}
+			else {
+				 converter.json2csv(arr, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    }, {emptyFieldValue  : ''})
+			}
 		    return;
 		}
 		 });
