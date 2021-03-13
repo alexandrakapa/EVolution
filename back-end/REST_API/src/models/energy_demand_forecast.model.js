@@ -1,4 +1,5 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 const Session = function (){
 };
@@ -47,7 +48,7 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 		    console.log("error: ", err);
 		    result(err, null);
 		    return;
-		    }
+		 }
 		console.log(res.length);
 		if (res.length != 0){
 			arr.push({SupplierID: res[0]['SupplierID']});
@@ -56,17 +57,39 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 			arr.push({PeriodTo: periodto});
 			var months = [ "January", "February", "March", "April", "May", "June",
            "July", "August", "September", "October", "November", "December" ];
+			let newArr= new Array();
 			for (var i=0; i<res.length; i++){
       let sessionlist=new Array();
       //arr.push({Number: res.length});
 			sessionlist.push({Month: months[res[i]['Month'] -1 ]});
 			sessionlist.push({TotalEnergyDelivered: res[i]['Total_Energy_Delivered']});
+			newArr.push({Month: months[res[i]['Month'] -1 ], TotalEnergyDelivered: res[i]['Total_Energy_Delivered']})
       arr.push(sessionlist)
 }
+			if (req.query.format=='csv'){
+			console.log("found it")
+			var tocsv=newArr
+			newArr.unshift(arr[0],arr[1],arr[2],arr[3])
+				converter.json2csv(tocsv, (err, csv) =>{
+					if (err) {
+						result(err,null)
+					}
+
+					else {
+						//result.attachment('results.csv').send(csv)
+						result(null,csv)
+					}
+				}, {emptyFieldValue  : ''})
+
+	}
+
+			else{
+
 			result(null, arr);
 			return;
-
 		}
+
+}
 		else{
 		arr.push({SupplierID: null})
 		console.log("No result for this ID.")
@@ -99,18 +122,38 @@ ORDER BY Year ASC`
 		arr.push({SupplierName: res[0]['SupplierName']});
 		arr.push({PeriodFrom: periodfrom});
 		arr.push({PeriodTo: periodto});
+		let newArr= new Array();
 		for (var i=0; i<res.length; i++){
 		let sessionlist=new Array();
 		//arr.push({Number: res.length});
 		sessionlist.push({Year: res[i]['Year']});
 		sessionlist.push({TotalEnergyDelivered: res[i]['Total_Energy_Delivered']});
+		newArr.push({Year: res[i]['Year'],TotalEnergyDelivered: res[i]['Total_Energy_Delivered'] })
 		arr.push(sessionlist)
 }
+		if (req.query.format=='csv'){
+		console.log("found it")
+		var tocsv=newArr
+		newArr.unshift(arr[0],arr[1],arr[2],arr[3])
 
+			converter.json2csv(tocsv, (err, csv) =>{
+				if (err) {
+					result(err,null)
+				}
+
+				else {
+					//result.attachment('results.csv').send(csv)
+					result(null,csv)
+				}
+			}, {emptyFieldValue  : ''})
+
+		}
+	else{
 		result(null, arr);
 		return;
-
 	}
+
+}
 	else{
 	arr.push({SupplierID: null})
 	console.log("No result for this ID.")

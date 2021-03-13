@@ -1,4 +1,6 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
+
 
 const Session = function (){
 };
@@ -48,19 +50,44 @@ Supplier.getSessionsbyManID = async (req, result) => {
 			arr.push({SupplierName: res[0]['SupplierName']});
 			arr.push({PeriodFrom: periodfrom});
 			arr.push({PeriodTo: periodto});
-			arr.push({Station: station});
+			arr.push({StationID: station});
 			arr.push({Station: res[0]['Address']});
 			arr.push({TotalEnergyDelivered: res[0]['Total_Energy_Delivered']});
 			//Session.getter(req, arr, result);
-			result(null, arr);
-			return;
+			if (req.query.format=='csv'){
+			console.log("found it")
+			var tocsv=arr
+
+
+
+				converter.json2csv(tocsv, (err, csv) =>{
+					if (err) {
+						result(err,null)
+					}
+
+					else {
+						//result.attachment('results.csv').send(csv)
+						result(null,csv)
+					}
+				}, {emptyFieldValue  : ''})
 
 		}
+		else {
+			result(null,arr)
+		}
+
+		//END OF CSV  --------------------------------
+
+			//result(null, arr);
+			//return;
+
+	}
+	else{
 		console.log("No result for this ID.")
 		//result({ kind: "not_found" }, null);
 		result(null,res);
 		return;
-
+}
 
 	});
 }

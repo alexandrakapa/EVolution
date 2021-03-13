@@ -1,4 +1,6 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
+
 
 const Session = function (session){
 };
@@ -59,29 +61,43 @@ Provider.getProviderByID = async(req,result) => {
 			//arr.push(res);
       arr.push({ProviderID: res[0]['Energy_SupplierID']});
       arr.push({ProviderName: res[0]['company_name']});
+			let sessionlist=new Array();
       for (var i=0; i<res.length; i++){
-      let sessionlist=new Array();
+
       //arr.push({Number: res.length});
-      sessionlist.push({StationID: res[i]['StationID']});
-      sessionlist.push({SessionID: res[i]['SessionID']});
-      sessionlist.push({VehicleID: res[i]['VehicleID']});
-      sessionlist.push({StartedOn: res[i]['StartedOn']});
-      sessionlist.push({FinishedOn: res[i]['FinishedOn']});
-      sessionlist.push({EnergyDelivered: res[i]['EnergyDelivered']});
+      sessionlist.push({StationID: res[i]['StationID'], SessionID: res[i]['SessionID'], VehicleID: res[i]['VehicleID'] , StartedOn: res[i]['StartedOn'], FinishedOn: res[i]['FinishedOn'] ,EnergyDelivered: res[i]['EnergyDelivered'], CostPerKWh: res[i]['CostPerKWh'], TotalCost: res[i]['TotalCost']   } );
       // arr.push({PricePolicyRef: res[0]['PricePolicyRef']});
-      sessionlist.push({CostPerKWh: res[i]['CostPerKWh']});
-      sessionlist.push({TotalCost: res[i]['TotalCost']});
       arr.push(sessionlist)
 }
 
-			result(null,arr);
-			return;
+
+			if (req.query.format=='csv'){
+			console.log("found it")
+			var tocsv=sessionlist
+			tocsv.unshift(arr[0],arr[1])
+
+			converter.json2csv(tocsv, (err, csv) =>{
+				if (err) {
+					result(err,null)
+				}
+				else {
+					result(null,csv)
+				}
+			},{emptyFieldValue  : ''})
+
+			}
+			else {
+			result(null,arr)
+			return
+			}
 
 		}
+		else{
 		console.log("No result for this ID.")
 		//result({ kind: "not_found" }, null);
 		result(null,res);
 		return;
+	}
 
 
 	});

@@ -1,4 +1,6 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
+
 
 const Session = function (){
 };
@@ -46,40 +48,88 @@ Supplier.getSessionsbyManID = async (req, result) => {
 			var months = [ "January", "February", "March", "April", "May", "June",
            "July", "August", "September", "October", "November", "December" ];
 					let check=0;
+					var newArr= new Array();
 		 			for (var i=0; i<res.length; i++){
 		       let sessionlist=new Array();
 		       //arr.push({Number: res.length});
 		 			if((res[i]['Month'] -1)==check){
 		 			sessionlist.push({Month: months[res[i]['Month'] -1 ]});
-
 		 			sessionlist.push({Total_Charging_Sum: res[i]['Total_Charging_Sum']});
-		 			check=check+1;
+					newArr.push({Month: months[res[i]['Month'] -1 ], Total_Charging_Sum: res[i]['Total_Charging_Sum'] })
+					check=check+1;
 		 		}
 		 		else{
 		 			sessionlist.push({Month: months[check]});
 		 			sessionlist.push({Total_Charging_Sum: 0});
+					newArr.push({Month: months[check],Total_Charging_Sum: 0 })
 		 			i--;
 		 			check=check+1;
-
 		 		}
 		       arr.push(sessionlist)
 		 }
 		 let diff= 11 -(res[res.length-1]['Month'] -1) ;
+
 		 if(diff==0){
-		 			result(null, arr);
-		 			return;
+
+			 if (req.query.format=='csv'){
+			 console.log("found it")
+			 var tocsv=newArr
+			 newArr.unshift(arr[0],arr[1])
+
+				 converter.json2csv(tocsv, (err, csv) =>{
+					 if (err) {
+						 result(err,null)
+					 }
+
+					 else {
+						 //result.attachment('results.csv').send(csv)
+						 result(null,csv)
+					 }
+				 }, {emptyFieldValue  : ''})
+
+			 }
+		 else{
+			 result(null, arr);
+			 return;
 		 }
+
+
+ }
 		 else {
+
 		 	for (var i=12-diff; i<12;i++){
 		 		let sessionlist=new Array();
 		 		sessionlist.push({Month: months[i]});
 		 		sessionlist.push({Total_Charging_Sum: 0});
+				newArr.push({Month: months[i],Total_Charging_Sum: 0})
 		 		arr.push(sessionlist)
 		 	}
-		 	result(null, arr);
-		 	return;
 
-		 }
+		if (req.query.format=='csv'){
+		console.log("found it")
+		var tocsv=newArr
+		newArr.unshift(arr[0],arr[1])
+
+			converter.json2csv(tocsv, (err, csv) =>{
+				if (err) {
+					result(err,null)
+				}
+
+				else {
+					//result.attachment('results.csv').send(csv)
+					result(null,csv)
+				}
+			}, {emptyFieldValue  : ''})
+
+		}
+	else{
+		result(null, arr);
+		return;
+	}
+
+
+
+	}
 
 		}
 		else{
