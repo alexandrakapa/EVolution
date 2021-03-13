@@ -7,10 +7,11 @@ exports.logout = (req, res)=> {
    
     Logout.logMeOut(req,(err,data) =>{
         if(err){
-            res.status(200).json({
+            res.status(401).json({
                 message:"error occured"
             });
         }
+        
         if(data == "ok"){
             res.status(200).send();
         }

@@ -110,14 +110,13 @@ csvReader.upDB =  ((data, result) => {
                 cur_to_exec += data_ar[k];
             }
         }
-        if(i <= data[i].length -1){
+        
         cur_to_exec += "),"
-        }else{
-            cur_to_exec += ")"
-        }
+        
         to_exec += cur_to_exec;
   }
-//   console.log(to_exec);
+   to_exec = to_exec.slice(0, -1) 
+  console.log(to_exec);
 //   result(null,"okey dokey");
     dbConn.query(to_exec,(er,re)=>{
         if(er){

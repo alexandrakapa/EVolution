@@ -7,7 +7,7 @@ const dbConn = mysql.createConnection({
     user: 'root',       //the credentials for our database
     password: 'root',
     port:8889,
-    database: 'Evolution'
+     database: 'Evolution'
 
 });
 

@@ -136,7 +136,7 @@ console.log("verified", hash === origHash);
 var fin= Date.now();
 var inbetween=(fin-start)/1000+"secs";
 console.log("here: "+inbetween);
-if((Login.category =="Car_owner"&&hash === origHash)||(Login.category =="Energy_Supplier" &&Login.is_user==1 &&hash === origHash)||(Login.category =="Car_Manufacturer" &&Login.is_user==1 &&hash === origHash)||(Login.category =="Admin"&&hash === origHash)) return(resp(null,true));
+if((Login.category =="Car_Owner"&&hash === origHash)||(Login.category =="Energy_Supplier" &&Login.is_user==1 &&hash === origHash)||(Login.category =="Car_Manufacturer" &&Login.is_user==1 &&hash === origHash)||(Login.category =="Admin"&&hash === origHash)) return(resp(null,true));
 else return(resp(null,false));
 }
 
