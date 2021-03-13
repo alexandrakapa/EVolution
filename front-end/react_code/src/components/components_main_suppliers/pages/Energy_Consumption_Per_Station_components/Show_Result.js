@@ -17,7 +17,7 @@ if(check===0){
 <label className='label2'> Company name: {name.SupplierName} </label>
 <label className='label2'> From: {start_date.PeriodFrom} </label>
 <label className='label2'> To: {end_date.PeriodTo}</label>
-<label className='label2'> Station Id: {station_id.Station} </label>
+<label className='label2'> Station Id: {station_id.StationID} </label>
 <label className='label2'> Station Name: {station_name.Station} </label>
 <label className='label12'> Total Energy Consumption: {result.TotalEnergyDelivered} kWh </label>
    </div>);

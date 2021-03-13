@@ -1,7 +1,5 @@
 node_modules
 config
-<<<<<<< HEAD
+db.config.js
 .DS_Store
-=======
 .cert
->>>>>>> 8f4e807cad6c4fd427aac92841e4223ed8cbc4a8

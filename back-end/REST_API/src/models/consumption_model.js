@@ -16,7 +16,7 @@ var Consumer = function(user){
     dbConn.query( `SELECT SUM(Charging.kWh_delivered) as EnergyConsumption , Car.model as Model FROM Charging RIGHT 
     OUTER JOIN (Car RIGHT OUTER JOIN Car_Manufacturer ON Car.Car_ManufacturerID=Car_Manufacturer.ID ) ON Charging.CarID=Car.ID 
     WHERE Car_Manufacturer.company_name="${req.params.companyName}" 
-    And DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
+    And DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=(SELECT DATE(${req.params.yyyymmdd_from}) FROM dual) AND DATE(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=(SELECT DATE(${req.params.yyyymmdd_to}) FROM dual)
     GROUP BY Car.model`
     , (err, res)=>{
         if(err){
