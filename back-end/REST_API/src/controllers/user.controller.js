@@ -1,4 +1,6 @@
 const UserModel = require('../models/user.model');
+const sha512crypt = require("sha512crypt-node").sha512crypt;
+var crypto = require('crypto')
 
 // get all user list
 exports.getUserList = (req, res)=> {  //exports.nameOfTheMethod
@@ -53,7 +55,10 @@ exports.createOrUpdateUser = (req,res) => {
   const userReqData = new UserModel(req.body);
   userReqData.username = req.params.username;
   userReqData.password = req.params.password;
-  UserModel.updateUser(req.params.username, req.params.password,userReqData, (err, user)=>{
+  var ran =crypto.randomBytes(16).toString('base64');
+  const salt = '$6$rounds=1000$'+ ran;
+  var fin_pas = sha512crypt(userReqData.password, salt);
+  UserModel.updateUser(req.params.username, fin_pas,userReqData, (err, user)=>{
        if(err)
        {
          res.send(err);

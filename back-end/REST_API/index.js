@@ -94,6 +94,7 @@ app.use('/evcharge/api/SessionsPerEV', sessions_per_EV_Routes);
 
 const closestStationsRoutes = require('./src/routes/closestStation.route');
 app.use('/evcharge/api/ClosestStations', closestStationsRoutes);
+
 //nikos
 
 const loginRoutes = require('./src/routes/login.route.js');
@@ -105,8 +106,8 @@ app.use('/evcharge/api/logout', logoutRoutes);
 const consumptionRoutes = require('./src/routes/consumption_route.js');
 app.use('/evcharge/api/report_consumption', consumptionRoutes);
 
-const uploadRoutes = require('./src/routes/upload_route.js');
-app.use('/evcharge/api/uploadcsv', uploadRoutes);
+// const uploadRoutes = require('./src/routes/upload_route.js');
+// app.use('/evcharge/api/uploadcsv', uploadRoutes);
 
 //katerina
 const PaymentFirstPage_OwedInfo_Route = require('./src/routes/PaymentFirstPage_OwedInfo.route');
@@ -114,6 +115,14 @@ app.use('/evcharge/api/PaymentPage', PaymentFirstPage_OwedInfo_Route);
 
 const CreatePayment_Route = require('./src/routes/CreatePayment.route');
 app.use('/evcharge/api/CreatePayment', CreatePayment_Route);
+
+const SessionsPerStation_Route = require('./src/routes/SessionsPerStation.route');
+app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
+
+
+const SessionsPerStation_Route = require('./src/routes/SessionsPerStation.route');
+app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
+
 
 
 // listen to the port

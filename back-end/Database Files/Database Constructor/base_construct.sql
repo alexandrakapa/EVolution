@@ -10,7 +10,7 @@ DROP DATABASE IF EXISTS Evolution;
     email varchar(255),
     phone varchar(30),
     whatamI int NOT NULL DEFAULT '1',
-    sessionID int(1) NOT NULL ,
+    sessionID int(4) NOT NULL ,
     primary key (ID),
     unique (username)
     );
@@ -24,7 +24,7 @@ DROP DATABASE IF EXISTS Evolution;
     email varchar(255),
     phone varchar(30),
     whatamI int NOT NULL DEFAULT '0',   
-    sessionID int(1) NOT NULL ,
+    sessionID int(4) NOT NULL ,
     primary key (ID),
     unique (username)
     );
@@ -36,7 +36,7 @@ DROP DATABASE IF EXISTS Evolution;
     phone_number varchar(30),
     price_to_pay decimal(7,2) not null DEFAULT 0,
     points integer(10) not null DEFAULT 0,
-    sessionID int(1) NOT NULL ,
+    sessionID int(4) NOT NULL ,
     primary key (username)
     );
 
@@ -171,4 +171,11 @@ DROP DATABASE IF EXISTS Evolution;
     primary key (Car_Ownerusername, StationID),
     foreign key (Car_Ownerusername) references Car_Owner(username),
     foreign key (StationID) references Station(ID)
+    );
+    CREATE TABLE `Admin` (
+    `username` varchar(255) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `email` varchar(255) NOT NULL,
+    `phone` varchar(30) NOT NULL,
+    `sessionID` int(4) NOT NULL
     );

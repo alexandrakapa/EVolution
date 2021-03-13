@@ -14,6 +14,7 @@ var Login = function(login){
     this.email          =   login.email;
     this.company_name ="";
     this.token = login.token;
+    this.is_user = 0;
     this.category ="";
     this.sessionID =login.sessionID;
 
@@ -59,6 +60,7 @@ Login.findByManufacturerUsername = async(username, result)=>{
             Login.category = "Car_Manufacturer";
             Login.company_name = res[0].company_name;
             Login.sessionID= res[0].sessionID;
+            Login.is_user = res[0].is_user;
             console.log("id "+Login.id+" username: "+Login.username+" password: "+Login.password+" category: "+Login.category)
             result(null, res[0]);
             return;
@@ -86,6 +88,7 @@ Login.findBySupplierUsername = (username, result)=>{
             Login.category = "Energy_Supplier";
             Login.company_name = res[0].company_name;
             Login.sessionID= res[0].sessionID;
+            Login.is_user = res[0].is_user;
             console.log("id "+Login.id+" username: "+Login.username+" password: "+Login.password+" category: "+Login.category)
             result(null, res[0]);
             return;
@@ -133,7 +136,7 @@ console.log("verified", hash === origHash);
 var fin= Date.now();
 var inbetween=(fin-start)/1000+"secs";
 console.log("here: "+inbetween);
-if(hash === origHash) return(resp(null,true));
+if((Login.category =="Car_owner"&&hash === origHash)||(Login.category =="Energy_Supplier" &&Login.is_user==1 &&hash === origHash)||(Login.category =="Car_Manufacturer" &&Login.is_user==1 &&hash === origHash)||(Login.category =="Admin"&&hash === origHash)) return(resp(null,true));
 else return(resp(null,false));
 }
 
