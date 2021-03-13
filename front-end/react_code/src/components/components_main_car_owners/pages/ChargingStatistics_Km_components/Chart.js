@@ -105,7 +105,7 @@ export default function Charts(props) {
             display: true,
             fontColor: "white",
             fontSize: 30,
-            text: 'Km between charging charges '+ start_date.PeriodFrom
+            text: 'Km between chargings '+ start_date.PeriodFrom
         },
         legend: {
             display: false
