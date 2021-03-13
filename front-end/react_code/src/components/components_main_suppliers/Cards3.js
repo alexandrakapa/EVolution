@@ -37,7 +37,7 @@ function Cards3() {
               path='https://github.com/stelazr'
             />
             <CardItem2
-              src="https://scontent.fath3-4.fna.fbcdn.net/v/t1.0-1/p480x480/48422220_1184394105041319_6651669263528493056_o.jpg?_nc_cat=102&ccb=1-3&_nc_sid=7206a8&_nc_ohc=iMn8tBA2wH8AX8B0kW9&_nc_ht=scontent.fath3-4.fna&tp=6&oh=051eebb91d05fa6a145b722cbd675570&oe=6071BCAA"
+              src="https://avatars.githubusercontent.com/u/75030581?s=460&u=b7a5810e1010a96647ad4a61d4da5b54ac3cf3da&v=4"
               text='Aikaterini Liagka'
               path='https://github.com/LiagkaAikaterini'
             />

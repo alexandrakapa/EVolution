@@ -120,11 +120,6 @@ const SessionsPerStation_Route = require('./src/routes/SessionsPerStation.route'
 app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
 
 
-const SessionsPerStation_Route = require('./src/routes/SessionsPerStation.route');
-app.use('/evcharge/api/SessionsPerStation', SessionsPerStation_Route);
-
-
-
 // listen to the port
 // app.listen(port, ()=>{
 //     console.log(`Express Server is running at port ${port}`);
