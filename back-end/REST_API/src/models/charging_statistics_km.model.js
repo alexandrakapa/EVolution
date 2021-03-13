@@ -1,4 +1,7 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
+
+
 
 const Session = function (){
 };
@@ -40,6 +43,7 @@ Supplier.getSessionsbyManID = async (req, result) => {
 		    return;
 		    }
 		console.log(res.length);
+		var newArr= new Array();
 		if (res.length != 0){
 			arr.push({Car_Owner: res[0]['Car_Owner']});
 			arr.push({PeriodFrom: periodfrom});
@@ -51,13 +55,15 @@ Supplier.getSessionsbyManID = async (req, result) => {
       //arr.push({Number: res.length});
 			if((res[i]['Month'] -1)==check){
 			sessionlist.push({Month: months[res[i]['Month'] -1 ]});
-
 			sessionlist.push({Total_Km_Between_Charges: res[i]['TotalKmBetweenCharges']});
+			newArr.push({Month: months[res[i]['Month'] -1 ], Total_Km_Between_Charges: res[i]['TotalKmBetweenCharges'] });
 			check=check+1;
 		}
 		else{
 			sessionlist.push({Month: months[check]});
 			sessionlist.push({Total_Km_Between_Charges: 0});
+			newArr.push({Month: months[check],Total_Km_Between_Charges: 0 })
+
 			i--;
 			check=check+1;
 
@@ -66,18 +72,66 @@ Supplier.getSessionsbyManID = async (req, result) => {
 }
 let diff= 11 -(res[res.length-1]['Month'] -1) ;
 if(diff==0){
-			result(null, arr);
-			return;
+
+		if (req.query.format=='csv'){
+		console.log("found it")
+		var tocsv=newArr
+		newArr.unshift(arr[0],arr[1])
+
+			converter.json2csv(tocsv, (err, csv) =>{
+				if (err) {
+					result(err,null)
+				}
+
+				else {
+					//result.attachment('results.csv').send(csv)
+					result(null,csv)
+				}
+			}, {emptyFieldValue  : ''})
+
+		}
+	else{
+		result(null, arr);
+		return;
+	}
+
+
+
+
 }
 else {
 	for (var i=12-diff; i<12;i++){
 		let sessionlist=new Array();
 		sessionlist.push({Month: months[i]});
 		sessionlist.push({Total_Km_Between_Charges: 0});
+		newArr.push({Month: months[i],Total_Km_Between_Charges: 0})
 		arr.push(sessionlist)
 	}
+
+	if (req.query.format=='csv'){
+	console.log("found it")
+	var tocsv=newArr
+	newArr.unshift(arr[0],arr[1])
+
+		converter.json2csv(tocsv, (err, csv) =>{
+			if (err) {
+				result(err,null)
+			}
+
+			else {
+				//result.attachment('results.csv').send(csv)
+				result(null,csv)
+			}
+		}, {emptyFieldValue  : ''})
+
+	}
+else{
 	result(null, arr);
 	return;
+}
+
+
+
 
 }
 		}
