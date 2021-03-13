@@ -1,5 +1,8 @@
 const dbConn = require('../../config/db.config');
+
 const converter = require('json-2-csv');
+
+
 
 const Station = function (station) {};
 
@@ -64,8 +67,7 @@ Station.getStationByID = async (req, result)=> {
             }
 
             resultarray.push(myList);
-
-              if (req.query.format=='csv'){
+if (req.query.format=='csv'){
                 console.log("found it")
                 var tocsv=myList
                 tocsv.unshift(resultarray[0],resultarray[1],resultarray[2],resultarray[3],resultarray[4],resultarray[5],resultarray[6])

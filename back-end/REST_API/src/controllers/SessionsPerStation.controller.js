@@ -98,6 +98,7 @@ exports.getStation = (req, res)=> {
 
     //401 error code missing
 
+
     //check that the datatype requested is valid
     if (req.query.format!='csv' && req.query.format!=undefined && req.query.format!='json'){
         res.statusMessage = 'Bad Request'
