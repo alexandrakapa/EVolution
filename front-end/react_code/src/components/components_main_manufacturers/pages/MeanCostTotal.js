@@ -25,7 +25,7 @@ function MeanCostTotal(props) {
     if (didSubmit){
       setIsLoading(true)
       const tok = localStorage.getItem('token');
-      fetch(`http://localhost:8765/evcharge/api/EnergyCost/Total/${startdate}/${enddate}`,{
+      fetch(`https://localhost:8765/evcharge/api/EnergyCost/Total/${startdate}/${enddate}`,{
         headers:{'Content-type':'application/json','x-access-token':tok}
       })
           .then(response => {
@@ -68,12 +68,12 @@ function MeanCostTotal(props) {
       <FormStyle className='meanCostTotal' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{float:'left', marginLeft: '130px', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost per km per Manufacturer"} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{float:'left', marginLeft: '130px', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Mean energy cost (kWh/km) per Manufacturer"} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <NoData /> : null}
       <br />
       <br />
       {isloading? <BatteryLoading size={"large"} speed={1} color={'#99cc00'} style={{margingTop: '20px', borderColor: '#99cc00', position: 'absolute', left: '50%', transform: 'translate(-50%,-50%)'}} /> : null}
-      {data.length!==0 && !isloading?  <div style={{marginLeft: '54%', paddingRight: '5%'}}><BarCHart data={data} title={"Mean energy cost (kWh) per km for Manufacturers"}/></div>: null}
+      {data.length!==0 && !isloading?  <div style={{marginLeft: '54%', paddingRight: '5%'}}><BarCHart data={data} title={"Mean energy cost (kWh/km) for Manufacturers"}/></div>: null}
     </div>
 
   );

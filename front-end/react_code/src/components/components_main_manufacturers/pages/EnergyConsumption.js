@@ -28,7 +28,7 @@ function EnergyConsumption(props) {
 
       const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/report_consumption/${localStorage.company_name}/${startdate}/${enddate}`,{
+      fetch(`https://localhost:8765/evcharge/api/report_consumption/${localStorage.company_name}/${startdate}/${enddate}`,{
          headers:{'Content-type':'application/json','x-access-token':tok}
       })
 
@@ -78,7 +78,7 @@ function EnergyConsumption(props) {
       <FormStyle className='energyConsumption' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '12%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Energy consumption (kWh)"} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{float:'left', paddingLeft: '8%', marginRight: '0%', marginTop: '20px'}}><Muitable data={data} tableName={"Energy consumption per car model (kWh)"} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <NoData /> : null}
       <br />
       <br />

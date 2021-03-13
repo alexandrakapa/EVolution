@@ -54,7 +54,7 @@ body {
   background-color: #f1f1f1;
   border-radius: 50px;
   height: 175px;
-  width: 350px;
+  width: 390px;
 }
 .header {
   padding: 60px;

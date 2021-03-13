@@ -17,7 +17,7 @@ export const columns = [
     },
     {
       name: "EnergyCost",
-      label: "Energy Cost",
+      label: "Energy Cost (kWh/km)",
       options: {
         filter: true,
         sort: false,
@@ -33,7 +33,7 @@ export const columns = [
       },
       {
         name: "TotalEnergyConsumed",
-        label: "Total Energy Consumed",
+        label: "Total Energy Consumed (kWh)",
         options: {
           filter: true,
           sort: false,

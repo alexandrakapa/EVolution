@@ -20,7 +20,7 @@ form {
   margin-top: 5%;
   background: rgba(0,27,45,0.8);
   border-radius: 25px;
-  width: 40%;
+  width: 35%;
 }
 
 h1 {
@@ -60,8 +60,8 @@ input {
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
-  margin-top: 3%;
-  font-size: 27px;
+  margin-top: 1%;
+  font-size: 12px;
   margin-left: 30%;
 }
 
@@ -71,7 +71,7 @@ label {
   display: block;
   margin-top: 2%;
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 200;
   text-align: center;
 
@@ -83,7 +83,7 @@ label {
   display: block;
   margin-top: 5%;
   color: white;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -95,11 +95,11 @@ input[type="submit"] {
   color: white;
   text-transform: uppercase;
   border: none;
-  padding: 30px;
-  font-size: 16px;
+  padding: 20px;
+  font-size: 10px;
   font-weight: 100;
   letter-spacing: 10px;
-  margin-left: 33%;
+  margin-left: 26%;
   margin-top: 5%;
 }
 
@@ -133,7 +133,7 @@ input[type="submit"] {
 
 .App {
   max-width: 100%;
-  height: 900%;
+  height: 600px;
   margin-left: 30%;
   margin-top:0%;
   margin-right:5%;
@@ -171,12 +171,12 @@ button {
   display: block;
   box-sizing: border-box;
   width: 12%;
-  height: 6%;
+  height: 4%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
   margin-top: -8%;
-  font-size: 27px;
+  font-size: 12px;
   margin-left: 30%;
   margin-bottom: 2%;
 }
@@ -185,14 +185,14 @@ button {
   display: block;
   box-sizing: border-box;
   width: 12%;
-  height: 6%;
+  height: 4%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
   margin-top: 10%;
-  font-size: 27px;
-  margin-left: 58%;
-  margin-right: 23%;
+  font-size: 12px;
+  margin-left: 55%;
+  margin-right: 20%;
   margin-bottom: 2%;
 }
 
@@ -202,7 +202,7 @@ button {
   display: block;
   margin-top: 2%;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 200;
   margin-left: 30%;
   float:left;
@@ -214,7 +214,7 @@ button {
   display: block;
   margin-top: 2%;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 200;
   margin-right: 37%;
   float:right;
@@ -231,15 +231,15 @@ export const selectStyle2 = {
      marginTop : '3%',
      boxShadow: 'none', // no box-shadow
      width: '48%',
-     height: '55px',
-     fontSize: '23px',
+     height: '30px',
+     fontSize: '12px',
    }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     const color = 'rgba(44, 130, 201, 1)';
     return {
       ...styles,
      // height : '30px',
-      fontSize : '23px',
+      fontSize : '12px',
       backgroundColor:
          isSelected
         ? data.color

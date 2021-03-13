@@ -1,4 +1,7 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
+const fs = require('fs').promises;
+//import { promises as fs } from 'fs';
 
 const Session = function (session){
 };
@@ -22,6 +25,10 @@ Point.getPointByID = async (req, result) => {
 	
 	//console.log(parsedate());
 	let arr=new Array();
+	console.log(req.query.format)
+	
+	
+
 	let spacename=(req.params.pointID).substring(0,6);
 	let stationid=(req.params.pointID).substring(6,req.params.pointID.length);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
@@ -104,17 +111,47 @@ Session.findByPoint= async ( req, arr, result ) => {
 		    arr.push(sessionlist);
 		    //console.log(arr[0]['NumberOfChargingSessions']);
 		    //console.log(arr[1][0]['SessionIndex']);
-		    result(null, arr);
-		    return;
+
+		    console.log(req.query.format)
+
+		    // FOR CSV:  -----------------------------------
+
+
+		    if (req.query.format=='csv'){
+				console.log("found it")
+				var tocsv=sessionlist
+				tocsv.unshift(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5])
+				
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    }, {emptyFieldValue  : ''})
+			   
+			}
+			else {
+				result(null,arr)
+			}
+
+			//END OF CSV  --------------------------------
+
+		    //result(null, arr);
+		    //return;
 		
 		    }
-
+		    else{
 		    // not found 
 		    console.log('No ChargingSessions for these dates.')
 		    arr.push({NumberOfChargingSessions: 0});
 		    arr.push([]);
 		    result(null, arr);
 		    return;
+		}
 		 });
 };
 

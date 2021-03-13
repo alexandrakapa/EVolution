@@ -34,7 +34,7 @@ const location = useLocation();
   const [points, setPoints] = useState([])
   useEffect( () => {
   const tok = localStorage.getItem('token');
-  fetch(`http://localhost:8765/evcharge/api/PaymentPage/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+  fetch(`https://localhost:8765/evcharge/api/PaymentPage/${localStorage.username}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
     .then(response => response.json())
            .then(fetchedData => {
 
@@ -53,7 +53,8 @@ const [calc, setCalc] = useState('');
 
 
   return (
-    <PayStyle className="synchronous_payment">
+    <div className="synchronous_payment">
+    <PayStyle>
     <div className="speech-bubble"><h1>You have {points.Points} points!</h1></div>
 
 
@@ -71,7 +72,7 @@ const [calc, setCalc] = useState('');
            state: {  paymentWay : payment.value, price : location.state.money, pointsGiven : pointsGiven}
            })
            const tok = localStorage.getItem('token');
-           fetch(`http://localhost:8765/evcharge/api/admin/UpdatePoints/${localStorage.username}/${location.state.money}/${pointsGiven}`, {
+           fetch(`https://localhost:8765/evcharge/api/admin/UpdatePoints/${localStorage.username}/${location.state.money}/${pointsGiven}`, {
              method: 'POST',
              headers: {
                'Accept': 'application/json',
@@ -107,15 +108,26 @@ const [calc, setCalc] = useState('');
 
 
       <label>Name on Card</label>
-      <input type="text" id="cname" name="cardname" placeholder="John More Doe"/>
+      <input type="text" id="cname" name="cardname" placeholder="John More Doe" ref={register({ required: true})}/>
+      {errors.cardname && errors.cardname.type === "required" && <span className='error' >Field is required </span>}
       <label for="ccnum">Credit card number</label>
-      <input type="text" id="ccnum" name="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+      <input type="text" id="ccnum" name="ccnum" placeholder="XXXX-XXXX-XXXX-XXXX" ref={register({ required: true, maxLength: 19, minLength:19})}/>
+      {errors.ccnum && errors.ccnum.type === "required" && <span className='error' >Field is required </span>}
+      {errors.ccnum && errors.ccnum.type === "maxLength" && <span className='error' >The correct form is XXXX-XXXX-XXXX-XXXX</span>}
+      {errors.ccnum && errors.ccnum.type === "minLength" && <span className='error' >The correct form is XXXX-XXXX-XXXX-XXXX</span>}
       <label for="expmonth">Expiration Month</label>
-      <input type="text" id="expmonth" name="expmonth" placeholder="September"/>
+      <input type="text" id="expmonth" name="expmonth" placeholder="September" ref={register({ required: true})}/>
+      {errors.expmonth && errors.expmonth.type === "required" && <span className='error' >Field is required </span>}
       <label for="expyear" className="expYearLabel">Exp Year</label>
       <label for="cvv" className="CVVLabel">CVV</label>
-      <input className="CVV" type="text" id="cvv" name="cvv" placeholder="352"/>
-      <input className="expYear" type="text" id="expyear" name="expyear" placeholder="2018"/>
+      <input className="CVV" type="text" id="cvv" name="cvv" placeholder="352" ref={register({ required: true, maxLength: 3, minLength:3})}/>
+      {errors.cvv && errors.cvv.type === "required" && <span className='error' >Field is required </span>}
+      {errors.cvv && errors.cvv.type === "maxLength" && <span className='error' >Not valid CVV</span>}
+      {errors.cvv && errors.cvv.type === "minLength" && <span className='error' >Not valid CVV</span>}
+      <input className="expYear" type="text" id="expyear" name="expyear" placeholder="2018" ref={register({ required: true, maxLength: 4, minLength:4})}/>
+      {errors.expyear && errors.expyear.type === "required" && <span className='error' >Field is required </span>}
+      {errors.expyear && errors.expyear.type === "maxLength" && <span className='error' >Not valid year</span>}
+      {errors.expyear && errors.expyear.type === "minLength" && <span className='error' >Not valid year</span>}
       <br/>
       <label className="label3">Would you like to use some points?(optional)</label>
       <input name="pointsGiven" type="number" placeholder="If not leave blank" onChange={e => setCalc(e.target.value/0.2)} ref={register({max: points.Points})}/>
@@ -128,6 +140,7 @@ const [calc, setCalc] = useState('');
 
 
     </PayStyle>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PayStyle = styled.div`
+export const SynchPayStyleFinal = styled.div`
 .error {
    color: red;
    font-family: sans-serif;
@@ -9,89 +9,102 @@ export const PayStyle = styled.div`
    font-style: italic;
    margin-left: 30%;
  }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-form {
-  background: rgba(0,27,45,0.8);
-  border-radius: 25px;
-  width: 30%;
+
+
+.header {
+margin-top:10%;
+text-align: center;
+background: rgba(0,27,45,0.8);
+color: white;
+font-size: 20px;
+
 }
+
 h1 {
   line-height: 2;
+  text-align: center;
   display: block;
   margin-bottom: 10%;
   margin-top: 10%;
   color: white;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
 }
+
 .form {
   margin-top: 60px;
 }
+
 p {
   color: #bf1650;
   margin-top: 3%;
   margin-left: 30%;
   font-size: 20px;
 }
-.p2 {
-  color: #f1f1f1;
-  margin-top: -6%;
-  margin-left: 70%;
-  font-size: 22px;
-  margin-bottom:3%;
+
+mark {
+ background-color: rgba(0,27,45,1);
+ color: white;
+ font-size: 45px;
 }
-select {
-  margin-left: 10%;
-}
+
 input {
   display: block;
   box-sizing: border-box;
-  width: 34%;
-  height: 5%;
+  width: 40%;
+  height: 7%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
-  margin-top: 7%;
-  font-size: 12px;
-  margin-left: 35%;
+  margin-top: 10%;
+  font-size: 27px;
+  margin-left: 30%;
 }
+.icon {
+  margin-left: 48%;
+  margin-top: 1%;
+}
+
 label {
   line-height: 2;
   text-align: left;
   display: block;
-  margin-bottom: 10px;
-  margin-top: 7%;
+  margin-top: 0%;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
+  background-color: rgba(0,27,45,1);
 }
+
 button[type="submit"],
 input[type="submit"] {
   background: rgba(44,139,201,1);
   color: white;
   text-transform: uppercase;
   border: none;
-  margin-top: 35px;
-  padding: 20px;
-  font-size: 10px;
+  margin-top: 40px;
+  padding: 30px;
+  font-size: 16px;
   font-weight: 100;
   letter-spacing: 10px;
-  margin-left: 42%;
-  display: inline-block;
-
+  margin-left: 43%;
 }
+
 button[type="submit"]:hover,
 input[type="submit"]:hover {
   background: rgba(44,200,201,4)
 }
+
 button[type="submit"]:active,
 input[type="button"]:active,
 input[type="submit"]:active {
@@ -100,24 +113,29 @@ input[type="submit"]:active {
   border: 1px solid transparent;
   opacity: 0.8;
 }
+
 input:disabled {
   opacity: 0.4;
 }
+
 input[type="button"]:hover {
   transition: 0.3s all;
 }
+
 button[type="submit"],
 input[type="button"],
 input[type="submit"] {
   -webkit-appearance: none;
 }
+
 .App {
   max-width: 100%;
-  height: 450px;
-  margin-left: 35%;
-  margin-top:-20%;
-  margin-right:2%;
+  height: 900px;
+  margin-left: 5%;
+  margin-top:0%;
+  margin-right:5%;
 }
+
 button[type="button"] {
   display: block;
   appearance: none;
@@ -127,11 +145,12 @@ button[type="button"] {
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 4px;
-
 }
+
 hr {
   margin-top: 30px;
 }
+
 button {
   display: block;
   appearance: none;
@@ -142,52 +161,60 @@ button {
   padding: 10px 20px;
   border-radius: 4px;
 }
-.speech-bubble {
-	position: relative;
-	background: rgba(0,27,45,0.8);
+
+.speech-bubble_1 {
+  position: relative;
+	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
   border: 2px solid transparent;
   width:20%;
   height: 20%;
-  margin-top:-7%;
-  margin-left: 75%;
+  margin-right: 2%;
+  margin-left:30%;
+  margin-top:2%;
 }
-.speech-bubble:after {
-	content: '';
+
+.speech-bubble_1:after {
+  content: '';
 	position: absolute;
 	bottom: 0;
 	left: 50%;
 	width: 0;
 	height: 0;
 	border: 25px solid transparent;
-	border-top-color: rgba(0,27,45,0.8);
+	border-top-color: rgba(0,27,45,0.9);
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -12.5px;
 	margin-bottom: -25px;
 }
+
 .speech-bubble_2 {
-	position: relative;
-	background: rgba(0,27,45,0.8);
+  position: relative;
+	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
   border: 2px solid transparent;
-  width:20%;
+  width:30%;
   height: 20%;
-  margin-left: 5%;
-  margin-top: 14%;
+  margin-right: 2%;
+  margin-top: 2%;
+  margin-left: 50%;
 }
+
 .speech-bubble_2:after {
-	content: '';
+  content: '';
 	position: absolute;
 	bottom: 0;
 	left: 50%;
 	width: 0;
 	height: 0;
 	border: 25px solid transparent;
-	border-top-color: rgba(0,27,45,0.8);
+	border-top-color: rgba(0,27,45,0.9);
 	border-bottom: 0;
 	border-right: 0;
 	margin-left: -12.5px;
 	margin-bottom: -25px;
 }
+
+
 `

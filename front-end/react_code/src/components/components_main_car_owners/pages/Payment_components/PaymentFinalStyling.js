@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PayStyle = styled.div`
+export const PayStyleFinal = styled.div`
 .error {
    color: red;
    font-family: sans-serif;
@@ -28,12 +28,12 @@ font-size: 20px;
 
 h1 {
   line-height: 2;
-  text-align: left;
+  text-align: center;
   display: block;
   margin-bottom: 10%;
   margin-top: 10%;
   color: white;
-  font-size: 35px;
+  font-size: 23px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -69,17 +69,16 @@ input {
   margin-left: 30%;
 }
 .icon {
-  margin-left: 50%;
+  margin-left: 48%;
   margin-top: 1%;
 }
 
 label {
   line-height: 2;
-  text-align: left;
   display: block;
   margin-top: 1%;
   color: white;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 200;
   text-align: center;
   border-bottom: 1px solid rgb(79, 98, 148);
@@ -162,7 +161,7 @@ button {
   border-radius: 4px;
 }
 
-.speech-bubble {
+.speech-bubble_1 {
 	position: relative;
 	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
@@ -174,7 +173,7 @@ button {
   margin-top:2%;
 }
 
-.speech-bubble:after {
+.speech-bubble_1:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -194,7 +193,7 @@ button {
 	background: rgba(0,27,45,0.9);
 	border-radius: 5em;
   border: 2px solid transparent;
-  width:20%;
+  width:30%;
   height: 20%;
   margin-right: 2%;
   margin-top: 2%;

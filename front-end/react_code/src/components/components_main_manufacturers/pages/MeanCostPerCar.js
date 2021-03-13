@@ -32,7 +32,7 @@ function MeanCostPerCar(props) {
       console.log(model, startdate, enddate)
       const tok = localStorage.getItem('token');
 
-      fetch(`http://localhost:8765/evcharge/api/EnergyCost/PerModel/${localStorage.id}/${model}/${startdate}/${enddate}`,{
+      fetch(`https://localhost:8765/evcharge/api/EnergyCost/PerModel/${localStorage.id}/${model}/${startdate}/${enddate}`,{
          headers:{'Content-type':'application/json','x-access-token':tok}
       })
           .then(response => {
@@ -74,7 +74,7 @@ function MeanCostPerCar(props) {
       <FormStyle className='meanCostPerCar' >
         <Form setStartDate={setStartDate} setEndDate={setEndDate} setModel={setModel} setDidSubmit={setDidSubmit}/>
       </FormStyle>
-      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={`Mean energy cost per km`} columns={columns} /></div> : null}
+      {data.length!==0 && !isloading? <div style={{ paddingLeft: '30px', paddingRight: '30px'}}><Muitable data={data} tableName={`Mean energy cost (kWh/km)`} columns={columns} /></div> : null}
       {data.length===0 && !isloading && shouldRender? <NoData/> : null}
       <br />
       <br />

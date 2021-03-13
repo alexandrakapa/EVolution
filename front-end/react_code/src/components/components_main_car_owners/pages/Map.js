@@ -10,7 +10,7 @@ export default function Map() {
   const[isfetched,setfetched] = useState(false);
   var maptok = "pk.eyJ1Ijoibmlrb3NnaW9yZyIsImEiOiJja20yZnJtNzEwMWdpMndxZHBvejhpOTIzIn0.19RRfYCa9MZ0Tq-98vYjHw";
   useEffect(() => {
-    fetch(`http://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
+    fetch(`https://localhost:8765/evcharge/api/StationAddresses`,{headers:{'Content-type':'application/json','x-access-token':tok}})
     .then(response => {
         if (response.ok){
            return response.json();
@@ -25,8 +25,8 @@ export default function Map() {
         setData(fetchedData);
     });
   },[]);
- 
-  
+
+
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
@@ -65,7 +65,7 @@ export default function Map() {
         {dat.map(park => (
           <Marker
             key={park.StationID}
-            
+
             latitude={park.Lat}
             longitude={park.Longi}
           >
@@ -95,25 +95,25 @@ export default function Map() {
               <h2>{selectedPark.Address}</h2>
               <p><img src="/profile.png"/>{selectedPark.Operator}</p>
               {/* <p><b>You can pay in: </b>{selectedPark.Payment_Types}</p> */}
-              <p><b>You can pay in: </b> 
+              <p><b>You can pay in: </b>
               {(selectedPark.Payment_Types.search("Cash")!=-1)?(
                 <img src="/bank.png"/>
-  
+
               ) :  null}
               {(selectedPark.Payment_Types.search("Pos")!=-1)?(
                 <img src="/card.png"/>
-  
+
               ) :  null}
               {(selectedPark.Payment_Types.search("Pay_later_in_app")!=-1)?(
                 <img src="/smart.png"/>
-  
+
               ) :  null}
               </p>
-              <p><b>Cost(in euros per Kwh) </b>{selectedPark.epk}</p>
-              
+              <p><b>Cost(in euros per Kwh) </b>{selectedPark.epk} ‎€/kWh</p>
+
                {(selectedPark.Payment_Types.search("Credit_note")!=-1)?(
                 <h4>Supports Credit Notes</h4>
-  
+
           ) :  <h4>Does not support Credit Notes</h4>}
           <button>Route</button>
             </div>

@@ -27,7 +27,7 @@ form {
   margin-top: 5%;
   background: rgba(0,27,45,0.8);
   border-radius: 25px;
-  width: 29%;
+  width: 35%;
 }
 
 h1 {
@@ -63,12 +63,12 @@ input {
   display: block;
   box-sizing: border-box;
   width: 40%;
-  height: 6%;
+  height: 4%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
-  margin-top: 2%;
-  font-size: 18px;
+  margin-top: 1%;
+  font-size: 12px;
   margin-left: 30%;
 }
 
@@ -78,7 +78,7 @@ label {
   display: block;
   margin-top: 2%;
   color: white;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 200;
   text-align: center;
 
@@ -114,12 +114,12 @@ input[type="submit"] {
   color: white;
   text-transform: uppercase;
   border: none;
-  padding: 20px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 10px;
   font-weight: 100;
   letter-spacing: 10px;
-  margin-left: 29%;
-  margin-top: 7%;
+  margin-left: 27%;
+  margin-top: 2%;
 }
 
 button[type="submit"]:hover,
@@ -152,9 +152,9 @@ input[type="submit"] {
 
 .App {
   max-width: 100%;
-  height: 50%;
-  margin-left: 35%;
-  margin-top:-25%;
+  height: 640px;
+  margin-left: 30%;
+  margin-top:-27%;
   margin-right:5%;
 
 }
@@ -191,12 +191,12 @@ button {
   display: block;
   box-sizing: border-box;
   width: 12%;
-  height: 6%;
+  height: 4%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
   margin-top: -8%;
-  font-size: 18px;
+  font-size: 12px;
   margin-left: 30%;
   margin-bottom: 2%;
 }
@@ -205,14 +205,14 @@ button {
   display: block;
   box-sizing: border-box;
   width: 12%;
-  height: 6%;
+  height: 4%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
   margin-top: 10%;
-  font-size: 18px;
-  margin-left: 58%;
-  margin-right: 23%;
+  font-size: 12px;
+  margin-left: 55%;
+  margin-right: 20%;
   margin-bottom: 2%;
 }
 
@@ -220,9 +220,9 @@ button {
   line-height: 2;
   text-align: left;
   display: block;
-  margin-top: 3%;
+  margin-top: 2%;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 200;
   margin-left: 30%;
   float:left;
@@ -232,9 +232,9 @@ button {
   line-height: 2;
   text-align: left;
   display: block;
-  margin-top: 3%;
+  margin-top: 2%;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 200;
   margin-right: 37%;
   float:right;
@@ -245,7 +245,7 @@ button {
 	border-radius: 5em;
   border: 2px solid transparent;
   width:20%;
-  height: 200px;
+  height: 160px;
   margin-left: 70%;
   margin:right: 50%;
   margin-top:17%;
@@ -277,15 +277,15 @@ export const selectStyle2 = {
      marginTop : '3%',
      boxShadow: 'none', // no box-shadow
      width: '48%',
-     height: '52px',
-     fontSize: '18px',
+     height: '30px',
+     fontSize: '12px',
    }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     const color = 'rgba(44, 130, 201, 1)';
     return {
       ...styles,
      // height : '30px',
-      fontSize : '18px',
+      fontSize : '12px',
       backgroundColor:
          isSelected
         ? data.color
