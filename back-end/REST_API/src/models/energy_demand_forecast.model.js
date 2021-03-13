@@ -1,4 +1,5 @@
 const dbConn  = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 const Session = function (){
 };
@@ -36,9 +37,9 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 		periodto="2020";
 	}
 
-	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, MONTH(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Month ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
+	dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, MONTH(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i')) as Month ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
 	FROM Space,Energy_Supplier,Station,Charging
-	WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${periodto}
+	WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=${periodfrom} AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=${periodto}
 	GROUP BY Month
 	ORDER BY Month ASC`
 	, (err, res) =>
@@ -47,7 +48,7 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 		    console.log("error: ", err);
 		    result(err, null);
 		    return;
-		    }
+		 }
 		console.log(res.length);
 		if (res.length != 0){
 			arr.push({SupplierID: res[0]['SupplierID']});
@@ -56,17 +57,39 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 			arr.push({PeriodTo: periodto});
 			var months = [ "January", "February", "March", "April", "May", "June",
            "July", "August", "September", "October", "November", "December" ];
+			let newArr= new Array();
 			for (var i=0; i<res.length; i++){
       let sessionlist=new Array();
       //arr.push({Number: res.length});
 			sessionlist.push({Month: months[res[i]['Month'] -1 ]});
 			sessionlist.push({TotalEnergyDelivered: res[i]['Total_Energy_Delivered']});
+			newArr.push({Month: months[res[i]['Month'] -1 ], TotalEnergyDelivered: res[i]['Total_Energy_Delivered']})
       arr.push(sessionlist)
 }
+			if (req.query.format=='csv'){
+			console.log("found it")
+			var tocsv=newArr
+			newArr.unshift(arr[0],arr[1],arr[2],arr[3])
+				converter.json2csv(tocsv, (err, csv) =>{
+					if (err) {
+						result(err,null)
+					}
+
+					else {
+						//result.attachment('results.csv').send(csv)
+						result(null,csv)
+					}
+				}, {emptyFieldValue  : ''})
+
+	}
+
+			else{
+
 			result(null, arr);
 			return;
-
 		}
+
+}
 		else{
 		arr.push({SupplierID: null})
 		console.log("No result for this ID.")
@@ -81,9 +104,9 @@ if(periodfrom==periodto|| periodto==2018||periodfrom==2020) {
 
 }
 else{
-dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i')) as Year ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
+dbConn.query(`SELECT Energy_Supplier.ID as SupplierID ,Energy_Supplier.company_name as SupplierName, YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i')) as Year ,SUM(Charging.kWh_delivered) as Total_Energy_Delivered
 FROM Space,Energy_Supplier,Station,Charging
-WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y %H:%i'))>=${req.params.yyyy_from} AND YEAR(STR_TO_DATE(Charging.the_date, '%c/%e/%Y'))<=${req.params.yyyy_to}
+WHERE Energy_Supplier.ID='${supplierID}' and Space.Energy_SupplierID=Energy_Supplier.ID  and Space.StationID=Station.ID  and Charging.SpaceStationID=Station.ID and Charging.supplierID=Energy_Supplier.ID AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y %H:%i'))>=${req.params.yyyy_from} AND YEAR(STR_TO_DATE(Charging.the_date, '%e/%c/%Y'))<=${req.params.yyyy_to}
 GROUP BY Year
 ORDER BY Year ASC`
 , (err, res) =>
@@ -99,18 +122,38 @@ ORDER BY Year ASC`
 		arr.push({SupplierName: res[0]['SupplierName']});
 		arr.push({PeriodFrom: periodfrom});
 		arr.push({PeriodTo: periodto});
+		let newArr= new Array();
 		for (var i=0; i<res.length; i++){
 		let sessionlist=new Array();
 		//arr.push({Number: res.length});
 		sessionlist.push({Year: res[i]['Year']});
 		sessionlist.push({TotalEnergyDelivered: res[i]['Total_Energy_Delivered']});
+		newArr.push({Year: res[i]['Year'],TotalEnergyDelivered: res[i]['Total_Energy_Delivered'] })
 		arr.push(sessionlist)
 }
+		if (req.query.format=='csv'){
+		console.log("found it")
+		var tocsv=newArr
+		newArr.unshift(arr[0],arr[1],arr[2],arr[3])
 
+			converter.json2csv(tocsv, (err, csv) =>{
+				if (err) {
+					result(err,null)
+				}
+
+				else {
+					//result.attachment('results.csv').send(csv)
+					result(null,csv)
+				}
+			}, {emptyFieldValue  : ''})
+
+		}
+	else{
 		result(null, arr);
 		return;
-
 	}
+
+}
 	else{
 	arr.push({SupplierID: null})
 	console.log("No result for this ID.")

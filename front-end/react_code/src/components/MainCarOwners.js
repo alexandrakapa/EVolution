@@ -12,11 +12,15 @@ import Map from './components_main_car_owners/pages/Map';
 import ChargeNow from './components_main_car_owners/pages/ChargeNow';
 import ChargeInProgress from './components_main_car_owners/pages/ChargeInProgress';
 import ChargeDone from './components_main_car_owners/pages/ChargeDone';
+import ChargingStatistics from './components_main_car_owners/pages/ChargingStatistics';
+import ChargingStatisticsKm from './components_main_car_owners/pages/ChargingStatisticsKm';
+import ChargingStatisticsMoney from './components_main_car_owners/pages/ChargingStatisticsMoney';
 import Payment from './components_main_car_owners/pages/Payment';
 import PaymentNext from './components_main_car_owners/pages/PaymentNext';
 import PaymentFinal from './components_main_car_owners/pages/PaymentFinal';
 import SynchronousPayment from './components_main_car_owners/pages/SynchronousPayment';
 import SynchronousPaymentFinal from './components_main_car_owners/pages/SynchronousPaymentFinal';
+
 
 function MainCarOwners(props) {
 
@@ -51,11 +55,14 @@ function MainCarOwners(props) {
         <Route path='/mainown/founders' render={renderProtectedComponent(Founders)} />
         <Route path='/mainown/charging_in_progress' render={renderProtectedComponent(ChargeInProgress)} />
         <Route path='/mainown/charging_done' render={renderProtectedComponent(ChargeDone)} />
+        <Route path='/mainown/charging_statistics' render={renderProtectedComponent(ChargingStatistics)} />
         <Route path='/mainown/payment' component={Payment} />
         <Route path='/mainown/payment_next' component={PaymentNext} />
         <Route path='/mainown/payment_final' component={PaymentFinal} />
         <Route path='/mainown/synchronous_payment' component={SynchronousPayment} />
         <Route path='/mainown/synchronous_payment_final' component={SynchronousPaymentFinal} />
+        <Route path='/mainown/charging_statistics_km' component={ChargingStatisticsKm} />
+        <Route path='/mainown/charging_statistics_price' component={ChargingStatisticsMoney} />
       </Switch>
     </Router>
   );

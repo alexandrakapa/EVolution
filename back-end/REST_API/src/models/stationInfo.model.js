@@ -1,4 +1,5 @@
 var dbConn = require('../../config/db.config');
+const converter = require('json-2-csv');
 
 var Station = function(station) {
 	this.ID = station.ID
@@ -11,7 +12,7 @@ var Station = function(station) {
 	this.country = station.country
 }
 
-Station.getAllStations = async (result) => {
+Station.getAllStations = async (format,result) => {
 
 	dbConn.query(`SELECT Station.operator AS Operator,Station.ID as Sid,
 Station.euro_per_kWh AS Price_per_kWh,
@@ -28,13 +29,36 @@ GROUP BY StationID` ,  (err,res) =>
 		}
 		else
 		{
-			result(null,res);
+			if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+				return;
+			}
+		}
 		}
 	});
 }
 
 
-Station.getStationInfo = (stationID,result) => {
+Station.getStationInfo = (stationID,format,result) => {
 
 	dbConn.query(`SELECT Station.*, E.evaluation
 FROM Station
@@ -49,12 +73,34 @@ WHERE ID='${stationID}'` ,  (err,res) =>
 		}
 		else
 		{
-			result(null,res);
+			if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
+		}
 		}
 	});
 }
 
-Station.getStationReview = (stationID,result) => {
+Station.getStationReview = (stationID,format,result) => {
 
 	dbConn.query(`SELECT ((SUM(evaluation))/(COUNT(StationID))) AS Evaluation FROM evaluates WHERE StationID = ?`, stationID, (err,res) =>
 	{
@@ -64,7 +110,29 @@ Station.getStationReview = (stationID,result) => {
 		}
 		else
 		{
-			result(null,res);
+			if (res.length) {
+
+	    console.log("Found models.");
+		 
+		 if (format=='csv'){
+				console.log("found it")
+				var tocsv=res
+								
+			    converter.json2csv(tocsv, (err, csv) =>{
+			    	if (err) {
+			    		result(err,null)
+			    	}
+
+			    	else {
+			    		//result.attachment('results.csv').send(csv)
+			    		result(null,csv)
+			    	}
+			    },{emptyFieldValue  : ''})
+		}
+		else {
+				result(null,res)
+			}
+		}
 		}
 	});
 	

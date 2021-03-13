@@ -18,6 +18,10 @@ var Logout = function(logout){
 
 Logout.logMeOut = async(req,res) =>{
     var tok = req.headers["x-access-token"];
+    if (!tok){
+      res(null,"no_tok");
+      return;
+    }
     var csid = jwt_decode(tok).sessionID;
     var csum = jwt_decode(tok).username;
     var csct = jwt_decode(tok).category;
@@ -26,7 +30,7 @@ Logout.logMeOut = async(req,res) =>{
     Logout.category = csct;
 
     if(Logout.sessionID==9999){
-        Logout.sessionID=0; 
+        Logout.sessionID=0;
     }else{
     Logout.sessionID +=1;
     }
