@@ -52,17 +52,11 @@ def logout():
 
 @evgroup_38.command(name='healthcheck')
 def healthcheck():
-    if os.path.exists("softeng20bAPI.token"):
-        f = open("softeng20bAPI.token", "r")
-        tok = f.read()
-        URL = ("https://localhost:8765/evcharge/api/admin/healthcheck")
-        payload={}
-        headers = {
-                'x-access-token': tok
-                }
-        response = requests.get( url= URL, headers=headers, data=payload, verify = False)
-        f.close()
-        click.echo(response.text)
+    URL = ("https://localhost:8765/evcharge/api/admin/healthcheck")
+    payload={}
+    headers={}
+    response = requests.get( url= URL, headers=headers, data=payload, verify = False)
+    click.echo(response.text)
 
 @evgroup_38.command(name='resetsessions')
 def reset():

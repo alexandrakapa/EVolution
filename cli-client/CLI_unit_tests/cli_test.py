@@ -45,18 +45,12 @@ def logout():
 
 def healthcheck():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-    if os.path.exists("softeng20bAPI.token"):
-        f = open("softeng20bAPI.token", "r")
-        tok = f.read()
-        URL = ("https://localhost:8765/evcharge/api/admin/healthcheck")
-        payload={}
-        headers = {
-                'x-access-token': tok
-                }
-        response = requests.get( url= URL, headers=headers, data=payload, verify=False)
-        f.close()
-        #click.echo(response.text)
-        return response.status_code
+    URL = ("https://localhost:8765/evcharge/api/admin/healthcheck")
+    payload={}
+    headers={}
+    response = requests.get( url= URL, headers=headers, data=payload, verify = False)
+    #click.echo(response.text)
+    return response.status_code
 
 
 def reset():
