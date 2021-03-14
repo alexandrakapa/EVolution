@@ -6,22 +6,21 @@ function isFloat(n) {
 
 exports.postPayment = (req, res)=> {
 
-    //check if any of the variables is empty
-    if ( !( req.params.username > "" && req.params.moneypaid > "" && req.params.paymentway > "" && req.params.bankID > "" && req.params.pointsused > "" ) ) {
+    //check if any of the variables given is empty
+    if (Object.keys(req.params).length!=5){
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Empty Required Field');
         return;
     }
 
-    let m = parseFloat(req.params.moneypaid);
+    let m = Number(req.params.moneypaid);
     if ( ( !isFloat(m) && !Number.isInteger(m) ) || m < 0) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Inserted money is invalid number');
         return;
     }
 
-    let p = parseInt(req.params.pointsused);
-    if (!Number.isInteger(p) || p < 0) {
+    if (!Number.isInteger(Number(req.params.pointsused)) || (req.params.pointsused) < 0) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Inserted points in not an integer');
         return;
@@ -45,7 +44,10 @@ exports.postPayment = (req, res)=> {
                     return;
                 }
                 else {
-                    console.log('error in query.format, should not be here')
+                    console.log('error in query.format, should not be here');
+                    res.statusMessage = 'Bad Request';
+                    res.status(400).send('Bad Request : Invalid format');
+                    return;
                 }
             }
             else {
