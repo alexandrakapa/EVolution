@@ -110,6 +110,7 @@ csvReader.upDB =  ((data, result) => {
                 cur_to_exec += data_ar[k];
             }
         }
+
         cur_to_exec += "),"
         to_exec += cur_to_exec;
   }

@@ -128,19 +128,19 @@ class TestUnit (unittest.TestCase):
             mocked_logout.return_value.json.return_value = fakeToken
             logout()
 
-    def test_admin_actions_sessionsupd(self):
-        with patch.object(requests, 'post') as mocked_login:
-            mocked_login.return_value = Mock(status_code = 200)
-            mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
-        with patch.object(requests, 'post') as mocked_post:
-            mocked_post.return_value = Mock(status_code = 200)
-            mocked_post.return_value.json.return_value = fakeToken
-            self.assertEqual(admin_actions(sessionsupd = 'test.csv'), [200, 1])
-        with patch.object(requests, 'post') as mocked_logout:
-            mocked_logout.return_value = Mock(status_code = 200)
-            mocked_logout.return_value.json.return_value = fakeToken
-            logout()
+#    def test_admin_actions_sessionsupd(self):
+#        with patch.object(requests, 'post') as mocked_login:
+#            mocked_login.return_value = Mock(status_code = 200)
+#            mocked_login.return_value.json.return_value = fakeToken
+#            login('organicfrog305', 'gilles')        
+#        with patch.object(requests, 'post') as mocked_post:
+#            mocked_post.return_value = Mock(status_code = 200)
+#            mocked_post.return_value.json.return_value = fakeToken
+#            self.assertEqual(admin_actions(sessionsupd = 'test.csv'), [200, 1])
+#        with patch.object(requests, 'post') as mocked_logout:
+#            mocked_logout.return_value = Mock(status_code = 200)
+#            mocked_logout.return_value.json.return_value = fakeToken
+#            logout()
 
     def test_admin_actions_usermod(self):
         with patch.object(requests, 'post') as mocked_login:

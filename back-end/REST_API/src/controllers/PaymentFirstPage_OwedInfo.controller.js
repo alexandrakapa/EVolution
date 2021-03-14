@@ -2,8 +2,8 @@ const SessionModel = require('../models/PaymentFirstPage_OwedInfo.model')
 
 exports.Owed = (req, res)=> {
 
-    //check if parameter is empty
-    if ( !( req.params.username > "") ) {
+    //check if any of the variables given is empty
+    if (Object.keys(req.params).length!=1){
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Empty Required Field');
         return;
@@ -25,7 +25,10 @@ exports.Owed = (req, res)=> {
                 return;
             }
             else {
-                console.log('error in query.format, should not be here')
+                console.log('error in query.format, should not be here');
+                res.statusMessage = 'Bad Request';
+                res.status(400).send('Bad Request : Empty Required Field');
+                return;
             }
         }
         else {
