@@ -38,7 +38,7 @@ def logout():
         tok = f.read()
         #click.echo(tok)
         url = "https://localhost:8765/logout"
-        
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -48,7 +48,7 @@ def logout():
             os.remove("softeng20bAPI.token")
         f.close()
         click.echo("\nLog out successful!\nSee you again soon!\n")
-        
+
 
 @evgroup_38.command(name='healthcheck')
 def healthcheck():
@@ -69,7 +69,6 @@ def reset():
     URL = ("https://localhost:8765/evcharge/api/admin/resetsessions")
     r = requests.post(url = URL, verify = False)
     #result = r.json()
-    f.close()
     click.echo('\nSessions have been deleted and admin credentials reset!\n')
 
 @evgroup_38.command(name='SessionsPerPoint', help='Find sessions that took place at a certain point')
@@ -106,12 +105,12 @@ def sessions_per_station(station,datefrom,dateto,format):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
                 }
-        
+
         URL = ("https://localhost:8765/evcharge/api/SessionsPerStation/"+station+'/'+datefrom+'/'+dateto+'/?format='+format)
         r = requests.get(url = URL, headers=headers, data=payload, verify = False)
         f.close()
@@ -122,14 +121,14 @@ def sessions_per_station(station,datefrom,dateto,format):
 @evgroup_38.command(name='SessionsPerEV', help = 'Find sessions of certain vehicle')
 @click.option('--ev','--e',type=str)
 @click.option('--datefrom', '--from', '--f', type=str, prompt = 'Give me datefrom')
-@click.option('--dateto','--to','--t', type=str, prompt = 'Give me dateto') 
+@click.option('--dateto','--to','--t', type=str, prompt = 'Give me dateto')
 @click.option('--format', type=str, default = 'json')
 def sessions_per_ev(ev,datefrom,dateto,format):
     if os.path.exists("softeng20bAPI.token"):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -151,7 +150,7 @@ def sessions_per_provider(provider,datefrom,dateto,format):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -173,7 +172,9 @@ def sessions_per_provider(provider,datefrom,dateto,format):
 @click.option('--format', type=str, default = 'json')
 @click.option('--create', is_flag = True)
 @click.option('--update',is_flag=True)
-def admin_actions(usermod,username,passw,users,sessionsupd,source,format,create,update):
+@click.option('--healthcheck',is_flag=True)
+@click.option('--resetsessions',is_flag=True)
+def admin_actions(usermod,username,passw,users,sessionsupd,source,format,create,update,healthcheck,resetsessions):
     if os.path.exists("softeng20bAPI.token"):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
@@ -189,9 +190,10 @@ def admin_actions(usermod,username,passw,users,sessionsupd,source,format,create,
             r = requests.get(url = URL, headers = headers, data = payload, verify = False)
             result = r.json()
             click.echo(result)
+            return
         elif (users == 'not_selected' and source != 'not_selected' and username == 'nothing_inserted' and passw == 'nothing_inserted'):
             #URL = "https://localhost:8765/evcharge/api/admin/system/sessionsupd"
-            
+
             #r = requests.post(url=URL, headers=headers, data=payload)
             #click.echo(r.text)
             url = "https://localhost:8765/evcharge/api/admin/system/sessionsupd"
@@ -201,43 +203,67 @@ def admin_actions(usermod,username,passw,users,sessionsupd,source,format,create,
                     'x-access-token': tok
                     }
             response = requests.request("POST", url, headers=headers, data=payload, files=files, verify = False)
-            click.echo('\nSessions uploaded!\n')
+            click.echo(response.text)
+            return
 
         elif (users == 'not_selected' and source == 'not_selected' and username != 'nothing_inserted' and passw != 'nothing_inserted'):
             if(create):
                 email = input("\nEmail:")
                 phone_number = input("\nPhone_number:")
                 whatamI = input("\nWhat is the new user?(Car Owner, Manufacturer, Energy Supplier):")
-                
+
                 while (whatamI!='Car Owner') & (whatamI!='Manufacturer') & (whatamI!='Energy Supplier'):
                     click.echo('\nInvalid user type. Please try again. Available options are: Car Owner, Manufacturer, Energy Supplier\n')
                     whatamI = input("\nWhat is the new user?(Car Owner, Manufacturer, Energy Supplier):")
-                
+
                 if (whatamI == 'Car Owner'):
                     payload ={ 'email' :email,'phone_number':phone_number,'price_to_pay':0,'points':0}
                     URL = ("https://localhost:8765/evcharge/api/admin/usermod/"+username+'/'+passw)
                     r = requests.post(url=URL, headers=headers,data=payload, verify = False)
                     click.echo(r.text)
+                    return
                 elif (whatamI == 'Manufacturer'):
                     company_name = input('Company Name:')
                     payload ={ 'email' :email,'phone':phone_number,'price_to_pay':0,'points':0, 'whatamI':0, 'company_name':company_name, 'is_user':1}
                     URL = ("https://localhost:8765/evcharge/api/admin/usermod/"+username+'/'+passw)
                     r = requests.post(url=URL, headers=headers,data=payload, verify = False)
                     click.echo(r.text)
+                    return
                 elif (whatamI == 'Energy Supplier'):
                     company_name = input('Company Name:')
                     payload ={ 'email' :email,'phone':phone_number,'price_to_pay':0,'points':0, 'whatamI':1, 'company_name':company_name, 'is_user':1}
                     URL = ("https://localhost:8765/evcharge/api/admin/usermod/"+username+'/'+passw)
                     r = requests.post(url=URL, headers=headers,data=payload, verify = False)
                     click.echo(r.text)
+                    return
             elif (update):
                 URL = ("https://localhost:8765/evcharge/api/admin/usermod/"+username+'/'+passw)
                 r = requests.post(url=URL, headers=headers,data=payload, verify = False)
                 click.echo(r.text)
+                return
             else:
                 click.echo('\nInvalid combination. Should choose --create or --update\n')
+        elif (resetsessions and not healthcheck):
+            URL = ("https://localhost:8765/evcharge/api/admin/resetsessions")
+            r = requests.post(url = URL, verify = False)
+            #result = r.json()
+            click.echo('\nSessions have been deleted and admin credentials reset!\n')
+        elif (healthcheck and not resetsessions):
+            if os.path.exists("softeng20bAPI.token"):
+                f = open("softeng20bAPI.token", "r")
+                tok = f.read()
+                URL = ("https://localhost:8765/evcharge/api/admin/healthcheck")
+                payload={}
+                headers = {
+                        'x-access-token': tok
+                        }
+                response = requests.get( url= URL, headers=headers, data=payload, verify = False)
+                f.close()
+                click.echo(response.text)
         else:
-            click.echo("Invalid user. Access denied. Try logging in first.")
+            click.echo('\nInvalid Combination\n')
+    else:
+        click.echo("Invalid user. Access denied. Try logging in first.")
 
 if __name__ == '__main__':
     evgroup_38()

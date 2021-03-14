@@ -12,7 +12,7 @@ myStatus['status'] = 'OK'
 
 fakeToken={}
 fakeToken['token'] = '12345'
-        
+
 class TestUnit (unittest.TestCase):
 
     def test_login(self):
@@ -24,7 +24,7 @@ class TestUnit (unittest.TestCase):
             mocked_logout.return_value = Mock(status_code = 200)
             mocked_logout.return_value.json.return_value = fakeToken
             logout()
-    
+
     def test_logout(self):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
@@ -48,21 +48,21 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_logout:
             mocked_logout.return_value = Mock(status_code = 200)
             mocked_logout.return_value.json.return_value = fakeToken
-            logout() 
-            
+            logout()
+
 
     def test_resetsessions(self):
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 200)
             mocked_post.return_value.json.return_value = myStatus
             self.assertEqual(reset(), 200)
-            
+
 
     def test_sessions_per_point(self):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 200)
             mocked_get.return_value.json.return_value = 0
@@ -70,13 +70,13 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_logout:
             mocked_logout.return_value = Mock(status_code = 200)
             mocked_logout.return_value.json.return_value = fakeToken
-            logout()            
+            logout()
 
     def test_sessions_per_station(self):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 200)
             mocked_get.return_value.json.return_value = 0
@@ -90,7 +90,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 200)
             mocked_get.return_value.json.return_value = 0
@@ -104,7 +104,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 200)
             mocked_get.return_value.json.return_value = 0
@@ -118,7 +118,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')       
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 200)
             mocked_get.return_value.json.return_value = fakeToken
@@ -132,7 +132,7 @@ class TestUnit (unittest.TestCase):
 #        with patch.object(requests, 'post') as mocked_login:
 #            mocked_login.return_value = Mock(status_code = 200)
 #            mocked_login.return_value.json.return_value = fakeToken
-#            login('organicfrog305', 'gilles')        
+#            login('organicfrog305', 'gilles')
 #        with patch.object(requests, 'post') as mocked_post:
 #            mocked_post.return_value = Mock(status_code = 200)
 #            mocked_post.return_value.json.return_value = fakeToken
@@ -144,25 +144,25 @@ class TestUnit (unittest.TestCase):
 
 
 #Make many tests like that
-    def test_admin_actions_usermod(self):
-        with patch.object(requests, 'post') as mocked_login:
-            mocked_login.return_value = Mock(status_code = 200)
-            mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
-        with patch.object(requests, 'post') as mocked_post:
-            mocked_post.return_value = Mock(status_code = 200)
-            mocked_post.return_value.json.return_value = fakeToken
-            self.assertEqual(admin_actions(usermod = ' ', username = 'browntiger776', passw = 'maker'), [200, 2])
-        with patch.object(requests, 'post') as mocked_logout:
-            mocked_logout.return_value = Mock(status_code = 200)
-            mocked_logout.return_value.json.return_value = fakeToken
-            logout()
+    # def test_admin_actions_usermod(self):
+    #     with patch.object(requests, 'post') as mocked_login:
+    #         mocked_login.return_value = Mock(status_code = 200)
+    #         mocked_login.return_value.json.return_value = fakeToken
+    #         login('organicfrog305', 'gilles')
+    #     with patch.object(requests, 'post') as mocked_post:
+    #         mocked_post.return_value = Mock(status_code = 200)
+    #         mocked_post.return_value.json.return_value = fakeToken
+    #         self.assertEqual(admin_actions(usermod = ' ', username = 'browntiger776', passw = 'maker'), [200, 2])
+    #     with patch.object(requests, 'post') as mocked_logout:
+    #         mocked_logout.return_value = Mock(status_code = 200)
+    #         mocked_logout.return_value.json.return_value = fakeToken
+    #         logout()
 
     def test_admin_actions_invalid_combination1(self):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 404)
             mocked_post.return_value.json.return_value = fakeToken
@@ -176,7 +176,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 404)
             mocked_post.return_value.json.return_value = fakeToken
@@ -190,7 +190,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 404)
             mocked_post.return_value.json.return_value = fakeToken
@@ -204,7 +204,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
             mocked_login.return_value.json.return_value = fakeToken
-            login('organicfrog305', 'gilles')        
+            login('organicfrog305', 'gilles')
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 404)
             mocked_post.return_value.json.return_value = fakeToken

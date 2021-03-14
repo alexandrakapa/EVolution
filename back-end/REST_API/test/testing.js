@@ -6,9 +6,27 @@ const {expect} = chai;
 
 chai.use(chaiHttp);
 
-let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJyb3dudGlnZXI3NzYiLCJjYXRlZ29yeSI6IkNhcl9Pd25lciIsInNlc3Npb25JRCI6MCwiaWF0IjoxNjE1Njc0MjU2LCJleHAiOjE2MTU4NDcwNTZ9.qzhQE0KSHjuW2lfhlDxfHtl0RVpsTsX0XWkNDlvPcf4'
+let token = String();
 
 describe('Displaying station information', () => {
+
+	it('Login for token', function (done) {
+					chai.request('https://localhost:8765/evcharge/api')
+							.post('/login')
+							.set('content-type', 'application/x-www-form-urlencoded')
+							.send({ username: 'smallkoala709', password: 'alexis' })
+							.end(function (err, res) {
+									expect(res).to.have.status(200);
+									expect(res).to.be.an('object');
+									expect(res.body).to.have.property('accessToken');
+									token = res.body['accessToken'];
+									done();
+							});
+			});
+
+
+
+
 
 	describe('Display all stations', () => {
 
@@ -112,7 +130,7 @@ describe('Vehicles', () => {
 				expect(res.body[7][1]).to.have.property('EnergyDelivered').equal(11.61);
 				expect(res.body[7][1]).to.have.property('CostPerkWh').equal(0.15);
 				expect(res.body[7][1]).to.have.property('SessionCost').equal(2.15);
-			
+
 				done();
 			});
 		});
@@ -181,7 +199,7 @@ describe('Points', () => {
 				expect(res.body[6][0]).to.have.property('EnergyDelivered').equal(6.49);
 				expect(res.body[6][0]).to.have.property('Payment').equal('Pay later with app.');
 				expect(res.body[6][0]).to.have.property('VehicleType').equal('Life 20');
-			
+
 				done();
 			});
 		});
@@ -319,7 +337,7 @@ describe('Providers', () => {
 				expect(res.body[2][0]).to.have.property('EnergyDelivered').equal(6.5);
 				expect(res.body[2][0]).to.have.property('CostPerKWh').equal(2.12);
 				expect(res.body[2][0]).to.have.property('TotalCost').equal(13.78);
-			
+
 				done();
 			});
 		});
@@ -457,7 +475,7 @@ describe('Station', () => {
 				expect(res.body[7][0]).to.have.property('NumberOfActivePoints').equal(1);
 				expect(res.body[7][1]).to.have.property('PointID').equal('2-39-123-23 CB-772');
 				expect(res.body[7][1]).to.have.property('PointSessions').equal(1);
-				expect(res.body[7][1]).to.have.property('EnergyDelivered').equal(4.26);			
+				expect(res.body[7][1]).to.have.property('EnergyDelivered').equal(4.26);
 				done();
 			});
 		});
@@ -569,4 +587,19 @@ describe('Station', () => {
 		});
 
 	});
+});
+
+
+
+describe('Testing Endpoints', ()=> {
+    it('Log out', function (done) {
+            chai.request('https://localhost:8765/evcharge/api')
+                .post('/logout')
+                .set('x-access-token', token)
+                .send()
+                .end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    done();
+                });
+        });
 });

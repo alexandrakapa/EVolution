@@ -19,10 +19,9 @@ def login(username,passw):
     f.write(json.loads(response.text)["accessToken"])
     f.close()
     if(json.loads(response.text)):
-        #click.echo('\nWelcome back!\n')
+        return response.status_code
     else:
-        #click.echo('\nOoops! Your username or password was wrong :(\nPlease try again!\n')
-    return response.status_code
+        return response.status_code
 
 
 def logout():
@@ -146,7 +145,7 @@ def sessions_per_provider(provider,datefrom,dateto,format='json'):
                 }
         URL = ("https://localhost:8765/evcharge/api/SessionsPerProvider/"+provider+'/'+datefrom+'/'+dateto+'/?format='+format)
         r = requests.get(url = URL, headers=headers, data = payload, verify=False)
-        f.close()     
+        f.close()
         #click.echo(r.text)
         return r.status_code
     else:
@@ -173,7 +172,7 @@ def admin_actions(usermod = None ,username='nothing_inserted',passw='nothing_ins
             return [r.status_code, 0]
         elif (users == 'not_selected' and source != 'not_selected' and username == 'nothing_inserted' and passw == 'nothing_inserted'):
             #URL = "https://localhost:8765/evcharge/api/admin/system/sessionsupd"
-            
+
             #r = requests.post(url=URL, headers=headers, data=payload)
             #click.echo(r.text)
             url = "https://localhost:8765/evcharge/api/admin/system/sessionsupd"
@@ -191,11 +190,11 @@ def admin_actions(usermod = None ,username='nothing_inserted',passw='nothing_ins
                 email = input("\nEmail:")
                 phone_number = input("\nPhone_number:")
                 whatamI = input("\nWhat is the new user?(Car Owner, Manufacturer, Energy Supplier):")
-                
+
                 while (whatamI!='Car Owner') & (whatamI!='Manufacturer') & (whatamI!='Energy Supplier'):
                     #click.echo('\nInvalid user type. Please try again. Available options are: Car Owner, Manufacturer, Energy Supplier\n')
                     whatamI = input("\nWhat is the new user?(Car Owner, Manufacturer, Energy Supplier):")
-                
+
                 if (whatamI == 'Car Owner'):
                     payload ={ 'email' :email,'phone_number':phone_number,'price_to_pay':0,'points':0}
                     URL = ("https://localhost:8765/evcharge/api/admin/usermod/"+username+'/'+passw)
@@ -233,4 +232,3 @@ def admin_actions(usermod = None ,username='nothing_inserted',passw='nothing_ins
 
 if __name__ == '__main__':
     evgroup_38()
-       

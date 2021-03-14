@@ -177,14 +177,14 @@ def test_admin_users2():
     runner = CliRunner()
     result = runner.invoke(evgroup_38, ['Admin', '--username', 'angrybird515', '--users', 'angrybird515'])
     #assert result.exit_code == 0
-    assert "\nInvalid combination\n" in result.output
+    assert "\nInvalid Combination\n\n" in result.output
 
 def test_admin_users3():
     urllib3.disable_warnings()
     runner = CliRunner()
     result = runner.invoke(evgroup_38, ['Admin', '--username', 'angrybird515'])
     assert result.exit_code == 0
-    assert "\nInvalid combination\n" in result.output
+    assert "\nInvalid Combination\n\n" in result.output
 
 #make many tests like that with correct usernames
 def test_admin_usermod():
