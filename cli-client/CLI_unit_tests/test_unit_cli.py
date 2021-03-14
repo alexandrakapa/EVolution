@@ -7,6 +7,7 @@ import unittest
 from mock import MagicMock, Mock, patch
 
 
+
 myStatus={}
 myStatus['status'] = 'OK'
 

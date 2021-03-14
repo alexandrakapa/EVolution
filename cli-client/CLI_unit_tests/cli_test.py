@@ -7,7 +7,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def login(username,passw):
-
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     url = "https://localhost:8765/evcharge/api/login"
     payload='username='+username+'&password='+passw
     headers = {
@@ -25,6 +25,7 @@ def login(username,passw):
 
 
 def logout():
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     if os.path.exists("softeng20bAPI.token"):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
