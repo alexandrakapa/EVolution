@@ -11,19 +11,18 @@ const sha512crypt = require("sha512crypt-node").sha512crypt;
 const jwt_decode =require("jwt-decode");
 dotenv.config();
 
-const fileRows =[];
+var fileRows =[];
 csvReader.checkToken = async(tokid,tuname, cat,result) =>{
     qur = "SELECT * FROM "+cat+" WHERE username= '"+ tuname+"'";
-    console.log(qur);
+    // console.log(qur);
     dbConn.query(qur, (err, res)=>{
         if(err){
             console.log('Error while fetching user by username', err);
             result(err, null);
             return;
         }else{
-            console.log(res[0].sessionID);
+            // console.log(res[0].sessionID);
             if(res[0].sessionID ==tokid){
-            console.log("komple");
             result(null, "ok");
             return;
             }else{
@@ -43,7 +42,6 @@ csvReader.findByToken = async (tok, result) => {
     }else{
         jwt.verify(tok,  process.env.TOKEN_SECRET, (err, decoded) => {
         if (err) {
-            console.log("stranger");
             result(null,"fail");
             return;
         }else{
@@ -51,7 +49,6 @@ csvReader.findByToken = async (tok, result) => {
         var csid = jwt_decode(tok).sessionID;
         var csum = jwt_decode(tok).username;
         var csct = jwt_decode(tok).category;
-        console.log("this sess: "+csid);
         csvReader.checkToken(csid,csum,csct,(err,res)=>{
             if(err){
                 console.log(err);
@@ -73,16 +70,22 @@ csvReader.findByToken = async (tok, result) => {
     console.log("result: "+result);
   };
 csvReader.upFile =  ((req, result) => {
-    console.log(req.file);
-    console.log(Object.getOwnPropertyNames(req.file));
-    console.log(Object.getOwnPropertyNames(req));
+    fileRows =[];
+    // console.log(req.file);
+    // console.log(Object.getOwnPropertyNames(req.file));
+    // console.log(Object.getOwnPropertyNames(req));
     csv.parseFile(req.file.path)
     .on("data", function (data) {
       fileRows.push(data); // push each row
     })
     .on("end", function () {
-      fs.unlinkSync(req.file.path);
-      console.log(fileRows);
+      //fs.unlink(req.file.path);
+      fs.unlink(req.file.path, (err => { 
+        if (err) console.log(err); 
+        else { 
+          console.log("\nDeleted file: example_file.txt");  
+        } 
+      })); 
       result(null,fileRows);
       return;
     })
@@ -90,10 +93,10 @@ csvReader.upFile =  ((req, result) => {
 csvReader.upDB =  ((data, result) => {
     var to_exec = "INSERT INTO Charging VALUES ";
     for(var i=0; i<data.length;i++){
-        console.log("object: "+i);
+        //console.log("object: "+i);
         cur="";
         for(var j=0; j<data[i].length;j++){
-            console.log("this: "+j+" : "+ data[i][j]);
+            //console.log("this: "+j+" : "+ data[i][j]);
             cur += data[i][j];
         }
         var data_ar = cur.split(';');

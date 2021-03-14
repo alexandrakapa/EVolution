@@ -6,13 +6,11 @@ exports.getFile =(req,res) =>{
    
     UploadModel.findByToken(token,(err,data)=>{
             if(data == "fail"){ 
-                console.log(data);
                 var um = data;
                  res.status(400).json({
-                    message:"Invalid data "+um
+                    message:"Not authorized "+um
                 });
             }else {
-                console.log("here");
                 UploadModel.upFile(req,(err,data) => {
                     if (err) {
                         res.send(err);
