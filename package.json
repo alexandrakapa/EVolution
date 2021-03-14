@@ -2,9 +2,16 @@
   "dependencies": {
     "click": "^0.1.0",
     "cors": "^2.8.5",
+    "json": "^10.0.0",
+    "mock": "^0.1.1",
+    "os": "^0.1.1",
     "package.json": "^2.0.1",
+    "pytest": "^1.0.0",
+    "python3": "^0.0.1",
     "recompose": "^0.30.0",
+    "requests": "^0.3.0",
+    "start": "^5.1.0",
     "unittest": "^1.0.0",
-    "start": "^5.1.0"
+    "urllib3": "^0.0.1"
   }
 }

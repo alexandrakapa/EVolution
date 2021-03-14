@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from google.colab import drive
 drive.mount('/gdrive')
 import os
@@ -16,6 +18,8 @@ company_names1=list(myset)
 
 !pip install randomuser
 
+pip install passlib
+
 #Function to produce random datatimes
 import random
 from random import randrange
@@ -23,7 +27,7 @@ from datetime import timedelta
 
 def random_date(start, end):
     """
-    This function will return a random datetime between two datetime 
+    This function will return a random datetime between two datetime
     objects.
     """
     delta = end - start
@@ -31,7 +35,7 @@ def random_date(start, end):
     random_second = randrange(int_delta)
     return start + timedelta(seconds=random_second)
 
-    
+
 from datetime import datetime
 
 d1 = datetime.strptime('1/1/2018 1:30 PM', '%m/%d/%Y %I:%M %p')
@@ -42,6 +46,8 @@ d2 = datetime.strptime('1/1/2021 4:50 AM', '%m/%d/%Y %I:%M %p')
 from randomuser import RandomUser
 import hashlib
 import bcrypt
+from passlib.hash import sha512_crypt
+
 # Generate a single user
 user = RandomUser()
 
@@ -53,6 +59,7 @@ class Car_Owner:
   points=0
   price_to_pay=0
   hashed_password =""
+  sessionID =0
 
 
 class Energy_Supplier:
@@ -64,6 +71,8 @@ class Energy_Supplier:
   phone=""
   password=""
   hashed_password =""
+  whatamI = 1
+  sessionID =0
 class Payment:
   id=""
   value_paid=""
@@ -86,7 +95,8 @@ class Car_Manufacturer:
   email=""
   phone=""
   hashed_password =""
-
+  whatamI = 0
+  sessionID =0
 
 user_list = RandomUser.generate_users(100)
 energy_suppliers=['Harz Energie','BS Energie','EV Energy Group (FCN)','eVgo Network','EVS Energieversorgung Sylt','Evway','EWB','EWI Energiewerke Isernhagen','Fenie Energía (Spain)','FLOW Charging','FORTISIS','GardaUno','Gnrgy','GoCharge (IE)','Greenflux']
@@ -109,10 +119,10 @@ for i in user_list:
   car_owners[j].username=i.get_username()
   car_owners[j].email=i.get_email()
   car_owners[j].password=i.get_password()
-  salt = bcrypt.gensalt()
-  car_owners[j].hashed_password  = bcrypt.hashpw(car_owners[j].password.encode(), salt)
+  car_owners[j].hashed_password  = sha512_crypt.encrypt(car_owners[j].password,rounds=1000)
   car_owners[j].phone=i.get_phone()
   car_owners[j].points=random.randint(0,10000)
+  car_owners[j].sessionID =0
   #car_owners[j].price_to_pay=random.randint(0,1000)/10
   j=j+1
 
@@ -120,14 +130,16 @@ user_list = RandomUser.generate_users(len(energy_suppliers))
 j=0
 for i in user_list:
   energy_supplier[j].id=j+1
-  energy_supplier[j].username=i.get_username() ############## insert from datafiles ??????????? 
+  energy_supplier[j].username=i.get_username() ############## insert from datafiles ???????????
   energy_supplier[j].email=i.get_email()
   energy_supplier[j].password=i.get_password()
   salt = bcrypt.gensalt()
-  energy_supplier[j].hashed_password =  bcrypt.hashpw(car_owners[j].password.encode(), salt)
+  energy_supplier[j].hashed_password = sha512_crypt.encrypt(energy_supplier[j].password,rounds=1000)
   energy_supplier[j].phone=i.get_phone()
   energy_supplier[j].is_user=random.randint(0,1)
   energy_supplier[j].company_name = energy_suppliers[j]
+  energy_supplier[j].whatamI = 1
+  energy_supplier[j].sessionID =0
   j=j+1
 
 
@@ -142,9 +154,11 @@ for j in range(len(car_manufacturers)):
   car_manufacturers[j].username=user_list1[j].get_username()
   car_manufacturers[j].password=user_list1[j].get_password()
   salt = bcrypt.gensalt()
-  car_manufacturers[j].hashed_password =  bcrypt.hashpw(car_manufacturers[j].password.encode(),salt)
+  car_manufacturers[j].hashed_password =  sha512_crypt.encrypt(car_manufacturers[j].password,rounds=1000)
   car_manufacturers[j].email=user_list1[j].get_email()
   car_manufacturers[j].phone=user_list1[j].get_phone()
+  car_manufacturers[j].whatamI = 0
+  car_manufacturers[j].sessionID = 0
 
 def pick_random(start,end):
   return random.randint(start,end-1)
@@ -197,7 +211,7 @@ class has:
 
 with open(filename) as f:
   data = json.load(f)
-  
+
 
   cars=[car() for i in range(len(data['data']))]
 
@@ -259,7 +273,7 @@ with open(filename) as f:
     charger_types[id_inc].phases=i
     charger_types[id_inc].port='type1'
     id_inc+=1
-  
+
   for i in range (1,4):
     new_type=charger_type()
     charger_types.append(new_type)
@@ -268,7 +282,7 @@ with open(filename) as f:
     charger_types[id_inc].phases=id_inc
     charger_types[id_inc].port='type2'
     id_inc+=1
-   
+
 
   for i in range (len(charger_ports_dc)):
     new_type=charger_type()
@@ -280,7 +294,7 @@ with open(filename) as f:
     id_inc+=1
 
   # for i in range (0, len(charger_types)):
-  #   print(charger_types[i].ID, charger_types[i].type_, charger_types[i].phases, charger_types[i].port)  
+  #   print(charger_types[i].ID, charger_types[i].type_, charger_types[i].phases, charger_types[i].port)
 
   def get_charger_type (type_, phases, port):
     if (type_=='AC' and phases==1 and port=='type1'):
@@ -303,7 +317,7 @@ with open(filename) as f:
       return 9
     if (type_=='DC' and phases==0 and port=='tesla_suc'):
       return 10
-  
+
   has_relations=[]
 
   for i in range (0, len(data['data'])):
@@ -320,17 +334,17 @@ with open(filename) as f:
         temp.CarID=cars[i].ID
         has_relations.append(temp)
 
-month_to_number = {'Jan':1,         
-'Feb' : 2,         
-'Mar' : 3,           
-'Apr' : 4,              
-'May' : 5, 
+month_to_number = {'Jan':1,
+'Feb' : 2,
+'Mar' : 3,
+'Apr' : 4,
+'May' : 5,
 'Jun' : 6,
-'Jul' : 7, 
-'Aug' : 8, 
-'Sep' : 9, 
-'Oct' : 10, 
-'Nov' : 11, 
+'Jul' : 7,
+'Aug' : 8,
+'Sep' : 9,
+'Oct' : 10,
+'Nov' : 11,
 'Dec' : 12}
 
 """# Let's generate Charging Data"""
@@ -340,17 +354,17 @@ def its_a_date(date_str):
   my_hour =  datetime.strftime(datetime.strptime(date_str.split(" ",1)[1], "%I:%M %p"),"%H:%M")
   return(str(my_date)+" "+str(my_hour))
 
-import random 
+import random
 from datetime import datetime
 protocols = ["OSCP","OCPP","PWM","LIN"]
 def generate_total_km(car):
-  
+
   events =dict()
   dates=[]
   for i in charging_events:
     if i.car_id == car:
       if i.total_km >0:
-        events[i.date] = i.total_km 
+        events[i.date] = i.total_km
         dates.append(i.date)
   if(len(dates)>0):
     max = dates[0]
@@ -365,10 +379,10 @@ def generate_total_km(car):
   return [rand_km,diff]
 def return_rand_car(owner):
   car_list=[]
-  
+
   for i in cars:
     if i.Car_Ownerusername ==owner:
-      car_list.append(i.ID) 
+      car_list.append(i.ID)
   if (len(car_list)>1):
     return car_list[random.randint(0,len(car_list)-1)]
   else:
@@ -484,7 +498,7 @@ def generate_random_name(oc_set):
     fin = first+second+"-"+str(num)
     if fin not in oc_set:
       break
-  return fin 
+  return fin
   #επί της ουσίας πριν υπήρχαν πολλά charging events για την ίδια θέση,ωστόσο εμείς κρατούσαμε μόνο ένα. Επομένως, σε μεταγενέστερες επαναλήψεις απλά "κόβαμε" το event
   #αν βλέπαμε ότι έχει γίνει στον ίδιο σταθμό και space. Τώρα, αν βρω ίδιο όνομα σταθμού και space παράγω νέο όνομα space και ενημερώνω αντίστοιχα την αντίστοιχη τιμή
   #στον πίνακα των events
@@ -510,7 +524,7 @@ filename2 = "/gdrive/My Drive/Colab Notebooks/charging_points_europe_json/poi.js
 #print(len(charging_events))
 charg_dict = dict()
 with open(filename2) as f2:
- 
+
   #lu  = RandomUser.generate_users(len(charging_events)) + RandomUser.generate_users(len(charging_events)) +RandomUser.generate_users(len(charging_events))+RandomUser.generate_users(len(charging_events))+RandomUser.generate_users(len(charging_events))+RandomUser.generate_users(3117)
   #lu  = RandomUser.generate_users(1)
   #print(len(lu))
@@ -532,7 +546,7 @@ with open(filename2) as f2:
           y=charg_dict[i.stationID]["pos"][charg_dict[i.stationID]["prev"]]
           i.position =y
           charg_dict[i.stationID][y] +=1
-          
+
           charg_dict[i.stationID]["prev"]+=1
     else:
       if i.stationID not in station_ids:
@@ -567,12 +581,12 @@ with open(filename2) as f2:
     temp.is_active=1
     stations.append(temp)
 
-    
+
 
   poi_data = []
   for line in open(filename2, 'r'):
     poi_data.append(json.loads(line))
-   
+
   for i in range (0, len(stations)):
     stations[i].address_info=poi_data[i]['AddressInfo']['Title']
     if (poi_data[i]['AddressInfo']['AddressLine1']):
@@ -586,7 +600,7 @@ with open(filename2) as f2:
     if poi_data[i]['AddressInfo']['Postcode']:
       stations[i].postal_code=poi_data[i]['AddressInfo']['Postcode']
     stations[i].country=poi_data[i]['AddressInfo']['Country']['Title']
-     
+
 #for i in stations:
  # i.print_station()
 #print("NEW")
@@ -619,6 +633,88 @@ for k in charging_events:
       m.price_to_pay += k.charging_price
       #print (m.price_to_pay)
 
+'''
+class pays_up:
+  PaymentID = ""
+  ChargingID = ""
+pays_up_relations = []
+J=0
+payments=[]
+for k in car_owners:
+  print("to_p long before: "+ str(k.price_to_pay))
+  amount=random.randint(int(k.price_to_pay/5), int(k.price_to_pay))
+  totalsum=0   #το ποσο που εχουμε εξοφλισει μεσω πληρωμων για τον χρηστη μεχρι αυτη τη στιγμη
+  left_from_amount = amount
+  for j in range(0,random.randint(1,10)):  #θα κανω το πολυ δεκα πληρωμες για το ποσο που θελω να εξοφλισω για αυτο τον χρηστη
+    money=random.randint(int(left_from_amount/5), left_from_amount)  #επιλεγω ποσο για την πρωτη πληρωμη
+    amount=amount-money   #για τις υπολοιπες πληρωμες μενει το υπολοιπο
+    #totalsum=totalsum - amount  #ποσο που εχω πληρωσει μεχρι τωρα
+    #totalsum = totalsum +money
+    temp=Payment()  #φτιαχνω την πληρωμη μου
+    temp.id=J   #πρεπει να αρχικοποιησω τα πεδια ολα
+    temp.value_paid=money
+    temp.car_owner_username=k.username
+    #εδω και τα υπολοιπα στοιχεια
+    amount_left=money  #τι ποσο απο αυτο που θελω να εξοφλει η πληρωμη αυτη εχω εξοφλισει μεχρι τωρα
+    for m in charging_events:  #ψαχνω φορτισεις να συνδεσω με την πληρωμη
+      if (m.Car_Ownerusername==k.username):  #με νοιαζουν μονο οι φορτισεις που εχω για τον συγκεκριμενο χρηστη
+        if (m.still_owed==0):   #αν η φορτιση αυτη ειναι ηδη εξοφλημενη ψαχνω την επομενη
+          #print("hello")
+          continue;
+
+        if (amount_left>m.still_owed):  #αν στην φορτιση μενει ενα ποσο για εξοφλιση, μικροτετο απο το ποσο που μου μενει να εξοφλισω σε αυτην την πλρωμη:
+          totalsum +=m.still_owed
+          print("still: "+str(m.still_owed))
+          amount_left=amount_left-m.still_owed  #χρησιμοποιω ολο το ποσο της φορτισης και μου μενει ακομα καμποσο να εξοφλισω
+          m.still_owed=0   #η φορτιση εξοφληθηκε
+          obj=pays_up()   #συσχετιση πληρωμης με την συγκεκριμενη φορτιση
+          obj.PaymentID=temp.id
+          obj.ChargingID=m.id
+          pays_up_relations.append(obj)
+        else:   #ενναλακτικα το μη εξοφλημενο ποσο της φορτισης ειναι μεγαλυτερο απο αυτο που μου μενει για την πληρωμη αυτη
+          totalsum += amount_left
+          print("left: "+ str(amount_left))
+          m.still_owed=m.still_owed-amount_left   #θα μεινει ενα μερος της φορτισης μη εξοφλημενο
+          amount_left=0   #εχω τελειωσει με ολο το ποσο για την παρουσα πληρωμη
+          obj=pays_up()   #συσχετιση πληρωμης φορτισης
+          obj.PaymentID=temp.id
+          obj.ChargingID=m.id
+          pays_up_relations.append(obj)
+      if (amount_left==0):   #αν εχω εξοφλησει ολο το ποσο που ηθελα για την παρουσα πληρωμη δεν χρειαζεται να ψαξω αλλες φορτισεις
+        break;
+      #totalsum+=money-amount_left #εχω μολις τελειωσει με το ποσο που επελεξα για την πρωτη μου πληρωμη, αρα το προσθετω στο συνολικο ποσο που εχω εξοφλισει μεχρι τωρα
+      #print(totalsum)
+    payments.append(temp)   #προσθετω και την πληρωμη μου στις πληρωμες
+    J=J+1  #το επομενο id για την επομενη πληρωμη
+    if (amount==0): #αν το ποσο που μενει σε σχεση με το αρχικο ποσο που θελω να εξοφλισω για αυτον τον χρηστη ειναι 0 τοτε δε χρειαζεται να φτιαξω αλλες πληρωμες
+      break
+    print("to_p before: "+ str(k.price_to_pay))
+    k.price_to_pay-=totalsum  #εχω τελειωσει με οσες πληρωμες επελεξα να κανω για αυτον τον χρηστη,ισως ομως να μην επελεξα αρκετες με το randint για να εξοφλισω ολο το ποσο του, χρωσταει ακομα οσα χρωσταγε μειον οσα καταφερα να εξοφλισω με πληρωμες
+    print("to_p after: "+ str(k.price_to_pay))
+    print("total: "+ str(totalsum))
+'''
+
+'''
+for i in car_owners:
+  print(i.username)
+  for j in payments:
+    if(i.username == j.car_owner_username):
+      print(str(j.id)+" "+str(j.value_paid))
+'''
+
+'''
+for k in car_owners:
+  tot = 0
+  lot =0
+  for m in charging_events:
+    if(k.username == m.Car_Ownerusername):
+      tot += m.charging_price
+  for j in payments:
+     if(k.username == j.car_owner_username):
+      lot += j.value_paid
+  print (str(tot)+" "+str(lot)+" "+str(k.price_to_pay))
+'''
+
 class in_program_with:
   monthly_charge=""
   discount=""
@@ -642,7 +738,7 @@ for i in car_owners:
       temp.monthly_charge=random.randint(100,1000)
       temp.discount=-1
     in_program_with_relations.append(temp)
-  
+
 # for i in in_program_with_relations:
 #   print(i.monthly_charge, i.discount, i.Energy_SupplierID)
 #   print(i.Car_Ownerusername)
@@ -686,7 +782,7 @@ for i in car_owners:
 
       temp = Evaluates()
       temp.car_owner = i.username
-      temp.station_id = stations[l2].ID              
+      temp.station_id = stations[l2].ID
       temp.evaluation = random.randint(0,10)
       evaluations.append(temp)
       ev_set.add((i.username,stations[l2].ID))
@@ -774,7 +870,10 @@ for i in energy_supplier:
   cur.append(i.hashed_password)
   cur.append(i.email)
   cur.append(i.phone)
+  cur.append(i.whatamI)
+  cur.append(i.sessionID)
   energy_supplier_list.append(cur)
+
 
 with open('/gdrive/My Drive/Colab Notebooks/energy_supplier_list.csv', 'w', newline='') as myfile:
      wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
@@ -805,6 +904,8 @@ for i in car_manufacturers:
   cur.append(i.hashed_password)
   cur.append(i.email)
   cur.append(i.phone)
+  cur.append(i.whatamI)
+  cur.append(i.sessionID)
   car_manufacturers_list.append(cur)
 
 with open('/gdrive/My Drive/Colab Notebooks/car_manufacturers_list.csv', 'w', newline='') as myfile:
@@ -833,6 +934,7 @@ for i in car_owners:
   cur.append(i.phone)
   cur.append(i.price_to_pay)
   cur.append(i.points)
+  cur.append(i.sessionID)
   car_owner_list.append(cur)
 
 with open('/gdrive/My Drive/Colab Notebooks/car_owner_list.csv', 'w', newline='') as myfile:
@@ -993,7 +1095,7 @@ with open('/gdrive/My Drive/Colab Notebooks/evaluations_list.csv', 'w', newline=
 #   discount=""
 #   Car_Ownerusername=""
 #   Energy_SupplierID=""
-  
+
 in_program_with_relations_list=[]
 for i in in_program_with_relations:
   cur=[]
@@ -1007,3 +1109,40 @@ with open('/gdrive/My Drive/Colab Notebooks/in_program_with_relations_list.csv',
   wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
   for i in in_program_with_relations_list:
     wr.writerow(i)
+
+pip install passlib
+
+from passlib.hash import sha512_crypt
+
+pip install RandomUser
+
+from randomuser import RandomUser
+import csv
+user_list = RandomUser.generate_users(1)
+total=[]
+total1 =[]
+cur =[]
+car =[]
+for i in user_list:
+  uname = i.get_username()
+  cur.append(uname)
+  car.append(uname)
+  pas = i.get_password()
+  car.append(pas)
+  cur.append(sha512_crypt.encrypt(pas, rounds=1000))
+  cur.append(i.get_email())
+  cur.append(i.get_phone())
+  cur.append(0)
+print(cur)
+print(car)
+total.append(cur)
+total1.append(car)
+with open('/gdrive/My Drive/Colab Notebooks/admin_list.csv', 'w', newline='') as myfile:
+     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+     for i in total:
+      wr.writerow(i)
+
+with open('/gdrive/My Drive/Colab Notebooks/admin_user_list.csv', 'w', newline='') as myfile:
+     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+     for i in total1:
+      wr.writerow(i)
