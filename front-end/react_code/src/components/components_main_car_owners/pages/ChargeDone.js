@@ -126,7 +126,12 @@ function ChargeInProgress(props){
 					}
 				}}>Continue to payment</button> : null}
 				</div>
-				: typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button_alone' onClick={()=>{props.history.push('/mainown')}}>Return to homepage</button> : null }
+				: <div className='container1'>
+				{typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button' onClick={()=>{props.history.push('/mainown')}}>Return to homepage</button> : null }
+				{typeof data !=='undefined'  &&  data.length!==0 && !isloading? <button className='charging_button2' onClick={()=>{props.history.push('/mainown/charging_statistics')}}>Charging Statistics</button> : null}
+
+				</div>
+			}
 			</div>
 		)
 	}
