@@ -142,6 +142,8 @@ class TestUnit (unittest.TestCase):
 #            mocked_logout.return_value.json.return_value = fakeToken
 #            logout()
 
+
+#Make many tests like that
     def test_admin_actions_usermod(self):
         with patch.object(requests, 'post') as mocked_login:
             mocked_login.return_value = Mock(status_code = 200)
@@ -206,7 +208,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'post') as mocked_post:
             mocked_post.return_value = Mock(status_code = 404)
             mocked_post.return_value.json.return_value = fakeToken
-            self.assertEqual(admin_actions(username = 'browntiger776' , users = 'browntiger776' , sessionsupd = 'source'), 404)
+            self.assertEqual(admin_actions(username = 'browntiger776' , users = 'browntiger776' , source = 'source'), 404)
         with patch.object(requests, 'post') as mocked_logout:
             mocked_logout.return_value = Mock(status_code = 200)
             mocked_logout.return_value.json.return_value = fakeToken
@@ -220,7 +222,7 @@ class TestUnit (unittest.TestCase):
         with patch.object(requests, 'get') as mocked_get:
             mocked_get.return_value = Mock(status_code = 404)
             mocked_get.return_value.json.return_value = fakeToken
-            self.assertEqual(admin_actions(users = 'browntiger776' , sessionsupd = 'source'), 404)
+            self.assertEqual(admin_actions(users = 'browntiger776' , source = 'source'), 404)
         with patch.object(requests, 'post') as mocked_logout:
             mocked_logout.return_value = Mock(status_code = 200)
             mocked_logout.return_value.json.return_value = fakeToken

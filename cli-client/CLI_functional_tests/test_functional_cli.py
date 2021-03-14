@@ -171,26 +171,27 @@ def test_admin_users1():
     runner = CliRunner()
     result = runner.invoke(evgroup_38, ['Admin', '--users', 'blackkoala898'])
     assert result.exit_code == 0
-    assert not "Invalid combination." in result.output
 
 def test_admin_users2():
     urllib3.disable_warnings()
     runner = CliRunner()
     result = runner.invoke(evgroup_38, ['Admin', '--username', 'angrybird515', '--users', 'angrybird515'])
     #assert result.exit_code == 0
-    assert "Invalid combination." in result.output
+    assert "\nInvalid combination\n" in result.output
 
 def test_admin_users3():
     urllib3.disable_warnings()
     runner = CliRunner()
     result = runner.invoke(evgroup_38, ['Admin', '--username', 'angrybird515'])
     assert result.exit_code == 0
-    assert "Invalid combination." in result.output
+    assert "\nInvalid combination\n" in result.output
 
+#make many tests like that with correct usernames
 def test_admin_usermod():
     urllib3.disable_warnings()
     runner = CliRunner()
-    result = runner.invoke(evgroup_38, ['Admin','--username', 'browntiger776', 'passw', 'maker'])
+    result = runner.invoke(evgroup_38, ['Admin','--username', 'browntiger776', '--passw', 'make'])
+    assert result.exit_code == 0
     assert not "has been created or changed password" in result.output
 
 #def test_admin_usermod2():
