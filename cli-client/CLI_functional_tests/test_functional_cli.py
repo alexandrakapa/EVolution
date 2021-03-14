@@ -13,12 +13,12 @@ def test_login0():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     runner = CliRunner()
     result = runner.invoke(evgroup_38, ['login', '--userna', 'angrybird515', 'vfdbf'])
-    assert result.exit_code != 0 
+    assert result.exit_code != 0
 
 def test_login():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     runner = CliRunner()
-    result = runner.invoke(evgroup_38, ['login', '--username', 'crazykoala329', '--passw', 'gonzalez'])
+    result = runner.invoke(evgroup_38, ['login', '--username', 'admin', '--passw', 'petrol4ever'])
     assert result.exit_code == 0
 
 def test_healthcheck():
@@ -55,7 +55,7 @@ def test_sessions_per_station3():
     result = runner.invoke(evgroup_38, ['SessionsPerStation', '--station', '2-39-129-17', '--datefrom','0101','--dateto','20201010'])
     assert result.exit_code == 0
     assert "Bad Request : Invalid Date Format\n" in result.output
-    
+
 
 def test_sessions_per_station4():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -199,11 +199,11 @@ def test_admin_usermod():
 #    result = runner.invoke(evgroup_38, ['Admin','--username', 'katerina', 'passw', 'newuser'])
 #    assert "has been created or changed password" in result.output
 
-#def test_admin_sessionsupd():
-#    urllib3.disable_warnings()
-#    runner = CliRunner()
-#    result = runner.invoke(evgroup_38, ['Admin','--sessionsupd', 'test'])
-#    assert "has been created or changed password" in result.output
+def test_admin_sessionsupd():
+   urllib3.disable_warnings()
+   runner = CliRunner()
+   result = runner.invoke(evgroup_38, ['Admin','--sessionsupd', 'test'])
+   assert result.exit_code != 0
 
 
 def test_logout():

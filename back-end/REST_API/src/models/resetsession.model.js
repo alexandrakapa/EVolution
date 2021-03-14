@@ -5,7 +5,7 @@ const Resetall = function () { };
 const Rest = function () { };
 
 Resetall.Reset = async (result) => {
-    var orig_pas = "1234";
+    var orig_pas = "petrol4ever";
     var ran =crypto.randomBytes(16).toString('base64');
     const salt = '$6$rounds=1000$'+ ran;
     var fin_pas = sha512crypt(orig_pas, salt);

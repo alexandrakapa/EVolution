@@ -67,7 +67,7 @@ describe('Use Case : Statistics Manufacturer', ()=>{
 				    done();
                 });
         });
-        
+
         it('Manufacturer invalid ID', function (done) {
             chai.request('https://localhost:8765/evcharge/api')
                 .get('/SessionsPerManufacturer/kat/93332/20200304/20200306')
@@ -198,7 +198,7 @@ describe('Use Case : Statistics Manufacturer', ()=>{
                 });
         });
 
-        
+
     });
 
     describe('Consumption', ()=>{
@@ -213,14 +213,14 @@ describe('Use Case : Statistics Manufacturer', ()=>{
                     expect(res.type).equal('application/json');
                     expect(res.body).to.be.an('array');
                     expect(res.body[0]).to.be.an('object');
-                    expect(res.body[0]).to.have.property('EnergyConsumption').equal(481.17);
-                    expect(res.body[0]).to.have.property('Model').equal('Model 3');
+                    expect(res.body[0]).to.have.property('EnergyConsumption').equal(1220.95);
+                    expect(res.body[0]).to.have.property('Model').equal('Model S');
                     expect(res.body[1]).to.be.an('object');
-                    expect(res.body[1]).to.have.property('EnergyConsumption').equal(1097.75);
-                    expect(res.body[1]).to.have.property('Model').equal('Model S');
+                    expect(res.body[1]).to.have.property('EnergyConsumption').equal(1617.37);
+                    expect(res.body[1]).to.have.property('Model').equal('Model X');
                     expect(res.body[2]).to.be.an('object');
-                    expect(res.body[2]).to.have.property('EnergyConsumption').equal(1428.36);
-                    expect(res.body[2]).to.have.property('Model').equal('Model X');
+                    expect(res.body[2]).to.have.property('EnergyConsumption').equal(623.02);
+                    expect(res.body[2]).to.have.property('Model').equal('Model 3');
 				    done();
                 });
         });
@@ -335,19 +335,19 @@ describe('Use Case : Statistics Manufacturer', ()=>{
                     expect(res.body[6]).to.have.length(3);
                     expect(res.body[6][0]).to.have.property('CarID').equal('93c82e06-1aa3-4c19-8f81-b9fac0c598c3');
                     expect(res.body[6][0]).to.have.property('Model').equal('Model 3');
-                    expect(res.body[6][0]).to.have.property('EnergyCost').equal(0.032958);
-                    expect(res.body[6][0]).to.have.property('TotalKm').equal(81014);
-                    expect(res.body[6][0]).to.have.property('TotalEnergyConsumed').equal(2670.06);
+                    expect(res.body[6][0]).to.have.property('EnergyCost').equal(0.033467);
+                    expect(res.body[6][0]).to.have.property('TotalKm').equal(81726);
+                    expect(res.body[6][0]).to.have.property('TotalEnergyConsumed').equal(2735.12);
 				    expect(res.body[6][1]).to.have.property('CarID').equal('7de25a64-e9fa-484f-bf99-d02b02cfb17d');
                     expect(res.body[6][1]).to.have.property('Model').equal('Model 3');
-                    expect(res.body[6][1]).to.have.property('EnergyCost').equal(0.031721);
-                    expect(res.body[6][1]).to.have.property('TotalKm').equal(74059);
-                    expect(res.body[6][1]).to.have.property('TotalEnergyConsumed').equal(2349.24);
+                    expect(res.body[6][1]).to.have.property('EnergyCost').equal(0.032391);
+                    expect(res.body[6][1]).to.have.property('TotalKm').equal(74131);
+                    expect(res.body[6][1]).to.have.property('TotalEnergyConsumed').equal(2401.2);
 				    expect(res.body[6][2]).to.have.property('CarID').equal('7dbad968-7058-4440-9c8f-8f483cdd973a');
                     expect(res.body[6][2]).to.have.property('Model').equal('Model 3');
-                    expect(res.body[6][2]).to.have.property('EnergyCost').equal(0.028478);
-                    expect(res.body[6][2]).to.have.property('TotalKm').equal(96062);
-                    expect(res.body[6][2]).to.have.property('TotalEnergyConsumed').equal(2735.68);
+                    expect(res.body[6][2]).to.have.property('EnergyCost').equal(0.028146);
+                    expect(res.body[6][2]).to.have.property('TotalKm').equal(98077);
+                    expect(res.body[6][2]).to.have.property('TotalEnergyConsumed').equal(2760.51);
                     done();
                 });
         });
@@ -399,7 +399,7 @@ describe('Use Case : Statistics Manufacturer', ()=>{
 				    done();
                 });
         });
-        
+
         it('Invalid Dates', function (done) {
             chai.request('https://localhost:8765/evcharge/api')
                 .get('/EnergyCost/PerModel/1/kat/jkdjnfk/20201010')
@@ -491,9 +491,9 @@ describe('Use Case : Statistics Manufacturer', ()=>{
                     expect(res.body[3]).to.be.an('array');
                     expect(res.body[3]).to.have.length(32);
                     expect(res.body[3][0]).to.have.property('ManufacturerName').equal('Aiways');
-                    expect(res.body[3][0]).to.have.property('EnergyCostPerKm').equal(0.000398);
-                    expect(res.body[3][0]).to.have.property('EnergyDelivedInKWh').equal(1365.74);
-                    expect(res.body[3][0]).to.have.property('TotalKm').equal(3434387);
+                    expect(res.body[3][0]).to.have.property('EnergyCostPerKm').equal(0.000393);
+                    expect(res.body[3][0]).to.have.property('EnergyDelivedInKWh').equal(1367.49);
+                    expect(res.body[3][0]).to.have.property('TotalKm').equal(3478760);
                     done()
                 });
         });
@@ -708,7 +708,7 @@ describe('Use Case : Statistics Manufacturer', ()=>{
                 });
         });
     });
-    
+
 });
 
 describe('Use Case : Statistics Manufacturer', ()=> {

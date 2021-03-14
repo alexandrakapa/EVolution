@@ -35,7 +35,7 @@ def logout():
         tok = f.read()
         #click.echo(tok)
         url = "https://localhost:8765/logout"
-        
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -62,7 +62,7 @@ def healthcheck():
 @evgroup_38.command(name='resetsessions')
 def reset():
     URL = ("https://localhost:8765/evcharge/api/admin/resetsessions")
-    r = requests.post(url = URL)
+    r = requests.post(url = URL,verify=False)
     result = r.json()
     click.echo(result)
 
@@ -99,12 +99,12 @@ def sessions_per_station(station,datefrom,dateto,format):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
                 }
-        
+
         URL = ("https://localhost:8765/evcharge/api/SessionsPerStation/"+station+'/'+datefrom+'/'+dateto+'/?format='+format)
         r = requests.get(url = URL, headers=headers, data=payload, verify = False)
         click.echo(r.text)
@@ -114,14 +114,14 @@ def sessions_per_station(station,datefrom,dateto,format):
 @evgroup_38.command(name='SessionsPerEV', help = 'Find sessions of certain vehicle')
 @click.option('--ev','--e',type=str)
 @click.option('--datefrom', '--from', '--f', type=str, prompt = 'Give me datefrom')
-@click.option('--dateto','--to','--t', type=str, prompt = 'Give me dateto') 
+@click.option('--dateto','--to','--t', type=str, prompt = 'Give me dateto')
 @click.option('--format', type=str, default = 'json')
 def sessions_per_ev(ev,datefrom,dateto,format):
     if os.path.exists("softeng20bAPI.token"):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -142,7 +142,7 @@ def sessions_per_provider(provider,datefrom,dateto,format):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -165,7 +165,7 @@ def admin_actions(usermod,username,passw,users,sessionsupd,format):
         f = open("softeng20bAPI.token", "r")
         tok = f.read()
         #click.echo(tok)
-       
+
         payload={}
         headers = {
                 'x-access-token': tok
@@ -178,7 +178,7 @@ def admin_actions(usermod,username,passw,users,sessionsupd,format):
             click.echo(result)
         elif (users == 'not_selected' and sessionsupd != 'not_selected' and username == 'nothing_inserted' and passw == 'nothing_inserted'):
             #URL = "https://localhost:8765/evcharge/api/admin/system/sessionsupd"
-            
+
             #r = requests.post(url=URL, headers=headers, data=payload)
             #click.echo(r.text)
             url = "https://localhost:8765/evcharge/api/admin/system/sessionsupd"
