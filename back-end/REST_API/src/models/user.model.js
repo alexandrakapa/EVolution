@@ -142,7 +142,7 @@ User.updateUser = (username, password, userReqData, result)=>{
 User.createUser = (username, password, userReqData, result)=>{
   if (userReqData.whatamI==0) //Car_Manufacturer
   {
-    dbConn.query("INSERT INTO Car_Manufacturer SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,isAdmin = ?,sessionID = 0,whatamI=0", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone], (err, res)=>{
+    dbConn.query("INSERT INTO Car_Manufacturer SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,sessionID = 0,whatamI=0", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone], (err, res)=>{
         if(err){
           //  console.log('Error:Please fill all the forms!');
             result(null, err);
@@ -154,7 +154,7 @@ User.createUser = (username, password, userReqData, result)=>{
   }
   else if (userReqData.whatamI==1) //Energy_Supplier
   {
-    dbConn.query("INSERT INTO Energy_Supplier SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,isAdmin = ?,sessionID = 0,whatamI=1", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone], (err, res)=>{
+    dbConn.query("INSERT INTO Energy_Supplier SET username = ?, password = ?,company_name=?,is_user=?, email = ?, phone = ?,sessionID = 0,whatamI=1", [username, password,userReqData.company_name,userReqData.is_user, userReqData.email, userReqData.phone], (err, res)=>{
         if(err){
           //  console.log('Error:Please fill all the forms!');
             result(null, err);
