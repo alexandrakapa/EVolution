@@ -39,9 +39,17 @@
         return;
   	}
     
+    //check if Manufacturer ID is int
+    var id = Number(req.params.manufacturerID);
+    if (!Number.isInteger(id)) {
+		res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid Manufacturer ID');;
+		return;
+	}
+
     const region = req.params.region;
     //check if ID length is valid based on our database's corresponding attribute's type
-    if (region.toString().length < 2 || region.toString().length >5) {
+    if (region.toString().length < 2 || region.toString().length >5 || !Number.isInteger(Number(region))) {
         res.statusMessage = 'Bad Request';
         res.status(400).send('Bad Request : Invalid region.');
         return;
@@ -62,6 +70,13 @@
     const to_month = (req.params.yyyymmdd_to).substring(4,6);
     const from_day = (req.params.yyyymmdd_from).substring(6,8);
     const to_day = (req.params.yyyymmdd_to).substring(6,8);
+
+    //check if dates contain chars
+    if ( !Number.isInteger(Number(req.params.yyyymmdd_from)) || !Number.isInteger(Number(req.params.yyyymmdd_to)) ) {
+        res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid Dates');
+        return;
+    }
 
     //General easy checks: everything must be >= 1 and months must be < 12
     if (from_year < 1 || to_year < 1 || from_month < 1 || from_month > 12 || to_month < 1 || to_month > 12 || from_day < 1 || to_day < 1 ) {

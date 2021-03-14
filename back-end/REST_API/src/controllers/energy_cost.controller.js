@@ -51,7 +51,13 @@ check_day = (y, m, d) => {
   		return;
   	}
 
-  
+    //check if Manufacturer ID is int
+    var id = Number(req.params.manufacturerID);
+    if (!Number.isInteger(id)) {
+		res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid Manufacturer ID');;
+		return;
+	}
 
      //check if date length is indeed 8 , because we want format yyyymmdd
     if (req.params.yyyymmdd_from.length != 8 || req.params.yyyymmdd_to.length != 8) {
@@ -67,6 +73,13 @@ check_day = (y, m, d) => {
     const to_month = (req.params.yyyymmdd_to).substring(4,6);
     const from_day = (req.params.yyyymmdd_from).substring(6,8);
     const to_day = (req.params.yyyymmdd_to).substring(6,8);
+
+    //check if dates contain chars
+    if ( !Number.isInteger(Number(req.params.yyyymmdd_from)) || !Number.isInteger(Number(req.params.yyyymmdd_to)) ) {
+        res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid Dates');
+        return;
+    }
 
     //General easy checks: everything must be >= 1 and months must be < 12
     if (from_year < 1 || to_year < 1 || from_month < 1 || from_month > 12 || to_month < 1 || to_month > 12 || from_day < 1 || to_day < 1 ) {
@@ -171,6 +184,13 @@ check_day = (y, m, d) => {
     const from_day = (req.params.yyyymmdd_from).substring(6,8);
     const to_day = (req.params.yyyymmdd_to).substring(6,8);
 
+    //check if dates contain chars
+    if ( !Number.isInteger(Number(req.params.yyyymmdd_from)) || !Number.isInteger(Number(req.params.yyyymmdd_to)) ) {
+        res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid Dates');
+        return;
+    }
+
     //General easy checks: everything must be >= 1 and months must be < 12
     if (from_year < 1 || to_year < 1 || from_month < 1 || from_month > 12 || to_month < 1 || to_month > 12 || from_day < 1 || to_day < 1 ) {
         res.statusMessage = 'Bad Request';
@@ -256,6 +276,14 @@ check_day = (y, m, d) => {
         res.status(400).send('Bad Request : Empty Required Field');
         return;
     }
+
+    //check if Manufacturer ID is int
+    var id = Number(req.params.manufacturerID);
+    if (!Number.isInteger(id)) {
+		res.statusMessage = 'Bad Request';
+        res.status(400).send('Bad Request : Invalid Manufacturer ID');;
+		return;
+	}
 
      //check that the datatype requested is valid
     if (req.query.format!='csv' && req.query.format!=undefined && req.query.format!='json'){

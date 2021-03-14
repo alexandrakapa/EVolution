@@ -24,14 +24,16 @@ cost.getCostByModel = async (req, result) => {
 	//console.log(parsedate());
 	let arr=new Array();
 	let ManufacturerID=(req.params.manufacturerID);
-	let Model=req.params.model;
+	let Model=(req.params.model).toString();
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	//console.log(periodfrom);
 	console.log('ManufacturerID ',ManufacturerID);
 	dbConn.query(`SELECT Car_Manufacturer.ID as ManufacturerID, Car_Manufacturer.company_name as ManufacturerName
-					FROM Car_Manufacturer
-					WHERE Car_Manufacturer.ID=${ManufacturerID}` , (err, res) =>
+					FROM Car
+					LEFT JOIN Car_Manufacturer
+					ON Car.Car_ManufacturerID = Car_Manufacturer.ID
+					WHERE Car_Manufacturer.ID='${ManufacturerID}' AND Car.model='${Model}'` , (err, res) =>
 	
 	{
 
@@ -59,12 +61,13 @@ cost.getCostByModel = async (req, result) => {
 	    return;
 	
 	    }
-
+		else {
 	    // not found 
 	    console.log('No data for cars of this model for these dates.')
 
 	    result(null, res);
 	    return;
+		}
 	
 
 
@@ -135,6 +138,8 @@ cost.getter= async ( req, arr, result ) => {
 			    		result(null,csv)
 			    	}
 			    },{emptyFieldValue  : ''})
+
+				return;
 			   
 			}
 			else {

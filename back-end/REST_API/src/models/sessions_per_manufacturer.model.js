@@ -23,7 +23,7 @@ Manufacturer.getSessionsbyManID = async (req, result) => {
 	
 	//console.log(parsedate());
 	let arr=new Array();
-	let ManufacturerID=(req.params.manufacturerID);
+	let ManufacturerID=parseInt(req.params.manufacturerID);
 	let periodfrom=((req.params.yyyymmdd_from).substring(0,4)).concat('-',(req.params.yyyymmdd_from).substring(4,6),'-',(req.params.yyyymmdd_from).substring(6,8));
 	let periodto=((req.params.yyyymmdd_to).substring(0,4)).concat('-',(req.params.yyyymmdd_to).substring(4,6),'-',(req.params.yyyymmdd_to).substring(6,8));
 	//console.log(periodfrom);
@@ -66,7 +66,7 @@ Session.getter= async ( req, arr, result ) => {
 	//Point.getPointByID(req, result);
 	let sessionlist=new Array();
 	let ManufacturerID=(req.params.manufacturerID);
-	let region=(req.params.region);
+	let region=(req.params.region).substring(0,2);
 	console.log('ManufacturerID ',ManufacturerID);
 	console.log('region',region);
 	dbConn.query(`
