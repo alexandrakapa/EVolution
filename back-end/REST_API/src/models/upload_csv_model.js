@@ -11,7 +11,7 @@ const sha512crypt = require("sha512crypt-node").sha512crypt;
 const jwt_decode =require("jwt-decode");
 dotenv.config();
 
-const fileRows =[];
+var fileRows =[];
 csvReader.checkToken = async(tokid,tuname, cat,result) =>{
     qur = "SELECT * FROM "+cat+" WHERE username= '"+ tuname+"'";
     console.log(qur);
@@ -73,6 +73,8 @@ csvReader.findByToken = async (tok, result) => {
     console.log("result: "+result);
   };
 csvReader.upFile =  ((req, result) => {
+    fileRows =[];
+    console.log("START: "+fileRows)
     console.log(req.file);
     console.log(Object.getOwnPropertyNames(req.file));
     console.log(Object.getOwnPropertyNames(req));
@@ -81,19 +83,26 @@ csvReader.upFile =  ((req, result) => {
       fileRows.push(data); // push each row
     })
     .on("end", function () {
-      fs.unlinkSync(req.file.path);
-      console.log(fileRows);
+      //fs.unlink(req.file.path);
+      fs.unlink(req.file.path, (err => { 
+        if (err) console.log(err); 
+        else { 
+          console.log("\nDeleted file: example_file.txt");  
+        } 
+      })); 
+      console.log("THIS: "+fileRows);
       result(null,fileRows);
       return;
     })
 });
 csvReader.upDB =  ((data, result) => {
     var to_exec = "INSERT INTO Charging VALUES ";
+    console.log(data);
     for(var i=0; i<data.length;i++){
-        console.log("object: "+i);
+        //console.log("object: "+i);
         cur="";
         for(var j=0; j<data[i].length;j++){
-            console.log("this: "+j+" : "+ data[i][j]);
+            //console.log("this: "+j+" : "+ data[i][j]);
             cur += data[i][j];
         }
         var data_ar = cur.split(';');

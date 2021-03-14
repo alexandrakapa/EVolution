@@ -12,13 +12,14 @@ exports.getFile =(req,res) =>{
                     message:"Invalid data "+um
                 });
             }else {
-                console.log("here");
+                console.log("DARA:"+data);
                 UploadModel.upFile(req,(err,data) => {
                     if (err) {
                         res.send(err);
                         return;
                     }
                     else if (data.length){
+                        console.log("DADA:"+data);
                         UploadModel.upDB(data,(error,result) => {
                             if (error) {
                                 res.send(error);
