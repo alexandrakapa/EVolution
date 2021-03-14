@@ -42,7 +42,7 @@ function checkBig(){
     <h1_new> Energy Consumption Per District </h1_new>
      <h1>Select Date and Region</h1>
      <label>Postal Code</label>
-     <input name="region" type="number" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />
+     <input name="region" type="number" placeholder="Enter Region XX" ref={register({ required: true, maxLength: 5,minLength: 2 }) } />
         {errors.region && errors.region.type === "required" && <span className='error' >Field is required </span>}
         {errors.region && errors.region.type === "maxLength" && <span className='error'>Maximum length 5 digits</span> }
         {errors.region && errors.region.type === "minLength" && <span className='error'>Minumum length 2 digits</span> }

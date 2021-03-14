@@ -14,39 +14,39 @@ function ChargingData(props) {
 	const price=(props.money=='' || props.data.charging_price<=props.money)? props.data.charging_price : props.money;
 	const timeNow=new Date().getTime()/1000
 
-	var currentdate = new Date(); 
+	var currentdate = new Date();
 	var tmp=currentdate.getTime() - 3974*1000
 	var chargedate= new Date(null);
 	chargedate.setTime(tmp);
 
-	var paymentWay=props.paymentWay=='card_in_app' ? 
+	var paymentWay=props.paymentWay=='card_in_app' ?
 									  "With card in app"
 									  : props.paymentWay=='station'	?
 									  "At station"
 									  : "Later in app"
 
 	var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " : "  
-                + currentdate.getHours() + ":"  
-               
-     
-    var mins= currentdate.getMinutes()<10? "0"+currentdate.getMinutes() : currentdate.getMinutes();          
+                + (currentdate.getMonth()+1)  + "/"
+                + currentdate.getFullYear() + " : "
+                + currentdate.getHours() + ":"
+
+
+    var mins= currentdate.getMinutes()<10? "0"+currentdate.getMinutes() : currentdate.getMinutes();
     var secs= currentdate.getSeconds()<10? "0"+currentdate.getSeconds() : currentdate.getSeconds();
     var datetime=datetime+mins+":"+secs
 
 
     var connectiontime=chargedate.getDate() + "/"
-    				+ (chargedate.getMonth()+1)  + "/" 
-                	+ chargedate.getFullYear() + " : "  
+    				+ (chargedate.getMonth()+1)  + "/"
+                	+ chargedate.getFullYear() + " : "
                 	+ chargedate.getHours() + ":"
-    var mins_1= chargedate.getMinutes()<10? "0"+chargedate.getMinutes() : chargedate.getMinutes();          
+    var mins_1= chargedate.getMinutes()<10? "0"+chargedate.getMinutes() : chargedate.getMinutes();
     var secs_1= chargedate.getSeconds()<10? "0"+chargedate.getSeconds() : chargedate.getSeconds();
     var connectiontime=connectiontime+mins_1+":"+secs_1
 
 
 	if(props.check===0){
-		 return ( 
+		 return (
 			<div className='charging_results'>
 				<h1 className='title_res'> Some information about your charging: </h1>
 
@@ -64,9 +64,9 @@ function ChargingData(props) {
 				<hr style={{marginTop: '15px', marginBottom: '5px', border : '1px dashed rgba(44, 130, 201, 0.6)'}}/>
 
 
-				<label className='label_res'> Charging price: {price} euros </label>
+				<label className='label_res'> Charging price: {price} € </label>
 				<label className='label_res'> Payment way: {paymentWay}</label>
-				
+
 				</div>);
 
 	}
@@ -82,5 +82,3 @@ function ChargingData(props) {
 
 
 export default ChargingData;
-
-

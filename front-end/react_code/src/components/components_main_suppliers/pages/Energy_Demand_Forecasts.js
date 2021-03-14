@@ -39,7 +39,13 @@ function EnergyDemand(props) {
       fetch(`https://localhost:8765/evcharge/api/EnergyDemandForecast/${localStorage.id}/${startdate}/${enddate}`,{headers:{'Content-type':'application/json','x-access-token':tok}})
           .then(response => response.json())
           .then(fetchedData => {
-              if(startdate==enddate|| enddate==2018 || startdate==2020){
+            if(startdate==enddate && (enddate>2020 || enddate<2018)){
+              let tmp=[]
+              setGeneral(() => tmp)
+              setIsLoading(false)
+
+            }
+            else if(startdate==enddate|| enddate==2018 || startdate==2020){
               setData(() => fetchedData[15])
               let tmp=[]
               var i

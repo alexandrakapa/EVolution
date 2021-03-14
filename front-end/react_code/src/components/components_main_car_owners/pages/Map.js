@@ -76,7 +76,7 @@ export default function Map() {
                 setSelectedPark(park);
               }}
             >
-              {park.Is_Active ? (
+              {park.is_act ? (
               <AiFillThunderbolt size ="1em"/>
         ) :                <AiOutlineThunderbolt size ="1em"/>}
             </button>
