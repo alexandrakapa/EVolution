@@ -1,0 +1,335 @@
+commit e206dfa4cbb4619429d383a1c7a296268a0795e4
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Wed Jan 6 17:21:36 2021 +0200
+
+    Delete readme.txt
+
+commit a64cfc4863907435e7b17fc26118fd1b549b4222
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Wed Jan 6 17:21:14 2021 +0200
+
+    Add files via upload
+
+commit 7d9f80f888b416b51ee3f82b6ae996d5a922c822
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Tue Jan 5 20:21:57 2021 +0200
+
+    Delete sessions_per_point.controlller.js
+
+commit 19fc4ad4d1f519f04c2bd56f619adfef3b9041a5
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Tue Jan 5 20:21:47 2021 +0200
+
+    Delete index.js
+
+commit c4c350172f4b479ef600c838edb6d61a306e76e0
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Tue Jan 5 19:51:37 2021 +0200
+
+    Create sessions_per_point.controlller.js
+
+commit a9384f8eb3d0f7ad3ba1eda91de97f23548c6ed5
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Tue Jan 5 19:50:15 2021 +0200
+
+    Create index.js
+
+commit 4a56e4b9063af77e4b54bf33c607c7bc590b755d
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Tue Jan 5 19:49:15 2021 +0200
+
+    Delete REST_API
+
+commit fb227ac1ead1085fa963fcc5acad6d87861b235e
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Tue Jan 5 19:49:02 2021 +0200
+
+    Create REST_API
+
+commit 821713341d6d34b05e224b37fd890ae732a71fda
+Author: alexandrakapa <63066416+alexandrakapa@users.noreply.github.com>
+Date:   Tue Jan 5 16:54:03 2021 +0200
+
+    Create README.md
+
+commit d40fd58ae54a0ddda9ccebb7df531b7ef44705c1
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Tue Jan 5 12:53:13 2021 +0200
+
+    Delete Database
+
+commit c947860386207fded24432b7c5042534a3f02413
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Tue Jan 5 12:52:47 2021 +0200
+
+    Create Database
+
+commit 2bd0cb5509f9788dd20a9a994249b9c2f539f70a
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:52:19 2020 +0200
+
+    Delete documentation.txt
+
+commit 6567b6f507bdb4e44d524b3919ddb01c07e0a575
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:49:57 2020 +0200
+
+    Delete test.txt
+
+commit 09350cf0943872a854a529b46b71cde3022aa476
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:49:33 2020 +0200
+
+    Delete test.txt
+
+commit f3754d571472a253f93d4428d9df20324de3a79c
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:49:16 2020 +0200
+
+    Delete test.txt
+
+commit 45b5f1f25df74d35fab513c39a6d273278d5aa32
+Author: alexandrakapa <63066416+alexandrakapa@users.noreply.github.com>
+Date:   Sun Dec 20 13:49:06 2020 +0200
+
+    Add files via upload
+
+commit 151fdf166aaf89a1d3f346f5961c924d1ba556aa
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:48:38 2020 +0200
+
+    Add files via upload
+
+commit 589743d2f6a67fa06ae36e709eccd205909686ae
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:47:49 2020 +0200
+
+    Delete test.txt
+
+commit bfef1e16e7678473900c98c0079925455ba957aa
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:47:26 2020 +0200
+
+    Add files via upload
+
+commit 6673704c450c56499c90dd96a4f9b1be7277bc5d
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:47:01 2020 +0200
+
+    Add files via upload
+
+commit 651907176ffac9eacc6b348dd8a468a935c7bca6
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:46:57 2020 +0200
+
+    Delete test.txt
+
+commit 56df3bf10927622663ab3d2dd02a8859ec03687b
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:46:27 2020 +0200
+
+    Delete Statistics for energy producers Use Case Diagram.vpp
+
+commit 18a481ca0d3087e2119f0f0db96d5ce72bdb2406
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:46:27 2020 +0200
+
+    Add files via upload
+
+commit 1e879e085e504d7e59ccdb87846ca066a2fc7259
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:45:53 2020 +0200
+
+    Delete test.txt
+
+commit e9cae3b783772eb6943318ed894950669a7ff9f4
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:45:19 2020 +0200
+
+    Delete test.txt
+
+commit 09ea4ad8503af772b61b23389f8327e40fb189e2
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Sun Dec 20 13:45:06 2020 +0200
+
+    Add files via upload
+
+commit 1507fb99321a00e6ae825bac7a364263f93faa2f
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:44:58 2020 +0200
+
+    Add files via upload
+
+commit 8de8251e6b99e8075f6e4cb9b22ba446a04692bd
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Sun Dec 20 13:44:20 2020 +0200
+
+    Add files via upload
+
+commit 1bc2dfcf1678688c7c229b2bc39663bf2ba7c3ad
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:44:09 2020 +0200
+
+    Add files via upload
+
+commit 8da0dae68861d22c737298ab782b2e4c37d631d5
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Sun Dec 20 13:43:27 2020 +0200
+
+    Add files via upload
+
+commit 64d67ce18d5a6973760fba77ef77ad8795d17b9a
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:42:05 2020 +0200
+
+    Add files via upload
+
+commit 822571173e3bb10d1fe058b2c525bb58ad448027
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Sun Dec 20 13:40:31 2020 +0200
+
+    Add files via upload
+
+commit 1d1c6ef64e8f4bc2be1cf68488b45614436aad76
+Author: Stamatis Alexandropoulos <64039583+stamatisalex@users.noreply.github.com>
+Date:   Sun Dec 20 13:39:11 2020 +0200
+
+    Add files via upload
+
+commit fb7e1bd019c541393d229ec7ceda3af520219b53
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:37:04 2020 +0200
+
+    Add files via upload
+
+commit 714795fd259e71c0df8730431b983688418f3a97
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:36:16 2020 +0200
+
+    Delete StRS_Statistics_for_Energy_Producers.docx
+
+commit f95ff67952f4d6c138a300cd0649901f6751d077
+Author: stelazr <75032534+stelazr@users.noreply.github.com>
+Date:   Sun Dec 20 13:35:25 2020 +0200
+
+    Add files via upload
+
+commit cf0440208d3c4469047e2db581d930fe64af5d5f
+Author: LiagkaAikaterini <75030581+LiagkaAikaterini@users.noreply.github.com>
+Date:   Sun Dec 20 13:34:32 2020 +0200
+
+    Add files via upload
+
+commit 9812261e4c9f761869a9fd552b14a1e98e373684
+Author: alexandrakapa <63066416+alexandrakapa@users.noreply.github.com>
+Date:   Sun Dec 20 13:34:04 2020 +0200
+
+    Add files via upload
+
+commit be387bfe001bd943cd83745cca9f8353e6c3dcfb
+Author: LiagkaAikaterini <75030581+LiagkaAikaterini@users.noreply.github.com>
+Date:   Sun Dec 20 13:33:57 2020 +0200
+
+    Add files via upload
+
+commit 7bf8a4859b1ea6e826bfe124047ad0daa4b52f09
+Author: LiagkaAikaterini <75030581+LiagkaAikaterini@users.noreply.github.com>
+Date:   Sun Dec 20 13:33:25 2020 +0200
+
+    Add files via upload
+
+commit 58ac774963fb9f49323f2f7afbb31f8098c06a18
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:33:17 2020 +0200
+
+    Add files via upload
+
+commit 3f9dc71ca730bbf8f34ac285c1e208c459c11d06
+Author: alexandrakapa <63066416+alexandrakapa@users.noreply.github.com>
+Date:   Sun Dec 20 13:32:58 2020 +0200
+
+    Add files via upload
+
+commit 56372dcdf9b596da102fcab9052128e4e71bbd78
+Author: LiagkaAikaterini <75030581+LiagkaAikaterini@users.noreply.github.com>
+Date:   Sun Dec 20 13:32:55 2020 +0200
+
+    Add files via upload
+
+commit e4dcd90def11f9039b782d92a1b9448852eb7c41
+Author: PolyannaG <64039707+PolyannaG@users.noreply.github.com>
+Date:   Sun Dec 20 13:32:37 2020 +0200
+
+    Add files via upload
+
+commit bb9de793afd3ef82af4b7a0ebefaa130e2b09a20
+Author: stelazr <75032534+stelazr@users.noreply.github.com>
+Date:   Sun Dec 20 13:30:11 2020 +0200
+
+    Add files via upload
+
+commit a8e1ba3fa32adc1b484b7f5e6d0d470e4e07e182
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:26:38 2020 +0200
+
+    Create test.txt
+
+commit b633b0f5894bb5d5fbdcc7773c46392f13e7e683
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:26:14 2020 +0200
+
+    Create test.txt
+
+commit 926b76d0757ec6682826e9dd726a475283116a57
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:25:24 2020 +0200
+
+    Create test.txt
+
+commit 40443c88a34a80bdabe95bcf89ebefaaf65259da
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:24:58 2020 +0200
+
+    Create test.txt
+
+commit de369b974603122f7026f07a6f88db5a091f433a
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:24:04 2020 +0200
+
+    Create test.txt
+
+commit db212f87785b3f881a397bdc0117011bbcdfa985
+Author: stelazr <75032534+stelazr@users.noreply.github.com>
+Date:   Sun Dec 20 13:23:32 2020 +0200
+
+    Add files via upload
+
+commit 0866df61bbee89ebcead77c360e258efefdb712d
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:22:24 2020 +0200
+
+    Create test.txt
+
+commit daf555163fa2c893fa6989ef4de1c8f9daca5a80
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:21:42 2020 +0200
+
+    Create test.txt
+
+commit 962e4defce0fa64f5c023a1276159ab39a0a4949
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:11:55 2020 +0200
+
+    Create documentation.txt
+
+commit 9bfc01537145470f80f9151863d9e05980d233b5
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:11:12 2020 +0200
+
+    Delete documentation
+
+commit d9d68bd9cbefbe6a7c781f5b2d1204809b17da74
+Author: nikosgio <45352904+nikosgio@users.noreply.github.com>
+Date:   Sun Dec 20 13:09:47 2020 +0200
+
+    Create documentation
