@@ -5,7 +5,7 @@
 * Alexandropoulos Stamatis (03117060)
 * Giorgoulakis Nikolaos (03117138)
 * Gkotsi Polytimi-Anna (03117201)
-* Kaparou Alexandra (03117100)
+* [Kaparou Alexandra (03117100)](https://github.com/alexandrakapa)
 * Liagka Aikaterini (03117208)
 * Zhara Stela (03117154)
 
