@@ -1,5 +1,9 @@
 # EVolution
 
+Ένα project για το μάθημα Τεχνολογία Λογισμικού (NTUA ECE) 2020-2021
+
+Στόχος ήταν η υλοποίηση ενός full stack site σχετικά με τα ηλεκτρικά οχήματα.
+
 <ins> Η ομάδα μας : </ins>
 
 * Alexandropoulos Stamatis (03117060)
@@ -9,6 +13,12 @@
 * Liagka Aikaterini (03117208)
 * Zhara Stela (03117154)
 
+
+<ins> Το stack μας : </ins>
+* JavaScript
+* Python
+* CSS
+* HTML
 
 ## Setup
 
