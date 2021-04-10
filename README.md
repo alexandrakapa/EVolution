@@ -6,12 +6,12 @@
 
 <ins> Η ομάδα μας : </ins>
 
-* Alexandropoulos Stamatis (03117060)
-* Giorgoulakis Nikolaos (03117138)
-* Gkotsi Polytimi-Anna (03117201)
-* [Kaparou Alexandra (03117100)](https://github.com/alexandrakapa)
-* Liagka Aikaterini (03117208)
-* Zhara Stela (03117154)
+* [Alexandropoulos Stamatis](https://github.com/stamatisalex)
+* [Giorgoulakis Nikolaos](https://github.com/nikosgio)
+* [Gkotsi Polytimi-Anna](https://github.com/PolyannaG)
+* [Kaparou Alexandra](https://github.com/alexandrakapa)
+* [Liagka Aikaterini](https://github.com/LiagkaAikaterini)
+* [Zhara Stela](https://github.com/stelazr)
 
 
 <ins> Το stack μας : </ins>
