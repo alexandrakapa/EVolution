@@ -4,6 +4,10 @@
 
 Στόχος ήταν η υλοποίηση ενός full stack site σχετικά με τα ηλεκτρικά οχήματα.
 
+### Η παρουσίαση του site φαίνεται παρακάτω:
+
+https://user-images.githubusercontent.com/63066416/137513209-474f8c5e-f07b-4158-8802-98ff725f89c7.mp4
+
 <ins> Η ομάδα μας : </ins>
 
 * [Alexandropoulos Stamatis](https://github.com/stamatisalex)
